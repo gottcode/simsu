@@ -1,0 +1,86 @@
+2009-03-30 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.2.1.
+
+2009-03-29 Pavel Fric <pavelfric@seznam.cz>
+	* Add Czech translation.
+
+2009-03-28 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.2.0.
+	* Improve interface on Maemo platform.
+
+2009-03-27 Graeme Gott <graeme@gottcode.org>
+	* Add version number to saved game.
+
+2009-03-26 Graeme Gott <graeme@gottcode.org>
+	* Add previews for symmetry choices.
+	* Add random choice for symmetry.
+	* Generalize code for symmetry.
+
+2009-03-25 Graeme Gott <graeme@gottcode.org>
+	* Allow user to select type of puzzle symmetry.
+
+2009-03-24 Graeme Gott <graeme@gottcode.org>
+	* Improve board appearance.
+
+2009-03-23 Graeme Gott <graeme@gottcode.org>
+	* Allow user to select algorithm when starting a game.
+	* Add slice and dice algorithm.
+
+2009-03-22 Graeme Gott <graeme@gottcode.org>
+	* Allow user to disable auto-switching modes.
+	* Add widescreen layout.
+	* Add icons for mode buttons.
+
+2009-03-19 Graeme Gott <graeme@gottcode.org>
+	* Speed up puzzle creation.
+	* Move square widget code out of window class.
+
+2009-02-27 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.1.0.
+
+2009-02-25 Graeme Gott <graeme@gottcode.org>
+	* Selection follows mouse.
+	* Add controls dialog to help menu.
+	* Allow highlighting all occurances of a number.
+	* Allow selecting number entry buttons by scrolling.
+
+2009-02-22 Graeme Gott <graeme@gottcode.org>
+	* Allow givens to be selected.
+	* Store moves across runs.
+	* Add ability to undo and redo moves.
+
+2009-02-21 Graeme Gott <graeme@gottcode.org>
+	* Store list of changes in each cell.
+
+2009-02-20 Graeme Gott <graeme@gottcode.org>
+	* Add number entry buttons in main window.
+
+2009-01-18 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.0.0.
+	* Add program icon.
+
+2009-01-17 Graeme Gott <graeme@gottcode.org>
+	* Add mac and windows deploy scripts.
+	* Maintain aspect ratio for board.
+
+2009-01-16 Graeme Gott <graeme@gottcode.org>
+	* Prevent user interaction with finished games.
+	* Switch between modes using buttons in main window.
+	* Allow user to see incorrect values.
+	* Prompt user when starting a new game.
+
+2009-01-15 Graeme Gott <graeme@gottcode.org>
+	* Inform user when they have completed the puzzle.
+	* Store current game across runs.
+	* Allow user to choose seed value.
+	* Add window class.
+
+2009-01-14 Graeme Gott <graeme@gottcode.org>
+	* Show conflicts in red.
+	* Move between cells with arrow keys.
+	* Add board class.
+	* Add cell class.
+
+2009-01-13 Graeme Gott <graeme@gottcode.org>
+	* Add puzzle generator.
+	* Add dancing links from Tetzle.
