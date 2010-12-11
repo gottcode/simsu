@@ -1,5 +1,4 @@
 TEMPLATE = app
-VERSION = 1.2.1
 CONFIG += warn_on release
 macx {
 	# Uncomment the following line to compile on PowerPC Macs
@@ -37,7 +36,8 @@ SOURCES = src/board.cpp \
 	src/square.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/simsu_cs.ts
+TRANSLATIONS = translations/cs.ts \
+	translations/en_US.ts
 
 RESOURCES = icons/icon.qrc symmetry/symmetry.qrc translations/translations.qrc
 macx {
