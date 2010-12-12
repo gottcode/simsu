@@ -32,6 +32,8 @@
 #include <QSettings>
 #include <QUndoStack>
 
+#include <ctime>
+
 /*****************************************************************************/
 
 Board::Board(QWidget* parent)
