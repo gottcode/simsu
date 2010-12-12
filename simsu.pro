@@ -52,8 +52,11 @@ unix: !macx {
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
 	}
+	isEmpty(BINDIR) {
+		BINDIR = bin
+	}
 
-	target.path = $$PREFIX/bin/
+	target.path = $$PREFIX/$$BINDIR/
 
 	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
 	icon.files = icons/simsu.png
