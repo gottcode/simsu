@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 #include "window.h"
 
 #include "board.h"
+#include "locale_dialog.h"
 #include "pattern.h"
 #include "square.h"
 
@@ -166,6 +167,8 @@ Window::Window() {
 	action->setCheckable(true);
 	connect(action, SIGNAL(toggled(bool)), this, SLOT(toggleWidescreen(bool)));
 	action->setChecked(settings.value("Widescreen").toBool());
+	menu->addSeparator();
+	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
 
 	menu = menuBar()->addMenu(tr("&Help"));
 	menu->addAction(tr("&Controls"), this, SLOT(showControls()));
@@ -350,6 +353,13 @@ void Window::toggleWidescreen(bool checked) {
 	for (int i = 1; i < 10; ++i) {
 		m_key_buttons->button(i)->setMinimumWidth(width);
 	}
+}
+
+/*****************************************************************************/
+
+void Window::setLocaleClicked() {
+	LocaleDialog dialog(this);
+	dialog.exec();
 }
 
 /*****************************************************************************/

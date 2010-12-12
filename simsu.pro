@@ -20,6 +20,7 @@ HEADERS = src/board.h \
 	src/cell.h \
 	src/dancing_links.h \
 	src/frame.h \
+	src/locale_dialog.h \
 	src/move.h \
 	src/pattern.h \
 	src/puzzle.h \
@@ -30,6 +31,7 @@ SOURCES = src/board.cpp \
 	src/cell.cpp \
 	src/dancing_links.cpp \
 	src/frame.cpp \
+	src/locale_dialog.cpp \
 	src/move.cpp \
 	src/main.cpp \
 	src/puzzle.cpp \
@@ -39,7 +41,7 @@ SOURCES = src/board.cpp \
 TRANSLATIONS = translations/cs.ts \
 	translations/en_US.ts
 
-RESOURCES = icons/icon.qrc symmetry/symmetry.qrc translations/translations.qrc
+RESOURCES = icons/icon.qrc symmetry/symmetry.qrc
 macx {
 	ICON = icons/simsu.icns
 } else:win32 {
@@ -59,5 +61,8 @@ unix: !macx {
 	desktop.path = $$PREFIX/share/applications/
 	desktop.files = icons/simsu.desktop
 
-	INSTALLS += target icon desktop
+	qm.files = translations/*.qm
+	qm.path = $$PREFIX/share/simsu/translations
+
+	INSTALLS += target icon desktop qm
 }
