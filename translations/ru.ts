@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs" sourcelanguage="en">
+<TS version="2.0" language="ru" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <location filename="../src/board.cpp" line="73"/>
         <location filename="../src/board.cpp" line="88"/>
         <source>Success</source>
-        <translation>Úspěch</translation>
+        <translation>Удача</translation>
     </message>
 </context>
 <context>
@@ -15,22 +15,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="46"/>
         <source>Application Language</source>
-        <translation>Jazyk programu</translation>
+        <translation>Язык приложения</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="48"/>
         <source>Select application language:</source>
-        <translation>Vybrat jazyk programu:</translation>
+        <translation>Выберите язык приложения:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="147"/>
         <source>Note</source>
-        <translation>Notiz</translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="147"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Spusťte, prosí, tento program znovu, aby se změna jazyka projevila.</translation>
+        <translation>Чтобы применить изменение языка, перезапустите программу.</translation>
     </message>
 </context>
 <context>
@@ -38,57 +38,57 @@
     <message>
         <location filename="../src/pattern.h" line="56"/>
         <source>180° Rotational</source>
-        <translation>Otočitelný o 180°</translation>
+        <translation>Разворачиваемый на 180°</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="57"/>
         <source>Full Rotational</source>
-        <translation>Úplně otočitelný</translation>
+        <translation>Полностью разворачиваемый</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="58"/>
         <source>Horizontal</source>
-        <translation>Vodorovný</translation>
+        <translation>Горизонтальный</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="59"/>
         <source>Vertical</source>
-        <translation>Svislý</translation>
+        <translation>Вертикальный</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="60"/>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Vodorovný a svislý</translation>
+        <translation>Горизонтальный и вртикальный</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="61"/>
         <source>Diagonal</source>
-        <translation>Úhlopříčný</translation>
+        <translation>Диагональ</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="62"/>
         <source>Anti-Diagonal</source>
-        <translation>Proti-úhlopříčný</translation>
+        <translation>Антидиагональ</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="63"/>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Úhlopříčný &amp;proti-úhlopříčný</translation>
+        <translation>Диакгональ и антидиагональ</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="64"/>
         <source>Full Dihedral</source>
-        <translation>Úplně dvoustěnný</translation>
+        <translation>Двухгранный</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="65"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>Случайный</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="66"/>
         <source>None</source>
-        <translation>Žádný</translation>
+        <translation>Безназвания</translation>
     </message>
 </context>
 <context>
@@ -101,17 +101,17 @@
     <message>
         <location filename="../src/window.cpp" line="92"/>
         <source>Pen</source>
-        <translation>Pero</translation>
+        <translation>Ручка</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Pencil</source>
-        <translation>Tužka</translation>
+        <translation>Каранаш</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="100"/>
         <source>Highlight</source>
-        <translation>Zvýraznit</translation>
+        <translation>Подсветка</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="102"/>
@@ -126,12 +126,12 @@
     <message>
         <location filename="../src/window.cpp" line="146"/>
         <source>&amp;Game</source>
-        <translation>&amp;Hra</translation>
+        <translation>&amp;Игра</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
         <source>&amp;New</source>
-        <translation>&amp;Nový</translation>
+        <translation>&amp;Новая</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
@@ -141,12 +141,12 @@
     <message>
         <location filename="../src/window.cpp" line="148"/>
         <source>&amp;Details</source>
-        <translation>&amp;Podrobnosti</translation>
+        <translation>&amp;Детали</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>&amp;Выход</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -156,22 +156,22 @@
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Move</source>
-        <translation>&amp;Přesunout</translation>
+        <translation>&amp;Действия</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Undo</source>
-        <translation>&amp;Zpět</translation>
+        <translation>&amp;Отменить</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
         <source>Ctrl+Z</source>
-        <translation>Ctrl+Z</translation>
+        <translation>Ctr+Z</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="155"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Znovu</translation>
+        <translation>&amp;Повторить</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="155"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Check</source>
-        <translation>&amp;Zkontrolovat</translation>
+        <translation>П&amp;роверить</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="158"/>
@@ -191,110 +191,110 @@
     <message>
         <location filename="../src/window.cpp" line="161"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>&amp;Настройки</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Automaticky přepnout režim</translation>
+        <translation>&amp;Режим автопереключения</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="166"/>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Rozvržení pro širokou obrazovku</translation>
+        <translation>&amp;Широкоэкранный режим</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="171"/>
         <source>Application &amp;Language...</source>
-        <translation>Jazyk &amp;programu...</translation>
+        <translation>&amp;Язык приложения...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <location filename="../src/window.cpp" line="180"/>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>&amp;Справка</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="174"/>
         <source>&amp;Controls</source>
-        <translation>&amp;Ovládání</translation>
+        <translation>&amp;Управление</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="182"/>
         <source>&amp;About</source>
-        <translation>&amp;O</translation>
+        <translation>&amp;О программе</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="183"/>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>О &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="221"/>
         <source>New Game</source>
-        <translation>Nová hra</translation>
+        <translation>Новая игра</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="238"/>
         <location filename="../src/window.cpp" line="278"/>
         <source>Dancing Links</source>
-        <translation>Tanec u golfového hřiště</translation>
+        <translation>Танцы ссылок</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="239"/>
         <location filename="../src/window.cpp" line="278"/>
         <source>Slice and Dice</source>
-        <translation>Plátek a kostky</translation>
+        <translation>Мясорубка</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="244"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>Случайный</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="252"/>
         <source>Symmetry:</source>
-        <translation>Souměrnost:</translation>
+        <translation>Симметрия:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="253"/>
         <source>Algorithm:</source>
-        <translation>Algoritmus:</translation>
+        <translation>Алгоритм:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="254"/>
         <source>Seed:</source>
-        <translation>Posetí:</translation>
+        <translation>Скорость:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="281"/>
         <source>Details</source>
-        <translation>Podrobnosti</translation>
+        <translation>Детали</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="281"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Souměrnost:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmus:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Zrnko:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Симметрия:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Алгоритм:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Скорость:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="289"/>
         <source>Controls</source>
-        <translation>Ovládání</translation>
+        <translation>Управление</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="289"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání myší:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klepnutí levým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu pera&lt;br&gt;&lt;b&gt;Klepnutí pravým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu tužky&lt;br&gt;&lt;b&gt;Projížděcí kolečko myši:&lt;/b&gt; Změnit nynější číslo&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání s pomocí klávesnice:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klávesy šipek:&lt;/b&gt; Přesunout výběr&lt;br&gt;&lt;b&gt;Klávesy čísel:&lt;/b&gt; Přepnout hodnotu nebo sdělení&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Přepnout mezi režimem pera a tužky&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Zvýraznit všechny instance nynějšího čísla&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Мышь:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Левый клик:&lt;/b&gt; Назначить число в режиме ручки&lt;br&gt;&lt;b&gt;Правый клик:&lt;/b&gt; Назначить число в режиме карандаша&lt;br&gt;&lt;b&gt;Прокрутка:&lt;/b&gt; Изменить текущее число&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Клавиатура:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Стрелки:&lt;/b&gt; Выбор ячейки&lt;br&gt;&lt;b&gt;Цифры:&lt;/b&gt; Переключение цифр&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Переключение режимов карандаша и ручки&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Подсветка ячеек с текущим числом&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>About Simsu</source>
-        <translation>O programu Simsu</translation>
+        <translation>О Simsu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Základní hra věnovaná Sudoku&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
+        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Классическая игра Судоку&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
     </message>
 </context>
 </TS>

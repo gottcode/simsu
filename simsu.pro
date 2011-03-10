@@ -39,7 +39,8 @@ SOURCES = src/board.cpp \
 	src/window.cpp
 
 TRANSLATIONS = translations/cs.ts \
-	translations/en_US.ts
+	translations/en_US.ts \
+	translations/ru.ts
 
 RESOURCES = icons/icon.qrc symmetry/symmetry.qrc
 macx {

@@ -13,27 +13,22 @@
 <context>
     <name>LocaleDialog</name>
     <message>
+        <location filename="../src/locale_dialog.cpp" line="46"/>
+        <source>Application Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/locale_dialog.cpp" line="48"/>
         <source>Select application language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="53"/>
-        <source>Czech</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="54"/>
-        <source>American English</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/locale_dialog.cpp" line="149"/>
+        <location filename="../src/locale_dialog.cpp" line="147"/>
         <source>Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="149"/>
+        <location filename="../src/locale_dialog.cpp" line="147"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
