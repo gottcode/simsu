@@ -51,7 +51,7 @@ LocaleDialog::LocaleDialog(QWidget* parent)
 	QStringList translations = findTranslations();
 	QHash<QString, QString> display_texts;
 	display_texts.insert("cs", QString::fromUtf8("\304\214esky (cs)"));
-	display_texts.insert("en_US", QLatin1String("English (en_US)"));
+	display_texts.insert("en", QLatin1String("English (en)"));
 	display_texts.insert("ru", QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271 (ru)"));
 	foreach (const QString& translation, translations) {
 		if (translation.startsWith("qt")) {
