@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
-	LocaleDialog::loadTranslator();
+	LocaleDialog::loadTranslator("simsu_");
 
 	Window window;
 	window.show();
