@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -188,6 +188,9 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load) {
 		break;
 	}
 	m_puzzle->generate(seed, symmetry);
+	for (int i = 0; i < 9; ++i) {
+		m_key_count[i] = 0;
+	}
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
 			m_cells[c][r]->setPuzzle(m_puzzle);
@@ -249,6 +252,26 @@ void Board::moveFocus(int column, int row, int xdelta, int ydelta) {
 	row += ydelta;
 
 	m_cells[column][row]->setFocus();
+}
+
+/*****************************************************************************/
+
+void Board::decreaseKeyCount(int key) {
+	key--;
+	if (key < 0 || key > 8) {
+		return;
+	}
+	m_key_count[key]--;
+}
+
+/*****************************************************************************/
+
+void Board::increaseKeyCount(int key) {
+	key--;
+	if (key < 0 || key > 8) {
+		return;
+	}
+	m_key_count[key]++;
 }
 
 /*****************************************************************************/

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,6 +46,10 @@ public:
 		return m_highlight_active;
 	}
 
+	int keyCount(int key) const {
+		return m_key_count[key - 1];
+	}
+
 	bool notesMode() const {
 		return m_notes_mode;
 	}
@@ -57,6 +61,10 @@ public:
 	void checkFinished();
 
 	void moveFocus(int column, int row, int deltax, int deltay);
+
+	void decreaseKeyCount(int key);
+
+	void increaseKeyCount(int key);
 
 	Cell* cell(int column, int row) const {
 		column = qBound(0, column, 9);
@@ -81,6 +89,7 @@ public slots:
 
 private:
 	Cell* m_cells[9][9];
+	int m_key_count[9];
 	Puzzle* m_puzzle;
 	int m_active_key;
 	bool m_auto_switch;

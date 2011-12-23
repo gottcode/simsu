@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -92,6 +92,7 @@ void Cell::setPuzzle(Puzzle* puzzle) {
 	if (m_given) {
 		m_states.append(state);
 		m_current_state++;
+		m_board->increaseKeyCount(state.value);
 	}
 	updateFont();
 
@@ -109,6 +110,10 @@ void Cell::setPuzzle(Puzzle* puzzle) {
 /*****************************************************************************/
 
 void Cell::setState(int state) {
+	// Check if all cells with matching values are found
+	m_board->decreaseKeyCount(m_states[m_current_state].value);
+	m_board->increaseKeyCount(m_states[state].value);
+
 	m_current_state = state;
 
 	// Check for conflicts
@@ -253,6 +258,8 @@ void Cell::paintEvent(QPaintEvent* event) {
 			color = Qt::blue;
 		} else if (!m_conflicts.isEmpty()) {
 			color = Qt::red;
+		} else if (m_board->highlightActive() && m_states[m_current_state].value == m_board->activeKey() && m_board->keyCount(state.value) == 9) {
+			color = palette().highlightedText().color();
 		}
 		painter.setPen(color);
 
