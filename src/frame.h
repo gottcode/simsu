@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,9 +37,14 @@ protected:
 		m_highlight_border = highlight;
 	}
 
+	void setHighlightPartial(bool highlight) {
+		m_highlight_partial = highlight;
+	}
+
 private:
 	bool m_highlight;
 	bool m_highlight_border;
+	bool m_highlight_partial;
 };
 
 #endif

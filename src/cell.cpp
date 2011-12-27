@@ -166,6 +166,23 @@ void Cell::focusInEvent(QFocusEvent* event) {
 	} else {
 		setHighlightBorder(true);
 	}
+
+	// Highlight column and row
+	for (int c = 0; c < 9; ++c) {
+		Cell* cell = m_board->cell(c, m_row);
+		if (cell != this) {
+			cell->setHighlightPartial(true);
+			cell->update();
+		}
+	}
+	for (int r = 0; r < 9; ++r) {
+		Cell* cell = m_board->cell(m_column, r);
+		if (cell != this) {
+			cell->setHighlightPartial(true);
+			cell->update();
+		}
+	}
+
 	Frame::focusInEvent(event);
 }
 
@@ -178,6 +195,23 @@ void Cell::focusOutEvent(QFocusEvent* event) {
 	} else {
 		setHighlightBorder(false);
 	}
+
+	// Remove highlight of column and row
+	for (int c = 0; c < 9; ++c) {
+		Cell* cell = m_board->cell(c, m_row);
+		if (cell != this) {
+			cell->setHighlightPartial(false);
+			cell->update();
+		}
+	}
+	for (int r = 0; r < 9; ++r) {
+		Cell* cell = m_board->cell(m_column, r);
+		if (cell != this) {
+			cell->setHighlightPartial(false);
+			cell->update();
+		}
+	}
+
 	Frame::focusOutEvent(event);
 }
 
