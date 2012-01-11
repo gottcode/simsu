@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Simsu
+GenericName=Sudoku Game
 Exec=simsu
 Icon=simsu
 Terminal=false
 Type=Application
-Categories=Qt;Game;
+Categories=Qt;Game;LogicGame;
