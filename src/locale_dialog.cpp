@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,43 +39,29 @@ namespace
 {
 	class LocaleNames
 	{
-		LocaleNames()
-		{
-			m_names["ca"] = QString::fromUtf8("Catal\303\240");
-			m_names["cs"] = QString::fromUtf8("\304\214esky");
-			m_names["de"] = QLatin1String("Deutsch");
-			m_names["en"] = QLatin1String("English");
-			m_names["es"] = QString::fromUtf8("Espa\303\261ol");
-			m_names["es_MX"] = QString::fromUtf8("Espa\303\261ol (M\303\251xico)");
-			m_names["fi"] = QLatin1String("Suomi");
-			m_names["fr"] = QString::fromUtf8("Fran\303\247ais");
-			m_names["he"] = QString::fromUtf8("\327\242\326\264\327\221\326\260\327\250\326\264\327\231\327\252");
-			m_names["it"] = QLatin1String("Italiano");
-			m_names["pl"] = QLatin1String("Polski");
-			m_names["pt"] = QString::fromUtf8("Portugu\303\252s");
-			m_names["pt_BR"] = QString::fromUtf8("Portugu\303\252s (Brasil)");
-			m_names["ru"] = QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271");
-			m_names["uk"] = QString::fromUtf8("\320\243\320\272\321\200\320\260\321\227\320\275\321\201\321\214\320\272\320\260");
-			m_names["uk_UA"] = QString::fromUtf8("\320\243\320\272\321\200\320\260\321\227\320\275\321\201\321\214\320\272\320\260 (\320\243\320\272\321\200\320\260\321\227\320\275\320\260)");
-		}
-
-		QHash<QString, QString> m_names;
-
 	public:
 		static QString toString(const QString& name)
 		{
-			static LocaleNames locale_names;
-			QString locale_name = locale_names.m_names.value(name);
+			static QHash<QString, QString> locale_names;
+			QString locale_name = locale_names.value(name);
 			if (locale_name.isEmpty()) {
 				QLocale locale(name);
+#if (QT_VERSION >= QT_VERSION_CHECK(4, 8, 0))
+				QString language = locale.nativeLanguageName();
+#else
 				QString language = QLocale::languageToString(locale.language());
-				if (locale.country() != QLocale::AnyCountry) {
+#endif
+				if (name.length() > 2) {
+#if (QT_VERSION >= QT_VERSION_CHECK(4, 8, 0))
+					QString country = locale.nativeCountryName();
+#else
 					QString country = QLocale::countryToString(locale.country());
+#endif
 					locale_name = QString("%1 (%2)").arg(language, country);
 				} else {
 					locale_name = language;
 				}
-				locale_names.m_names[name] = locale_name;
+				locale_names[name] = locale_name;
 			}
 			return locale_name;
 		}

@@ -38,9 +38,15 @@ SOURCES = src/board.cpp \
 	src/square.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/simsu_cs.ts \
+TRANSLATIONS = translations/simsu_ca.ts \
+	translations/simsu_cs.ts \
+	translations/simsu_el.ts \
+	translations/simsu_es.ts \
+	translations/simsu_es_CL.ts \
 	translations/simsu_en.ts \
-	translations/simsu_ru.ts
+	translations/simsu_fr.ts \
+	translations/simsu_ru.ts \
+	translations/simsu_uk.ts
 
 RESOURCES = icons/icon.qrc symmetry/symmetry.qrc
 macx {
