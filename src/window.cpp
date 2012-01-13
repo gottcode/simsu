@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -300,7 +300,7 @@ void Window::showControls() {
 /*****************************************************************************/
 
 void Window::about() {
-	QMessageBox::about(this, tr("About Simsu"), tr("<center><big><b>Simsu %1</b></big><br/>A basic Sudoku game<br/><small>Copyright &copy; 2009 Graeme Gott</small></center>").arg(qApp->applicationVersion()));
+	QMessageBox::about(this, tr("About Simsu"), tr("<center><big><b>Simsu %1</b></big><br/>A basic Sudoku game<br/><small>Copyright &copy; 2009-2012 Graeme Gott</small></center>").arg(qApp->applicationVersion()));
 }
 
 /*****************************************************************************/

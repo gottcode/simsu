@@ -293,8 +293,8 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
-        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Стандартна гра «Судоку»&lt;br/&gt;&lt;small&gt;Авторське право &amp;copy; 2009 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
+        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
+        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Стандартна гра «Судоку»&lt;br/&gt;&lt;small&gt;Авторське право &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
     </message>
 </context>
 </TS>
