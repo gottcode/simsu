@@ -66,8 +66,11 @@ unix: !macx {
 
 	target.path = $$PREFIX/$$BINDIR/
 
-	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
-	icon.files = icons/simsu.png
+	icon.files = icons/hicolor/*
+	icon.path = $$PREFIX/share/icons/hicolor/
+
+	pixmap.files = icons/simsu_32.xpm
+	pixmap.path = $$PREFIX/share/pixmaps/
 
 	desktop.path = $$PREFIX/share/applications/
 	desktop.files = icons/simsu.desktop
@@ -75,5 +78,5 @@ unix: !macx {
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/simsu/translations
 
-	INSTALLS += target icon desktop qm
+	INSTALLS += target icon pixmap desktop qm
 }

@@ -68,9 +68,6 @@ namespace {
 /*****************************************************************************/
 
 Window::Window() {
-#if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
-	setWindowIcon(QIcon(":/simsu.png"));
-#endif
 	setWindowTitle(tr("Simsu"));
 
 	QSettings settings;
