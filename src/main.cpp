@@ -25,7 +25,7 @@
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	app.setApplicationName("Simsu");
-	app.setApplicationVersion("1.2.1");
+	app.setApplicationVersion("1.2.2");
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 	{
