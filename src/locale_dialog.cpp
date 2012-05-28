@@ -35,41 +35,6 @@
 
 //-----------------------------------------------------------------------------
 
-namespace
-{
-	class LocaleNames
-	{
-	public:
-		static QString toString(const QString& name)
-		{
-			static QHash<QString, QString> locale_names;
-			QString locale_name = locale_names.value(name);
-			if (locale_name.isEmpty()) {
-				QLocale locale(name);
-#if (QT_VERSION >= QT_VERSION_CHECK(4, 8, 0))
-				QString language = locale.nativeLanguageName();
-#else
-				QString language = QLocale::languageToString(locale.language());
-#endif
-				if (name.length() > 2) {
-#if (QT_VERSION >= QT_VERSION_CHECK(4, 8, 0))
-					QString country = locale.nativeCountryName();
-#else
-					QString country = QLocale::countryToString(locale.country());
-#endif
-					locale_name = QString("%1 (%2)").arg(language, country);
-				} else {
-					locale_name = language;
-				}
-				locale_names[name] = locale_name;
-			}
-			return locale_name;
-		}
-	};
-}
-
-//-----------------------------------------------------------------------------
-
 QString LocaleDialog::m_current;
 QString LocaleDialog::m_path;
 QString LocaleDialog::m_appname;
@@ -92,7 +57,7 @@ LocaleDialog::LocaleDialog(QWidget* parent)
 			continue;
 		}
 		translation.remove(m_appname);
-		m_translations->addItem(LocaleNames::toString(translation), translation);
+		m_translations->addItem(languageName(translation), translation);
 	}
 	int index = qMax(0, m_translations->findData(m_current));
 	m_translations->setCurrentIndex(index);
@@ -155,6 +120,37 @@ void LocaleDialog::loadTranslator(const QString& name)
 	static QTranslator translator;
 	translator.load(m_appname + current, m_path);
 	QCoreApplication::installTranslator(&translator);
+}
+
+//-----------------------------------------------------------------------------
+
+QString LocaleDialog::languageName(const QString& language)
+{
+	QString lang_code = language.left(5);
+	QLocale locale(lang_code);
+	QString name;
+#if QT_VERSION >= 0x040800
+	if (lang_code.length() > 2) {
+		if (locale.name() == lang_code) {
+			name = locale.nativeLanguageName() + " (" + locale.nativeCountryName() + ")";
+		} else {
+			name = locale.nativeLanguageName() + " (" + language + ")";
+		}
+	} else {
+		name = locale.nativeLanguageName();
+	}
+#else
+	if (lang_code.length() > 2) {
+		if (locale.name() == lang_code) {
+			name = QLocale::languageToString(locale.language()) + " (" + QLocale::countryToString(locale.country()) + ")";
+		} else {
+			name = QLocale::languageToString(locale.language()) + " (" + language + ")";
+		}
+	} else {
+		name = QLocale::languageToString(locale.language());
+	}
+#endif
+	return name;
 }
 
 //-----------------------------------------------------------------------------
