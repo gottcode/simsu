@@ -13,22 +13,22 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="49"/>
+        <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Sélectionner la langue de l&apos;application</translation>
+        <translation>Sélectionner la langue de l&apos;application :</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="52"/>
+        <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
         <translation>&lt;Langue du système&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
         <translation>Remarque</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Veuillez relancer l&apos;application pour que la modification prenne effet. </translation>
     </message>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Refaire</translation>
+        <translation>&amp;Rétablir</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="152"/>
@@ -197,7 +197,7 @@
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation>Modes &amp;automatique</translation>
+        <translation>Modes &amp;automatiques</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Langue de l&apos;application</translation>
+        <translation>&amp;Langue de l&apos;application…</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/window.cpp" line="179"/>
         <source>&amp;About</source>
-        <translation>À &amp;propos de...</translation>
+        <translation>À &amp;propos de…</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="180"/>
@@ -295,21 +295,17 @@
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation type="unfinished"></translation>
+        <translation>Un jeu de Sodoku simple</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation type="obsolete">&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Un jeu de Sudoku simple&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
+        <translation>Distribué sous licence GNU &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

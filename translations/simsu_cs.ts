@@ -13,22 +13,22 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="49"/>
+        <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
         <translation>Vybrat jazyk programu:</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="52"/>
+        <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
         <translation>&lt;Jazyk systému&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Spusťte, prosí, tento program znovu, aby se změna jazyka projevila.</translation>
     </message>
@@ -306,10 +306,6 @@
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation type="obsolete">&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Základní hra Sudoku&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
     </message>
 </context>
 </TS>

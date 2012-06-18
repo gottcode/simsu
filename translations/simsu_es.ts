@@ -13,22 +13,22 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="49"/>
+        <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
         <translation>Seleccione el idioma de la aplicación:</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="52"/>
+        <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="177"/>
+        <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Por favor, reinicie la aplicación para que el cambio de idioma tenga efecto.</translation>
     </message>
@@ -239,7 +239,7 @@
         <location filename="../src/window.cpp" line="235"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Dancing Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Bailando Enlaces</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
