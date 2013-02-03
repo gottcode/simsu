@@ -1,15 +1,21 @@
 TEMPLATE = app
-CONFIG += warn_on release
+greaterThan(QT_MAJOR_VERSION, 4) {
+	QT += widgets
+}
+CONFIG += warn_on
 macx {
 	CONFIG += x86_64
-	# Comment the above line and uncomment the following lines to compile Universal for 10.4+
-	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
-	# CONFIG += x86 ppc
 }
 
 MOC_DIR = build
 OBJECTS_DIR = build
 RCC_DIR = build
+
+VERSION = $$system(git rev-parse --short HEAD)
+isEmpty(VERSION) {
+	VERSION = 0
+}
+DEFINES += VERSIONSTR=\\\"git.$${VERSION}\\\"
 
 unix: !macx {
 	TARGET = simsu
@@ -46,6 +52,9 @@ TRANSLATIONS = translations/simsu_ca.ts \
 	translations/simsu_es_CL.ts \
 	translations/simsu_en.ts \
 	translations/simsu_fr.ts \
+	translations/simsu_he.ts \
+	translations/simsu_hu.ts \
+	translations/simsu_ro.ts \
 	translations/simsu_ru.ts \
 	translations/simsu_uk.ts
 
@@ -69,7 +78,7 @@ unix: !macx {
 	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
-	pixmap.files = icons/simsu_32.xpm
+	pixmap.files = icons/simsu.xpm
 	pixmap.path = $$PREFIX/share/pixmaps/
 
 	desktop.path = $$PREFIX/share/applications/

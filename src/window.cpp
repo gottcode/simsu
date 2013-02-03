@@ -297,7 +297,12 @@ void Window::showControls() {
 /*****************************************************************************/
 
 void Window::about() {
-	QMessageBox::about(this, tr("About Simsu"), tr("<center><big><b>Simsu %1</b></big><br/>A basic Sudoku game<br/><small>Copyright &copy; 2009-2012 Graeme Gott</small></center>").arg(qApp->applicationVersion()));
+	QMessageBox::about(this, tr("About Simsu"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></p>")
+		.arg(tr("Simsu"), QCoreApplication::applicationVersion(),
+			tr("A basic Sudoku game"),
+			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2012"),
+			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
+	);
 }
 
 /*****************************************************************************/

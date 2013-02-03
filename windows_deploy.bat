@@ -1,7 +1,7 @@
 @ECHO OFF
 
 SET APP=Simsu
-SET VERSION=1.2.2
+FOR /f %%i IN ('git rev-parse --short HEAD') DO SET VERSION=%%i
 
 ECHO Copying executable
 MKDIR %APP%

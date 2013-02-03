@@ -13,24 +13,24 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="84"/>
+        <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
         <translation>Επιλέξτε γλώσσα εφαρμογής:</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="87"/>
+        <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Γλώσσα Συστήματος&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
-        <translation>Σημείωση:</translation>
+        <translation>Σημείωση</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Παρακαλούμε επανεκκινήστε την εφάρμογη για να αλλάξη η γλώσσα.</translation>
+        <translation>Παρακαλούμε επανεκκινήστε την εφαρμογή για να αλλάξει η γλώσσα.</translation>
     </message>
 </context>
 <context>
@@ -38,12 +38,12 @@
     <message>
         <location filename="../src/pattern.h" line="56"/>
         <source>180° Rotational</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιστροφικό 180°</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="57"/>
         <source>Full Rotational</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλήρες Περιστροφικό</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="58"/>
@@ -53,32 +53,32 @@
     <message>
         <location filename="../src/pattern.h" line="59"/>
         <source>Vertical</source>
-        <translation>Κάθετως</translation>
+        <translation>Καθέτα</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="60"/>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Οριζόντια &amp; Κάθετως</translation>
+        <translation>Οριζόντια και Κάθετα</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="61"/>
         <source>Diagonal</source>
-        <translation>Διαγόνια</translation>
+        <translation>Διαγωνίως</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="62"/>
         <source>Anti-Diagonal</source>
-        <translation>Διαγώνια</translation>
+        <translation>Διαγωνίως Αντίστροφα</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="63"/>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Διαγώνια &amp; Αντι-διαγώνια</translation>
+        <translation>Διαγώνια &amp; Διαγωνίως Αντίστροφα</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="64"/>
         <source>Full Dihedral</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλήρες Δίεδρος</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="65"/>
@@ -95,6 +95,7 @@
     <name>Window</name>
     <message>
         <location filename="../src/window.cpp" line="71"/>
+        <location filename="../src/window.cpp" line="301"/>
         <source>Simsu</source>
         <translation>Simsu</translation>
     </message>
@@ -196,7 +197,7 @@
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation>%Αυτόματη Αλλαγή Λειτουργίας</translation>
+        <translation>&amp;Αυτόματη Αλλαγή Λειτουργίας</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
@@ -206,7 +207,7 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Γλώσσα Εφαρμογής...</translation>
+        <translation>Γλώσσα &amp;Εφαρμογής...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -238,13 +239,13 @@
         <location filename="../src/window.cpp" line="235"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Dancing Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Χορευτικοί Σύνδεσμοι</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Slice and Dice</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόψε και Χώρισε</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="241"/>
@@ -254,17 +255,17 @@
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>Symmetry:</source>
-        <translation>Συμμετρία</translation>
+        <translation>Συμμετρία:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="250"/>
         <source>Algorithm:</source>
-        <translation>Αλγόρυθμος</translation>
+        <translation>Αλγόριθμος:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="251"/>
         <source>Seed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Βάση γεννήτριας:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="278"/>
@@ -274,7 +275,7 @@
     <message>
         <location filename="../src/window.cpp" line="278"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Συμμετρία:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Αλγόριθμος:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Βάση:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="286"/>
@@ -284,7 +285,7 @@
     <message>
         <location filename="../src/window.cpp" line="286"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Χειρισμός Ποντικιού:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Αριστερό Κλικ:&lt;/b&gt; Εναλλαγή αριθμού σε λειτουργία στυλού&lt;br&gt;&lt;b&gt;Δεξί κλικ:&lt;/b&gt; Εναλλαγή αριθμού σε λειτουργία μολιβιού&lt;br&gt;&lt;b&gt;Τροχός:&lt;/b&gt; Αλλαγή επιλεγμένου αριθμού&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Χειρισμός Πληκτρολογίου:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Βελάκια:&lt;/b&gt; Μετακίνηση επιλογής&lt;br&gt;&lt;b&gt;Αριθμητικά πλήκτρα:&lt;/b&gt; Αλλαγή αριθμού&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Εναλλαγή αναμεσά λειτουργίες στυλού και μολυβιού&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Επισήμανση όλων των υποδείξεων του επιλεγμένου αριθμού&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Χειρισμός Ποντικιού:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Αριστερό Κλικ:&lt;/b&gt; Εναλλαγή αριθμού σε λειτουργία στυλό&lt;br&gt;&lt;b&gt;Δεξί κλικ:&lt;/b&gt; Εναλλαγή αριθμού σε λειτουργία μολυβιού &lt;br&gt;&lt;b&gt;Τροχός:&lt;/b&gt; Αλλαγή επιλεγμένου αριθμού&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Χειρισμός Πληκτρολογίου:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Βελάκια:&lt;/b&gt; Μετακίνηση επιλογής&lt;br&gt;&lt;b&gt;Αριθμητικά πλήκτρα:&lt;/b&gt; Αλλαγή αριθμού&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Εναλλαγή ανάμεσα λειτουργίες στυλό και μολυβιού&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Επισήμανση όλων των περιπτώσεων του επιλεγμένου αριθμού&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="300"/>
@@ -292,9 +293,19 @@
         <translation>Σχετικά με το Simsu</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="300"/>
-        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Ένα βασικό παιχνίδι Σουντόκου&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
+        <location filename="../src/window.cpp" line="302"/>
+        <source>A basic Sudoku game</source>
+        <translation>Ένα βασικό παιχνίδι Σουντόκου</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="303"/>
+        <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="304"/>
+        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation>Κυκλοφορεί υπό την άδεια χρήσης &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

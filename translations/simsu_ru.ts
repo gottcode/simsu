@@ -13,12 +13,12 @@
 <context>
     <name>LocaleDialog</name>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="84"/>
+        <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
         <translation>Выберите язык приложения:</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="87"/>
+        <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
         <translation>&lt;Язык системы&gt;</translation>
     </message>
@@ -95,6 +95,7 @@
     <name>Window</name>
     <message>
         <location filename="../src/window.cpp" line="71"/>
+        <location filename="../src/window.cpp" line="301"/>
         <source>Simsu</source>
         <translation>Simsu</translation>
     </message>
@@ -292,9 +293,19 @@
         <translation>О Simsu</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="300"/>
-        <source>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A basic Sudoku game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</source>
-        <translation>&lt;center&gt;&lt;big&gt;&lt;b&gt;Simsu %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;Классическая игра Судоку&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-2012 Graeme Gott&lt;/small&gt;&lt;/center&gt;</translation>
+        <location filename="../src/window.cpp" line="302"/>
+        <source>A basic Sudoku game</source>
+        <translation>Классическая игра Судоку</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="303"/>
+        <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="304"/>
+        <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation>Выпущен под лицензией &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>
