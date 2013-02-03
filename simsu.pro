@@ -52,6 +52,9 @@ TRANSLATIONS = translations/simsu_ca.ts \
 	translations/simsu_es_CL.ts \
 	translations/simsu_en.ts \
 	translations/simsu_fr.ts \
+	translations/simsu_he.ts \
+	translations/simsu_hu.ts \
+	translations/simsu_ro.ts \
 	translations/simsu_ru.ts \
 	translations/simsu_uk.ts
 

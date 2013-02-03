@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>Aplicación &amp; Lenguaje ...</translation>
+        <translation>Aplicación &amp;Lenguaje ...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -297,12 +297,12 @@
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation type="unfinished"></translation>
+        <translation>Un juego de Sudoku básico</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="304"/>

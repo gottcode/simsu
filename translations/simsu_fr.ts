@@ -15,7 +15,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Sélectionner la langue de l&apos;application :</translation>
+        <translation>Sélectionner la langue de l&apos;application</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation>Un jeu de Sodoku simple</translation>
+        <translation>Un jeu de Sudoku simple</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Distribué sous licence GNU &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Publié sous licence &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

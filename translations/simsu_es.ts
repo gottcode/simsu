@@ -20,7 +20,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Idioma del sistema&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>Aplicación &amp; Lenguaje ...</translation>
+        <translation>Aplicación &amp;Lenguaje ...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -239,7 +239,7 @@
         <location filename="../src/window.cpp" line="235"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Dancing Links</source>
-        <translation>Bailando Enlaces</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Publicado con licencia &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

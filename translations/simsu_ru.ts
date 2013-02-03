@@ -295,17 +295,17 @@
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation type="unfinished"></translation>
+        <translation>Классическая игра Судоку</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Выпущен под лицензией &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs" sourcelanguage="en">
+<TS version="2.0" language="ro" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <location filename="../src/board.cpp" line="73"/>
         <location filename="../src/board.cpp" line="88"/>
         <source>Success</source>
-        <translation>Úspěch</translation>
+        <translation>Succes</translation>
     </message>
 </context>
 <context>
@@ -15,22 +15,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Vybrat jazyk programu:</translation>
+        <translation>Selectaţi limba aplicaţiei:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Jazyk systému&gt;</translation>
+        <translation>&lt;Limbaj Sistem&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
-        <translation>Notiz</translation>
+        <translation>Notă</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Spusťte, prosí, tento program znovu, aby se změna jazyka projevila.</translation>
+        <translation>Vă rugăm reporniţi această aplicaţie pentru ca schimbarea limbii să aibă efect.</translation>
     </message>
 </context>
 <context>
@@ -38,57 +38,57 @@
     <message>
         <location filename="../src/pattern.h" line="56"/>
         <source>180° Rotational</source>
-        <translation>Otočitelný o 180°</translation>
+        <translation>Rotativ 180°</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="57"/>
         <source>Full Rotational</source>
-        <translation>Úplně otočitelný</translation>
+        <translation>Rotativ complet</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="58"/>
         <source>Horizontal</source>
-        <translation>Vodorovný</translation>
+        <translation>Orizontal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="59"/>
         <source>Vertical</source>
-        <translation>Svislý</translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="60"/>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Vodorovný a svislý</translation>
+        <translation>Orizontal &amp; Vertical</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="61"/>
         <source>Diagonal</source>
-        <translation>Úhlopříčný</translation>
+        <translation>Diagonal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="62"/>
         <source>Anti-Diagonal</source>
-        <translation>Proti-úhlopříčný</translation>
+        <translation>Anti-Diagonal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="63"/>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Úhlopříčný &amp; proti-úhlopříčný</translation>
+        <translation>Diagonal &amp; Anti-Diagonal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="64"/>
         <source>Full Dihedral</source>
-        <translation>Úplně dvoustěnný</translation>
+        <translation>Diedru complet</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="65"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>Aleator</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="66"/>
         <source>None</source>
-        <translation>Žádný</translation>
+        <translation>Niciunul</translation>
     </message>
 </context>
 <context>
@@ -102,17 +102,17 @@
     <message>
         <location filename="../src/window.cpp" line="89"/>
         <source>Pen</source>
-        <translation>Pero</translation>
+        <translation>Stilou</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="93"/>
         <source>Pencil</source>
-        <translation>Tužka</translation>
+        <translation>Creion</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="97"/>
         <source>Highlight</source>
-        <translation>Zvýraznit</translation>
+        <translation>Evidenţiat</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="99"/>
@@ -127,12 +127,12 @@
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Game</source>
-        <translation>&amp;Hra</translation>
+        <translation>&amp;Joc</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <source>&amp;New</source>
-        <translation>&amp;Nový</translation>
+        <translation>&amp;Nou</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <source>&amp;Details</source>
-        <translation>&amp;Podrobnosti</translation>
+        <translation>&amp;Detalii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>&amp;Ieşire</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
@@ -157,12 +157,12 @@
     <message>
         <location filename="../src/window.cpp" line="149"/>
         <source>&amp;Move</source>
-        <translation>&amp;Přesunout</translation>
+        <translation>&amp;Mută</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Undo</source>
-        <translation>&amp;Zpět</translation>
+        <translation>Anulează</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Znovu</translation>
+        <translation>Reface</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="152"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../src/window.cpp" line="155"/>
         <source>&amp;Check</source>
-        <translation>&amp;Zkontrolovat</translation>
+        <translation>Verifi&amp;că</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="155"/>
@@ -192,120 +192,120 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>&amp;Setări</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Automaticky přepnout režim</translation>
+        <translation>Comutare &amp;automată moduri</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Rozvržení pro širokou obrazovku</translation>
+        <translation>Aspect ecran lat</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>Jazyk &amp;programu...</translation>
+        <translation>&amp;Limbă aplicaţie...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <location filename="../src/window.cpp" line="177"/>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>&amp;Ajutor</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Controls</source>
-        <translation>&amp;Ovládání</translation>
+        <translation>&amp;Controale</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="179"/>
         <source>&amp;About</source>
-        <translation>&amp;O</translation>
+        <translation>&amp;Despre</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="180"/>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>Despre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="218"/>
         <source>New Game</source>
-        <translation>Nová hra</translation>
+        <translation>Joc nou</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="235"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Dancing Links</source>
-        <translation>Tanec u golfového hřiště</translation>
+        <translation>Dancing Links</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Slice and Dice</source>
-        <translation>Plátek a kostky</translation>
+        <translation>Mărunţire</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="241"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>Aleator</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>Symmetry:</source>
-        <translation>Souměrnost:</translation>
+        <translation>Simetrie:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="250"/>
         <source>Algorithm:</source>
-        <translation>Algoritmus:</translation>
+        <translation>Algoritm:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="251"/>
         <source>Seed:</source>
-        <translation>Posetí:</translation>
+        <translation>Sămînţă:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="278"/>
         <source>Details</source>
-        <translation>Podrobnosti</translation>
+        <translation>Detalii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="278"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Souměrnost:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmus:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Zrnko:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Simetrie:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Sămînţă:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="286"/>
         <source>Controls</source>
-        <translation>Ovládání</translation>
+        <translation>Controale</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="286"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání myší:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klepnutí levým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu pera&lt;br&gt;&lt;b&gt;Klepnutí pravým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu tužky&lt;br&gt;&lt;b&gt;Projížděcí kolečko myši:&lt;/b&gt; Změnit nynější číslo&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání s pomocí klávesnice:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klávesy šipek:&lt;/b&gt; Přesunout výběr&lt;br&gt;&lt;b&gt;Klávesy čísel:&lt;/b&gt; Přepnout hodnotu nebo sdělení&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Přepnout mezi režimem pera a tužky&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Zvýraznit všechny instance nynějšího čísla&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Controale mouse:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Clic stînga:&lt;/b&gt; Comută număr în mod stilou&lt;br&gt;&lt;b&gt;Clic dreapta:&lt;/b&gt; Comută număr în mod creion&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Schimbă număr curent &lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Controale tastatură:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Taste săgeţi:&lt;/b&gt; Mută selecţie&lt;br&gt;&lt;b&gt;Taste numerice:&lt;/b&gt; Comută valoarea sau nota&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Comută între modurile stilou şi creion&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Evidenţiază toate instanţele numărului actual&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="300"/>
         <source>About Simsu</source>
-        <translation>O programu Simsu</translation>
+        <translation>Despre Simsu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation>Základní hra Sudoku</translation>
+        <translation>Un joc Sudoku de bază</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>Toate drepturile rezervate &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Vydáno pod licencí &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Lansat sub licenţă &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>

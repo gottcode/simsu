@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs" sourcelanguage="en">
+<TS version="2.0" language="hu" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <location filename="../src/board.cpp" line="73"/>
         <location filename="../src/board.cpp" line="88"/>
         <source>Success</source>
-        <translation>Úspěch</translation>
+        <translation>Kész!</translation>
     </message>
 </context>
 <context>
@@ -15,22 +15,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Vybrat jazyk programu:</translation>
+        <translation>Válaszd ki a program nyelvét:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Jazyk systému&gt;</translation>
+        <translation>&lt;op. rendszer nyelve&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
-        <translation>Notiz</translation>
+        <translation>megjegyzés</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Spusťte, prosí, tento program znovu, aby se změna jazyka projevila.</translation>
+        <translation>Indítsd újra a programot, hogy a felület nyelve megváltozzon!</translation>
     </message>
 </context>
 <context>
@@ -38,57 +38,57 @@
     <message>
         <location filename="../src/pattern.h" line="56"/>
         <source>180° Rotational</source>
-        <translation>Otočitelný o 180°</translation>
+        <translation>elforgatás 180°-kal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="57"/>
         <source>Full Rotational</source>
-        <translation>Úplně otočitelný</translation>
+        <translation>teljes elforgatás</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="58"/>
         <source>Horizontal</source>
-        <translation>Vodorovný</translation>
+        <translation>vízszintes</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="59"/>
         <source>Vertical</source>
-        <translation>Svislý</translation>
+        <translation>függőleges</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="60"/>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Vodorovný a svislý</translation>
+        <translation>függőleges és vízszintes</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="61"/>
         <source>Diagonal</source>
-        <translation>Úhlopříčný</translation>
+        <translation>átlós</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="62"/>
         <source>Anti-Diagonal</source>
-        <translation>Proti-úhlopříčný</translation>
+        <translation>nem átlós</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="63"/>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Úhlopříčný &amp; proti-úhlopříčný</translation>
+        <translation>átlós és nem átlós</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="64"/>
         <source>Full Dihedral</source>
-        <translation>Úplně dvoustěnný</translation>
+        <translation>Teljes Dihedral (?)</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="65"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>véletlen</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="66"/>
         <source>None</source>
-        <translation>Žádný</translation>
+        <translation>nincs</translation>
     </message>
 </context>
 <context>
@@ -102,17 +102,17 @@
     <message>
         <location filename="../src/window.cpp" line="89"/>
         <source>Pen</source>
-        <translation>Pero</translation>
+        <translation>toll</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="93"/>
         <source>Pencil</source>
-        <translation>Tužka</translation>
+        <translation>ceruza</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="97"/>
         <source>Highlight</source>
-        <translation>Zvýraznit</translation>
+        <translation>kiemelés</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="99"/>
@@ -127,12 +127,12 @@
     <message>
         <location filename="../src/window.cpp" line="143"/>
         <source>&amp;Game</source>
-        <translation>&amp;Hra</translation>
+        <translation>Já&amp;ték</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
         <source>&amp;New</source>
-        <translation>&amp;Nový</translation>
+        <translation>Ú&amp;j</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="144"/>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../src/window.cpp" line="145"/>
         <source>&amp;Details</source>
-        <translation>&amp;Podrobnosti</translation>
+        <translation>Rész&amp;letek</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>Kilé&amp;pés</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="147"/>
@@ -157,12 +157,12 @@
     <message>
         <location filename="../src/window.cpp" line="149"/>
         <source>&amp;Move</source>
-        <translation>&amp;Přesunout</translation>
+        <translation>Moz&amp;gások?</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Undo</source>
-        <translation>&amp;Zpět</translation>
+        <translation>V&amp;issza</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="150"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Znovu</translation>
+        <translation>Elő&amp;re</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="152"/>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../src/window.cpp" line="155"/>
         <source>&amp;Check</source>
-        <translation>&amp;Zkontrolovat</translation>
+        <translation>Elle&amp;nőrzés</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="155"/>
@@ -192,70 +192,70 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>B&amp;eállítások</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Automaticky přepnout režim</translation>
+        <translation>Automatikus üze&amp;mmód váltása</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="163"/>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Rozvržení pro širokou obrazovku</translation>
+        <translation>Ké&amp;pernyőnyújtás</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>Application &amp;Language...</source>
-        <translation>Jazyk &amp;programu...</translation>
+        <translation>Program n&amp;yelve...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <location filename="../src/window.cpp" line="177"/>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>Sú&amp;gó</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Controls</source>
-        <translation>&amp;Ovládání</translation>
+        <translation>Vezérlő&amp;k</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="179"/>
         <source>&amp;About</source>
-        <translation>&amp;O</translation>
+        <translation>Né&amp;vjegy</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="180"/>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>Qt név&amp;jegy</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="218"/>
         <source>New Game</source>
-        <translation>Nová hra</translation>
+        <translation>Új játék</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="235"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Dancing Links</source>
-        <translation>Tanec u golfového hřiště</translation>
+        <translation>Táncoló ... (linkek?)</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
         <location filename="../src/window.cpp" line="275"/>
         <source>Slice and Dice</source>
-        <translation>Plátek a kostky</translation>
+        <translation>Slice and Dice (?)</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="241"/>
         <source>Random</source>
-        <translation>Náhodný</translation>
+        <translation>Véletlen</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>Symmetry:</source>
-        <translation>Souměrnost:</translation>
+        <translation>Szimmetria:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="250"/>
@@ -265,37 +265,37 @@
     <message>
         <location filename="../src/window.cpp" line="251"/>
         <source>Seed:</source>
-        <translation>Posetí:</translation>
+        <translation>Seed: (?)</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="278"/>
         <source>Details</source>
-        <translation>Podrobnosti</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="278"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Souměrnost:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmus:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Zrnko:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Szimmetria:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmus:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed: (?)&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="286"/>
         <source>Controls</source>
-        <translation>Ovládání</translation>
+        <translation>Vezérlők</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="286"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání myší:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klepnutí levým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu pera&lt;br&gt;&lt;b&gt;Klepnutí pravým tlačítkem myši:&lt;/b&gt; Přepnout číslo v režimu tužky&lt;br&gt;&lt;b&gt;Projížděcí kolečko myši:&lt;/b&gt; Změnit nynější číslo&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Ovládání s pomocí klávesnice:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Klávesy šipek:&lt;/b&gt; Přesunout výběr&lt;br&gt;&lt;b&gt;Klávesy čísel:&lt;/b&gt; Přepnout hodnotu nebo sdělení&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Přepnout mezi režimem pera a tužky&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Zvýraznit všechny instance nynějšího čísla&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Egérrel történő műveletek&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;bal egérgomb:&lt;/b&gt;toll üzemmód&lt;br&gt;&lt;b&gt;jobb egérgomb:&lt;/b&gt; ceruza üzemmód&lt;br&gt;&lt;b&gt;gördítőkerék:&lt;/b&gt; szám javítása&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Billentyűzettel történő műveletek:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;nyilak:&lt;/b&gt; mozgatás&lt;br&gt;&lt;b&gt;számok:&lt;/b&gt; szám javítása&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; toll/ceruza váltása&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; kiválasztott szám kiemelt megjelenítése&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="300"/>
         <source>About Simsu</source>
-        <translation>O programu Simsu</translation>
+        <translation>Simsu névjegye</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation>Základní hra Sudoku</translation>
+        <translation>Sudoku játék</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Vydáno pod licencí &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

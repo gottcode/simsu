@@ -20,7 +20,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Idioma del sistema&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/window.cpp" line="179"/>
         <source>&amp;About</source>
-        <translation>&amp;Quant a...</translation>
+        <translation>&amp;Quant a</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="180"/>
@@ -295,17 +295,17 @@
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>A basic Sudoku game</source>
-        <translation type="unfinished"></translation>
+        <translation>Un joc de Sudoku senzill</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="304"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation type="unfinished"></translation>
+        <translation>Publicat sota llicència  &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>
