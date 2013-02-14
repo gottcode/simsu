@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008-2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,13 +59,13 @@ class Matrix {
 
 	class GlobalCallback : public Callback {
 	public:
-		typedef void(*function)(const QVector<Node*>&, unsigned int);
+		typedef void(*function)(const QVector<Node*>&);
 		GlobalCallback(function f)
 		: m_function(f) {
 		}
 
 		virtual void operator()(const QVector<Node*>& rows, unsigned int count) {
-			(*m_function)(rows, count);
+			(*m_function)(rows.mid(0, count));
 		}
 
 	private:
@@ -75,13 +75,13 @@ class Matrix {
 	template <typename T>
 	class MemberCallback : public Callback {
 	public:
-		typedef void(T::*function)(const QVector<Node*>& rows, unsigned int count);
+		typedef void(T::*function)(const QVector<Node*>& rows);
 		MemberCallback(T* object, function f)
 		: m_object(object), m_function(f) {
 		}
 
 		virtual void operator()(const QVector<Node*>& rows, unsigned int count) {
-			(*m_object.*m_function)(rows, count);
+			(*m_object.*m_function)(rows.mid(0, count));
 		}
 
 	private:
@@ -96,36 +96,29 @@ public:
 	void addRow();
 	void addElement(unsigned int column);
 
-	unsigned int search(unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	unsigned int search(unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF) {
 		Callback solution;
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
-	unsigned int search(void(*function)(const QVector<Node*>& rows, unsigned int count), unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	unsigned int search(void(*function)(const QVector<Node*>& rows), unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF) {
 		GlobalCallback solution(function);
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
 	template <typename T>
-	unsigned int search(T* object, void(T::*function)(const QVector<Node*>& rows, unsigned int count), unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	unsigned int search(T* object, void(T::*function)(const QVector<Node*>& rows), unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF) {
 		MemberCallback<T> solution(object, function);
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
 private:
+	unsigned int search(Callback* solution, unsigned int max_solutions, unsigned int max_tries);
 	void solve(unsigned int k);
-	void cover(HeaderNode* column);
-	void uncover(HeaderNode* column);
+	void cover(HeaderNode* node);
+	void uncover(HeaderNode* node);
 
+private:
 	unsigned int m_max_columns;
 
 	HeaderNode* m_header;
@@ -137,6 +130,8 @@ private:
 	Callback* m_solution;
 	unsigned int m_solutions;
 	unsigned int m_max_solutions;
+	unsigned int m_tries;
+	unsigned int m_max_tries;
 };
 
 }

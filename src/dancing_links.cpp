@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008-2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ namespace DLX
 /*****************************************************************************/
 
 Matrix::Matrix(unsigned int max_columns)
-: m_max_columns(max_columns), m_columns(max_columns), m_output(max_columns), m_solutions(0) {
+: m_max_columns(max_columns), m_columns(max_columns), m_output(max_columns), m_solutions(0), m_tries(0) {
 	m_header = new HeaderNode;
 	m_header->column = m_header;
 
@@ -84,10 +84,29 @@ void Matrix::addElement(unsigned int c) {
 
 /*****************************************************************************/
 
+unsigned int Matrix::search(Callback* solution, unsigned int max_solutions, unsigned int max_tries) {
+	m_solution = solution;
+
+	m_solutions = 0;
+	m_max_solutions = max_solutions;
+
+	m_tries = 0;
+	m_max_tries = (max_tries != 0) ? max_tries : m_max_columns;
+
+	solve(0);
+	return m_solutions;
+}
+
+/*****************************************************************************/
+
 void Matrix::solve(unsigned int k) {
 	if (m_header->right == m_header) {
 		++m_solutions;
 		(*m_solution)(m_output, k);
+		return;
+	}
+
+	if ((m_solutions >= m_max_solutions) || (++m_tries >= m_max_tries)) {
 		return;
 	}
 
@@ -113,14 +132,10 @@ void Matrix::solve(unsigned int k) {
 
 		solve(next_k);
 
-		if (m_solutions >= m_max_solutions) {
-			return;
-		}
-
 		row = m_output[k];
 		column = row->column;
 
-		for(Node* j = row->left; j != row ; j = j->left) {
+		for(Node* j = row->left; j != row; j = j->left) {
 			uncover(j->column);
 		}
 	}
@@ -130,11 +145,11 @@ void Matrix::solve(unsigned int k) {
 
 /*****************************************************************************/
 
-void Matrix::cover(HeaderNode* column) {
-	column->right->left = column->left;
-	column->left->right = column->right;
+void Matrix::cover(HeaderNode* node) {
+	node->right->left = node->left;
+	node->left->right = node->right;
 
-	for (Node* i = column->down; i != column; i = i->down) {
+	for (Node* i = node->down; i != node; i = i->down) {
 		for (Node* j = i->right; j != i; j = j->right) {
 			j->down->up = j->up;
 			j->up->down = j->down;
@@ -145,8 +160,8 @@ void Matrix::cover(HeaderNode* column) {
 
 /*****************************************************************************/
 
-void Matrix::uncover(HeaderNode* column) {
-	for (Node* i = column->up; i != column; i = i->up) {
+void Matrix::uncover(HeaderNode* node) {
+	for (Node* i = node->up; i != node; i = i->up) {
 		for (Node* j = i->left; j != i; j = j->left) {
 			j->column->size++;
 			j->down->up = j;
@@ -154,8 +169,8 @@ void Matrix::uncover(HeaderNode* column) {
 		}
 	}
 
-	column->right->left = column;
-	column->left->right = column;
+	node->right->left = node;
+	node->left->right = node;
 }
 
 /*****************************************************************************/
