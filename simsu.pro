@@ -11,11 +11,8 @@ MOC_DIR = build
 OBJECTS_DIR = build
 RCC_DIR = build
 
-VERSION = $$system(git rev-parse --short HEAD)
-isEmpty(VERSION) {
-	VERSION = 0
-}
-DEFINES += VERSIONSTR=\\\"git.$${VERSION}\\\"
+VERSION = 1.2.3
+DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
 unix: !macx {
 	TARGET = simsu
