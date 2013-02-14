@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,18 +30,24 @@
 #include <QSizePolicy>
 #include <QUndoStack>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-namespace {
-	int cell_size = 0;
-	int pen_size = 1;
-	int pencil_size = 1;
-}
+static int cell_size = 0;
+static int pen_size = 1;
+static int pencil_size = 1;
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Cell::Cell(int column, int row, Board* board, QWidget* parent)
-: Frame(parent), m_current_state(0), m_column(column), m_row(row), m_wrong(false), m_given(false), m_board(board), m_puzzle(0) {
+Cell::Cell(int column, int row, Board* board, QWidget* parent) :
+	Frame(parent),
+	m_current_state(0),
+	m_column(column),
+	m_row(row),
+	m_wrong(false),
+	m_given(false),
+	m_board(board),
+	m_puzzle(0)
+{
 	State state;
 	state.value = 0;
 	for (int i = 0; i < 9; ++i) {
@@ -55,16 +61,18 @@ Cell::Cell(int column, int row, Board* board, QWidget* parent)
 	setMouseTracking(true);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool Cell::isCorrect() const {
+bool Cell::isCorrect() const
+{
 	Q_ASSERT(m_puzzle != 0);
 	return m_states[m_current_state].value == m_puzzle->value(m_column, m_row);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::setPuzzle(Puzzle* puzzle) {
+void Cell::setPuzzle(Puzzle* puzzle)
+{
 	Q_ASSERT(puzzle != 0);
 	m_puzzle = puzzle;
 
@@ -94,9 +102,10 @@ void Cell::setPuzzle(Puzzle* puzzle) {
 	setFont(f);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::setState(int state) {
+void Cell::setState(int state)
+{
 	// Check if all cells with matching values are found
 	m_board->decreaseKeyCount(m_states[m_current_state].value);
 	m_board->increaseKeyCount(m_states[state].value);
@@ -136,16 +145,18 @@ void Cell::setState(int state) {
 	m_board->checkFinished();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::showWrong(bool show) {
+void Cell::showWrong(bool show)
+{
 	m_wrong = show ? !isCorrect() : false;
 	update();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::focusInEvent(QFocusEvent* event) {
+void Cell::focusInEvent(QFocusEvent* event)
+{
 	QSettings().setValue("Current/Active", QString("%1x%2").arg(m_column).arg(m_row));
 	if (!m_given) {
 		setBackgroundRole(QPalette::Highlight);
@@ -173,9 +184,10 @@ void Cell::focusInEvent(QFocusEvent* event) {
 	Frame::focusInEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::focusOutEvent(QFocusEvent* event) {
+void Cell::focusOutEvent(QFocusEvent* event)
+{
 	if (!m_given) {
 		setBackgroundRole(QPalette::Base);
 		setForegroundRole(QPalette::Text);
@@ -202,9 +214,10 @@ void Cell::focusOutEvent(QFocusEvent* event) {
 	Frame::focusOutEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::keyPressEvent(QKeyEvent* event) {
+void Cell::keyPressEvent(QKeyEvent* event)
+{
 	switch (event->key()) {
 	case Qt::Key_1:
 	case Qt::Key_2:
@@ -238,18 +251,20 @@ void Cell::keyPressEvent(QKeyEvent* event) {
 	Frame::keyPressEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::mouseMoveEvent(QMouseEvent* event) {
+void Cell::mouseMoveEvent(QMouseEvent* event)
+{
 	if (!hasFocus()) {
 		setFocus();
 	}
 	Frame::mouseMoveEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::mousePressEvent(QMouseEvent* event) {
+void Cell::mousePressEvent(QMouseEvent* event)
+{
 	if (!m_given && !m_board->isFinished()) {
 		if (m_board->autoSwitch()) {
 			if (event->button() == Qt::LeftButton) {
@@ -263,9 +278,10 @@ void Cell::mousePressEvent(QMouseEvent* event) {
 	Frame::mousePressEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::paintEvent(QPaintEvent* event) {
+void Cell::paintEvent(QPaintEvent* event)
+{
 	setHighlight(m_board->highlightActive() && m_states[m_current_state].value == m_board->activeKey());
 	Frame::paintEvent(event);
 
@@ -300,9 +316,10 @@ void Cell::paintEvent(QPaintEvent* event) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::resizeEvent(QResizeEvent* event) {
+void Cell::resizeEvent(QResizeEvent* event)
+{
 	int size = qMin(event->size().width(), event->size().height());
 	if (cell_size != size) {
 		cell_size = size;
@@ -312,9 +329,10 @@ void Cell::resizeEvent(QResizeEvent* event) {
 	updateFont();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::checkConflict(Cell* cell) {
+void Cell::checkConflict(Cell* cell)
+{
 	if (cell != this && !m_conflicts.contains(cell)) {
 		if (cell->m_states[cell->m_current_state].value == m_states[m_current_state].value) {
 			m_conflicts.append(cell);
@@ -324,9 +342,10 @@ void Cell::checkConflict(Cell* cell) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::updateValue() {
+void Cell::updateValue()
+{
 	// Find key pressed
 	int key = m_board->activeKey();
 
@@ -349,12 +368,13 @@ void Cell::updateValue() {
 	m_board->moves()->push(new Move(this, m_current_state, m_column, m_row, state.value == 0, key));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Cell::updateFont() {
+void Cell::updateFont()
+{
 	QFont f = font();
 	f.setPixelSize(m_states[m_current_state].value ? pen_size : pencil_size);
 	setFont(f);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

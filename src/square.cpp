@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,24 +22,28 @@
 #include <QResizeEvent>
 #include <QStyle>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Square::Square(QWidget* parent)
-: QWidget(parent), m_child(0) {
+Square::Square(QWidget* parent) :
+	QWidget(parent),
+	m_child(0)
+{
 	setMinimumSize(345, 345);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Square::setChild(QWidget* child) {
+void Square::setChild(QWidget* child)
+{
 	m_child = child;
 	m_child->setParent(this);
 	resize(size());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Square::resizeEvent(QResizeEvent* event) {
+void Square::resizeEvent(QResizeEvent* event)
+{
 	QWidget::resizeEvent(event);
 	if (m_child) {
 		QRect region = contentsRect();
@@ -49,4 +53,4 @@ void Square::resizeEvent(QResizeEvent* event) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

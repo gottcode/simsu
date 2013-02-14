@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,10 +34,17 @@
 
 #include <ctime>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Board::Board(QWidget* parent)
-: Frame(parent), m_puzzle(0), m_active_key(1), m_auto_switch(true), m_highlight_active(false), m_notes_mode(false), m_finished(false) {
+Board::Board(QWidget* parent) :
+	Frame(parent),
+	m_puzzle(0),
+	m_active_key(1),
+	m_auto_switch(true),
+	m_highlight_active(false),
+	m_notes_mode(false),
+	m_finished(false)
+{
 	setBackgroundRole(QPalette::Mid);
 
 	m_moves = new QUndoStack(this);
@@ -127,9 +134,10 @@ Board::Board(QWidget* parent)
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Board::~Board() {
+Board::~Board()
+{
 	if (!m_finished) {
 		QStringList moves;
 		int count = m_moves->index();
@@ -143,9 +151,10 @@ Board::~Board() {
 	delete m_puzzle;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load) {
+void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
+{
 	QSettings settings;
 
 	if (seed <= 0) {
@@ -198,9 +207,10 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::checkFinished() {
+void Board::checkFinished()
+{
 	m_finished = true;
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
@@ -220,9 +230,10 @@ void Board::checkFinished() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::showWrong(bool show) {
+void Board::showWrong(bool show)
+{
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
 			m_cells[c][r]->showWrong(show);
@@ -230,9 +241,10 @@ void Board::showWrong(bool show) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::moveFocus(int column, int row, int xdelta, int ydelta) {
+void Board::moveFocus(int column, int row, int xdelta, int ydelta)
+{
 	xdelta = qBound(-1, xdelta, 2);
 	ydelta = qBound(-1, ydelta, 2);
 	Q_ASSERT(xdelta != ydelta);
@@ -254,9 +266,10 @@ void Board::moveFocus(int column, int row, int xdelta, int ydelta) {
 	m_cells[column][row]->setFocus();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::decreaseKeyCount(int key) {
+void Board::decreaseKeyCount(int key)
+{
 	key--;
 	if (key < 0 || key > 8) {
 		return;
@@ -264,9 +277,10 @@ void Board::decreaseKeyCount(int key) {
 	m_key_count[key]--;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::increaseKeyCount(int key) {
+void Board::increaseKeyCount(int key)
+{
 	key--;
 	if (key < 0 || key > 8) {
 		return;
@@ -274,36 +288,40 @@ void Board::increaseKeyCount(int key) {
 	m_key_count[key]++;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::setActiveKey(int key) {
+void Board::setActiveKey(int key)
+{
 	m_active_key = qBound(1, key, 10);
 	QSettings().setValue("Key", m_active_key);
 	update();
 	emit activeKeyChanged(m_active_key);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::setAutoSwitch(bool auto_switch) {
+void Board::setAutoSwitch(bool auto_switch)
+{
 	m_auto_switch = auto_switch;
 	QSettings().setValue("AutoSwitch", m_auto_switch);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::setHighlightActive(bool highlight) {
+void Board::setHighlightActive(bool highlight)
+{
 	m_highlight_active = highlight;
 	QSettings().setValue("Highlight", m_highlight_active);
 	update();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Board::setMode(int mode) {
+void Board::setMode(int mode)
+{
 	m_notes_mode = mode;
 	QSettings().setValue("Mode", (m_notes_mode ? "Pencil" : "Pen"));
 	emit notesModeChanged(mode);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

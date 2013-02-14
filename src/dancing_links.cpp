@@ -19,13 +19,15 @@
 
 #include "dancing_links.h"
 
-namespace DLX
+//-----------------------------------------------------------------------------
+
+DLX::Matrix::Matrix(unsigned int max_columns) :
+	m_max_columns(max_columns),
+	m_columns(max_columns),
+	m_output(max_columns),
+	m_solutions(0),
+	m_tries(0)
 {
-
-/*****************************************************************************/
-
-Matrix::Matrix(unsigned int max_columns)
-: m_max_columns(max_columns), m_columns(max_columns), m_output(max_columns), m_solutions(0), m_tries(0) {
 	m_header = new HeaderNode;
 	m_header->column = m_header;
 
@@ -42,23 +44,26 @@ Matrix::Matrix(unsigned int max_columns)
 	node->right = m_header;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Matrix::~Matrix() {
+DLX::Matrix::~Matrix()
+{
 	delete m_header;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::addRow() {
+void DLX::Matrix::addRow()
+{
 	m_rows.append(HeaderNode());
 	HeaderNode* row = &m_rows.last();
 	row->left = row->right = row->up = row->down = row->column = row;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::addElement(unsigned int c) {
+void DLX::Matrix::addElement(unsigned int c)
+{
 	Q_ASSERT(c < m_max_columns);
 
 	HeaderNode* column = &m_columns[c];
@@ -82,9 +87,10 @@ void Matrix::addElement(unsigned int c) {
 	column->size++;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-unsigned int Matrix::search(Callback* solution, unsigned int max_solutions, unsigned int max_tries) {
+unsigned int DLX::Matrix::search(Callback* solution, unsigned int max_solutions, unsigned int max_tries)
+{
 	m_solution = solution;
 
 	m_solutions = 0;
@@ -97,9 +103,11 @@ unsigned int Matrix::search(Callback* solution, unsigned int max_solutions, unsi
 	return m_solutions;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::solve(unsigned int k) {
+void DLX::Matrix::solve(unsigned int k)
+{
+	// If matrix is empty a solution has been found.
 	if (m_header->right == m_header) {
 		++m_solutions;
 		(*m_solution)(m_output, k);
@@ -110,6 +118,7 @@ void Matrix::solve(unsigned int k) {
 		return;
 	}
 
+	// Choose column with lowest amount of 1s.
 	HeaderNode* column = 0;
 	unsigned int s = 0xFFFFFFFF;
 	for(HeaderNode* i = m_header->right->column; i != m_header; i = i->right->column) {
@@ -118,7 +127,6 @@ void Matrix::solve(unsigned int k) {
 			s = i->size;
 		}
 	}
-
 	cover(column);
 
 	unsigned int next_k = k + 1;
@@ -143,9 +151,10 @@ void Matrix::solve(unsigned int k) {
 	uncover(column);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::cover(HeaderNode* node) {
+void DLX::Matrix::cover(HeaderNode* node)
+{
 	node->right->left = node->left;
 	node->left->right = node->right;
 
@@ -158,9 +167,10 @@ void Matrix::cover(HeaderNode* node) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::uncover(HeaderNode* node) {
+void DLX::Matrix::uncover(HeaderNode* node)
+{
 	for (Node* i = node->up; i != node; i = i->up) {
 		for (Node* j = i->left; j != i; j = j->left) {
 			j->column->size++;
@@ -173,6 +183,4 @@ void Matrix::uncover(HeaderNode* node) {
 	node->left->right = node;
 }
 
-/*****************************************************************************/
-
-}
+//-----------------------------------------------------------------------------

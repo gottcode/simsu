@@ -45,7 +45,7 @@
 #include <QVBoxLayout>
 #include <QWheelEvent>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
 namespace
 {
@@ -81,9 +81,10 @@ namespace
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Window::Window() {
+Window::Window()
+{
 	setWindowTitle(tr("Simsu"));
 
 	QSettings settings;
@@ -199,16 +200,18 @@ Window::Window() {
 	restoreGeometry(settings.value("Geometry").toByteArray());
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::closeEvent(QCloseEvent* event) {
+void Window::closeEvent(QCloseEvent* event)
+{
 	QSettings().setValue("Geometry", saveGeometry());
 	QMainWindow::closeEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::wheelEvent(QWheelEvent* event) {
+void Window::wheelEvent(QWheelEvent* event)
+{
 	int id = m_key_buttons->checkedId();
 	if (event->delta() < 0) {
 		id++;
@@ -225,9 +228,10 @@ void Window::wheelEvent(QWheelEvent* event) {
 	QMainWindow::wheelEvent(event);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::newGame() {
+void Window::newGame()
+{
 	QSettings settings;
 
 	QDialog* dialog = new QDialog(this);
@@ -282,9 +286,10 @@ void Window::newGame() {
 	delete dialog;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::showDetails() {
+void Window::showDetails()
+{
 	QSettings settings;
 	QString symmetry = Pattern::name(settings.value("Current/Symmetry").toInt());
 	QString icon = Pattern::icon(settings.value("Current/Symmetry").toInt());
@@ -296,9 +301,10 @@ void Window::showDetails() {
 	details.exec();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::showControls() {
+void Window::showControls()
+{
 	QMessageBox::information(this, tr("Controls"), tr("<p><big><b>Mouse Controls:</b></big><br>"
 		"<b>Left click:</b> Toggle number in pen mode<br>"
 		"<b>Right click:</b> Toggle number in pencil mode<br>"
@@ -310,38 +316,43 @@ void Window::showControls() {
 		"<b>H:</b> Highlight all instances of current number</p>"));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::about() {
+void Window::about()
+{
 	QMessageBox::about(this, tr("About Simsu"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></p>")
 		.arg(tr("Simsu"), QCoreApplication::applicationVersion(),
 			tr("A basic Sudoku game"),
-			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2012"),
+			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2013"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::activeKeyChanged(int key) {
+void Window::activeKeyChanged(int key)
+{
 	m_key_buttons->button(key)->setChecked(true);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::notesModeChanged(bool mode) {
+void Window::notesModeChanged(bool mode)
+{
 	m_mode_buttons->button(mode)->setChecked(true);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::toggleMode() {
+void Window::toggleMode()
+{
 	m_mode_buttons->button(!m_mode_buttons->checkedId())->click();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::toggleWidescreen(bool checked) {
+void Window::toggleWidescreen(bool checked)
+{
 	QSettings().setValue("Widescreen", checked);
 
 	Qt::ToolButtonStyle style = Qt::ToolButtonTextBesideIcon;
@@ -373,11 +384,12 @@ void Window::toggleWidescreen(bool checked) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Window::setLocaleClicked() {
+void Window::setLocaleClicked()
+{
 	LocaleDialog dialog(this);
 	dialog.exec();
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
