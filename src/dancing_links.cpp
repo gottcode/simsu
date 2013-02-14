@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008-2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,13 +19,15 @@
 
 #include "dancing_links.h"
 
-namespace DLX
+//-----------------------------------------------------------------------------
+
+DLX::Matrix::Matrix(unsigned int max_columns) :
+	m_max_columns(max_columns),
+	m_columns(max_columns),
+	m_output(max_columns),
+	m_solutions(0),
+	m_tries(0)
 {
-
-/*****************************************************************************/
-
-Matrix::Matrix(unsigned int max_columns)
-: m_max_columns(max_columns), m_columns(max_columns), m_output(max_columns), m_solutions(0) {
 	m_header = new HeaderNode;
 	m_header->column = m_header;
 
@@ -42,23 +44,26 @@ Matrix::Matrix(unsigned int max_columns)
 	node->right = m_header;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Matrix::~Matrix() {
+DLX::Matrix::~Matrix()
+{
 	delete m_header;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::addRow() {
+void DLX::Matrix::addRow()
+{
 	m_rows.append(HeaderNode());
 	HeaderNode* row = &m_rows.last();
 	row->left = row->right = row->up = row->down = row->column = row;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::addElement(unsigned int c) {
+void DLX::Matrix::addElement(unsigned int c)
+{
 	Q_ASSERT(c < m_max_columns);
 
 	HeaderNode* column = &m_columns[c];
@@ -82,15 +87,38 @@ void Matrix::addElement(unsigned int c) {
 	column->size++;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::solve(unsigned int k) {
+unsigned int DLX::Matrix::search(Callback* solution, unsigned int max_solutions, unsigned int max_tries)
+{
+	m_solution = solution;
+
+	m_solutions = 0;
+	m_max_solutions = max_solutions;
+
+	m_tries = 0;
+	m_max_tries = (max_tries != 0) ? max_tries : m_max_columns;
+
+	solve(0);
+	return m_solutions;
+}
+
+//-----------------------------------------------------------------------------
+
+void DLX::Matrix::solve(unsigned int k)
+{
+	// If matrix is empty a solution has been found.
 	if (m_header->right == m_header) {
 		++m_solutions;
 		(*m_solution)(m_output, k);
 		return;
 	}
 
+	if ((m_solutions >= m_max_solutions) || (++m_tries >= m_max_tries)) {
+		return;
+	}
+
+	// Choose column with lowest amount of 1s.
 	HeaderNode* column = 0;
 	unsigned int s = 0xFFFFFFFF;
 	for(HeaderNode* i = m_header->right->column; i != m_header; i = i->right->column) {
@@ -99,7 +127,6 @@ void Matrix::solve(unsigned int k) {
 			s = i->size;
 		}
 	}
-
 	cover(column);
 
 	unsigned int next_k = k + 1;
@@ -113,14 +140,10 @@ void Matrix::solve(unsigned int k) {
 
 		solve(next_k);
 
-		if (m_solutions >= m_max_solutions) {
-			return;
-		}
-
 		row = m_output[k];
 		column = row->column;
 
-		for(Node* j = row->left; j != row ; j = j->left) {
+		for(Node* j = row->left; j != row; j = j->left) {
 			uncover(j->column);
 		}
 	}
@@ -128,13 +151,14 @@ void Matrix::solve(unsigned int k) {
 	uncover(column);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::cover(HeaderNode* column) {
-	column->right->left = column->left;
-	column->left->right = column->right;
+void DLX::Matrix::cover(HeaderNode* node)
+{
+	node->right->left = node->left;
+	node->left->right = node->right;
 
-	for (Node* i = column->down; i != column; i = i->down) {
+	for (Node* i = node->down; i != node; i = i->down) {
 		for (Node* j = i->right; j != i; j = j->right) {
 			j->down->up = j->up;
 			j->up->down = j->down;
@@ -143,10 +167,11 @@ void Matrix::cover(HeaderNode* column) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Matrix::uncover(HeaderNode* column) {
-	for (Node* i = column->up; i != column; i = i->up) {
+void DLX::Matrix::uncover(HeaderNode* node)
+{
+	for (Node* i = node->up; i != node; i = i->up) {
 		for (Node* j = i->left; j != i; j = j->left) {
 			j->column->size++;
 			j->down->up = j;
@@ -154,10 +179,8 @@ void Matrix::uncover(HeaderNode* column) {
 		}
 	}
 
-	column->right->left = column;
-	column->left->right = column;
+	node->right->left = node;
+	node->left->right = node;
 }
 
-/*****************************************************************************/
-
-}
+//-----------------------------------------------------------------------------

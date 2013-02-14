@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,24 +21,27 @@
 
 #include "cell.h"
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Move::Move(Cell* cell, int id, int column, int row, bool note, int value)
-: m_cell(cell),
-  m_id(id) {
+Move::Move(Cell* cell, int id, int column, int row, bool note, int value) :
+	m_cell(cell),
+	m_id(id)
+{
 	setText(QString("%1%2%3%4").arg(column).arg(row).arg(note ? "n" : "v").arg(value));
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Move::redo() {
+void Move::redo()
+{
 	m_cell->setState(m_id + 1);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Move::undo() {
+void Move::undo()
+{
 	m_cell->setState(m_id);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

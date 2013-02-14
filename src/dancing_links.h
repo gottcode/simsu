@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2008-2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2008, 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,128 +17,247 @@
  *
  ***********************************************************************/
 
-#ifndef DANCING_LINKS_H
-#define DANCING_LINKS_H
+#ifndef SIMSU_DANCING_LINKS_H
+#define SIMSU_DANCING_LINKS_H
 
 #include <QLinkedList>
 #include <QVector>
 
-namespace DLX {
+/**
+ * Dancing Links implementation of Algorithm X.
+ *
+ * Algorithm X is a recursive backtracking algorithm that finds all solutions
+ * to the exact cover problem. It works on a matrix consisting of 0s an 1s.
+ * The purpose is to find a combination of rows such that the digit 1 appears
+ * in each column only once.
+ *
+ * To convert an exact cover problem into a sparse matrix solvable by
+ * Algorithm X you represent each constraint by a column. Each possible value
+ * is then placed into a row with 1s in the columns for the constraints it
+ * matches.
+ */
+namespace DLX
+{
 
 struct HeaderNode;
-struct Node {
-	Node()
-	: left(0), right(0), up(0), down(0), column(0) {
+
+/** %Node in matrix. */
+struct Node
+{
+	/** Constructs a node with the value of 1. */
+	Node() :
+		left(0),
+		right(0),
+		up(0),
+		down(0),
+		column(0)
+	{
 	}
 
-	Node* left;
-	Node* right;
-	Node* up;
-	Node* down;
-	HeaderNode* column;
+	Node* left; /**< node to the left with value of 1 */
+	Node* right; /**< node to the right with value of 1 */
+	Node* up; /**< node above with value of 1 */
+	Node* down; /**< node below with value of 1 */
+	HeaderNode* column; /**< column containing this node */
 };
 
-struct HeaderNode : public Node {
-	HeaderNode()
-	: size(0), id(0) {
+/** Head node of column or row in matrix. */
+struct HeaderNode : public Node
+{
+	/** Constructs an empty column. */
+	HeaderNode() :
+		size(0),
+		id(0)
+	{
 	}
 
-	unsigned int size;
-	unsigned int id;
+	unsigned int size; /**< how many nodes with value of 1 are in column */
+	unsigned int id; /**< unique identifier */
 };
 
-class Matrix {
-	class Callback {
+/** Sparse matrix class. */
+class Matrix
+{
+	/** Abstract base class for solution callback. */
+	class Callback
+	{
 	public:
-		virtual ~Callback() {
+		/** Destroy collback. */
+		virtual ~Callback()
+		{
 		}
 
-		virtual void operator()(const QVector<Node*>&, unsigned int) {
+		/** Empty function to allow for ignored callbacks. */
+		virtual void operator()(const QVector<Node*>&, unsigned int)
+		{
 		}
 	};
 
-	class GlobalCallback : public Callback {
+	/** Callback using non-member function. */
+	class GlobalCallback : public Callback
+	{
 	public:
-		typedef void(*function)(const QVector<Node*>&, unsigned int);
-		GlobalCallback(function f)
-		: m_function(f) {
+		typedef void(*function)(const QVector<Node*>&);
+
+		/**
+		 * Constructs callback.
+		 *
+		 * @param f non-member function to use as callback
+		 */
+		GlobalCallback(function f) :
+			m_function(f)
+		{
 		}
 
-		virtual void operator()(const QVector<Node*>& rows, unsigned int count) {
-			(*m_function)(rows, count);
+		/** Perform callback using non-member function. */
+		void operator()(const QVector<Node*>& rows, unsigned int count)
+		{
+			(*m_function)(rows.mid(0, count));
 		}
 
 	private:
-		function m_function;
+		function m_function; /**< non-member function to use as callback */
 	};
 
+	/** Callback using member function */
 	template <typename T>
-	class MemberCallback : public Callback {
+	class MemberCallback : public Callback
+	{
 	public:
-		typedef void(T::*function)(const QVector<Node*>& rows, unsigned int count);
-		MemberCallback(T* object, function f)
-		: m_object(object), m_function(f) {
+		typedef void(T::*function)(const QVector<Node*>& rows);
+
+		/**
+		 * Constructs callback.
+		 *
+		 * @param object pointer to object of callback
+		 * @param f member function of @p object to use as callback
+		 */
+		MemberCallback(T* object, function f) :
+			m_object(object),
+			m_function(f)
+		{
 		}
 
-		virtual void operator()(const QVector<Node*>& rows, unsigned int count) {
-			(*m_object.*m_function)(rows, count);
+		/** Perform callback using member function. */
+		void operator()(const QVector<Node*>& rows, unsigned int count)
+		{
+			(*m_object.*m_function)(rows.mid(0, count));
 		}
 
 	private:
-		T* m_object;
-		function m_function;
+		T* m_object; /**< pointer to object of callback */
+		function m_function; /**< member function of @p object to use as callback */
 	};
 
 public:
+	/** Constructs a matrix with @p max_columns number of columns. */
 	Matrix(unsigned int max_columns);
+
+	/** Clean up matrix. */
 	~Matrix();
 
+	/** Add row to matrix. */
 	void addRow();
+
+	/**
+	 * Add element to matrix.
+	 *
+	 * @param column which column in current row to mark as filled
+	 */
 	void addElement(unsigned int column);
 
-	unsigned int search(unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	/**
+	 * Search for solutions.
+	 *
+	 * @param max_solutions maximum allowed solutions
+	 * @param max_tries maximum allowed attempts before stopping search
+	 * @return total count of solutions
+	 */
+	unsigned int search(unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF)
+	{
 		Callback solution;
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
-	unsigned int search(void(*function)(const QVector<Node*>& rows, unsigned int count), unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	/**
+	 * Search for solutions.
+	 *
+	 * @param function non-member function called with each solution
+	 * @param max_solutions maximum allowed solutions before stopping search
+	 * @param max_tries maximum allowed attempts before stopping search
+	 * @return total count of solutions
+	 */
+	unsigned int search(void(*function)(const QVector<Node*>& rows), unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF)
+	{
 		GlobalCallback solution(function);
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
+	/**
+	 * Search for solutions.
+	 *
+	 * @param object pointer to object of callback
+	 * @param function member function of @p object called with each solution
+	 * @param max_solutions maximum allowed solutions before stopping search
+	 * @param max_tries maximum allowed attempts before stopping search
+	 * @return total count of solutions
+	 */
 	template <typename T>
-	unsigned int search(T* object, void(T::*function)(const QVector<Node*>& rows, unsigned int count), unsigned int max_solutions = 0xFFFFFFFF) {
-		m_max_solutions = max_solutions;
+	unsigned int search(T* object, void(T::*function)(const QVector<Node*>& rows), unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF)
+	{
 		MemberCallback<T> solution(object, function);
-		m_solution = &solution;
-		solve(0);
-		return m_solutions;
+		return search(&solution, max_solutions, max_tries);
 	}
 
 private:
+	/**
+	 * Performs the search for solutions.
+	 *
+	 * @param solution function called with each solution
+	 * @param max_solutions maximum allowed solutions before stopping search
+	 * @param max_tries maximum allowed attempts before stopping search
+	 * @return total count of solutions
+	 */
+	unsigned int search(Callback* solution, unsigned int max_solutions, unsigned int max_tries);
+
+	/**
+	 * Run Algorithm X at depth @p k.
+	 *
+	 * This is a recursive function that hides rows and columns and checks to
+	 * see if a solution has been found.
+	 */
 	void solve(unsigned int k);
-	void cover(HeaderNode* column);
-	void uncover(HeaderNode* column);
 
-	unsigned int m_max_columns;
+	/**
+	 * Remove column or row from matrix.
+	 *
+	 * @param node head node of column or row to remove
+	 */
+	void cover(HeaderNode* node);
 
-	HeaderNode* m_header;
-	QVector<HeaderNode> m_columns;
-	QLinkedList<HeaderNode> m_rows;
-	QLinkedList<Node> m_nodes;
-	QVector<Node*> m_output;
+	/**
+	 * Add column or row back to matrix.
+	 *
+	 * @param node head node of column or row to add
+	 */
+	void uncover(HeaderNode* node);
 
-	Callback* m_solution;
-	unsigned int m_solutions;
-	unsigned int m_max_solutions;
+private:
+	unsigned int m_max_columns; /**< amount of constraints */
+
+	HeaderNode* m_header; /**< root element */
+	QVector<HeaderNode> m_columns; /**< constraints */
+	QLinkedList<HeaderNode> m_rows; /**< rows */
+	QLinkedList<Node> m_nodes; /**< row values */
+	QVector<Node*> m_output; /**< rows where columns do not conflict */
+
+	Callback* m_solution; /**< function to call when a solution is found */
+	unsigned int m_solutions; /**< how many solutions have been found so far */
+	unsigned int m_max_solutions; /**< maximum allowed solutions */
+	unsigned int m_tries; /**< how many attempts have been made so far */
+	unsigned int m_max_tries; /**< maximum allowed attempts */
 };
 
 }
 
-#endif
+#endif // SIMSU_DANCING_LINKS_H

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,21 +24,24 @@
 
 #include <algorithm>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Puzzle::Puzzle()
-: m_pattern(0) {
+Puzzle::Puzzle() :
+	m_pattern(0)
+{
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Puzzle::~Puzzle() {
+Puzzle::~Puzzle()
+{
 	delete m_pattern;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Puzzle::generate(unsigned int seed, int symmetry) {
+void Puzzle::generate(unsigned int seed, int symmetry)
+{
 	srand(seed);
 
 	delete m_pattern;
@@ -90,9 +93,10 @@ void Puzzle::generate(unsigned int seed, int symmetry) {
 	} while (givens > 30);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Puzzle::createSolution() {
+void Puzzle::createSolution()
+{
 	// Create list of initial values
 	QList<int> initial;
 	for (int i = 1; i < 10; ++i) {
@@ -148,9 +152,10 @@ void Puzzle::createSolution() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Puzzle::createGivens() {
+void Puzzle::createGivens()
+{
 	// Initialize givens
 	QList<QPoint> cells;
 	for (int r = 0; r < 9; ++r) {
@@ -186,9 +191,10 @@ void Puzzle::createGivens() {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool PuzzleDancingLinks::isUnique() {
+bool PuzzleDancingLinks::isUnique()
+{
 	QList<int> initial;
 	for (int i = 0; i < 9; ++i) {
 		initial.append(i);
@@ -212,9 +218,10 @@ bool PuzzleDancingLinks::isUnique() {
 	return (matrix.search(2) == 1);
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-bool PuzzleSliceAndDice::isUnique() {
+bool PuzzleSliceAndDice::isUnique()
+{
 	// Create list of initial values
 	QList<int> initial;
 	for (int i = 1; i < 10; ++i) {
@@ -286,4 +293,4 @@ bool PuzzleSliceAndDice::isUnique() {
 	return true;
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------

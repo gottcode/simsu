@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,15 +21,20 @@
 
 #include <QPainter>
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-Frame::Frame(QWidget* parent)
-: QWidget(parent), m_highlight(false), m_highlight_border(false), m_highlight_partial(false) {
+Frame::Frame(QWidget* parent) :
+	QWidget(parent),
+	m_highlight(false),
+	m_highlight_border(false),
+	m_highlight_partial(false)
+{
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
 
-void Frame::paintEvent(QPaintEvent* event) {
+void Frame::paintEvent(QPaintEvent* event)
+{
 	QWidget::paintEvent(event);
 
 	QPainter painter(this);
@@ -60,4 +65,4 @@ void Frame::paintEvent(QPaintEvent* event) {
 	}
 }
 
-/*****************************************************************************/
+//-----------------------------------------------------------------------------
