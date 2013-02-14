@@ -64,19 +64,6 @@ bool Cell::isCorrect() const {
 
 /*****************************************************************************/
 
-void Cell::setHintVisible(bool visible) {
-	if (visible) {
-		if (m_states[m_current_state].value) {
-			Q_ASSERT(m_puzzle != 0);
-			m_wrong = m_puzzle->value(m_column, m_row) == m_states[m_current_state].value;
-		}
-	} else {
-		m_wrong = false;
-	}
-}
-
-/*****************************************************************************/
-
 void Cell::setPuzzle(Puzzle* puzzle) {
 	Q_ASSERT(puzzle != 0);
 	m_puzzle = puzzle;

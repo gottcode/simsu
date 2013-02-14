@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,53 +17,96 @@
  *
  ***********************************************************************/
 
-#ifndef PUZZLE_H
-#define PUZZLE_H
+#ifndef SIMSU_PUZZLE_H
+#define SIMSU_PUZZLE_H
+
+class Pattern;
 
 #include <QList>
 #include <QPoint>
-class Pattern;
 
-class Puzzle {
+/**
+ * Layout generator.
+ *
+ * This class is the abstract base of the board layout creation classes.
+ *
+ */
+class Puzzle
+{
 public:
+	/** Constructs a puzzle. */
 	Puzzle();
+
+	/** Clean up puzzle. */
 	virtual ~Puzzle();
 
+	/**
+	 * Creates a new layout.
+	 *
+	 * @param seed the value to prime the random number generator
+	 * @param symmetry the pattern to use when laying out givens
+	 */
 	void generate(unsigned int seed, int symmetry);
 
-	int given(int x, int y) const {
+	/**
+	 * Returns the given at the requested position.
+	 *
+	 * @param x the column of the given
+	 * @param y the row of the given
+	 */
+	int given(int x, int y) const
+	{
 		x = qBound(0, x, 9);
 		y = qBound(0, y, 9);
 		return m_givens[x][y];
 	}
 
-	int value(int x, int y) const {
+	/**
+	 * Returns the value at the requested position.
+	 *
+	 * @param x the column of the cell
+	 * @param y the row of the cell
+	 */
+	int value(int x, int y) const
+	{
 		x = qBound(0, x, 9);
 		y = qBound(0, y, 9);
 		return m_solution[x][y];
 	}
 
 private:
+	/** Fills the board with unique values. */
 	void createSolution();
+
+	/** Finds a set of givens to show the player. */
 	void createGivens();
+
+	/** Check if the givens on the board have a unique solution. */
 	virtual bool isUnique() = 0;
 
 private:
-	int m_solution[9][9];
-	int m_givens[9][9];
-	Pattern* m_pattern;
+	int m_solution[9][9]; /**< board solution */
+	int m_givens[9][9]; /**< board givens */
+	Pattern* m_pattern; /**< the pattern used to lay out the givens */
 };
 
-
-class PuzzleDancingLinks : public Puzzle {
+/** Layout generator that uses Algorithm X. */
+class PuzzleDancingLinks : public Puzzle
+{
 private:
-	virtual bool isUnique();
+	/** Check for uniqueness by using Algorithm X. */
+	bool isUnique();
 };
 
-
-class PuzzleSliceAndDice : public Puzzle {
+/** Layout generator that uses a brute force solving method. */
+class PuzzleSliceAndDice : public Puzzle
+{
 private:
-	virtual bool isUnique();
+	/**
+	 * Check for uniqueness by filling each cell with all possibilities and
+	 * then removing duplicates. Makes boards that are easier to solve.
+	 */
+	bool isUnique();
 };
 
-#endif
+#endif // SIMSU_PUZZLE_H

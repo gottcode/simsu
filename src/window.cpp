@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2010, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2010, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,14 +47,30 @@
 
 /*****************************************************************************/
 
-namespace {
-	class SidebarButton : public QToolButton {
+namespace
+{
+	/**
+	 * Interface button.
+	 *
+	 * This class defines the defaults for the action toolbuttons used in the
+	 * main window.
+	 */
+	class SidebarButton : public QToolButton
+	{
 	public:
+		/**
+		 * Constructs an interface button.
+		 *
+		 * @param icon the icon for the button
+		 * @param text the text to display on the button
+		 * @param parent the parent widget of the button
+		 */
 		SidebarButton(const QString& icon, const QString& text, QWidget* parent = 0);
 	};
 
-	SidebarButton::SidebarButton(const QString& icon, const QString& text, QWidget* parent)
-	: QToolButton(parent) {
+	SidebarButton::SidebarButton(const QString& icon, const QString& text, QWidget* parent) :
+		QToolButton(parent)
+	{
 		setText(text);
 		setIconSize(QSize(32,32));
 		setIcon(QIcon(icon));

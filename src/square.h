@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,22 +17,35 @@
  *
  ***********************************************************************/
 
-#ifndef SQUARE_H
-#define SQUARE_H
+#ifndef SIMSU_SQUARE_H
+#define SIMSU_SQUARE_H
 
 #include <QWidget>
 
-class Square : public QWidget {
+/** Widget that squares a child widget. */
+class Square : public QWidget
+{
 public:
+	/**
+	 * Constructs a square widget.
+	 *
+	 * @param parent the parent widget
+	 */
 	Square(QWidget* parent = 0);
 
+	/**
+	 * Set the widget to be squared.
+	 *
+	 * @param child widget to be squared
+	 */
 	void setChild(QWidget* child);
 
 protected:
-	virtual void resizeEvent(QResizeEvent* event);
+	/** Override parent function to handle setting child position and size. */
+	void resizeEvent(QResizeEvent* event);
 
 private:
-	QWidget* m_child;
+	QWidget* m_child; /**< widget to be squared */
 };
 
-#endif
+#endif // SIMSU_SQUARE_H

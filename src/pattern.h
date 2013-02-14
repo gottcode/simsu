@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  *
  ***********************************************************************/
 
-#ifndef PATTERN_H
-#define PATTERN_H
+#ifndef SIMSU_PATTERN_H
+#define SIMSU_PATTERN_H
 
 #include <QCoreApplication>
 #include <QHash>
@@ -26,31 +26,53 @@
 #include <QPoint>
 #include <QString>
 
-class Pattern {
+/**
+ * %Pattern of givens.
+ *
+ * This class controls the placement of the givens to make them symmetrical.
+ */
+class Pattern
+{
 	Q_DECLARE_TR_FUNCTIONS(Pattern);
 
 public:
+	/** Specify how givens are mirrored when placed. */
 	enum Symmetry {
-		Rotational180,
-		RotationalFull,
-		Horizontal,
-		Vertical,
-		HorizontalVertical,
-		Diagonal,
-		AntiDiagonal,
-		DiagonalAntiDiagonal,
-		FullDihedral,
-		Random,
-		None
+		Rotational180, /**< Givens are rotated 180&deg; */
+		RotationalFull, /**< Givens are rotated 90&deg; four times */
+		Horizontal, /**< Givens are reflected across horizontal axis */
+		Vertical, /**< Givens are reflected across vertical axis */
+		HorizontalVertical, /**< Givens are reflected across both horizontal and vertical axes */
+		Diagonal, /**< Givens are reflected across top-left to bottom-right axis */
+		AntiDiagonal, /**< Givens are reflected across top-right to bottom-left axis */
+		DiagonalAntiDiagonal, /**< Givens are reflected across both diagonal axes */
+		FullDihedral, /**< Givens are reflected across both horizontal and vertical axes and rotated 90&deg; four times */
+		Random, /**< Choose a symmetry at random */
+		None /**< No symmetry at all */
 	};
 
-	virtual ~Pattern() {
+	/** Clean up pattern */
+	virtual ~Pattern()
+	{
 	}
 
+	/** Returns amount of cells that are mirrored for each step. */
 	virtual int count() const = 0;
+
+	/**
+	 * Returns the mirrored positions for a cell.
+	 *
+	 * @param cell the cell to mirror.
+	 */
 	virtual QList<QPoint> pattern(const QPoint& cell) const = 0;
 
-	static QString name(int symmetry) {
+	/**
+	 * Returns the human readable name for a pattern.
+	 *
+	 * @param symmetry fetch the name of the specified pattern
+	 */
+	static QString name(int symmetry)
+	{
 		static QHash<int, QString> names;
 		if (names.isEmpty()) {
 			names[Rotational180] = tr("180\260 Rotational");
@@ -68,7 +90,13 @@ public:
 		return names.value(symmetry);
 	}
 
-	static QString icon(int symmetry) {
+	/**
+	 * Returns the preview image for a pattern.
+	 *
+	 * @param symmetry fetch the preview image for the specified pattern
+	 */
+	static QString icon(int symmetry)
+	{
 		static QHash<int, QString> icons;
 		if (icons.isEmpty()) {
 			icons[Rotational180] = ":/rotational_180.png";
@@ -87,14 +115,20 @@ public:
 	}
 };
 
-
-class PatternFullDihedral : public Pattern {
+/**
+ * %Pattern where givens are reflected across both horizontal and vertical
+ * axes and rotated 90&deg; four times.
+ */
+class PatternFullDihedral : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 8;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(cell.x(), 8 - cell.y())
@@ -107,28 +141,34 @@ public:
 	}
 };
 
-
-class PatternRotational180 : public Pattern {
+/** %Pattern where givens are rotated 180&deg;. */
+class PatternRotational180 : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 2;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(8 - cell.x(), 8 - cell.y());
 	}
 };
 
-
-class PatternRotationalFull : public Pattern {
+/** %Pattern where givens are rotated 90&deg; four times. */
+class PatternRotationalFull : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 4;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(8 - cell.y(), cell.x())
@@ -137,42 +177,51 @@ public:
 	}
 };
 
-
-class PatternHorizontal : public Pattern {
+/** %Pattern where givens are reflected across horizontal axis. */
+class PatternHorizontal : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 2;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(8 - cell.x(), cell.y());
 	}
 };
 
-
-class PatternVertical : public Pattern {
+/** %Pattern where givens are reflected across vertical axis. */
+class PatternVertical : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 2;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(cell.x(), 8 - cell.y());
 	}
 };
 
-
-class PatternHorizontalVertical : public Pattern {
+/** %Pattern where givens are reflected across both horizontal and vertical axes. */
+class PatternHorizontalVertical : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 4;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(8 - cell.x(), cell.y())
@@ -181,42 +230,51 @@ public:
 	}
 };
 
-
-class PatternDiagonal : public Pattern {
+/** %Pattern where givens are reflected across top-left to bottom-right axis. */
+class PatternDiagonal : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 2;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(cell.y(), cell.x());
 	}
 };
 
-
-class PatternAntiDiagonal : public Pattern {
+/** %Pattern where givens are reflected across top-right to bottom-left axis. */
+class PatternAntiDiagonal : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 2;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(8 - cell.y(), 8 - cell.x());
 	}
 };
 
-
-class PatternDiagonalAntiDiagonal : public Pattern {
+/** %Pattern where givens are reflected across both diagonal axes. */
+class PatternDiagonalAntiDiagonal : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 4;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell
 			<< QPoint(cell.y(), cell.x())
@@ -225,17 +283,20 @@ public:
 	}
 };
 
-
-class PatternNone : public Pattern {
+/** %Pattern with no symmetry at all. */
+class PatternNone : public Pattern
+{
 public:
-	virtual int count() const {
+	int count() const
+	{
 		return 1;
 	}
 
-	virtual QList<QPoint> pattern(const QPoint& cell) const {
+	QList<QPoint> pattern(const QPoint& cell) const
+	{
 		return QList<QPoint>()
 			<< cell;
 	}
 };
 
-#endif
+#endif // SIMSU_PATTERN_H
