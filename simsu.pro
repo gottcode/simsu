@@ -1,15 +1,12 @@
+lessThan(QT_VERSION, 4.5) {
+	error("Simsu requires Qt 4.5 or greater")
+}
+
 TEMPLATE = app
 greaterThan(QT_MAJOR_VERSION, 4) {
 	QT += widgets
 }
 CONFIG += warn_on
-macx {
-	CONFIG += x86_64
-}
-
-MOC_DIR = build
-OBJECTS_DIR = build
-RCC_DIR = build
 
 VERSION = $$system(git rev-parse --short HEAD)
 isEmpty(VERSION) {
@@ -45,18 +42,7 @@ SOURCES = src/board.cpp \
 	src/square.cpp \
 	src/window.cpp
 
-TRANSLATIONS = translations/simsu_ca.ts \
-	translations/simsu_cs.ts \
-	translations/simsu_el.ts \
-	translations/simsu_es.ts \
-	translations/simsu_es_CL.ts \
-	translations/simsu_en.ts \
-	translations/simsu_fr.ts \
-	translations/simsu_he.ts \
-	translations/simsu_hu.ts \
-	translations/simsu_ro.ts \
-	translations/simsu_ru.ts \
-	translations/simsu_uk.ts
+TRANSLATIONS = $$files(translations/simsu_*.ts)
 
 RESOURCES = icons/icon.qrc symmetry/symmetry.qrc
 macx {
