@@ -1,0 +1,29 @@
+1.2.3
+-----
+* Added support for Qt 5.
+* Translation updates: Hungarian, Romanian.
+
+1.2.2
+-----
+* Highlights text when all cells are found
+* Highlights column and row of current cell
+* New program icon
+* Translation updates: Catalan, French, Greek, Russian, Spanish,
+  Spanish (Chile), Ukranian.
+
+1.2.1
+-----
+* Translation updates: Czech.
+
+1.2.0
+-----
+* Added multiple types of symmetry.
+* Added an easier solving algorithm.
+* Added a widescreen layout.
+
+1.1.0
+-----
+* Added support for undo and redo.
+* Added support for highlighting current number.
+* Added number entry buttons.
+* Added selectable givens.
