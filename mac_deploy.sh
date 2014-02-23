@@ -2,7 +2,7 @@
 
 APP='Simsu'
 BUNDLE="$APP.app"
-VERSION=$(git rev-parse --short HEAD)
+VERSION='1.2.3'
 
 # Create disk folder
 echo -n 'Copying application bundle... '
