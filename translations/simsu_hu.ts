@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="hu" sourcelanguage="en">
+<TS version="2.1" language="hu" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
@@ -95,7 +95,7 @@
     <name>Window</name>
     <message>
         <location filename="../src/window.cpp" line="88"/>
-        <location filename="../src/window.cpp" line="324"/>
+        <location filename="../src/window.cpp" line="327"/>
         <source>Simsu</source>
         <translation>Simsu</translation>
     </message>
@@ -135,11 +135,6 @@
         <translation>Ú&amp;j</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Details</source>
         <translation>Rész&amp;letek</translation>
@@ -150,160 +145,145 @@
         <translation>Kilé&amp;pés</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="164"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Move</source>
         <translation>Moz&amp;gások?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="167"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Undo</source>
         <translation>V&amp;issza</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="167"/>
-        <source>Ctrl+Z</source>
-        <translation>Ctrl+Z</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Redo</source>
         <translation>Elő&amp;re</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="169"/>
-        <source>Shift+Ctrl+Z</source>
-        <translation>Shift+Ctrl+Z</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Check</source>
         <translation>Elle&amp;nőrzés</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="176"/>
         <source>&amp;Settings</source>
         <translation>B&amp;eállítások</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="176"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>&amp;Auto Switch Modes</source>
         <translation>Automatikus üze&amp;mmód váltása</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="180"/>
+        <location filename="../src/window.cpp" line="181"/>
         <source>&amp;Widescreen Layout</source>
         <translation>Ké&amp;pernyőnyújtás</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="185"/>
+        <location filename="../src/window.cpp" line="186"/>
         <source>Application &amp;Language...</source>
         <translation>Program n&amp;yelve...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="187"/>
-        <location filename="../src/window.cpp" line="194"/>
+        <location filename="../src/window.cpp" line="188"/>
+        <location filename="../src/window.cpp" line="195"/>
         <source>&amp;Help</source>
         <translation>Sú&amp;gó</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="188"/>
+        <location filename="../src/window.cpp" line="189"/>
         <source>&amp;Controls</source>
         <translation>Vezérlő&amp;k</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="196"/>
+        <location filename="../src/window.cpp" line="197"/>
         <source>&amp;About</source>
         <translation>Né&amp;vjegy</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="197"/>
+        <location filename="../src/window.cpp" line="199"/>
         <source>About &amp;Qt</source>
         <translation>Qt név&amp;jegy</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="238"/>
+        <location filename="../src/window.cpp" line="241"/>
         <source>New Game</source>
         <translation>Új játék</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="255"/>
-        <location filename="../src/window.cpp" line="296"/>
+        <location filename="../src/window.cpp" line="258"/>
+        <location filename="../src/window.cpp" line="299"/>
         <source>Dancing Links</source>
         <translation>Táncoló ... (linkek?)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="256"/>
-        <location filename="../src/window.cpp" line="296"/>
+        <location filename="../src/window.cpp" line="259"/>
+        <location filename="../src/window.cpp" line="299"/>
         <source>Slice and Dice</source>
         <translation>Slice and Dice (?)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="261"/>
+        <location filename="../src/window.cpp" line="264"/>
         <source>Random</source>
         <translation>Véletlen</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="269"/>
+        <location filename="../src/window.cpp" line="272"/>
         <source>Symmetry:</source>
         <translation>Szimmetria:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="270"/>
+        <location filename="../src/window.cpp" line="273"/>
         <source>Algorithm:</source>
         <translation>Algoritmus:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="271"/>
+        <location filename="../src/window.cpp" line="274"/>
         <source>Seed:</source>
         <translation>Seed: (?)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="299"/>
+        <location filename="../src/window.cpp" line="302"/>
         <source>Details</source>
         <translation>Részletek</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="299"/>
+        <location filename="../src/window.cpp" line="302"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Szimmetria:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmus:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed: (?)&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="308"/>
+        <location filename="../src/window.cpp" line="311"/>
         <source>Controls</source>
         <translation>Vezérlők</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="308"/>
+        <location filename="../src/window.cpp" line="311"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Egérrel történő műveletek&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;bal egérgomb:&lt;/b&gt;toll üzemmód&lt;br&gt;&lt;b&gt;jobb egérgomb:&lt;/b&gt; ceruza üzemmód&lt;br&gt;&lt;b&gt;gördítőkerék:&lt;/b&gt; szám javítása&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Billentyűzettel történő műveletek:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;nyilak:&lt;/b&gt; mozgatás&lt;br&gt;&lt;b&gt;számok:&lt;/b&gt; szám javítása&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; toll/ceruza váltása&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; kiválasztott szám kiemelt megjelenítése&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="323"/>
+        <location filename="../src/window.cpp" line="326"/>
         <source>About Simsu</source>
         <translation>Simsu névjegye</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="325"/>
+        <location filename="../src/window.cpp" line="328"/>
         <source>A basic Sudoku game</source>
         <translation>Sudoku játék</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="326"/>
+        <location filename="../src/window.cpp" line="329"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
         <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="327"/>
+        <location filename="../src/window.cpp" line="330"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
         <translation type="unfinished"></translation>
     </message>

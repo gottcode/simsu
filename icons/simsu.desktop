@@ -1,6 +1,18 @@
 [Desktop Entry]
 Name=Simsu
+Name[cs]=Simsu
+Name[de]=Simsu
+Name[el]=Simsu
+Name[ms]=Simsu
+Name[pl]=Simsu
+Name[ro]=Simsu
 GenericName=Sudoku Game
+GenericName[cs]=Hra Sudoku
+GenericName[de]=Sudoku Spiel
+GenericName[el]=Παιχνίδι Σουντόκου
+GenericName[ms]=Permainan Sudoku
+GenericName[pl]=Gra Sudoku
+GenericName[ro]=Joc Sudooku
 Exec=simsu
 Icon=simsu
 Terminal=false
