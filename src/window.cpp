@@ -158,15 +158,16 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, SLOT(newGame()), tr("Ctrl+N"));
+	menu->addAction(tr("&New"), this, SLOT(newGame()), QKeySequence::New);
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addSeparator();
-	menu->addAction(tr("&Quit"), qApp, SLOT(quit()), tr("Ctrl+Q"));
+	QAction* action = menu->addAction(tr("&Quit"), qApp, SLOT(quit()), QKeySequence::Quit);
+	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Move"));
-	QAction* action = menu->addAction(tr("&Undo"), m_board->moves(), SLOT(undo()), tr("Ctrl+Z"));
+	action = menu->addAction(tr("&Undo"), m_board->moves(), SLOT(undo()), QKeySequence::Undo);
 	connect(m_board->moves(), SIGNAL(canUndoChanged(bool)), action, SLOT(setEnabled(bool)));
-	action = menu->addAction(tr("&Redo"), m_board->moves(), SLOT(redo()), tr("Shift+Ctrl+Z"));
+	action = menu->addAction(tr("&Redo"), m_board->moves(), SLOT(redo()), QKeySequence::Redo);
 	connect(m_board->moves(), SIGNAL(canRedoChanged(bool)), action, SLOT(setEnabled(bool)));
 	menu->addSeparator();
 	menu->addAction(tr("&Check"), m_board, SLOT(showWrong()), tr("C"));
@@ -185,7 +186,7 @@ Window::Window()
 	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	menu->addAction(tr("&Controls"), this, SLOT(showControls()));
+	menu->addAction(tr("&Controls"), this, SLOT(showControls()), QKeySequence::HelpContents);
 	menu->addSeparator();
 #else
 	m_board->setAutoSwitch(false);
@@ -193,8 +194,10 @@ Window::Window()
 
 	menu = menuBar()->addMenu(tr("&Help"));
 #endif
-	menu->addAction(tr("&About"), this, SLOT(about()));
-	menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action->setMenuRole(QAction::AboutRole);
+	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action->setMenuRole(QAction::AboutQtRole);
 
 	// Restore size and position
 	restoreGeometry(settings.value("Geometry").toByteArray());
