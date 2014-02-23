@@ -75,7 +75,7 @@ public:
 	{
 		static QHash<int, QString> names;
 		if (names.isEmpty()) {
-			names[Rotational180] = tr("180\260 Rotational");
+			names[Rotational180] = trUtf8("180° Rotational");
 			names[RotationalFull] = tr("Full Rotational");
 			names[Horizontal] = tr("Horizontal");
 			names[Vertical] = tr("Vertical");
