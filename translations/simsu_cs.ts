@@ -25,7 +25,7 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="183"/>
         <source>Note</source>
-        <translation>Notiz</translation>
+        <translation>Poznámka</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="183"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/window.cpp" line="161"/>
         <source>&amp;New</source>
-        <translation>&amp;Nový</translation>
+        <translation>&amp;Nová</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../src/window.cpp" line="164"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>U&amp;končit</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Move</source>
-        <translation>&amp;Přesunout</translation>
+        <translation>&amp;Pohyb</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Znovu</translation>
+        <translation>Zn&amp;ovu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
@@ -193,7 +193,7 @@
         <location filename="../src/window.cpp" line="188"/>
         <location filename="../src/window.cpp" line="195"/>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>Nápo&amp;věda</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="189"/>
@@ -280,7 +280,7 @@
     <message>
         <location filename="../src/window.cpp" line="329"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>Autorské právo &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="330"/>

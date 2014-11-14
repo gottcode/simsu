@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="he" sourcelanguage="en">
+<TS version="2.1" language="nl" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <location filename="../src/board.cpp" line="80"/>
         <location filename="../src/board.cpp" line="95"/>
         <source>Success</source>
-        <translation>הצלחה</translation>
+        <translation>Succes</translation>
     </message>
 </context>
 <context>
@@ -15,22 +15,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>בחירת שפת יישום:</translation>
+        <translation>Selecteer de taal van de applicatie</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;שפת מערכת&gt;</translation>
+        <translation>&lt;systeemtaal&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="183"/>
         <source>Note</source>
-        <translation>הערה</translation>
+        <translation>Notitie</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="183"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>אנא אתחל את יישום זה כדי ששינויים בשפה יכנסו לתוקף.</translation>
+        <translation>Herstart de applicatie om de taalwijziging door te voeren</translation>
     </message>
 </context>
 <context>
@@ -38,57 +38,57 @@
     <message>
         <location filename="../src/pattern.h" line="78"/>
         <source>180° Rotational</source>
-        <translation type="unfinished"></translation>
+        <translation>180° Rotatie</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="79"/>
         <source>Full Rotational</source>
-        <translation type="unfinished"></translation>
+        <translation>Volledige rotatie</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="80"/>
         <source>Horizontal</source>
-        <translation>אופקי</translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="81"/>
         <source>Vertical</source>
-        <translation>אנכי</translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="82"/>
         <source>Horizontal &amp; Vertical</source>
-        <translation>אופקית ואנכית</translation>
+        <translation>Horizontaal en verticaal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="83"/>
         <source>Diagonal</source>
-        <translation>אלכסוני</translation>
+        <translation>Diagonaal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="84"/>
         <source>Anti-Diagonal</source>
-        <translation>אנטי-אלכסוני</translation>
+        <translation>Andere diagonaal</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="85"/>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>אלכסוני וגם אנטי-אלכסוני</translation>
+        <translation>Diagonalen</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="86"/>
         <source>Full Dihedral</source>
-        <translation>דו-מישורי מלא</translation>
+        <translation>Volledige tweevlak</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="87"/>
         <source>Random</source>
-        <translation>אקראי</translation>
+        <translation>Willekeurig</translation>
     </message>
     <message>
         <location filename="../src/pattern.h" line="88"/>
         <source>None</source>
-        <translation>ללא</translation>
+        <translation>Geen</translation>
     </message>
 </context>
 <context>
@@ -102,17 +102,17 @@
     <message>
         <location filename="../src/window.cpp" line="106"/>
         <source>Pen</source>
-        <translation>עט</translation>
+        <translation>Pen</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="110"/>
         <source>Pencil</source>
-        <translation>עפרון</translation>
+        <translation>Potlood</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="114"/>
         <source>Highlight</source>
-        <translation>הדגשה</translation>
+        <translation>Markeren</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="116"/>
@@ -127,42 +127,42 @@
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <source>&amp;Game</source>
-        <translation>&amp;משחק</translation>
+        <translation>&amp;Spel</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="161"/>
         <source>&amp;New</source>
-        <translation>&amp;חדש</translation>
+        <translation>&amp;Nieuw</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Details</source>
-        <translation>&amp;פרטים</translation>
+        <translation>&amp;Details</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="164"/>
         <source>&amp;Quit</source>
-        <translation>י&amp;ציאה</translation>
+        <translation>&amp;Stoppen</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Move</source>
-        <translation>&amp;תור</translation>
+        <translation>&amp;Verplaats</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Undo</source>
-        <translation>&amp;בטל</translation>
+        <translation>&amp;Ongedaan maken</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Redo</source>
-        <translation>בצ&amp;ע שוב</translation>
+        <translation>&amp;Opnieuw uitvoeren</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Check</source>
-        <translation>&amp;בדיקה</translation>
+        <translation>&amp;Controleren</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
@@ -172,120 +172,120 @@
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>&amp;Settings</source>
-        <translation>&amp;הגדרות</translation>
+        <translation>&amp;Instellingen</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="177"/>
         <source>&amp;Auto Switch Modes</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Automatische modus wisseling</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="181"/>
         <source>&amp;Widescreen Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Breedbeeld weergave</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="186"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;שפת יישום...</translation>
+        <translation>&amp;Applicatietaal</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="188"/>
         <location filename="../src/window.cpp" line="195"/>
         <source>&amp;Help</source>
-        <translation>&amp;עזרה</translation>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="189"/>
         <source>&amp;Controls</source>
-        <translation>&amp;בקרים</translation>
+        <translation>&amp;Besturing</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="197"/>
         <source>&amp;About</source>
-        <translation>&amp;אודות</translation>
+        <translation>&amp;Over</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="199"/>
         <source>About &amp;Qt</source>
-        <translation>אודות &amp;QT</translation>
+        <translation>Over &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="241"/>
         <source>New Game</source>
-        <translation>משחק חדש</translation>
+        <translation>Nieuw spel</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="258"/>
         <location filename="../src/window.cpp" line="299"/>
         <source>Dancing Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Dansende verbindignen</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="259"/>
         <location filename="../src/window.cpp" line="299"/>
         <source>Slice and Dice</source>
-        <translation type="unfinished"></translation>
+        <translation>Hak en snij</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="264"/>
         <source>Random</source>
-        <translation>אקראי</translation>
+        <translation>Willekeurig</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="272"/>
         <source>Symmetry:</source>
-        <translation>סימטרייה:</translation>
+        <translation>Symmetrie:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="273"/>
         <source>Algorithm:</source>
-        <translation>אלגוריתם:</translation>
+        <translation>Algoritme</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="274"/>
         <source>Seed:</source>
-        <translation>זרעים:</translation>
+        <translation>Startpunt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>Details</source>
-        <translation>פרטים</translation>
+        <translation>Details</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="302"/>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;סימטרייה:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;אלגוריתם:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;זרעים:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Symmetrie:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritme:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Startpunt:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="311"/>
         <source>Controls</source>
-        <translation>בקרים</translation>
+        <translation>Besturing</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="311"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse besturing:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Linkerklik:&lt;/b&gt; Schakel nummer in penmodus&lt;br&gt;&lt;b&gt;Rechterklik:&lt;/b&gt; Schakel nummer in potloodmodus &lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Verander het huidige nummer&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Toetsenbordbesturing:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Pijltjestoetsen:&lt;/b&gt; Verplaats selectie&lt;br&gt;&lt;b&gt;Numerieke toetsen:&lt;/b&gt; Schakel waarde of notitie&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Schakel tussen pen- en potloodmodus&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Markeer alle instanties van het huidige nummer&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="326"/>
         <source>About Simsu</source>
-        <translation>אודות Simsu</translation>
+        <translation>Over Simsu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="328"/>
         <source>A basic Sudoku game</source>
-        <translation>משחק סודוקו בסיסי</translation>
+        <translation>Een basis Sudoku spel</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="329"/>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="330"/>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>משוחרר תחת הרשיון &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Uitgegeven onder de &lt;a href=%1&gt;GPL 3&lt;/a&gt; licentie</translation>
     </message>
 </context>
 </TS>
