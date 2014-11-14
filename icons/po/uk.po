@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 17:10+0000\n"
+"POT-Creation-Date: 2014-11-14 20:55+0000\n"
 "PO-Revision-Date: 2014-11-14 17:11+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/simsu/language/"
@@ -19,11 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:3
+#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
+msgid "Simsu"
+msgstr ""
+
+#: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
 msgstr ""
 
-#: ../simsu.appdata.xml.in.h:2
+#: ../simsu.appdata.xml.in.h:3
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
@@ -31,10 +35,6 @@ msgid ""
 "also check your answers for correctness while playing. The game stores your "
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
-msgstr ""
-
-#: ../simsu.desktop.in.h:1
-msgid "Simsu"
 msgstr ""
 
 #: ../simsu.desktop.in.h:2

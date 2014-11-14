@@ -4,6 +4,13 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Simsu</name>
+  <name xml:lang="cs">Simsu</name>
+  <name xml:lang="de">Simsu</name>
+  <name xml:lang="el">Simsu</name>
+  <name xml:lang="ms">Simsu</name>
+  <name xml:lang="nl">Simsu</name>
+  <name xml:lang="pl">Simsu</name>
+  <name xml:lang="ro">Simsu</name>
   <summary>Fill in numbers to solve puzzles</summary>
   <description>
     <p>Simsu is a basic Sudoku game. You can switch between filling in notes (pencil mode), or filling in answers (pen mode). To make it easier to see where to place numbers, you can highlight all instances of a number. You can also check your answers for correctness while playing. The game stores your current notes and answers, so that you can pick up where you left off the next time you play.</p>
