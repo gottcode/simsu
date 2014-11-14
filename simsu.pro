@@ -65,11 +65,14 @@ macx {
 	desktop.path = $$PREFIX/share/applications/
 	desktop.files = icons/simsu.desktop
 
+	appdata.files = icons/simsu.appdata.xml
+	appdata.path = $$PREFIX/share/appdata/
+
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/simsu/translations
 
 	man.files = doc/simsu.6
 	man.path = $$PREFIX/share/man/man6
 
-	INSTALLS += target icon pixmap desktop qm man
+	INSTALLS += target icon pixmap desktop appdata qm man
 }
