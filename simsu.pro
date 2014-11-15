@@ -41,12 +41,14 @@ SOURCES = src/board.cpp \
 
 TRANSLATIONS = $$files(translations/simsu_*.ts)
 
-RESOURCES = icons/icon.qrc symmetry/symmetry.qrc
+RESOURCES = icons/images.qrc symmetry/symmetry.qrc
 macx {
 	ICON = icons/simsu.icns
 } else:win32 {
 	RC_FILE = icons/icon.rc
 } else:unix {
+	RESOURCES += icons/icon.qrc
+
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
 	}
