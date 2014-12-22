@@ -111,7 +111,7 @@ Board::Board(QWidget* parent) :
 		newPuzzle(seed, symmetry, algorithm, true);
 
 		// Load moves
-		foreach (const QString& move, moves) {
+		for (const QString& move : moves) {
 			if (move.length() == 4) {
 				m_notes_mode = (move[2] == 'n');
 				Cell* c = cell(move[0].digitValue(), move[1].digitValue());

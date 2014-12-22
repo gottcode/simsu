@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,8 @@
 
 #include <QResizeEvent>
 #include <QStyle>
+
+#include <algorithm>
 
 //-----------------------------------------------------------------------------
 
@@ -47,7 +49,7 @@ void Square::resizeEvent(QResizeEvent* event)
 	QWidget::resizeEvent(event);
 	if (m_child) {
 		QRect region = contentsRect();
-		int size = qMin(region.width(), region.height());
+		int size = std::min(region.width(), region.height());
 		QRect rect = QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, QSize(size, size), region);
 		m_child->setGeometry(rect);
 	}

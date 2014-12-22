@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -170,7 +170,7 @@ void Puzzle::createGivens()
 	QVector<int> values(m_pattern->count());
 	int count = values.count();
 	QList<QPoint> positions;
-	foreach (const QPoint& cell, cells) {
+	for (const QPoint& cell : cells) {
 		positions = m_pattern->pattern(cell);
 		for (int i = 0; i < count; ++i) {
 			QPoint pos = positions.at(i);
@@ -205,7 +205,7 @@ bool PuzzleDancingLinks::isUnique()
 		for (int c = 0; c < 9; ++c) {
 			int g = given(c, r);
 			QList<int> values = (g == 0) ? initial : (QList<int>() << g - 1);
-			foreach (int value, values) {
+			for (int value : values) {
 				matrix.addRow();
 				matrix.addElement(r * 9 + c);
 				matrix.addElement(r * 9 + value + 81);

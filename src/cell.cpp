@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,6 +29,8 @@
 #include <QSettings>
 #include <QSizePolicy>
 #include <QUndoStack>
+
+#include <algorithm>
 
 //-----------------------------------------------------------------------------
 
@@ -113,7 +115,7 @@ void Cell::setState(int state)
 	m_current_state = state;
 
 	// Check for conflicts
-	foreach (Cell* cell, m_conflicts) {
+	for (Cell* cell : m_conflicts) {
 		cell->m_conflicts.removeOne(this);
 		cell->update();
 	}
@@ -320,7 +322,7 @@ void Cell::paintEvent(QPaintEvent* event)
 
 void Cell::resizeEvent(QResizeEvent* event)
 {
-	int size = qMin(event->size().width(), event->size().height());
+	int size = std::min(event->size().width(), event->size().height());
 	if (cell_size != size) {
 		cell_size = size;
 		pen_size = size - 8;
