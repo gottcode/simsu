@@ -42,7 +42,7 @@ Puzzle::~Puzzle()
 
 void Puzzle::generate(unsigned int seed, int symmetry)
 {
-	srand(seed);
+	m_random.seed(seed);
 
 	delete m_pattern;
 	switch (symmetry) {
@@ -120,7 +120,7 @@ void Puzzle::createSolution()
 
 		m_solution[c][r] = 0;
 		QList<int>& cell = cells[i];
-		std::random_shuffle(cell.begin(), cell.end());
+		shuffleCell(cell);
 
 		forever {
 			// Backtrack if there are no possiblities
@@ -164,7 +164,7 @@ void Puzzle::createGivens()
 			cells.append(QPoint(c, r));
 		}
 	}
-	std::random_shuffle(cells.begin(), cells.end());
+	std::shuffle(cells.begin(), cells.end(), m_random);
 
 	// Remove as many givens as possible
 	QVector<int> values(m_pattern->count());
@@ -257,7 +257,7 @@ bool PuzzleSliceAndDice::isUnique()
 				QList<int>& cell = cells[c][r];
 				int count = cell.count();
 				if (count > 1) {
-					std::random_shuffle(cell.begin(), cell.end());
+					shuffleCell(cell);
 					done = false;
 				} else if (count == 1) {
 					int value = cell.first();

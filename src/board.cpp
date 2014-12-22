@@ -32,7 +32,7 @@
 #include <QSettings>
 #include <QUndoStack>
 
-#include <ctime>
+#include <random>
 
 //-----------------------------------------------------------------------------
 
@@ -157,16 +157,19 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 {
 	QSettings settings;
 
+	std::random_device rd;
+	std::mt19937 gen(rd());
 	if (seed <= 0) {
-		srand(time(0));
-		seed = rand();
+		std::uniform_int_distribution<int> dis(0, INT_MAX);
+		seed = dis(gen);
 	}
 
 	if (symmetry == -1) {
 		symmetry = settings.value("Symmetry", Pattern::Rotational180).toInt();
 	}
 	if (symmetry == Pattern::Random) {
-		symmetry = rand() % Pattern::Random;
+		std::uniform_int_distribution<int> dis(0, Pattern::Random - 1);
+		symmetry = dis(gen);
 	}
 
 	if (algorithm == -1) {

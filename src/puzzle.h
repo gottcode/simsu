@@ -25,6 +25,8 @@ class Pattern;
 #include <QList>
 #include <QPoint>
 
+#include <random>
+
 /**
  * Layout generator.
  *
@@ -74,6 +76,13 @@ public:
 		return m_solution[x][y];
 	}
 
+protected:
+	/** Randomly shuffle contents of a cell */
+	void shuffleCell(QList<int>& cell)
+	{
+		std::shuffle(cell.begin(), cell.end(), m_random);
+	}
+
 private:
 	/** Fills the board with unique values. */
 	void createSolution();
@@ -88,6 +97,7 @@ private:
 	int m_solution[9][9]; /**< board solution */
 	int m_givens[9][9]; /**< board givens */
 	Pattern* m_pattern; /**< the pattern used to lay out the givens */
+	std::mt19937 m_random; /**< random number generator */
 };
 
 /** Layout generator that uses Algorithm X. */
