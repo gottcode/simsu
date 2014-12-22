@@ -96,12 +96,12 @@ Window::Window()
 	Square* square = new Square(contents);
 	m_board = new Board(square);
 	square->setChild(m_board);
-	connect(m_board, SIGNAL(activeKeyChanged(int)), this, SLOT(activeKeyChanged(int)));
-	connect(m_board, SIGNAL(notesModeChanged(bool)), this, SLOT(notesModeChanged(bool)));
+	connect(m_board, &Board::activeKeyChanged, this, &Window::activeKeyChanged);
+	connect(m_board, &Board::notesModeChanged, this, &Window::notesModeChanged);
 
 	// Create mode buttons
 	m_mode_buttons = new QButtonGroup(this);
-	connect(m_mode_buttons, SIGNAL(buttonClicked(int)), m_board, SLOT(setMode(int)));
+	connect(m_mode_buttons, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), m_board, &Board::setMode);
 
 	QToolButton* pen_button = new SidebarButton(":/pen.png", tr("Pen"), contents);
 	m_mode_buttons->addButton(pen_button, 0);
@@ -114,7 +114,7 @@ Window::Window()
 	QToolButton* highlight_button = new SidebarButton(":/highlight.png", tr("Highlight"), contents);
 	m_sidebar_buttons.append(highlight_button);
 	highlight_button->setShortcut(tr("H"));
-	connect(highlight_button, SIGNAL(clicked(bool)), m_board, SLOT(setHighlightActive(bool)));
+	connect(highlight_button, &QToolButton::clicked, m_board, &Board::setHighlightActive);
 	if (settings.value("Highlight").toBool()) {
 		highlight_button->click();
 	}
@@ -134,7 +134,7 @@ Window::Window()
 	m_keys_layout->setMargin(0);
 
 	m_key_buttons = new QButtonGroup(this);
-	connect(m_key_buttons, SIGNAL(buttonClicked(int)), m_board, SLOT(setActiveKey(int)));
+	connect(m_key_buttons, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), m_board, &Board::setActiveKey);
 
 	for (int i = 1; i < 10; ++i) {
 		QToolButton* key = new QToolButton(this);
@@ -166,9 +166,9 @@ Window::Window()
 
 	menu = menuBar()->addMenu(tr("&Move"));
 	action = menu->addAction(tr("&Undo"), m_board->moves(), SLOT(undo()), QKeySequence::Undo);
-	connect(m_board->moves(), SIGNAL(canUndoChanged(bool)), action, SLOT(setEnabled(bool)));
+	connect(m_board->moves(), &QUndoStack::canUndoChanged, action, &QAction::setEnabled);
 	action = menu->addAction(tr("&Redo"), m_board->moves(), SLOT(redo()), QKeySequence::Redo);
-	connect(m_board->moves(), SIGNAL(canRedoChanged(bool)), action, SLOT(setEnabled(bool)));
+	connect(m_board->moves(), &QUndoStack::canRedoChanged, action, &QAction::setEnabled);
 	menu->addSeparator();
 	menu->addAction(tr("&Check"), m_board, SLOT(showWrong()), tr("C"));
 
@@ -176,11 +176,11 @@ Window::Window()
 	menu = menuBar()->addMenu(tr("&Settings"));
 	action = menu->addAction(tr("&Auto Switch Modes"));
 	action->setCheckable(true);
-	connect(action, SIGNAL(toggled(bool)), m_board, SLOT(setAutoSwitch(bool)));
+	connect(action, &QAction::toggled, m_board, &Board::setAutoSwitch);
 	action->setChecked(settings.value("AutoSwitch", true).toBool());
 	action = menu->addAction(tr("&Widescreen Layout"));
 	action->setCheckable(true);
-	connect(action, SIGNAL(toggled(bool)), this, SLOT(toggleWidescreen(bool)));
+	connect(action, &QAction::toggled, this, &Window::toggleWidescreen);
 	action->setChecked(settings.value("Widescreen").toBool());
 	menu->addSeparator();
 	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
@@ -251,7 +251,7 @@ void Window::newGame()
 		preview->addWidget(image);
 	}
 	preview->setCurrentIndex(0);
-	connect(symmetry_box, SIGNAL(currentIndexChanged(int)), preview, SLOT(setCurrentIndex(int)));
+	connect(symmetry_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), preview, &QStackedWidget::setCurrentIndex);
 	symmetry_box->setCurrentIndex(symmetry_box->findData(settings.value("Symmetry", Pattern::Rotational180).toInt()));
 
 	QComboBox* algorithm_box = new QComboBox(dialog);
@@ -264,8 +264,8 @@ void Window::newGame()
 	seed_box->setSpecialValueText(tr("Random"));
 
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, dialog);
-	connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
-	connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+	connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
+	connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
 
 	QFormLayout* contents_layout = new QFormLayout;
 	contents_layout->addRow(QString(), preview);
