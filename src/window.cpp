@@ -85,8 +85,6 @@ namespace
 
 Window::Window()
 {
-	setWindowTitle(tr("Simsu"));
-
 	QSettings settings;
 
 	QWidget* contents = new QWidget(this);

@@ -34,6 +34,7 @@ int main(int argc, char** argv)
 	QApplication app(argc, argv);
 	app.setApplicationName("Simsu");
 	app.setApplicationVersion(VERSIONSTR);
+	app.setApplicationDisplayName(Window::tr("Simsu"));
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MAC)
