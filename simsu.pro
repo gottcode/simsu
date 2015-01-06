@@ -6,15 +6,25 @@ TEMPLATE = app
 QT += widgets
 CONFIG += warn_on c++11
 
+# Allow in-tree builds
+!win32 {
+	MOC_DIR = build
+	OBJECTS_DIR = build
+	RCC_DIR = build
+}
+
+# Set program version
 VERSION = 1.2.3
 DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
+# Set program name
 unix: !macx {
 	TARGET = simsu
 } else {
 	TARGET = Simsu
 }
 
+# Specify program sources
 HEADERS = src/board.h \
 	src/cell.h \
 	src/dancing_links.h \
@@ -37,8 +47,10 @@ SOURCES = src/board.cpp \
 	src/square.cpp \
 	src/window.cpp
 
+# Allow for updating translations
 TRANSLATIONS = $$files(translations/simsu_*.ts)
 
+# Install program data
 RESOURCES = icons/images.qrc symmetry/symmetry.qrc
 macx {
 	ICON = icons/simsu.icns
