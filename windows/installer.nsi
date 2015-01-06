@@ -162,18 +162,6 @@ Section "install"
 	;Copy files
 	SetOutPath $INSTDIR
 	File ..\release\Simsu.exe
-	File $%QTDIR%\bin\icudt51.dll
-	File $%QTDIR%\bin\icuin51.dll
-	File $%QTDIR%\bin\icuuc51.dll
-	File $%QTDIR%\bin\libgcc_s_dw2-1.dll
-	File $%QTDIR%\bin\libstdc++-6.dll
-	File $%QTDIR%\bin\libwinpthread-1.dll
-	File $%QTDIR%\bin\Qt5Core.dll
-	File $%QTDIR%\bin\Qt5Gui.dll
-	File $%QTDIR%\bin\Qt5Widgets.dll
-
-	SetOutPath $INSTDIR\platforms
-	File $%QTDIR%\plugins\platforms\qwindows.dll
 
 	SetOutPath $INSTDIR\translations
 	File ..\translations\*.qm
@@ -247,8 +235,6 @@ Section "Uninstall"
 	;Remove files
 	Delete $INSTDIR\Simsu.exe
 	Delete $INSTDIR\ReadMe.txt
-	Delete $INSTDIR\*.dll
-	Delete $INSTDIR\platforms\qwindows.dll
 	Delete $INSTDIR\translations\*.qm
 	Delete $INSTDIR\Uninstall.exe
 
