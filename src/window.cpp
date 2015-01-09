@@ -239,7 +239,7 @@ void Window::newGame()
 		symmetry_box->addItem(Pattern::name(i), i);
 
 		QLabel* image = new QLabel(preview);
-		image->setPixmap(Pattern::icon(i));
+		image->setPixmap(QIcon(Pattern::icon(i)).pixmap(60, 60));
 		preview->addWidget(image);
 	}
 	preview->setCurrentIndex(0);
@@ -292,7 +292,7 @@ void Window::showDetails()
 	int seed = settings.value("Current/Seed").toInt();
 
 	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1<br><b>Algorithm:</b> %L2<br><b>Seed:</b> %L3</p>").arg(symmetry).arg(algorithm).arg(seed), QMessageBox::Ok, this);
-	details.setIconPixmap(icon);
+	details.setIconPixmap(QIcon(icon).pixmap(60, 60));
 	details.exec();
 }
 

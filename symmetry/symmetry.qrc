@@ -11,5 +11,17 @@
 	<file>rotational_180.png</file>
 	<file>rotational_full.png</file>
 	<file>vertical.png</file>
+
+	<file>anti_diagonal@2x.png</file>
+	<file>diagonal_anti_diagonal@2x.png</file>
+	<file>diagonal@2x.png</file>
+	<file>dihedral@2x.png</file>
+	<file>horizontal@2x.png</file>
+	<file>horizontal_vertical@2x.png</file>
+	<file>none@2x.png</file>
+	<file>random@2x.png</file>
+	<file>rotational_180@2x.png</file>
+	<file>rotational_full@2x.png</file>
+	<file>vertical@2x.png</file>
 </qresource>
 </RCC>

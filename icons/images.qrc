@@ -3,5 +3,9 @@
 	<file>highlight.png</file>
 	<file>pen.png</file>
 	<file>pencil.png</file>
+
+	<file>highlight@2x.png</file>
+	<file>pen@2x.png</file>
+	<file>pencil@2x.png</file>
 </qresource>
 </RCC>
