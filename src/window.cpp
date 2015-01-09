@@ -170,7 +170,6 @@ Window::Window()
 	menu->addSeparator();
 	menu->addAction(tr("&Check"), m_board, SLOT(showWrong()), tr("C"));
 
-#ifndef Q_WS_HILDON
 	menu = menuBar()->addMenu(tr("&Settings"));
 	action = menu->addAction(tr("&Auto Switch Modes"));
 	action->setCheckable(true);
@@ -186,12 +185,7 @@ Window::Window()
 	menu = menuBar()->addMenu(tr("&Help"));
 	menu->addAction(tr("&Controls"), this, SLOT(showControls()), QKeySequence::HelpContents);
 	menu->addSeparator();
-#else
-	m_board->setAutoSwitch(false);
-	toggleWidescreen(true);
 
-	menu = menuBar()->addMenu(tr("&Help"));
-#endif
 	action = menu->addAction(tr("&About"), this, SLOT(about()));
 	action->setMenuRole(QAction::AboutRole);
 	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
