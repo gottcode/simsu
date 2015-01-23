@@ -3,8 +3,8 @@
 
 !define APPNAME "Simsu"
 !define VERSIONMAJOR 1
-!define VERSIONMINOR 2
-!define VERSIONPATCH 3
+!define VERSIONMINOR 3
+!define VERSIONPATCH 0
 !define APPVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONPATCH}"
 !define ABOUTURL "http://gottcode.org/simsu/"
 

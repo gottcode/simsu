@@ -1,3 +1,11 @@
+1.3.0
+-----
+* Added support for high DPI displays.
+* Switched to C++11 random classes.
+* Removed support for Qt 4.
+* Translation updates: Bulgarian, Czech, German, Greek, French, Lithuanian,
+  Malay, Polish, Romanian, Spanish (Chile), Turkish.
+
 1.2.3
 -----
 * Added support for Qt 5.
