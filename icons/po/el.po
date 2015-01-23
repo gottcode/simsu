@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Γιάννης Ανθυμίδης <yannanth@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-12-30 13:29+0000\n"
+"Last-Translator: Γιάννης Ανθυμίδης <yannanth@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/simsu/language/"
 "el/)\n"
 "Language: el\n"
@@ -24,7 +25,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Συμπληρώστε τους αριθμούς για να λύσετε τους γρίφους"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +36,13 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Το Simsu είναι βασικό πρόγραμμα για το παιχνίδι Σουντόκου. Μπορείτε να "
+"αλλάξετε μεταξύ λειτουργίες σημείωσης (με το μολύβι) και συμπλήρωσης (με το "
+"στυλό). Για να βλέπετε πιο εύκολα που μπορείτε να βάλετε αριθμούς, μπορείτε "
+"να επισημάνετε όλες τις παρουσίες ενός αριθμού. Μπορείτε επίσης να ελέγξτε "
+"τη λύση σας για ορθότητα όσο παίζετε με τον υπολογιστή. Το παιχνίδι "
+"αποθηκεύει τις σημειώσεις σας και αριθμούς, ώστε να μπορείτε να συνεχίσετε "
+"από εκεί που αφήσατε το παιχνίδι την επόμενη φορά που παίζεται Σουντόκου."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"

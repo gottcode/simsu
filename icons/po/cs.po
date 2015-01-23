@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# fri, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-12-28 09:30+0000\n"
+"Last-Translator: fri\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/simsu/language/"
 "cs/)\n"
 "Language: cs\n"
@@ -24,7 +25,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Vyplňte čísla a vyřešte hádanku"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""

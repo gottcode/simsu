@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# abuyop <abuyop@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-29 05:33+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (Malaysia) (http://www.transifex.com/projects/p/simsu/"
 "language/ms_MY/)\n"
 "Language: ms\n"
@@ -24,7 +25,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Isikan nombor untuk menyelesaikan teka-teki"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +36,12 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Simsu merupakan permainan Sudoku asas. Anda boleh tukar diantara mengisi "
+"dalam bentuk nota (mod pensel), atau mengisi jawapan (mod pen). Untuk "
+"memudahkan dimana nombor diletakkan, anda boleh sorotkan semua kejadian "
+"nombor tersebut. Anda juga boleh memeriksa jawapan sama ada betul atau "
+"sebaliknya ketika bermain. Permainan akan menyimpan nota semasa dan jawapan "
+"sekali, supaya anda dapat mula kembali pada tempat yang sama dilain masa."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"

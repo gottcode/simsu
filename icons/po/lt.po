@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Moo, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-15 15:55+0000\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/simsu/"
 "language/lt/)\n"
 "Language: lt\n"
@@ -21,11 +22,11 @@ msgstr ""
 
 #: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
 msgid "Simsu"
-msgstr ""
+msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Irašykite skaičius, kad išspręstumėte dėlionę"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -36,7 +37,14 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Simsu yra paprastas Sudoku žaidimas. Galite perjungti tarp užrašų pildymo "
+"(pieštuko veiksenos) arba atsakymų pildymo (tušinuko veiksenos). Kad būtų "
+"lengviau matoma, kur įrašyti skaičius, galite paryškinti tam tikro skaičiaus "
+"visus egzempliorius. Taip pat žaisdami, galite tikrinti ar jūsų įrašyti "
+"atsakymai yra teisingi. Žaidimas saugo jūsų dabartinius užrašus ir "
+"atsakymus, taigi kitą kartą galėsite tęsti žaidimą nuo tos vietos, kur "
+"užbaigėte anksčiau."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
-msgstr ""
+msgstr "Sudoku Žaidimas"

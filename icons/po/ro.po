@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Oprea Nicolae <jaff2002@yahoo.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-01-21 22:16+0000\n"
+"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/simsu/language/"
 "ro/)\n"
 "Language: ro\n"
@@ -25,7 +26,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Completaţi cu numere pentru a rezolva puzzle-uri"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -36,6 +37,13 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Simsu este un joc de bază Sudoku. Puteți comuta între completarea notelor "
+"(modul creion), sau completarea răspunsurilor (modul stilou). Pentru a vedea "
+"mai uşor unde să plaseze numere, puteţi evidenția toate instanţele unui "
+"număr. Puteţi verifica, de asemenea, răspunsurile dumneavoastră pentru "
+"corectitudine în timpul jocului. Jocul stochează notele curente și "
+"răspunsurile, astfel încît să puteți contunua de unde aţi rămas data "
+"viitoare cînd jucaţi."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
