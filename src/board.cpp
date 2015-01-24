@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@
 #include <QSettings>
 #include <QUndoStack>
 
+#include <ctime>
 #include <random>
 
 //-----------------------------------------------------------------------------
@@ -157,10 +158,14 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 {
 	QSettings settings;
 
+#ifndef Q_OS_WIN
 	std::random_device rd;
 	std::mt19937 gen(rd());
+#else
+	std::mt19937 gen(time(0));
+#endif
 	if (seed <= 0) {
-		std::uniform_int_distribution<int> dis(0, INT_MAX);
+		std::uniform_int_distribution<int> dis;
 		seed = dis(gen);
 	}
 
