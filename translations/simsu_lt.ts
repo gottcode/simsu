@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="80"/>
-        <location filename="../src/board.cpp" line="95"/>
+        <location filename="../src/board.cpp" line="81"/>
+        <location filename="../src/board.cpp" line="96"/>
         <source>Success</source>
         <translation>Sėkmė</translation>
     </message>
@@ -23,12 +23,12 @@
         <translation>&lt;Sistemos Kalba&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Note</source>
         <translation>Pastaba</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Kad įsigaliotų kalbos pakeitimai, prašome paleisti programą iš naujo.</translation>
     </message>
@@ -264,7 +264,7 @@
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Pele:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Kairiojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių tušinuko veiksenoje&lt;br&gt;&lt;b&gt;Dešiniojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių pieštuko veiksenoje&lt;br&gt;&lt;b&gt;Slinkimo ratukas:&lt;/b&gt; Keičia dabartinį skaičių&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Klaviatūra:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Krypties klavišai:&lt;/b&gt; Perkelia pasirinkimą&lt;br&gt;&lt;b&gt;Skaičių klavišai:&lt;/b&gt; Perjungia atsakymo arba užrašo reikšmes&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Perjungia tarp tušinuko ir pieštuko veiksenos&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Paryškina visus esamo skaičiaus egzempliorius&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Pėle:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Kairiojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių tušinuko veiksenoje&lt;br&gt;&lt;b&gt;Dešiniojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių pieštuko veiksenoje&lt;br&gt;&lt;b&gt;Slinkimo ratukas:&lt;/b&gt; Keičia dabartinį skaičių&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Klaviatūra:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Krypties klavišai:&lt;/b&gt; Perkelia pasirinkimą&lt;br&gt;&lt;b&gt;Skaičių klavišai:&lt;/b&gt; Perjungia atsakymo arba užrašo reikšmes&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Perjungia tarp tušinuko ir pieštuko veiksenos&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Paryškina visus esamo skaičiaus egzempliorius&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="318"/>

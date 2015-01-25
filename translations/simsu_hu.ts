@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="80"/>
-        <location filename="../src/board.cpp" line="95"/>
+        <location filename="../src/board.cpp" line="81"/>
+        <location filename="../src/board.cpp" line="96"/>
         <source>Success</source>
         <translation>Kész!</translation>
     </message>
@@ -23,12 +23,12 @@
         <translation>&lt;op. rendszer nyelve&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Note</source>
         <translation>megjegyzés</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Indítsd újra a programot, hogy a felület nyelve megváltozzon!</translation>
     </message>

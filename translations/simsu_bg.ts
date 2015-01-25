@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="80"/>
-        <location filename="../src/board.cpp" line="95"/>
+        <location filename="../src/board.cpp" line="81"/>
+        <location filename="../src/board.cpp" line="96"/>
         <source>Success</source>
         <translation>Успех</translation>
     </message>
@@ -23,12 +23,12 @@
         <translation>&lt;Системен език&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Note</source>
         <translation>Бележка</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="172"/>
+        <location filename="../src/locale_dialog.cpp" line="175"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Моля, рестартирайте приложението за да влезе в сила промяната на езика.</translation>
     </message>
