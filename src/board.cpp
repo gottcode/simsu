@@ -80,7 +80,9 @@ Board::Board(QWidget* parent) :
 	QFontMetrics metrics(QFont("Sans", 24));
 	int width = metrics.width(tr("Success"));
 	int height = metrics.height();
-	QPixmap success(QSize(width + height, height * 2));
+	int ratio = devicePixelRatio();
+	QPixmap success(QSize(width + height, height * 2) * ratio);
+	success.setDevicePixelRatio(ratio);
 	success.fill(QColor(0, 0, 0, 0));
 	{
 		QPainter painter(&success);
