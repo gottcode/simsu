@@ -300,6 +300,7 @@ void Cell::mousePressEvent(QMouseEvent* event)
 void Cell::paintEvent(QPaintEvent* event)
 {
 	setHighlight(m_board->highlightActive() && m_states[m_current_state].value == m_board->activeKey());
+	setHighlightMid(m_board->highlightActive() && m_states[m_current_state].notes[m_board->activeKey() - 1]);
 	Frame::paintEvent(event);
 
 	QPainter painter(this);

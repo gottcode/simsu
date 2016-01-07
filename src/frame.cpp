@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,8 @@ Frame::Frame(QWidget* parent) :
 	QWidget(parent),
 	m_highlight(false),
 	m_highlight_border(false),
-	m_highlight_partial(false)
+	m_highlight_partial(false),
+	m_highlight_mid(false)
 {
 }
 
@@ -40,19 +41,21 @@ void Frame::paintEvent(QPaintEvent* event)
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing, true);
 
-	painter.setPen(QPen(palette().dark().color(), 0));
+	QColor background = palette().highlight().color();
+
+	painter.setPen(QPen((m_highlight || m_highlight_mid) ? background : palette().dark().color(), 0));
 	painter.setBrush(palette().color(backgroundRole()));
 	painter.drawRoundedRect(QRectF(0.5, 0.5, width() - 1, height() - 1), 3, 3);
 
 	if (m_highlight) {
-		painter.setPen(QPen(palette().dark().color(), 0));
-		QColor background = palette().highlight().color();
 		background.setAlphaF(0.5);
 		painter.setBrush(background);
 		painter.drawRoundedRect(QRectF(0.5, 0.5, width() - 1, height() - 1), 3, 3);
+	} else if (m_highlight_mid) {
+		background.setAlphaF(0.3);
+		painter.setBrush(background);
+		painter.drawRoundedRect(QRectF(0.5, 0.5, width() - 1, height() - 1), 3, 3);
 	} else if (m_highlight_partial) {
-		painter.setPen(QPen(palette().dark().color(), 0));
-		QColor background = palette().highlight().color();
 		background.setAlphaF(0.1);
 		painter.setBrush(background);
 		painter.drawRoundedRect(QRectF(0.5, 0.5, width() - 1, height() - 1), 3, 3);

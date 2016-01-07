@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,10 +55,17 @@ protected:
 		m_highlight_partial = highlight;
 	}
 
+	/** Sets whether or not background should be drawn in partial highlight. */
+	void setHighlightMid(bool mid)
+	{
+		m_highlight_mid = mid;
+	}
+
 private:
 	bool m_highlight; /**< tracks if background should be drawn highlighted */
 	bool m_highlight_border; /**< tracks if border should be drawn highlighted */
 	bool m_highlight_partial; /**< tracks if background should be drawn only partially highlighted */
+	bool m_highlight_mid; /**< tracks if background should be drawn mid highlighted */
 };
 
 #endif // SIMSU_FRAME_H
