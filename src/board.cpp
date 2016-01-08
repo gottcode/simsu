@@ -152,6 +152,7 @@ Board::~Board()
 		}
 		settings.setValue("Current/Moves", moves);
 		settings.setValue("Current/Active", QString("%1x%2").arg(m_active_cell->column()).arg(m_active_cell->row()));
+		settings.setValue("Key", m_active_key);
 	} else {
 		settings.remove("Current");
 	}
@@ -307,7 +308,6 @@ void Board::increaseKeyCount(int key)
 void Board::setActiveKey(int key)
 {
 	m_active_key = qBound(1, key, 10);
-	QSettings().setValue("Key", m_active_key);
 	update();
 	emit activeKeyChanged(m_active_key);
 }
