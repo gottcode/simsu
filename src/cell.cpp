@@ -26,7 +26,6 @@
 #include <QKeyEvent>
 #include <QPainter>
 #include <QResizeEvent>
-#include <QSettings>
 #include <QSizePolicy>
 #include <QUndoStack>
 
@@ -60,7 +59,20 @@ Cell::Cell(int column, int row, Board* board, QWidget* parent) :
 	setFocusPolicy(Qt::StrongFocus);
 	setForegroundRole(QPalette::Text);
 	setMinimumSize(35, 35);
-	setMouseTracking(true);
+}
+
+//-----------------------------------------------------------------------------
+
+int Cell::column() const
+{
+	return m_column;
+}
+
+//-----------------------------------------------------------------------------
+
+int Cell::row() const
+{
+	return m_row;
 }
 
 //-----------------------------------------------------------------------------
@@ -159,7 +171,8 @@ void Cell::showWrong(bool show)
 
 void Cell::focusInEvent(QFocusEvent* event)
 {
-	QSettings().setValue("Current/Active", QString("%1x%2").arg(m_column).arg(m_row));
+	m_board->setActiveCell(this);
+
 	if (!m_given) {
 		setBackgroundRole(QPalette::Highlight);
 		setForegroundRole(QPalette::HighlightedText);
@@ -255,12 +268,10 @@ void Cell::keyPressEvent(QKeyEvent* event)
 
 //-----------------------------------------------------------------------------
 
-void Cell::mouseMoveEvent(QMouseEvent* event)
+void Cell::enterEvent(QEvent* event)
 {
-	if (!hasFocus()) {
-		setFocus();
-	}
-	Frame::mouseMoveEvent(event);
+	setFocus();
+	Frame::enterEvent(event);
 }
 
 //-----------------------------------------------------------------------------

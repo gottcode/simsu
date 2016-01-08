@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@ Board::Board(QWidget* parent) :
 	Frame(parent),
 	m_puzzle(0),
 	m_active_key(1),
+	m_active_cell(0),
 	m_auto_switch(true),
 	m_highlight_active(false),
 	m_notes_mode(false),
@@ -129,7 +130,8 @@ Board::Board(QWidget* parent) :
 		if (settings.contains("Current/Active")) {
 			QStringList cell = settings.value("Current/Active").toString().split('x');
 			if (cell.count() == 2) {
-				m_cells[cell[0].toInt()][cell[1].toInt()]->setFocus();
+				m_active_cell = m_cells[qBound(0, cell[0].toInt(), 8)][qBound(0, cell[1].toInt(), 8)];
+				m_active_cell->setFocus();
 			}
 		}
 	} else {
@@ -141,15 +143,17 @@ Board::Board(QWidget* parent) :
 
 Board::~Board()
 {
+	QSettings settings;
 	if (!m_finished) {
 		QStringList moves;
 		int count = m_moves->index();
 		for (int i = 0; i < count; ++i) {
 			moves += m_moves->text(i);
 		}
-		QSettings().setValue("Current/Moves", moves);
+		settings.setValue("Current/Moves", moves);
+		settings.setValue("Current/Active", QString("%1x%2").arg(m_active_cell->column()).arg(m_active_cell->row()));
 	} else {
-		QSettings().remove("Current");
+		settings.remove("Current");
 	}
 	delete m_puzzle;
 }
@@ -306,6 +310,13 @@ void Board::setActiveKey(int key)
 	QSettings().setValue("Key", m_active_key);
 	update();
 	emit activeKeyChanged(m_active_key);
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::setActiveCell(Cell* cell)
+{
+	m_active_cell = cell;
 }
 
 //-----------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2011, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -165,6 +165,13 @@ public slots:
 	void setActiveKey(int key);
 
 	/**
+	 * Set which cell is currently active.
+	 *
+	 * @param cell the current cell
+	 */
+	void setActiveCell(Cell* cell);
+
+	/**
 	 * Sets if it should automatically switch between answers and notes mode.
 	 *
 	 * @param auto_switch if @c true enables auto-switching
@@ -205,6 +212,7 @@ private:
 	int m_key_count[9]; /**< how many instances of each key are on the board */
 	Puzzle* m_puzzle; /**< the algorithm used to generate the board */
 	int m_active_key; /**< the current key */
+	Cell* m_active_cell; /**< the current cell */
 	bool m_auto_switch; /**< auto-switching is enabled */
 	bool m_highlight_active; /**< tracks if all instances of the current key should be highlighted */
 	bool m_notes_mode; /**< tracks if in notes mode */

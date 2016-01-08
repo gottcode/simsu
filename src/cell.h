@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,6 +45,12 @@ public:
 	 */
 	Cell(int column, int row, Board* board, QWidget* parent = 0);
 
+	/** @return column of cell. */
+	int column() const;
+
+	/** @return row of cell. */
+	int row() const;
+
 	/** Returns @c true if cell is correct value; @c false otherwise. */
 	bool isCorrect() const;
 
@@ -77,7 +83,7 @@ protected:
 	void keyPressEvent(QKeyEvent* event);
 
 	/** Override parent function to make sure cell has focus highlight. */
-	void mouseMoveEvent(QMouseEvent* event);
+	void enterEvent(QEvent* event);
 
 	/** Override parent function to handle inputting a guess. */
 	void mousePressEvent(QMouseEvent* event);
