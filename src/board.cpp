@@ -104,7 +104,7 @@ Board::Board(QWidget* parent) :
 
 	// Load current puzzle
 	QSettings settings;
-	if (settings.value("Current/Version", 0).toInt() != 4) {
+	if (settings.value("Current/Version", 0).toInt() != 5) {
 		settings.remove("Current");
 	}
 	int seed = settings.value("Current/Seed", 0).toInt();
@@ -190,7 +190,7 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 
 	if (!load) {
 		settings.remove("Current");
-		settings.setValue("Current/Version", 4);
+		settings.setValue("Current/Version", 5);
 		settings.setValue("Current/Seed", seed);
 		settings.setValue("Current/Symmetry", symmetry);
 		settings.setValue("Current/Algorithm", algorithm);
