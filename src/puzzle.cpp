@@ -23,6 +23,7 @@
 #include "pattern.h"
 
 #include <algorithm>
+#include <array>
 
 //-----------------------------------------------------------------------------
 
@@ -98,29 +99,28 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 void Puzzle::createSolution()
 {
 	// Create list of initial values
-	QList<int> initial;
-	for (int i = 1; i < 10; ++i) {
-		initial.append(i);
-	}
+	static const QVector<int> initial{1,2,3,4,5,6,7,8,9};
+	std::array<QVector<int>, 81> cells;
+	cells.fill(initial);
 
-	QList< QList<int> > cells;
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			m_solution[c][r] = 0;
-			cells.append(initial);
-		}
+	// Reset solution grid
+	for (int i = 0; i < 81; ++i) {
+		m_solution[i] = 0;
 	}
 
 	// Fill solution grid
 	for (int i = 0; i < 81; ++i) {
 		const unsigned int r = i / 9;
-		const unsigned int c = i - (r * 9);
+		const unsigned int c = i % 9;
 		const unsigned int box_row = (r / 3) * 3;
 		const unsigned int box_col = (c / 3) * 3;
 
-		m_solution[c][r] = 0;
-		QList<int>& cell = cells[i];
-		shuffleCell(cell);
+		// Reset cell in case of backtrack
+		m_solution[i] = 0;
+
+		QVector<int>& cell = cells[i];
+		std::shuffle(cell.begin(), cell.end(), m_random);
+
 		forever {
 			// Backtrack if there are no possiblities
 			if (cell.isEmpty()) {
@@ -135,16 +135,16 @@ void Puzzle::createSolution()
 			// Check for conflicts
 			bool conflicts = false;
 			for (unsigned int j = 0; j < 9; ++j) {
-				conflicts |= (m_solution[j][r] == value);
-				conflicts |= (m_solution[c][j] == value);
+				conflicts |= (m_solution[j + (r * 9)] == value);
+				conflicts |= (m_solution[c + (j * 9)] == value);
 			}
 			for (unsigned int row = box_row; row < box_row + 3; ++row) {
 				for (unsigned int col = box_col; col < box_col + 3; ++col) {
-					conflicts |= (m_solution[col][row] == value);
+					conflicts |= (m_solution[col + (row * 9)] == value);
 				}
 			}
 			if (!conflicts) {
-				m_solution[c][r] = value;
+				m_solution[i] = value;
 				break;
 			}
 		}
@@ -159,7 +159,7 @@ void Puzzle::createGivens()
 	QList<QPoint> cells;
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
-			m_givens[c][r] = m_solution[c][r];
+			m_givens[c][r] = m_solution[c + (r * 9)];
 			cells.append(QPoint(c, r));
 		}
 	}

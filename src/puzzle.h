@@ -71,9 +71,11 @@ public:
 	 */
 	int value(int x, int y) const
 	{
-		x = qBound(0, x, 9);
-		y = qBound(0, y, 9);
-		return m_solution[x][y];
+		Q_ASSERT(x >= 0);
+		Q_ASSERT(x < 9 );
+		Q_ASSERT(y >= 0);
+		Q_ASSERT(y < 9);
+		return m_solution[x + (y * 9)];
 	}
 
 protected:
@@ -94,7 +96,7 @@ private:
 	virtual bool isUnique() = 0;
 
 private:
-	int m_solution[9][9]; /**< board solution */
+	int m_solution[81]; /**< board solution */
 	int m_givens[9][9]; /**< board givens */
 	Pattern* m_pattern; /**< the pattern used to lay out the givens */
 	std::mt19937 m_random; /**< random number generator */
