@@ -21,8 +21,10 @@
 
 //-----------------------------------------------------------------------------
 
-DLX::Matrix::Matrix(unsigned int max_columns) :
+DLX::Matrix::Matrix(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row) :
 	m_max_columns(max_columns),
+	m_max_rows(max_rows),
+	m_max_nodes(max_rows * elements_per_row),
 	m_columns(max_columns),
 	m_output(max_columns),
 	m_solutions(0),
@@ -42,6 +44,9 @@ DLX::Matrix::Matrix(unsigned int max_columns) :
 		node = column;
 	}
 	node->right = m_header;
+
+	m_rows.reserve(m_max_rows);
+	m_nodes.reserve(m_max_nodes);
 }
 
 //-----------------------------------------------------------------------------
@@ -53,10 +58,11 @@ DLX::Matrix::~Matrix()
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::addRow()
+void DLX::Matrix::addRow(unsigned int id)
 {
-	m_rows.push_back(HeaderNode());
+	m_rows.append(HeaderNode());
 	HeaderNode* row = &m_rows.back();
+	row->id = id;
 	row->left = row->right = row->up = row->down = row->column = row;
 }
 
@@ -65,11 +71,12 @@ void DLX::Matrix::addRow()
 void DLX::Matrix::addElement(unsigned int c)
 {
 	Q_ASSERT(c < m_max_columns);
+	Q_ASSERT(m_nodes.size() < m_max_nodes);
 
 	HeaderNode* column = &m_columns[c];
 	HeaderNode* row = &m_rows.back();
 
-	m_nodes.push_back(Node());
+	m_nodes.append(Node());
 	Node* node = &m_nodes.back();
 
 	node->left = row->left;
@@ -83,6 +90,7 @@ void DLX::Matrix::addElement(unsigned int c)
 	column->up = node;
 
 	node->column = column;
+	node->row = row;
 
 	column->size++;
 }

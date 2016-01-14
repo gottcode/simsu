@@ -194,22 +194,24 @@ void Puzzle::createGivens()
 
 bool PuzzleDancingLinks::isUnique()
 {
-	QList<int> initial;
-	for (int i = 0; i < 9; ++i) {
-		initial.append(i);
-	}
-
-	DLX::Matrix matrix(324);
+	DLX::Matrix matrix(324, 729, 4);
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
-			int g = given(c, r);
-			QList<int> values = (g == 0) ? initial : (QList<int>() << g - 1);
-			for (int value : values) {
-				matrix.addRow();
+			const int g = given(c, r);
+			if (!g) {
+				for (int i = 0; i < 9; ++i) {
+					matrix.addRow((c << 8) | (r << 4) | (i + 1));
+					matrix.addElement(r * 9 + c);
+					matrix.addElement(r * 9 + i + 81);
+					matrix.addElement(c * 9 + i + 162);
+					matrix.addElement((3 * (r / 3) + (c / 3)) * 9 + i + 243);
+				}
+			} else {
+				matrix.addRow((c << 8) | (r << 4) | g);
 				matrix.addElement(r * 9 + c);
-				matrix.addElement(r * 9 + value + 81);
-				matrix.addElement(c * 9 + value + 162);
-				matrix.addElement((3 * (r / 3) + (c / 3)) * 9 + value + 243);
+				matrix.addElement(r * 9 + (g - 1) + 81);
+				matrix.addElement(c * 9 + (g - 1) + 162);
+				matrix.addElement((3 * (r / 3) + (c / 3)) * 9 + (g - 1) + 243);
 			}
 		}
 	}

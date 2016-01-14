@@ -22,8 +22,6 @@
 
 #include <QVector>
 
-#include <list>
-
 /**
  * Dancing Links implementation of Algorithm X.
  *
@@ -60,6 +58,7 @@ struct Node
 	Node* up; /**< node above with value of 1 */
 	Node* down; /**< node below with value of 1 */
 	HeaderNode* column; /**< column containing this node */
+	HeaderNode* row; /**< row containing this node */
 };
 
 /** Head node of column or row in matrix. */
@@ -81,13 +80,13 @@ class Matrix
 {
 public:
 	/** Constructs a matrix with @p max_columns number of columns. */
-	Matrix(unsigned int max_columns);
+	Matrix(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row);
 
 	/** Clean up matrix. */
 	~Matrix();
 
 	/** Add row to matrix. */
-	void addRow();
+	void addRow(unsigned int id);
 
 	/**
 	 * Add element to matrix.
@@ -129,12 +128,14 @@ private:
 	void uncover(HeaderNode* node);
 
 private:
-	unsigned int m_max_columns; /**< amount of constraints */
+	const unsigned int m_max_columns; /**< amount of constraints */
+	const unsigned int m_max_rows; /**< amount of choices */
+	const unsigned int m_max_nodes; /**< amount of nodes */
 
 	HeaderNode* m_header; /**< root element */
 	QVector<HeaderNode> m_columns; /**< constraints */
-	std::list<HeaderNode> m_rows; /**< rows */
-	std::list<Node> m_nodes; /**< row values */
+	QVector<HeaderNode> m_rows; /**< rows */
+	QVector<Node> m_nodes; /**< row values */
 	QVector<Node*> m_output; /**< rows where columns do not conflict */
 
 	unsigned int m_solutions; /**< how many solutions have been found so far */
