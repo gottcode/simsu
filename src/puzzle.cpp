@@ -23,7 +23,6 @@
 #include "pattern.h"
 
 #include <algorithm>
-#include <array>
 
 //-----------------------------------------------------------------------------
 
@@ -102,9 +101,7 @@ void Puzzle::createSolution()
 	cells.fill(initial);
 
 	// Reset solution grid
-	for (int i = 0; i < 81; ++i) {
-		m_solution[i] = 0;
-	}
+	m_solution.fill(0);
 
 	// Fill solution grid
 	for (int i = 0; i < 81; ++i) {
@@ -153,11 +150,13 @@ void Puzzle::createSolution()
 
 void Puzzle::createGivens()
 {
+	// Initialize givens
+	m_givens = m_solution;
+
 	// Initialize cells
 	std::array<int, 81> cells;
 	for (int i = 0; i < 81; ++i) {
 		cells[i] = i;
-		m_givens[i] = m_solution[i];
 	}
 	std::shuffle(cells.begin(), cells.end(), m_random);
 

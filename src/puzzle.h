@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@ class Pattern;
 #include <QList>
 #include <QPoint>
 
+#include <array>
 #include <random>
 
 /**
@@ -98,8 +99,8 @@ private:
 	virtual bool isUnique() = 0;
 
 private:
-	int m_solution[81]; /**< board solution */
-	int m_givens[81]; /**< board givens */
+	std::array<int, 81> m_solution; /**< board solution */
+	std::array<int, 81> m_givens; /**< board givens */
 	Pattern* m_pattern; /**< the pattern used to lay out the givens */
 	std::mt19937 m_random; /**< random number generator */
 };
