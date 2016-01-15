@@ -92,6 +92,13 @@ public:
 	 */
 	bool solvePuzzle(const Puzzle* puzzle);
 
+	/**
+	 * Retrieve solution.
+	 *
+	 * @return last solution found as 2D array
+	 */
+	std::array<int, 81> solution() const;
+
 private:
 	/** Set to initial values. */
 	void init();
@@ -138,6 +145,7 @@ private:
 	QVector<HeaderNode> m_rows; /**< rows */
 	QVector<Node> m_nodes; /**< row values */
 	QVector<Node*> m_output; /**< rows where columns do not conflict */
+	std::array<Node*, 81> m_solution; /**< nodes of most recent solution */
 
 	unsigned int m_solutions; /**< how many solutions have been found so far */
 	unsigned int m_tries; /**< how many attempts have been made so far */

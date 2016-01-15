@@ -52,6 +52,7 @@ bool SolverDLX::solvePuzzle(const Puzzle* puzzle)
 		m_output.clear();
 		m_rows.clear();
 		m_nodes.clear();
+		m_solution.fill(nullptr);
 		delete m_header;
 
 		m_columns.resize(m_max_columns);
@@ -88,6 +89,29 @@ bool SolverDLX::solvePuzzle(const Puzzle* puzzle)
 
 	solve(0);
 	return m_solutions == 1;
+}
+
+//-----------------------------------------------------------------------------
+
+std::array<int, 81> SolverDLX::solution() const
+{
+	std::array<int, 81> result;
+
+	// Return null solution array if invalid
+	if (m_solution.front() == nullptr) {
+		result.fill(0);
+		return result;
+	}
+
+	// Copy values to solution array
+	for (int i = 0; i < 81; ++i) {
+		const int id = m_solution[i]->row->id;
+		const int c = (id >> 8) & 0xF;
+		const int r = (id >> 4) & 0xF;
+		const int v = id & 0xF;
+		result[c + (r * 9)] = v;
+	}
+	return result;
 }
 
 //-----------------------------------------------------------------------------
@@ -159,6 +183,7 @@ void SolverDLX::solve(unsigned int k)
 	// If matrix is empty a solution has been found.
 	if (m_header->right == m_header) {
 		++m_solutions;
+		std::copy(m_output.cbegin(), m_output.cbegin() + 81, m_solution.begin());
 		return;
 	}
 
