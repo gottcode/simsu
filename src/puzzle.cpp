@@ -168,7 +168,7 @@ void Puzzle::createGivens()
 	// Remove as many givens as possible
 	QVector<int> values(m_pattern->count());
 	int count = values.count();
-	QList<QPoint> positions;
+	QVector<QPoint> positions;
 	for (const QPoint& cell : cells) {
 		positions = m_pattern->pattern(cell);
 		for (int i = 0; i < count; ++i) {
