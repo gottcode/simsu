@@ -17,11 +17,11 @@
  *
  ***********************************************************************/
 
-#include "dancing_links.h"
+#include "solver_dlx.h"
 
 //-----------------------------------------------------------------------------
 
-DLX::Matrix::Matrix(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row) :
+SolverDLX::SolverDLX(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row) :
 	m_max_columns(max_columns),
 	m_max_rows(max_rows),
 	m_max_nodes(max_rows * elements_per_row),
@@ -51,14 +51,14 @@ DLX::Matrix::Matrix(unsigned int max_columns, unsigned int max_rows, unsigned in
 
 //-----------------------------------------------------------------------------
 
-DLX::Matrix::~Matrix()
+SolverDLX::~SolverDLX()
 {
 	delete m_header;
 }
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::addRow(unsigned int id)
+void SolverDLX::addRow(unsigned int id)
 {
 	m_rows.append(HeaderNode());
 	HeaderNode* row = &m_rows.back();
@@ -68,7 +68,7 @@ void DLX::Matrix::addRow(unsigned int id)
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::addElement(unsigned int c)
+void SolverDLX::addElement(unsigned int c)
 {
 	Q_ASSERT(c < m_max_columns);
 	Q_ASSERT(m_nodes.size() < m_max_nodes);
@@ -97,7 +97,7 @@ void DLX::Matrix::addElement(unsigned int c)
 
 //-----------------------------------------------------------------------------
 
-unsigned int DLX::Matrix::search(unsigned int max_solutions, unsigned int max_tries)
+unsigned int SolverDLX::search(unsigned int max_solutions, unsigned int max_tries)
 {
 	m_solutions = 0;
 	m_max_solutions = max_solutions;
@@ -111,7 +111,7 @@ unsigned int DLX::Matrix::search(unsigned int max_solutions, unsigned int max_tr
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::solve(unsigned int k)
+void SolverDLX::solve(unsigned int k)
 {
 	// If matrix is empty a solution has been found.
 	if (m_header->right == m_header) {
@@ -158,7 +158,7 @@ void DLX::Matrix::solve(unsigned int k)
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::cover(HeaderNode* node)
+void SolverDLX::cover(HeaderNode* node)
 {
 	node->right->left = node->left;
 	node->left->right = node->right;
@@ -174,7 +174,7 @@ void DLX::Matrix::cover(HeaderNode* node)
 
 //-----------------------------------------------------------------------------
 
-void DLX::Matrix::uncover(HeaderNode* node)
+void SolverDLX::uncover(HeaderNode* node)
 {
 	for (Node* i = node->up; i != node; i = i->up) {
 		for (Node* j = i->left; j != i; j = j->left) {

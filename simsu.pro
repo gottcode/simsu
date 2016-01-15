@@ -32,23 +32,23 @@ unix: !macx {
 # Specify program sources
 HEADERS = src/board.h \
 	src/cell.h \
-	src/dancing_links.h \
 	src/frame.h \
 	src/locale_dialog.h \
 	src/move.h \
 	src/pattern.h \
 	src/puzzle.h \
+	src/solver_dlx.h \
 	src/square.h \
 	src/window.h
 
 SOURCES = src/board.cpp \
 	src/cell.cpp \
-	src/dancing_links.cpp \
 	src/frame.cpp \
 	src/locale_dialog.cpp \
 	src/move.cpp \
 	src/main.cpp \
 	src/puzzle.cpp \
+	src/solver_dlx.cpp \
 	src/square.cpp \
 	src/window.cpp
 

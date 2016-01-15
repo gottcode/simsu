@@ -36,12 +36,12 @@ add_custom_target(update_translations
 qt6_add_executable(simsu
 	src/board.cpp
 	src/cell.cpp
-	src/dancing_links.cpp
 	src/frame.cpp
 	src/locale_dialog.cpp
 	src/move.cpp
 	src/main.cpp
 	src/puzzle.cpp
+	src/solver_dlx.cpp
 	src/square.cpp
 	src/window.cpp
 	icons/images.qrc

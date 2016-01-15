@@ -17,13 +17,13 @@
  *
  ***********************************************************************/
 
-#ifndef SIMSU_DANCING_LINKS_H
-#define SIMSU_DANCING_LINKS_H
+#ifndef SIMSU_SOLVER_DLX_H
+#define SIMSU_SOLVER_DLX_H
 
 #include <QVector>
 
 /**
- * Dancing Links implementation of Algorithm X.
+ * Puzzle solver that uses Dancing Links implementation of Algorithm X.
  *
  * Algorithm X is a recursive backtracking algorithm that finds all solutions
  * to the exact cover problem. It works on a matrix consisting of 0s an 1s.
@@ -35,55 +35,52 @@
  * is then placed into a row with 1s in the columns for the constraints it
  * matches.
  */
-namespace DLX
+class SolverDLX
 {
+	struct HeaderNode;
 
-struct HeaderNode;
-
-/** %Node in matrix. */
-struct Node
-{
-	/** Constructs a node with the value of 1. */
-	Node() :
-		left(0),
-		right(0),
-		up(0),
-		down(0),
-		column(0)
+	/** %Node in matrix. */
+	struct Node
 	{
-	}
+		/** Constructs a node with the value of 1. */
+		Node() :
+			left(nullptr),
+			right(nullptr),
+			up(nullptr),
+			down(nullptr),
+			column(nullptr),
+			row(nullptr)
+		{
+		}
 
-	Node* left; /**< node to the left with value of 1 */
-	Node* right; /**< node to the right with value of 1 */
-	Node* up; /**< node above with value of 1 */
-	Node* down; /**< node below with value of 1 */
-	HeaderNode* column; /**< column containing this node */
-	HeaderNode* row; /**< row containing this node */
-};
+		Node* left; /**< node to the left with value of 1 */
+		Node* right; /**< node to the right with value of 1 */
+		Node* up; /**< node above with value of 1 */
+		Node* down; /**< node below with value of 1 */
+		HeaderNode* column; /**< column containing this node */
+		HeaderNode* row; /**< row containing this node */
+	};
 
-/** Head node of column or row in matrix. */
-struct HeaderNode : public Node
-{
-	/** Constructs an empty column. */
-	HeaderNode() :
-		size(0),
-		id(0)
+	/** Head node of column or row in matrix. */
+	struct HeaderNode : public Node
 	{
-	}
+		/** Constructs an empty column. */
+		HeaderNode() :
+			size(0),
+			id(0)
+		{
+		}
 
-	unsigned int size; /**< how many nodes with value of 1 are in column */
-	unsigned int id; /**< unique identifier */
-};
+		unsigned int size; /**< how many nodes with value of 1 are in column */
+		unsigned int id; /**< unique identifier */
+	};
 
-/** Sparse matrix class. */
-class Matrix
-{
 public:
 	/** Constructs a matrix with @p max_columns number of columns. */
-	Matrix(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row);
+	SolverDLX(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row);
 
 	/** Clean up matrix. */
-	~Matrix();
+	~SolverDLX();
 
 	/** Add row to matrix. */
 	void addRow(unsigned int id);
@@ -144,6 +141,4 @@ private:
 	unsigned int m_max_tries; /**< maximum allowed attempts */
 };
 
-}
-
-#endif // SIMSU_DANCING_LINKS_H
+#endif // SIMSU_SOLVER_DLX_H

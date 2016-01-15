@@ -19,8 +19,8 @@
 
 #include "puzzle.h"
 
-#include "dancing_links.h"
 #include "pattern.h"
+#include "solver_dlx.h"
 
 #include <algorithm>
 
@@ -187,7 +187,7 @@ void Puzzle::createGivens()
 
 bool PuzzleDancingLinks::isUnique()
 {
-	DLX::Matrix matrix(324, 729, 4);
+	SolverDLX matrix(324, 729, 4);
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
 			const int g = given(c, r);
