@@ -20,6 +20,8 @@
 #ifndef SIMSU_SOLVER_DLX_H
 #define SIMSU_SOLVER_DLX_H
 
+class Puzzle;
+
 #include <QVector>
 
 /**
@@ -76,32 +78,34 @@ class SolverDLX
 	};
 
 public:
-	/** Constructs a matrix with @p max_columns number of columns. */
-	SolverDLX(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row);
+	/** Construct a solver. */
+	SolverDLX();
 
-	/** Clean up matrix. */
+	/** Clean up solver. */
 	~SolverDLX();
+
+	/**
+	 * Find if puzzle has a solution.
+	 *
+	 * @param puzzle the values already set on the board
+	 * @return was a solution found
+	 */
+	bool solvePuzzle(const Puzzle* puzzle);
+
+private:
+	/** Set to initial values. */
+	void init();
 
 	/** Add row to matrix. */
 	void addRow(unsigned int id);
 
 	/**
-	 * Add element to matrix.
+	 * Add node to matrix.
 	 *
 	 * @param column which column in current row to mark as filled
 	 */
-	void addElement(unsigned int column);
+	void addNode(unsigned int column);
 
-	/**
-	 * Search for solutions.
-	 *
-	 * @param max_solutions maximum allowed solutions
-	 * @param max_tries maximum allowed attempts before stopping search
-	 * @return total count of solutions
-	 */
-	unsigned int search(unsigned int max_solutions = 0xFFFFFFFF, unsigned int max_tries = 0xFFFFFFFF);
-
-private:
 	/**
 	 * Run Algorithm X at depth @p k.
 	 *
@@ -136,9 +140,7 @@ private:
 	QVector<Node*> m_output; /**< rows where columns do not conflict */
 
 	unsigned int m_solutions; /**< how many solutions have been found so far */
-	unsigned int m_max_solutions; /**< maximum allowed solutions */
 	unsigned int m_tries; /**< how many attempts have been made so far */
-	unsigned int m_max_tries; /**< maximum allowed attempts */
 };
 
 #endif // SIMSU_SOLVER_DLX_H

@@ -19,34 +19,20 @@
 
 #include "solver_dlx.h"
 
+#include "puzzle.h"
+
 //-----------------------------------------------------------------------------
 
-SolverDLX::SolverDLX(unsigned int max_columns, unsigned int max_rows, unsigned int elements_per_row) :
-	m_max_columns(max_columns),
-	m_max_rows(max_rows),
-	m_max_nodes(max_rows * elements_per_row),
-	m_columns(max_columns),
-	m_output(max_columns),
+SolverDLX::SolverDLX() :
+	m_max_columns(324),
+	m_max_rows(729),
+	m_max_nodes(2916),
+	m_columns(m_max_columns),
+	m_output(m_max_columns),
 	m_solutions(0),
 	m_tries(0)
 {
-	m_header = new HeaderNode;
-	m_header->column = m_header;
-
-	Node* node = m_header;
-	HeaderNode* column = 0;
-	for (unsigned int i = 0; i < m_max_columns; ++i) {
-		column = &m_columns[i];
-		column->id = i;
-		column->up = column->down = column->column = column;
-		column->left = node;
-		node->right = column;
-		node = column;
-	}
-	node->right = m_header;
-
-	m_rows.reserve(m_max_rows);
-	m_nodes.reserve(m_max_nodes);
+	init();
 }
 
 //-----------------------------------------------------------------------------
@@ -54,6 +40,54 @@ SolverDLX::SolverDLX(unsigned int max_columns, unsigned int max_rows, unsigned i
 SolverDLX::~SolverDLX()
 {
 	delete m_header;
+}
+
+//-----------------------------------------------------------------------------
+
+bool SolverDLX::solvePuzzle(const Puzzle* puzzle)
+{
+	// Reset matrix
+	if (m_tries) {
+		m_columns.clear();
+		m_output.clear();
+		m_rows.clear();
+		m_nodes.clear();
+		delete m_header;
+
+		m_columns.resize(m_max_columns);
+		m_output.resize(m_max_columns);
+		init();
+	}
+
+	// Build matrix
+	for (int r = 0; r < 9; ++r) {
+		for (int c = 0; c < 9; ++c) {
+			const int g = puzzle->given(c, r);
+			if (!g) {
+				for (int i = 0; i < 9; ++i) {
+					addRow((c << 8) | (r << 4) | (i + 1));
+					addNode(r * 9 + c);
+					addNode(r * 9 + i + 81);
+					addNode(c * 9 + i + 162);
+					addNode((3 * (r / 3) + (c / 3)) * 9 + i + 243);
+				}
+			} else {
+				addRow((c << 8) | (r << 4) | g);
+				addNode(r * 9 + c);
+				addNode(r * 9 + (g - 1) + 81);
+				addNode(c * 9 + (g - 1) + 162);
+				addNode((3 * (r / 3) + (c / 3)) * 9 + (g - 1) + 243);
+			}
+		}
+	}
+
+	// Solve matrix
+	m_solutions = 0;
+
+	m_tries = 0;
+
+	solve(0);
+	return m_solutions == 1;
 }
 
 //-----------------------------------------------------------------------------
@@ -68,11 +102,8 @@ void SolverDLX::addRow(unsigned int id)
 
 //-----------------------------------------------------------------------------
 
-void SolverDLX::addElement(unsigned int c)
+void SolverDLX::addNode(unsigned int c)
 {
-	Q_ASSERT(c < m_max_columns);
-	Q_ASSERT(m_nodes.size() < m_max_nodes);
-
 	HeaderNode* column = &m_columns[c];
 	HeaderNode* row = &m_rows.back();
 
@@ -97,16 +128,28 @@ void SolverDLX::addElement(unsigned int c)
 
 //-----------------------------------------------------------------------------
 
-unsigned int SolverDLX::search(unsigned int max_solutions, unsigned int max_tries)
+void SolverDLX::init()
 {
 	m_solutions = 0;
-	m_max_solutions = max_solutions;
-
 	m_tries = 0;
-	m_max_tries = (max_tries != 0) ? max_tries : m_max_columns;
 
-	solve(0);
-	return m_solutions;
+	m_header = new HeaderNode;
+	m_header->column = m_header;
+
+	Node* node = m_header;
+	HeaderNode* column = 0;
+	for (unsigned int i = 0; i < m_max_columns; ++i) {
+		column = &m_columns[i];
+		column->id = i;
+		column->up = column->down = column->column = column;
+		column->left = node;
+		node->right = column;
+		node = column;
+	}
+	node->right = m_header;
+
+	m_rows.reserve(m_max_rows);
+	m_nodes.reserve(m_max_nodes);
 }
 
 //-----------------------------------------------------------------------------
@@ -119,7 +162,7 @@ void SolverDLX::solve(unsigned int k)
 		return;
 	}
 
-	if ((m_solutions >= m_max_solutions) || (++m_tries >= m_max_tries)) {
+	if ((m_solutions >= 2) || (++m_tries >= m_max_columns)) {
 		return;
 	}
 
