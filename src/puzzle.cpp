@@ -86,10 +86,8 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 		createGivens();
 
 		givens = 81;
-		for (int r = 0; r < 9; ++r) {
-			for (int c = 0; c < 9; ++c) {
-				givens -= (m_givens[c][r] == 0);
-			}
+		for (int i = 0; i < 81; ++i) {
+			givens -= !m_givens[i];
 		}
 	} while (givens > 30);
 }
@@ -155,36 +153,32 @@ void Puzzle::createSolution()
 
 void Puzzle::createGivens()
 {
-	// Initialize givens
-	QList<QPoint> cells;
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			m_givens[c][r] = m_solution[c + (r * 9)];
-			cells.append(QPoint(c, r));
-		}
+	// Initialize cells
+	std::array<int, 81> cells;
+	for (int i = 0; i < 81; ++i) {
+		cells[i] = i;
+		m_givens[i] = m_solution[i];
 	}
 	std::shuffle(cells.begin(), cells.end(), m_random);
 
 	// Remove as many givens as possible
-	QVector<int> values(m_pattern->count());
-	int count = values.count();
-	QVector<QPoint> positions;
-	for (const QPoint& cell : cells) {
-		positions = m_pattern->pattern(cell);
-		for (int i = 0; i < count; ++i) {
-			QPoint pos = positions.at(i);
-			values[i] = m_givens[pos.x()][pos.y()];
+	for (const int cell : cells) {
+		const QVector<int> positions = m_pattern->pattern(cell % 9, cell / 9);
+
+		bool valid = true;
+		for (const int pos : positions) {
+			valid &= bool(m_givens[pos]);
 		}
-		if (!values.contains(0)) {
-			for (int i = 0; i < count; ++i) {
-				const QPoint& pos = positions.at(i);
-				m_givens[pos.x()][pos.y()] = 0;
-			}
-			if (!isUnique()) {
-				for (int i = 0; i < count; ++i) {
-					const QPoint& pos = positions.at(i);
-					m_givens[pos.x()][pos.y()] = values.at(i);
-				}
+		if (!valid) {
+			continue;
+		}
+
+		for (const int pos : positions) {
+			m_givens[pos] = 0;
+		}
+		if (!isUnique()) {
+			for (const int pos : positions) {
+				m_givens[pos] = m_solution[pos];
 			}
 		}
 	}

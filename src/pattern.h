@@ -22,7 +22,6 @@
 
 #include <QCoreApplication>
 #include <QHash>
-#include <QPoint>
 #include <QString>
 #include <QVector>
 
@@ -64,7 +63,7 @@ public:
 	 *
 	 * @param cell the cell to mirror.
 	 */
-	virtual QVector<QPoint> pattern(const QPoint& cell) const = 0;
+	virtual QVector<int> pattern(const int c, const int r) const = 0;
 
 	/**
 	 * Returns the human readable name for a pattern.
@@ -113,6 +112,18 @@ public:
 		}
 		return icons.value(symmetry);
 	}
+
+protected:
+	/**
+	 * Returns the array index of a point.
+	 *
+	 * @param c the column
+	 * @param r the row
+	 */
+	int point(const int c, const int r) const
+	{
+		return c + (r * 9);
+	}
 };
 
 /**
@@ -127,17 +138,17 @@ public:
 		return 8;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(cell.x(), 8 - cell.y()),
-			QPoint(8 - cell.y(), cell.x()),
-			QPoint(cell.y(), cell.x()),
-			QPoint(8 - cell.x(), 8 - cell.y()),
-			QPoint(8 - cell.x(), cell.y()),
-			QPoint(cell.y(), 8 - cell.x()),
-			QPoint(8 - cell.y(), 8 - cell.x())
+			point(c, r),
+			point(c, 8 - r),
+			point(8 - r, c),
+			point(r, c),
+			point(8 - c, 8 - r),
+			point(8 - c, r),
+			point(r, 8 - c),
+			point(8 - r, 8 - c)
 		};
 	}
 };
@@ -151,11 +162,11 @@ public:
 		return 2;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(8 - cell.x(), 8 - cell.y())
+			point(c, r),
+			point(8 - c, 8 - r)
 		};
 	}
 };
@@ -169,13 +180,13 @@ public:
 		return 4;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(8 - cell.y(), cell.x()),
-			QPoint(8 - cell.x(), 8 - cell.y()),
-			QPoint(cell.y(), 8 - cell.x())
+			point(c, r),
+			point(8 - r, c),
+			point(8 - c, 8 - r),
+			point(r, 8 - c)
 		};
 	}
 };
@@ -189,11 +200,11 @@ public:
 		return 2;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(8 - cell.x(), cell.y())
+			point(c, r),
+			point(8 - c, r)
 		};
 	}
 };
@@ -207,11 +218,11 @@ public:
 		return 2;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(cell.x(), 8 - cell.y())
+			point(c, r),
+			point(c, 8 - r)
 		};
 	}
 };
@@ -225,13 +236,13 @@ public:
 		return 4;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(8 - cell.x(), cell.y()),
-			QPoint(cell.x(), 8 - cell.y()),
-			QPoint(8 - cell.x(), 8 - cell.y())
+			point(c, r),
+			point(8 - c, r),
+			point(c, 8 - r),
+			point(8 - c, 8 - r)
 		};
 	}
 };
@@ -245,11 +256,11 @@ public:
 		return 2;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(cell.y(), cell.x())
+			point(c, r),
+			point(r, c)
 		};
 	}
 };
@@ -263,11 +274,11 @@ public:
 		return 2;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(8 - cell.y(), 8 - cell.x())
+			point(c, r),
+			point(8 - r, 8 - c)
 		};
 	}
 };
@@ -281,13 +292,13 @@ public:
 		return 4;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
 		return {
-			cell,
-			QPoint(cell.y(), cell.x()),
-			QPoint(8 - cell.y(), 8 - cell.x()),
-			QPoint(8 - cell.x(), 8 - cell.y())
+			point(c, r),
+			point(r, c),
+			point(8 - r, 8 - c),
+			point(8 - c, 8 - r)
 		};
 	}
 };
@@ -301,9 +312,11 @@ public:
 		return 1;
 	}
 
-	QVector<QPoint> pattern(const QPoint& cell) const
+	QVector<int> pattern(const int c, const int r) const
 	{
-		return { cell };
+		return {
+			point(c, r)
+		};
 	}
 };
 
