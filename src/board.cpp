@@ -103,38 +103,7 @@ Board::Board(QWidget* parent) :
 	layout->addWidget(m_message, 0, 0, 3, 3, Qt::AlignCenter);
 
 	// Load current puzzle
-	QSettings settings;
-	if (settings.value("Current/Version", 0).toInt() != 5) {
-		settings.remove("Current");
-	}
-	int seed = settings.value("Current/Seed", 0).toInt();
-	int symmetry = settings.value("Current/Symmetry", -1).toInt();
-	int algorithm = settings.value("Current/Algorithm", -1).toInt();
-	if (seed > 0) {
-		QStringList moves = settings.value("Current/Moves").toStringList();
-		newPuzzle(seed, symmetry, algorithm, true);
-
-		// Load moves
-		for (const QString& move : moves) {
-			if (move.length() == 4) {
-				m_notes_mode = (move[2] == 'n');
-				Cell* c = cell(move[0].digitValue(), move[1].digitValue());
-				int key = move[3].digitValue();
-				QKeyEvent event(QEvent::KeyPress, 0x30 + key, Qt::NoModifier);
-				QApplication::sendEvent(c, &event);
-			}
-		}
-		m_notes_mode = false;
-
-		// Select current cell
-		if (settings.contains("Current/Active")) {
-			QStringList cell = settings.value("Current/Active").toString().split('x');
-			if (cell.count() == 2) {
-				m_active_cell = m_cells[qBound(0, cell[0].toInt(), 8)][qBound(0, cell[1].toInt(), 8)];
-				m_active_cell->setFocus();
-			}
-		}
-	} else {
+	if (!loadPuzzle()) {
 		newPuzzle();
 	}
 }
@@ -145,14 +114,8 @@ Board::~Board()
 {
 	QSettings settings;
 	if (!m_finished) {
-		QStringList moves;
-		int count = m_moves->index();
-		for (int i = 0; i < count; ++i) {
-			moves += m_moves->text(i);
-		}
-		settings.setValue("Current/Moves", moves);
-		settings.setValue("Current/Active", QString("%1x%2").arg(m_active_cell->column()).arg(m_active_cell->row()));
 		settings.setValue("Key", m_active_key);
+		savePuzzle();
 	} else {
 		settings.remove("Current");
 	}
@@ -161,7 +124,7 @@ Board::~Board()
 
 //-----------------------------------------------------------------------------
 
-void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
+void Board::newPuzzle(int seed, int symmetry, int algorithm)
 {
 	QSettings settings;
 
@@ -171,6 +134,7 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 #else
 	std::mt19937 gen(time(0));
 #endif
+
 	if (seed <= 0) {
 		std::uniform_int_distribution<int> dis;
 		seed = dis(gen);
@@ -188,19 +152,16 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 		algorithm = settings.value("Algorithm", 0).toInt();
 	}
 
-	if (!load) {
-		settings.remove("Current");
-		settings.setValue("Current/Version", 5);
-		settings.setValue("Current/Seed", seed);
-		settings.setValue("Current/Symmetry", symmetry);
-		settings.setValue("Current/Algorithm", algorithm);
-	}
-
+	// Reset board
 	showWrong(false);
 	m_finished = false;
 	m_message->hide();
 	m_moves->clear();
+	for (int i = 0; i < 9; ++i) {
+		m_key_count[i] = 0;
+	}
 
+	// Create puzzle
 	delete m_puzzle;
 	switch (algorithm) {
 	case 1:
@@ -212,13 +173,139 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm, bool load)
 		break;
 	}
 	m_puzzle->generate(seed, symmetry);
-	for (int i = 0; i < 9; ++i) {
-		m_key_count[i] = 0;
-	}
+
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
 			m_cells[c][r]->setPuzzle(m_puzzle);
 		}
+	}
+
+	// Store puzzle details
+	settings.remove("Current");
+	settings.beginGroup("Current");
+	settings.setValue("Version", 5);
+	settings.setValue("Seed", seed);
+	settings.setValue("Symmetry", symmetry);
+	settings.setValue("Algorithm", algorithm);
+
+	// Store puzzle layout
+	savePuzzle();
+}
+
+//-----------------------------------------------------------------------------
+
+bool Board::loadPuzzle()
+{
+	QSettings settings;
+	settings.beginGroup("Current");
+
+	// Check version number
+	if (settings.value("Version", 0).toInt() != 5) {
+		return false;
+	}
+
+	// Load board layout
+	const QString cells = settings.value("Board").toString();
+	if (cells.length() != 81) {
+		return false;
+	}
+
+	// Create puzzle
+	std::array<int, 81> givens;
+	for (int i = 0; i < 81; ++i) {
+		givens[i] = cells[i].digitValue();
+	}
+
+	Puzzle* puzzle = new PuzzleDancingLinks;
+	if (!puzzle->load(givens)) {
+		delete puzzle;
+		return false;
+	}
+
+	// Reset board
+	showWrong(false);
+	m_finished = false;
+	m_message->hide();
+	m_moves->clear();
+	for (int i = 0; i < 9; ++i) {
+		m_key_count[i] = 0;
+	}
+
+	// Load puzzle
+	delete m_puzzle;
+	m_puzzle = puzzle;
+	for (int r = 0; r < 9; ++r) {
+		for (int c = 0; c < 9; ++c) {
+			m_cells[c][r]->setPuzzle(m_puzzle);
+		}
+	}
+
+	// Load moves
+	const QStringList moves = settings.value("Moves").toStringList();
+	for (const QString& move : moves) {
+		if (move.length() == 4) {
+			m_notes_mode = (move[2] == 'n');
+			Cell* c = cell(move[0].digitValue(), move[1].digitValue());
+			QKeyEvent event(QEvent::KeyPress, Qt::Key_0 + move[3].digitValue(), Qt::NoModifier);
+			QApplication::sendEvent(c, &event);
+		}
+	}
+	m_notes_mode = false;
+
+	// Select current cell
+	const QStringList active = settings.value("Active").toString().split('x');
+	if (active.count() == 2) {
+		m_active_cell = cell(active[0].toInt(), active[1].toInt());
+		m_active_cell->setFocus();
+	}
+
+	// Store puzzle details
+	const int algorithm = settings.value("Algorithm").toInt();
+	const int symmetry = settings.value("Symmetry").toInt();
+
+	settings.endGroup();
+	settings.remove("Current");
+	settings.beginGroup("Current");
+	settings.setValue("Version", 5);
+	settings.setValue("Algorithm", algorithm);
+	settings.setValue("Symmetry", symmetry);
+
+	// Store puzzle layout and moves
+	savePuzzle();
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::savePuzzle()
+{
+	QSettings settings;
+	settings.beginGroup("Current");
+
+	// Store board layout
+	QString cells;
+	cells.reserve(81);
+	for (int r = 0; r < 9; ++r) {
+		for (int c = 0; c < 9; ++c) {
+			cells.append(QChar(m_puzzle->given(c, r) + '0'));
+		}
+	}
+	settings.setValue("Board", cells);
+
+	// Store moves
+	QStringList moves;
+	int count = m_moves->index();
+	for (int i = 0; i < count; ++i) {
+		moves += m_moves->text(i);
+	}
+	if (count) {
+		settings.setValue("Moves", moves);
+	}
+
+	// Store current cell
+	if (m_active_cell) {
+		settings.setValue("Active", QString("%1x%2").arg(m_active_cell->column()).arg(m_active_cell->row()));
 	}
 }
 

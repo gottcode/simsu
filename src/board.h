@@ -25,6 +25,7 @@ class Puzzle;
 
 #include "frame.h"
 class QLabel;
+class QSettings;
 class QUndoStack;
 
 /**
@@ -55,9 +56,20 @@ public:
 	 * @param seed value used to prime the random number generator; if @c 0 use current time
 	 * @param symmetry specify mirroring of givens; if @c -1 use previous symmetry, defaults to Pattern::Rotational180
 	 * @param algorithm specify method to generate givens; if @c -1 use previous algorithm, defaults to PuzzleDancingLinks
-	 * @param load if @c true use previous saved game instead of @p seed, @p symmetery, or @p algorithm
 	 */
-	void newPuzzle(int seed = 0, int symmetry = -1, int algorithm = -1, bool load = false);
+	void newPuzzle(int seed = 0, int symmetry = -1, int algorithm = -1);
+
+	/**
+	 * Clears out current game and loads a game.
+	 *
+	 * @return @c true if the puzzle could be loaded
+	 */
+	bool loadPuzzle();
+
+	/**
+	 * Saves current game.
+	 */
+	void savePuzzle();
 
 	/** Returns currently selected number. */
 	int activeKey() const
@@ -139,8 +151,8 @@ public:
 	 */
 	Cell* cell(int column, int row) const
 	{
-		column = qBound(0, column, 9);
-		row = qBound(0, row, 9);
+		column = qBound(0, column, 8);
+		row = qBound(0, row, 8);
 		return m_cells[column][row];
 	}
 
