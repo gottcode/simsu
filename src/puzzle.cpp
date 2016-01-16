@@ -93,6 +93,21 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 
 //-----------------------------------------------------------------------------
 
+bool Puzzle::load(const std::array<int, 81>& givens)
+{
+	m_givens = givens;
+
+	SolverDLX solver;
+	if (solver.solvePuzzle(this)) {
+		m_solution = solver.solution();
+		return true;
+	} else {
+		return false;
+	}
+}
+
+//-----------------------------------------------------------------------------
+
 void Puzzle::createSolution()
 {
 	// Create list of initial values

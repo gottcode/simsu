@@ -52,6 +52,14 @@ public:
 	void generate(unsigned int seed, int symmetry);
 
 	/**
+	  * Loads a layout.
+	  *
+	  * @param givens list of givens to use
+	  * @return @c true if the puzzle could be loaded
+	  */
+	bool load(const std::array<int, 81>& givens);
+
+	/**
 	 * Returns the given at the requested position.
 	 *
 	 * @param x the column of the given
