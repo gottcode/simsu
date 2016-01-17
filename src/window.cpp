@@ -259,10 +259,6 @@ void Window::newGame()
 	algorithm_box->addItem(tr("Slice and Dice"), 1);
 	algorithm_box->setCurrentIndex(algorithm_box->findData(settings.value("Algorithm").toInt()));
 
-	QSpinBox* seed_box = new QSpinBox(dialog);
-	seed_box->setRange(0, 2147483647);
-	seed_box->setSpecialValueText(tr("Random"));
-
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, dialog);
 	connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
 	connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
@@ -271,7 +267,6 @@ void Window::newGame()
 	contents_layout->addRow(QString(), preview);
 	contents_layout->addRow(tr("Symmetry:"), symmetry_box);
 	contents_layout->addRow(tr("Algorithm:"), algorithm_box);
-	contents_layout->addRow(tr("Seed:"), seed_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(dialog);
 	layout->addLayout(contents_layout);
@@ -283,7 +278,7 @@ void Window::newGame()
 		settings.setValue("Symmetry", symmetry);
 		int algorithm = algorithm_box->itemData(algorithm_box->currentIndex()).toInt();
 		settings.setValue("Algorithm", algorithm);
-		m_board->newPuzzle(seed_box->value(), symmetry, algorithm);
+		m_board->newPuzzle(symmetry, algorithm);
 	}
 
 	delete dialog;
@@ -297,9 +292,8 @@ void Window::showDetails()
 	QString symmetry = Pattern::name(settings.value("Current/Symmetry").toInt());
 	QString icon = Pattern::icon(settings.value("Current/Symmetry").toInt());
 	QString algorithm = settings.value("Current/Algorithm", 0).toInt() ? tr("Slice and Dice") : tr("Dancing Links");
-	int seed = settings.value("Current/Seed").toInt();
 
-	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1<br><b>Algorithm:</b> %L2<br><b>Seed:</b> %L3</p>").arg(symmetry).arg(algorithm).arg(seed), QMessageBox::Ok, this);
+	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1<br><b>Algorithm:</b> %L2</p>").arg(symmetry).arg(algorithm), QMessageBox::Ok, this);
 	details.setIconPixmap(QIcon(icon).pixmap(60, 60));
 	details.exec();
 }

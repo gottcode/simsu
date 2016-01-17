@@ -124,7 +124,7 @@ Board::~Board()
 
 //-----------------------------------------------------------------------------
 
-void Board::newPuzzle(int seed, int symmetry, int algorithm)
+void Board::newPuzzle(int symmetry, int algorithm)
 {
 	QSettings settings;
 
@@ -135,16 +135,11 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm)
 	std::mt19937 gen(time(0));
 #endif
 
-	if (seed <= 0) {
-		std::uniform_int_distribution<int> dis;
-		seed = dis(gen);
-	}
-
 	if (symmetry == -1) {
 		symmetry = settings.value("Symmetry", Pattern::Rotational180).toInt();
 	}
 	if (symmetry == Pattern::Random) {
-		std::uniform_int_distribution<int> dis(0, Pattern::Random - 1);
+		std::uniform_int_distribution<int> dis(Pattern::Rotational180, Pattern::FullDihedral);
 		symmetry = dis(gen);
 	}
 
@@ -172,7 +167,7 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm)
 		m_puzzle = new PuzzleDancingLinks;
 		break;
 	}
-	m_puzzle->generate(seed, symmetry);
+	m_puzzle->generate(gen(), symmetry);
 
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
@@ -184,7 +179,6 @@ void Board::newPuzzle(int seed, int symmetry, int algorithm)
 	settings.remove("Current");
 	settings.beginGroup("Current");
 	settings.setValue("Version", 5);
-	settings.setValue("Seed", seed);
 	settings.setValue("Symmetry", symmetry);
 	settings.setValue("Algorithm", algorithm);
 

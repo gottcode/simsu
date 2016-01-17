@@ -53,11 +53,10 @@ public:
 	/**
 	 * Clears out current game and starts a new game.
 	 *
-	 * @param seed value used to prime the random number generator; if @c 0 use current time
 	 * @param symmetry specify mirroring of givens; if @c -1 use previous symmetry, defaults to Pattern::Rotational180
 	 * @param algorithm specify method to generate givens; if @c -1 use previous algorithm, defaults to PuzzleDancingLinks
 	 */
-	void newPuzzle(int seed = 0, int symmetry = -1, int algorithm = -1);
+	void newPuzzle(int symmetry = -1, int algorithm = -1);
 
 	/**
 	 * Clears out current game and loads a game.
