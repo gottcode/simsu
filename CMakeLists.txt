@@ -42,6 +42,7 @@ qt6_add_executable(simsu
 	src/main.cpp
 	src/puzzle.cpp
 	src/solver_dlx.cpp
+	src/solver_logic.cpp
 	src/square.cpp
 	src/window.cpp
 	icons/images.qrc

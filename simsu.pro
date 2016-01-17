@@ -38,6 +38,7 @@ HEADERS = src/board.h \
 	src/pattern.h \
 	src/puzzle.h \
 	src/solver_dlx.h \
+	src/solver_logic.h \
 	src/square.h \
 	src/window.h
 
@@ -49,6 +50,7 @@ SOURCES = src/board.cpp \
 	src/main.cpp \
 	src/puzzle.cpp \
 	src/solver_dlx.cpp \
+	src/solver_logic.cpp \
 	src/square.cpp \
 	src/window.cpp
 

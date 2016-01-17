@@ -37,6 +37,14 @@ class Pattern;
 class Puzzle
 {
 public:
+	enum Difficulty {
+		VeryEasy = 1,
+		Easy,
+		Medium,
+		Hard,
+		Unsolved
+	};
+
 	/** Constructs a puzzle. */
 	Puzzle();
 
