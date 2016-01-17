@@ -124,7 +124,7 @@ Board::~Board()
 
 //-----------------------------------------------------------------------------
 
-void Board::newPuzzle(int symmetry, int algorithm)
+void Board::newPuzzle(int symmetry)
 {
 	QSettings settings;
 
@@ -143,10 +143,6 @@ void Board::newPuzzle(int symmetry, int algorithm)
 		symmetry = dis(gen);
 	}
 
-	if (algorithm == -1) {
-		algorithm = settings.value("Algorithm", 0).toInt();
-	}
-
 	// Reset board
 	showWrong(false);
 	m_finished = false;
@@ -158,15 +154,7 @@ void Board::newPuzzle(int symmetry, int algorithm)
 
 	// Create puzzle
 	delete m_puzzle;
-	switch (algorithm) {
-	case 1:
-		m_puzzle = new PuzzleSliceAndDice;
-		break;
-	case 0:
-	default:
-		m_puzzle = new PuzzleDancingLinks;
-		break;
-	}
+	m_puzzle = new PuzzleDancingLinks;
 	m_puzzle->generate(gen(), symmetry);
 
 	for (int r = 0; r < 9; ++r) {
@@ -180,7 +168,6 @@ void Board::newPuzzle(int symmetry, int algorithm)
 	settings.beginGroup("Current");
 	settings.setValue("Version", 5);
 	settings.setValue("Symmetry", symmetry);
-	settings.setValue("Algorithm", algorithm);
 
 	// Store puzzle layout
 	savePuzzle();
@@ -254,14 +241,12 @@ bool Board::loadPuzzle()
 	}
 
 	// Store puzzle details
-	const int algorithm = settings.value("Algorithm").toInt();
 	const int symmetry = settings.value("Symmetry").toInt();
 
 	settings.endGroup();
 	settings.remove("Current");
 	settings.beginGroup("Current");
 	settings.setValue("Version", 5);
-	settings.setValue("Algorithm", algorithm);
 	settings.setValue("Symmetry", symmetry);
 
 	// Store puzzle layout and moves

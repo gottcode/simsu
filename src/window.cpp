@@ -254,11 +254,6 @@ void Window::newGame()
 	connect(symmetry_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), preview, &QStackedWidget::setCurrentIndex);
 	symmetry_box->setCurrentIndex(symmetry_box->findData(settings.value("Symmetry", Pattern::Rotational180).toInt()));
 
-	QComboBox* algorithm_box = new QComboBox(dialog);
-	algorithm_box->addItem(tr("Dancing Links"), 0);
-	algorithm_box->addItem(tr("Slice and Dice"), 1);
-	algorithm_box->setCurrentIndex(algorithm_box->findData(settings.value("Algorithm").toInt()));
-
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, dialog);
 	connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
 	connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
@@ -266,7 +261,6 @@ void Window::newGame()
 	QFormLayout* contents_layout = new QFormLayout;
 	contents_layout->addRow(QString(), preview);
 	contents_layout->addRow(tr("Symmetry:"), symmetry_box);
-	contents_layout->addRow(tr("Algorithm:"), algorithm_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(dialog);
 	layout->addLayout(contents_layout);
@@ -276,9 +270,7 @@ void Window::newGame()
 	if (dialog->exec() == QDialog::Accepted) {
 		int symmetry = symmetry_box->itemData(symmetry_box->currentIndex()).toInt();
 		settings.setValue("Symmetry", symmetry);
-		int algorithm = algorithm_box->itemData(algorithm_box->currentIndex()).toInt();
-		settings.setValue("Algorithm", algorithm);
-		m_board->newPuzzle(symmetry, algorithm);
+		m_board->newPuzzle(symmetry);
 	}
 
 	delete dialog;
@@ -291,9 +283,8 @@ void Window::showDetails()
 	QSettings settings;
 	QString symmetry = Pattern::name(settings.value("Current/Symmetry").toInt());
 	QString icon = Pattern::icon(settings.value("Current/Symmetry").toInt());
-	QString algorithm = settings.value("Current/Algorithm", 0).toInt() ? tr("Slice and Dice") : tr("Dancing Links");
 
-	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1<br><b>Algorithm:</b> %L2</p>").arg(symmetry).arg(algorithm), QMessageBox::Ok, this);
+	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1</p>").arg(symmetry), QMessageBox::Ok, this);
 	details.setIconPixmap(QIcon(icon).pixmap(60, 60));
 	details.exec();
 }
