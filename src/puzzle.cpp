@@ -21,6 +21,7 @@
 
 #include "pattern.h"
 #include "solver_dlx.h"
+#include "solver_logic.h"
 
 #include <algorithm>
 
@@ -95,10 +96,9 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 
 bool Puzzle::load(const std::array<int, 81>& givens)
 {
-	m_givens = givens;
-
 	SolverDLX solver;
-	if (solver.solvePuzzle(this)) {
+	if (solver.solvePuzzle(givens)) {
+		m_givens = givens;
 		m_solution = solver.solution();
 		return true;
 	} else {
@@ -200,85 +200,10 @@ void Puzzle::createGivens()
 
 //-----------------------------------------------------------------------------
 
-bool PuzzleDancingLinks::isUnique()
+bool Puzzle::isUnique()
 {
 	SolverDLX solver;
-	return solver.solvePuzzle(this);
-}
-
-//-----------------------------------------------------------------------------
-
-bool PuzzleSliceAndDice::isUnique()
-{
-	// Create list of initial values
-	QList<int> initial;
-	for (int i = 1; i < 10; ++i) {
-		initial.append(i);
-	}
-
-	// Fill possible values into all cells
-	QList<int> cells[9][9];
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			cells[c][r] = initial;
-		}
-	}
-
-	// Remove givens
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			int g = given(c, r);
-			if (g != 0) {
-				cells[c][r] = QList<int>() << g;
-			}
-		}
-	}
-
-	bool done = false;
-	bool solvable = false;
-	while (!done) {
-		done = true;
-		solvable = false;
-
-		for (unsigned int r = 0; r < 9; ++r) {
-			for (unsigned int c = 0; c < 9; ++c) {
-				QList<int>& cell = cells[c][r];
-				int count = cell.count();
-				if (count > 1) {
-					shuffleCell(cell);
-					done = false;
-				} else if (count == 1) {
-					int value = cell.first();
-
-					// Remove all instances of value in column
-					for (unsigned int row = 0; row < 9; ++row) {
-						cells[c][row].removeOne(value);
-					}
-
-					// Remove all instances of value in row
-					for (unsigned int col = 0; col < 9; ++col) {
-						cells[col][r].removeOne(value);
-					}
-
-					// Remove all instances of value in box
-					const unsigned int box_row = (r / 3) * 3;
-					const unsigned int box_col = (c / 3) * 3;
-					for (unsigned int row = box_row; row < box_row + 3; ++row) {
-						for (unsigned int col = box_col; col < box_col + 3; ++col) {
-							cells[col][row].removeOne(value);
-						}
-					}
-
-					solvable = true;
-				}
-			}
-		}
-
-		if (!solvable) {
-			return false;
-		}
-	}
-	return true;
+	return solver.solvePuzzle(m_givens);
 }
 
 //-----------------------------------------------------------------------------

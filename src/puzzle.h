@@ -22,8 +22,7 @@
 
 class Pattern;
 
-#include <QList>
-#include <QPoint>
+#include <QtGlobal>
 
 #include <array>
 #include <random>
@@ -31,8 +30,7 @@ class Pattern;
 /**
  * Layout generator.
  *
- * This class is the abstract base of the board layout creation classes.
- *
+ * This class will build a layout of givens based upon the settings chosen.
  */
 class Puzzle
 {
@@ -49,7 +47,7 @@ public:
 	Puzzle();
 
 	/** Clean up puzzle. */
-	virtual ~Puzzle();
+	~Puzzle();
 
 	/**
 	 * Creates a new layout.
@@ -97,13 +95,6 @@ public:
 		return m_solution[x + (y * 9)];
 	}
 
-protected:
-	/** Randomly shuffle contents of a cell */
-	void shuffleCell(QList<int>& cell)
-	{
-		std::shuffle(cell.begin(), cell.end(), m_random);
-	}
-
 private:
 	/** Fills the board with unique values. */
 	void createSolution();
@@ -112,32 +103,13 @@ private:
 	void createGivens();
 
 	/** Check if the givens on the board have a unique solution. */
-	virtual bool isUnique() = 0;
+	bool isUnique();
 
 private:
 	std::array<int, 81> m_solution; /**< board solution */
 	std::array<int, 81> m_givens; /**< board givens */
 	Pattern* m_pattern; /**< the pattern used to lay out the givens */
 	std::mt19937 m_random; /**< random number generator */
-};
-
-/** Layout generator that uses Algorithm X. */
-class PuzzleDancingLinks : public Puzzle
-{
-private:
-	/** Check for uniqueness by using Algorithm X. */
-	bool isUnique();
-};
-
-/** Layout generator that uses a brute force solving method. */
-class PuzzleSliceAndDice : public Puzzle
-{
-private:
-	/**
-	 * Check for uniqueness by filling each cell with all possibilities and
-	 * then removing duplicates. Makes boards that are easier to solve.
-	 */
-	bool isUnique();
 };
 
 #endif // SIMSU_PUZZLE_H

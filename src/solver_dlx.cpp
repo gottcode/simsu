@@ -44,7 +44,7 @@ SolverDLX::~SolverDLX()
 
 //-----------------------------------------------------------------------------
 
-bool SolverDLX::solvePuzzle(const Puzzle* puzzle)
+bool SolverDLX::solvePuzzle(const std::array<int, 81>& givens)
 {
 	// Reset matrix
 	if (m_tries) {
@@ -63,7 +63,7 @@ bool SolverDLX::solvePuzzle(const Puzzle* puzzle)
 	// Build matrix
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
-			const int g = puzzle->given(c, r);
+			const int g = givens[c + (r * 9)];
 			if (!g) {
 				for (int i = 0; i < 9; ++i) {
 					addRow((c << 8) | (r << 4) | (i + 1));

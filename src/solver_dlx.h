@@ -20,9 +20,9 @@
 #ifndef SIMSU_SOLVER_DLX_H
 #define SIMSU_SOLVER_DLX_H
 
-class Puzzle;
-
 #include <QVector>
+
+#include <array>
 
 /**
  * Puzzle solver that uses Dancing Links implementation of Algorithm X.
@@ -87,10 +87,10 @@ public:
 	/**
 	 * Find if puzzle has a solution.
 	 *
-	 * @param puzzle the values already set on the board
+	 * @param givens the values already set on the board
 	 * @return was a solution found
 	 */
-	bool solvePuzzle(const Puzzle* puzzle);
+	bool solvePuzzle(const std::array<int, 81>& givens);
 
 	/**
 	 * Retrieve solution.

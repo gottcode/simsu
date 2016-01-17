@@ -39,7 +39,7 @@
 
 Board::Board(QWidget* parent) :
 	Frame(parent),
-	m_puzzle(0),
+	m_puzzle(new Puzzle),
 	m_active_key(1),
 	m_active_cell(0),
 	m_auto_switch(true),
@@ -153,8 +153,6 @@ void Board::newPuzzle(int symmetry)
 	}
 
 	// Create puzzle
-	delete m_puzzle;
-	m_puzzle = new PuzzleDancingLinks;
 	m_puzzle->generate(gen(), symmetry);
 
 	for (int r = 0; r < 9; ++r) {
@@ -197,9 +195,7 @@ bool Board::loadPuzzle()
 		givens[i] = cells[i].digitValue();
 	}
 
-	Puzzle* puzzle = new PuzzleDancingLinks;
-	if (!puzzle->load(givens)) {
-		delete puzzle;
+	if (!m_puzzle->load(givens)) {
 		return false;
 	}
 
@@ -213,8 +209,6 @@ bool Board::loadPuzzle()
 	}
 
 	// Load puzzle
-	delete m_puzzle;
-	m_puzzle = puzzle;
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
 			m_cells[c][r]->setPuzzle(m_puzzle);
