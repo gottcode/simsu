@@ -124,7 +124,7 @@ Board::~Board()
 
 //-----------------------------------------------------------------------------
 
-void Board::newPuzzle(int symmetry)
+void Board::newPuzzle(int symmetry, int difficulty)
 {
 	QSettings settings;
 
@@ -143,6 +143,10 @@ void Board::newPuzzle(int symmetry)
 		symmetry = dis(gen);
 	}
 
+	if (difficulty == -1) {
+		difficulty = settings.value("Difficulty", Puzzle::VeryEasy).toInt();
+	}
+
 	// Reset board
 	showWrong(false);
 	m_finished = false;
@@ -153,7 +157,7 @@ void Board::newPuzzle(int symmetry)
 	}
 
 	// Create puzzle
-	m_puzzle->generate(gen(), symmetry);
+	m_puzzle->generate(gen(), symmetry, difficulty);
 
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
@@ -165,6 +169,7 @@ void Board::newPuzzle(int symmetry)
 	settings.remove("Current");
 	settings.beginGroup("Current");
 	settings.setValue("Version", 5);
+	settings.setValue("Difficulty", difficulty);
 	settings.setValue("Symmetry", symmetry);
 
 	// Store puzzle layout
@@ -235,12 +240,14 @@ bool Board::loadPuzzle()
 	}
 
 	// Store puzzle details
+	const int difficulty = settings.value("Difficulty").toInt();
 	const int symmetry = settings.value("Symmetry").toInt();
 
 	settings.endGroup();
 	settings.remove("Current");
 	settings.beginGroup("Current");
 	settings.setValue("Version", 5);
+	settings.setValue("Difficulty", difficulty);
 	settings.setValue("Symmetry", symmetry);
 
 	// Store puzzle layout and moves

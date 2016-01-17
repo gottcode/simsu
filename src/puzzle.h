@@ -22,7 +22,8 @@
 
 class Pattern;
 
-#include <QtGlobal>
+#include <QCoreApplication>
+#include <QStringList>
 
 #include <array>
 #include <random>
@@ -34,6 +35,8 @@ class Pattern;
  */
 class Puzzle
 {
+	Q_DECLARE_TR_FUNCTIONS(Puzzle)
+
 public:
 	enum Difficulty {
 		VeryEasy = 1,
@@ -54,8 +57,9 @@ public:
 	 *
 	 * @param seed the value to prime the random number generator
 	 * @param symmetry the pattern to use when laying out givens
+	 * @param difficulty specify how hard to make puzzle
 	 */
-	void generate(unsigned int seed, int symmetry);
+	void generate(unsigned int seed, int symmetry, int difficulty);
 
 	/**
 	  * Loads a layout.
@@ -95,6 +99,21 @@ public:
 		return m_solution[x + (y * 9)];
 	}
 
+	/**
+	 * Returns the human readable name for a difficulty level.
+	 *
+	 * @param difficulty fetch the name of the specified difficulty level
+	 */
+	static QString difficultyString(int difficulty)
+	{
+		static const QStringList names = QStringList()
+				<< tr("Simple")
+				<< tr("Easy")
+				<< tr("Medium")
+				<< tr("Hard");
+		return names.at(qBound(1, difficulty, names.size()) - 1);
+	}
+
 private:
 	/** Fills the board with unique values. */
 	void createSolution();
@@ -110,6 +129,9 @@ private:
 	std::array<int, 81> m_givens; /**< board givens */
 	Pattern* m_pattern; /**< the pattern used to lay out the givens */
 	std::mt19937 m_random; /**< random number generator */
+
+	Difficulty m_difficulty; /**< requested difficulty setting */
+	int m_generated; /**< actual difficulty of board */
 };
 
 #endif // SIMSU_PUZZLE_H

@@ -28,7 +28,9 @@
 //-----------------------------------------------------------------------------
 
 Puzzle::Puzzle() :
-	m_pattern(0)
+	m_pattern(0),
+	m_difficulty(VeryEasy),
+	m_generated(INT_MAX)
 {
 }
 
@@ -41,7 +43,7 @@ Puzzle::~Puzzle()
 
 //-----------------------------------------------------------------------------
 
-void Puzzle::generate(unsigned int seed, int symmetry)
+void Puzzle::generate(unsigned int seed, int symmetry, int difficulty)
 {
 	m_random.seed(seed);
 
@@ -80,8 +82,11 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 		break;
 	}
 
+	m_difficulty = qBound(VeryEasy, Difficulty(difficulty), Hard);
+
 	int givens = 0;
 	do {
+		m_generated = INT_MAX;
 		createSolution();
 		createGivens();
 
@@ -89,7 +94,7 @@ void Puzzle::generate(unsigned int seed, int symmetry)
 		for (int i = 0; i < 81; ++i) {
 			givens -= !m_givens[i];
 		}
-	} while (givens > 30);
+	} while ((givens > 30) || (m_generated != m_difficulty));
 }
 
 //-----------------------------------------------------------------------------
@@ -202,8 +207,22 @@ void Puzzle::createGivens()
 
 bool Puzzle::isUnique()
 {
-	SolverDLX solver;
-	return solver.solvePuzzle(m_givens);
+	if (m_difficulty >= Hard) {
+		static SolverDLX solver;
+		if (!solver.solvePuzzle(m_givens)) {
+			return false;
+		}
+	}
+
+	static SolverLogic solver;
+	const int generated = solver.solvePuzzle(m_givens, m_difficulty);
+	if (generated > m_difficulty) {
+		return false;
+	}
+
+	m_generated = generated;
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------

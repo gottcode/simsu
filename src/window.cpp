@@ -22,6 +22,7 @@
 #include "board.h"
 #include "locale_dialog.h"
 #include "pattern.h"
+#include "puzzle.h"
 #include "square.h"
 
 #include <QApplication>
@@ -252,7 +253,15 @@ void Window::newGame()
 	}
 	preview->setCurrentIndex(0);
 	connect(symmetry_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), preview, &QStackedWidget::setCurrentIndex);
-	symmetry_box->setCurrentIndex(symmetry_box->findData(settings.value("Symmetry", Pattern::Rotational180).toInt()));
+	const int symmetry = qBound(int(Pattern::Rotational180), settings.value("Symmetry", Pattern::Rotational180).toInt(), int(Pattern::None));
+	symmetry_box->setCurrentIndex(symmetry_box->findData(symmetry));
+
+	QComboBox* difficulty_box = new QComboBox(dialog);
+	for (int i = Puzzle::VeryEasy; i <= Puzzle::Hard; ++i) {
+		difficulty_box->addItem(Puzzle::difficultyString(i), i);
+	}
+	const int difficulty = qBound(int(Puzzle::VeryEasy), settings.value("Difficulty", Puzzle::VeryEasy).toInt(), int(Puzzle::Hard));
+	difficulty_box->setCurrentIndex(difficulty_box->findData(difficulty));
 
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, dialog);
 	connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
@@ -261,6 +270,7 @@ void Window::newGame()
 	QFormLayout* contents_layout = new QFormLayout;
 	contents_layout->addRow(QString(), preview);
 	contents_layout->addRow(tr("Symmetry:"), symmetry_box);
+	contents_layout->addRow(tr("Difficulty:"), difficulty_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(dialog);
 	layout->addLayout(contents_layout);
@@ -270,7 +280,9 @@ void Window::newGame()
 	if (dialog->exec() == QDialog::Accepted) {
 		int symmetry = symmetry_box->itemData(symmetry_box->currentIndex()).toInt();
 		settings.setValue("Symmetry", symmetry);
-		m_board->newPuzzle(symmetry);
+		int difficulty = difficulty_box->itemData(difficulty_box->currentIndex()).toInt();
+		settings.setValue("Difficulty", difficulty);
+		m_board->newPuzzle(symmetry, difficulty);
 	}
 
 	delete dialog;
@@ -283,8 +295,14 @@ void Window::showDetails()
 	QSettings settings;
 	QString symmetry = Pattern::name(settings.value("Current/Symmetry").toInt());
 	QString icon = Pattern::icon(settings.value("Current/Symmetry").toInt());
+	QString difficulty = Puzzle::difficultyString(settings.value("Current/Difficulty").toInt());
 
-	QMessageBox details(QMessageBox::NoIcon, tr("Details"), tr("<p><b>Symmetry:</b> %1</p>").arg(symmetry), QMessageBox::Ok, this);
+	QMessageBox details(QMessageBox::NoIcon,
+		tr("Details"),
+		QString("<p><b>%1</b> %2<br><b>%3</b> %4</p>")
+			.arg(tr("Symmetry:"), symmetry, tr("Difficulty:"), difficulty),
+		QMessageBox::Ok,
+		this);
 	details.setIconPixmap(QIcon(icon).pixmap(60, 60));
 	details.exec();
 }

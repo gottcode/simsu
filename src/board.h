@@ -54,8 +54,9 @@ public:
 	 * Clears out current game and starts a new game.
 	 *
 	 * @param symmetry specify mirroring of givens; if @c -1 use previous symmetry, defaults to Pattern::Rotational180
+	 * @param difficulty specify how hard to make puzzle; if @c -1 use previous algorithm, defaults to Puzzle::VeryEasy
 	 */
-	void newPuzzle(int symmetry = -1);
+	void newPuzzle(int symmetry = -1, int difficulty = -1);
 
 	/**
 	 * Clears out current game and loads a game.
