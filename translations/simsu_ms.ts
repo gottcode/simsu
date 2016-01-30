@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="81"/>
-        <location filename="../src/board.cpp" line="96"/>
+        <location filename="../src/board.cpp" line="82"/>
+        <location filename="../src/board.cpp" line="99"/>
         <source>Success</source>
         <translation>Berjaya</translation>
     </message>

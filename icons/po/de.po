@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# M T <michtrz@gmail.com>, 2015
+# Wasilis Mandratzis-Walz, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/simsu/language/"
+"PO-Revision-Date: 2015-10-25 22:42+0000\n"
+"Last-Translator: M T <michtrz@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/gottcode/simsu/language/"
 "de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +26,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Geben Sie Zahlen ein, um das Rätsel zu lösen"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +37,13 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Simsu ist ein grundlegendes Sudoku-Spiel. Sie können zwischen dem Ausfüllen "
+"von Anmerkungen (Bleistift-Modus) oder Ausfüllen von Antworten (Stiftmodus) "
+"wechseln. Um einfacher zu sehen, wo Zahlen gesetzt werden können, können Sie "
+"alle Vorkommen einer Zahl markieren. Sie können auch Ihre Antworten auf "
+"Richtigkeit während des Spielens überprüfen. Das Spiel speichert Ihre "
+"aktuellen Notizen und Antworten, so dass können Sie sie beim nächsten Start "
+"des Spiels aufrufen können."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"

@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="81"/>
-        <location filename="../src/board.cpp" line="96"/>
+        <location filename="../src/board.cpp" line="82"/>
+        <location filename="../src/board.cpp" line="99"/>
         <source>Success</source>
         <translation>Επιτυχές</translation>
     </message>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Έξοδος</translation>
+        <translation>Έ&amp;ξοδος</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
@@ -157,12 +157,12 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Redo</source>
-        <translation>&amp;Επανάληψη</translation>
+        <translation>Ε&amp;πανάληψη</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Check</source>
-        <translation>&amp;Έλεγχος</translation>
+        <translation>Έλ&amp;εγχος</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="171"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/window.cpp" line="191"/>
         <source>About &amp;Qt</source>
-        <translation>Σχετικά με το &amp;Qt</translation>
+        <translation>Σχετι&amp;κά με το Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="233"/>
@@ -274,7 +274,7 @@
     <message>
         <location filename="../src/window.cpp" line="320"/>
         <source>A basic Sudoku game</source>
-        <translation>Ένα βασικό παιχνίδι Σουντόκου</translation>
+        <translation>Βασικό παιχνίδι Σουντόκου</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="321"/>

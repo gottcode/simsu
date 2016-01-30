@@ -4,8 +4,8 @@
 <context>
     <name>Board</name>
     <message>
-        <location filename="../src/board.cpp" line="81"/>
-        <location filename="../src/board.cpp" line="96"/>
+        <location filename="../src/board.cpp" line="82"/>
+        <location filename="../src/board.cpp" line="99"/>
         <source>Success</source>
         <translation>Éxito</translation>
     </message>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/window.cpp" line="303"/>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Controles del ratón:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Clic izquierdo:&lt;/b&gt; Alternar números en modo pluma&lt;br&gt;&lt;b&gt;Clic derecho:&lt;/b&gt; Alternar números en modo lápiz&lt;br&gt;&lt;b&gt;rueda de desplazamiento:&lt;/b&gt; Cambiar número actual&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Controles del teclado:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Flechas:&lt;/b&gt; Mover selección&lt;br&gt;&lt;b&gt;Teclas numéricas:&lt;/b&gt; Cambiar valor o nota&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Alternar entre modo pluma y modo lápiz&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Resaltar las instancias del número actual&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="318"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/window.cpp" line="320"/>
         <source>A basic Sudoku game</source>
-        <translation type="unfinished"></translation>
+        <translation>Un juego básico de Sudoku</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="321"/>

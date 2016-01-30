@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Lyubomir Vasilev, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/simsu/language/"
+"PO-Revision-Date: 2015-06-24 14:18+0000\n"
+"Last-Translator: Lyubomir Vasilev\n"
+"Language-Team: Bulgarian (http://www.transifex.com/gottcode/simsu/language/"
 "bg/)\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
 msgid "Simsu"
-msgstr ""
+msgstr "Симсу"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Попълнете числата, за да решите загадките"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -35,7 +36,14 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Симсу е простичка игра от тип Судоку. Можете да превключвате между това да "
+"попълвате бележки (режим „молив“) или отговори (режим „писалка“) За да е по-"
+"лесно да видите къде трябва да поставите цифрите, можете да осветите всички "
+"срещания на дадена цифра. Също така можете да проверите дали отговорите Ви "
+"са верни докато играете. Играта запазва текущите Ви бележки и отговори, така "
+"че да можете да продължите от там, където сте прекъснали, следващия път, "
+"когато играете."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
-msgstr ""
+msgstr "Игра от тип Судоку"
