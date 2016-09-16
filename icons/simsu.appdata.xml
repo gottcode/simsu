@@ -28,6 +28,7 @@
   <summary xml:lang="pl">Uzupełnij liczby aby rozwiązać puzzle</summary>
   <summary xml:lang="pt">Preenche com números para resolveres quebra-cabeças</summary>
   <summary xml:lang="ro">Completaţi cu numere pentru a rezolva puzzle-uri</summary>
+
   <description>
     <p>Simsu is a basic Sudoku game. You can switch between filling in notes (pencil mode), or filling in answers (pen mode). To make it easier to see where to place numbers, you can highlight all instances of a number. You can also check your answers for correctness while playing. The game stores your current notes and answers, so that you can pick up where you left off the next time you play.</p>
     <p xml:lang="bg">Симсу е простичка игра от тип Судоку. Можете да превключвате между това да попълвате бележки (режим „молив“) или отговори (режим „писалка“) За да е по-лесно да видите къде трябва да поставите цифрите, можете да осветите всички срещания на дадена цифра. Също така можете да проверите дали отговорите Ви са верни докато играете. Играта запазва текущите Ви бележки и отговори, така че да можете да продължите от там, където сте прекъснали, следващия път, когато играете.</p>
@@ -41,17 +42,52 @@
     <p xml:lang="pt">Simsu é um simples jogo de Sudoku. Podes escolher entre preencher com notas (modo de lápis) ou com respostas (modo de caneta). Para facilitar uma nova colocação, podes realçar todas as instâncias de um número. Podes também fazer a verificação durante o jogo. A aplicação guarda as tuas notas e respostas atuais, de modo a que possas retomar o jogo anterior.</p>
     <p xml:lang="ro">Simsu este un joc de bază Sudoku. Puteți comuta între completarea notelor (modul creion), sau completarea răspunsurilor (modul stilou). Pentru a vedea mai uşor unde să plaseze numere, puteţi evidenția toate instanţele unui număr. Puteţi verifica, de asemenea, răspunsurile dumneavoastră pentru corectitudine în timpul jocului. Jocul stochează notele curente și răspunsurile, astfel încît să puteți contunua de unde aţi rămas data viitoare cînd jucaţi.</p>
   </description>
+
   <screenshots>
     <screenshot type="default">
-      <image>http://gottcode.org/simsu/screenshots/appdata.png</image>
+      <image>https://gottcode.org/simsu/screenshots/appdata.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://gottcode.org/simsu/</url>
-  <url type="bugtracker">http://gottcode.org/simsu/bugs/</url>
-  <url type="donation">http://gottcode.org/tip/</url>
+
+  <url type="homepage">https://gottcode.org/simsu/</url>
+  <url type="bugtracker">https://gottcode.org/simsu/bugs/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/projects/p/simsu/</url>
+
   <developer_name>Graeme Gott</developer_name>
-  <updatecontact>graeme@gottcode.org</updatecontact>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">simsu</translation>
+
   <provides>
 	<binary>simsu</binary>
   </provides>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
 </component>
