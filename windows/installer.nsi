@@ -6,7 +6,7 @@
 !define VERSIONMINOR 3
 !define VERSIONPATCH 2
 !define APPVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONPATCH}"
-!define ABOUTURL "http://gottcode.org/simsu/"
+!define ABOUTURL "https://gottcode.org/simsu/"
 
 ;--------------------------------
 ;Includes
