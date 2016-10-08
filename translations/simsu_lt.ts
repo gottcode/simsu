@@ -16,7 +16,7 @@
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Sistemos Kalba&gt;</translation>
+        <translation>&lt;Sistemos kalba&gt;</translation>
     </message>
     <message>
         <source>Note</source>
@@ -31,11 +31,11 @@
     <name>Pattern</name>
     <message>
         <source>180° Rotational</source>
-        <translation>180° Pasukama</translation>
+        <translation>180° pasukama</translation>
     </message>
     <message>
         <source>Full Rotational</source>
-        <translation>Pilnai Pasukama</translation>
+        <translation>Pilnai pasukama</translation>
     </message>
     <message>
         <source>Horizontal</source>
@@ -47,7 +47,7 @@
     </message>
     <message>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Horizontali ir Vertikali</translation>
+        <translation>Horizontali ir vertikali</translation>
     </message>
     <message>
         <source>Diagonal</source>
@@ -55,11 +55,11 @@
     </message>
     <message>
         <source>Anti-Diagonal</source>
-        <translation>Anti-Įstrižainė</translation>
+        <translation>Anti-įstrižainė</translation>
     </message>
     <message>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Įstrižainė ir Anti-Įstrižainė</translation>
+        <translation>Įstrižainė ir anti-įstrižainė</translation>
     </message>
     <message>
         <source>Full Dihedral</source>
@@ -142,15 +142,15 @@
     </message>
     <message>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Automatiškai Perjungti Veiksenas</translation>
+        <translation>&amp;Automatiškai perjungti veiksenas</translation>
     </message>
     <message>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Plačiaekranis Lygiavimas</translation>
+        <translation>&amp;Plačiaekranis lygiavimas</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Programos Ka&amp;lba</translation>
+        <translation>Programos ka&amp;lba</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -170,11 +170,11 @@
     </message>
     <message>
         <source>New Game</source>
-        <translation>Naujas Žaidimas</translation>
+        <translation>Naujas žaidimas</translation>
     </message>
     <message>
         <source>Dancing Links</source>
-        <translation>Šokančios Nuorodos</translation>
+        <translation>Šokančios nuorodos</translation>
     </message>
     <message>
         <source>Slice and Dice</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Pėle:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Kairiojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių tušinuko veiksenoje&lt;br&gt;&lt;b&gt;Dešiniojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių pieštuko veiksenoje&lt;br&gt;&lt;b&gt;Slinkimo ratukas:&lt;/b&gt; Keičia dabartinį skaičių&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Klaviatūra:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Krypties klavišai:&lt;/b&gt; Perkelia pasirinkimą&lt;br&gt;&lt;b&gt;Skaičių klavišai:&lt;/b&gt; Perjungia atsakymo arba užrašo reikšmes&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Perjungia tarp tušinuko ir pieštuko veiksenos&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Paryškina visus esamo skaičiaus egzempliorius&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas pele:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Kairiojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių tušinuko veiksenoje&lt;br&gt;&lt;b&gt;Dešiniojo mygtuko paspaudimas:&lt;/b&gt; Perjungia skaičių pieštuko veiksenoje&lt;br&gt;&lt;b&gt;Slinkimo ratukas:&lt;/b&gt; Keičia dabartinį skaičių&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Valdymas Klaviatūra:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Krypties klavišai:&lt;/b&gt; Perkelia pasirinkimą&lt;br&gt;&lt;b&gt;Skaičių klavišai:&lt;/b&gt; Perjungia atsakymo arba užrašo reikšmes&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Perjungia tarp tušinuko ir pieštuko veiksenos&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Paryškina visus esamo skaičiaus egzempliorius&lt;/p&gt;</translation>
     </message>
     <message>
         <source>About Simsu</source>
@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>Autorinės Teisės &amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>Autorių Teisės &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>

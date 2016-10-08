@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# RobertBorst <webmaster@fam-borst.nl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2014-11-14 17:11+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/simsu/language/"
-"nl/)\n"
+"PO-Revision-Date: 2016-08-21 13:45+0000\n"
+"Last-Translator: RobertBorst <webmaster@fam-borst.nl>\n"
+"Language-Team: Dutch (http://www.transifex.com/gottcode/simsu/language/nl/)\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr "Simsu"
 
 #: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
-msgstr ""
+msgstr "Vul nummers in om de puzzel op te lossen"
 
 #: ../simsu.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +35,12 @@ msgid ""
 "current notes and answers, so that you can pick up where you left off the "
 "next time you play."
 msgstr ""
+"Simsu is een standaard Sudoku spel. Je kunt omschakelen tussen notitie maken "
+"(potlood mode) of het werkelijk invullen van de antwoorden (pen mode). Om "
+"het gemakkelijker te maken waar je nummers kunt plaatsen, kun je de nummers "
+"op laten lichten. Je kunt ook je antwoorden laten controleren tijdens het "
+"spelen. Het spel bewaart je notities en antwoorden zodat je kunt doorgaan "
+"waar je gebleven was."
 
 #: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
