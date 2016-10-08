@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -113,15 +113,14 @@ void Puzzle::createSolution()
 
 	// Fill solution grid
 	for (int i = 0; i < 81; ++i) {
-		int r = i / 9;
-		int c = i - (r * 9);
-		int box_row = (r / 3) * 3;
-		int box_col = (c / 3) * 3;
+		const unsigned int r = i / 9;
+		const unsigned int c = i - (r * 9);
+		const unsigned int box_row = (r / 3) * 3;
+		const unsigned int box_col = (c / 3) * 3;
 
 		m_solution[c][r] = 0;
 		QList<int>& cell = cells[i];
 		shuffleCell(cell);
-
 		forever {
 			// Backtrack if there are no possiblities
 			if (cell.isEmpty()) {
@@ -135,12 +134,12 @@ void Puzzle::createSolution()
 
 			// Check for conflicts
 			bool conflicts = false;
-			for (int j = 0; j < 9; ++j) {
+			for (unsigned int j = 0; j < 9; ++j) {
 				conflicts |= (m_solution[j][r] == value);
 				conflicts |= (m_solution[c][j] == value);
 			}
-			for (int row = box_row; row < box_row + 3; ++row) {
-				for (int col = box_col; col < box_col + 3; ++col) {
+			for (unsigned int row = box_row; row < box_row + 3; ++row) {
+				for (unsigned int col = box_col; col < box_col + 3; ++col) {
 					conflicts |= (m_solution[col][row] == value);
 				}
 			}
@@ -252,8 +251,8 @@ bool PuzzleSliceAndDice::isUnique()
 		done = true;
 		solvable = false;
 
-		for (int r = 0; r < 9; ++r) {
-			for (int c = 0; c < 9; ++c) {
+		for (unsigned int r = 0; r < 9; ++r) {
+			for (unsigned int c = 0; c < 9; ++c) {
 				QList<int>& cell = cells[c][r];
 				int count = cell.count();
 				if (count > 1) {
@@ -263,20 +262,20 @@ bool PuzzleSliceAndDice::isUnique()
 					int value = cell.first();
 
 					// Remove all instances of value in column
-					for (int row = 0; row < 9; ++row) {
+					for (unsigned int row = 0; row < 9; ++row) {
 						cells[c][row].removeOne(value);
 					}
 
 					// Remove all instances of value in row
-					for (int col = 0; col < 9; ++col) {
+					for (unsigned int col = 0; col < 9; ++col) {
 						cells[col][r].removeOne(value);
 					}
 
 					// Remove all instances of value in box
-					int box_row = (r / 3) * 3;
-					int box_col = (c / 3) * 3;
-					for (int row = box_row; row < box_row + 3; ++row) {
-						for (int col = box_col; col < box_col + 3; ++col) {
+					const unsigned int box_row = (r / 3) * 3;
+					const unsigned int box_col = (c / 3) * 3;
+					for (unsigned int row = box_row; row < box_row + 3; ++row) {
+						for (unsigned int col = box_col; col < box_col + 3; ++col) {
 							cells[col][row].removeOne(value);
 						}
 					}
