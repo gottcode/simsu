@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2017 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -75,7 +75,7 @@ public:
 	{
 		static QHash<int, QString> names;
 		if (names.isEmpty()) {
-			names[Rotational180] = trUtf8("180° Rotational");
+			names[Rotational180] = tr("180° Rotational");
 			names[RotationalFull] = tr("Full Rotational");
 			names[Horizontal] = tr("Horizontal");
 			names[Vertical] = tr("Vertical");
