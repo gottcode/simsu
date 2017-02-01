@@ -87,7 +87,7 @@ macx {
 	desktop.files = icons/simsu.desktop
 
 	appdata.files = icons/simsu.appdata.xml
-	appdata.path = $$PREFIX/share/appdata/
+	appdata.path = $$PREFIX/share/metainfo/
 
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/simsu/translations
