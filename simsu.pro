@@ -89,7 +89,7 @@ macx {
 	appdata.files = icons/simsu.appdata.xml
 	appdata.path = $$PREFIX/share/metainfo/
 
-	qm.files = translations/*.qm
+	qm.files = $$replace(TRANSLATIONS, .ts, .qm)
 	qm.path = $$PREFIX/share/simsu/translations
 	qm.CONFIG += no_check_exist
 
