@@ -1,3 +1,8 @@
+1.3.4
+-----
+* FIXED: Did not always install translations in Linux.
+* Translation updates: Chinese (Taiwan).
+
 1.3.3
 -----
 * Generate binary translations at build time.
