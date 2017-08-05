@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Graeme Gott
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# st.michael c, 2017
+# st.michael c, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Simsu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-14 20:55+0000\n"
+"PO-Revision-Date: 2017-05-20 15:56+0000\n"
+"Last-Translator: st.michael c\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/simsu/"
+"language/zh_TW/)\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
+msgid "Simsu"
+msgstr "Simsu"
+
+#: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
+msgid "Fill in numbers to solve puzzles"
+msgstr "填入數字，解答數謎。"
+
+#: ../simsu.appdata.xml.in.h:3
+msgid ""
+"Simsu is a basic Sudoku game. You can switch between filling in notes "
+"(pencil mode), or filling in answers (pen mode). To make it easier to see "
+"where to place numbers, you can highlight all instances of a number. You can "
+"also check your answers for correctness while playing. The game stores your "
+"current notes and answers, so that you can pick up where you left off the "
+"next time you play."
+msgstr ""
+"Simsu是一個基本的數獨遊戲。你可以在劃記(鉛筆模式)和作答(原子筆模式)之間切換。"
+"你可以把所有子表格的同一個號碼都塗上色，方便釐清下一個數字要放在哪裡。在玩遊"
+"戲時，你可以同時檢查答案的正確性。這遊戲會儲存你目前的劃記和答案，所以下次你"
+"可以重拾你前次未完成的殘局。"
+
+#: ../simsu.desktop.in.h:2
+msgid "Sudoku Game"
+msgstr "數獨遊戲"
