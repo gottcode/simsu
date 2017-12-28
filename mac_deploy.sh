@@ -2,7 +2,7 @@
 
 APP='Simsu'
 BUNDLE="$APP.app"
-VERSION='1.3.4'
+VERSION='1.3.5'
 
 # Create disk folder
 echo -n 'Copying application bundle... '
