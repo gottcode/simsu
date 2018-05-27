@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>關於　&amp;Qt</translation>
+        <translation>關於&#x3000;&amp;Qt</translation>
     </message>
     <message>
         <source>New Game</source>
@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>版權　&amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>版權&#x3000;&amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>

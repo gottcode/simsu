@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pt" sourcelanguage="en">
+<TS version="2.1" language="it" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <source>Success</source>
-        <translation>Sucesso</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Seleciona o idioma:</translation>
+        <translation>Seleziona la lingua dell&apos;applicazione:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Idioma do Sistema&gt;</translation>
+        <translation>&lt;System Language&gt;</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation>Nota</translation>
+        <translation>Note</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Reinicia a aplicação para que a alteração de idioma surta efeito.</translation>
+        <translation>Riavvia l&apos;applicazione per rendere effettivo il cambiamento della lingua.</translation>
     </message>
 </context>
 <context>
     <name>Pattern</name>
     <message>
         <source>180° Rotational</source>
-        <translation>Rotativo a 180°</translation>
+        <translation>Rotazione di 180°</translation>
     </message>
     <message>
         <source>Full Rotational</source>
-        <translation>Totalmente Rotativo</translation>
+        <translation>Rotazione completa</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontal</translation>
+        <translation>Orizzonale</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation>Verticale</translation>
     </message>
     <message>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Horizontal &amp; Vertical</translation>
+        <translation>Orizzontale &amp; Verticale</translation>
     </message>
     <message>
         <source>Diagonal</source>
-        <translation>Diagonal</translation>
+        <translation>Diagonale</translation>
     </message>
     <message>
         <source>Anti-Diagonal</source>
-        <translation>Anti-Diagonal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Diagonal e Anti-Diagonal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Full Dihedral</source>
-        <translation>Diedro Completo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Random</source>
-        <translation>Aleatório</translation>
+        <translation>Casuale</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Nenhum</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -82,15 +82,15 @@
     </message>
     <message>
         <source>Pen</source>
-        <translation>Caneta</translation>
+        <translation>Penna</translation>
     </message>
     <message>
         <source>Pencil</source>
-        <translation>Lápis</translation>
+        <translation>Matita</translation>
     </message>
     <message>
         <source>Highlight</source>
-        <translation>Realçar</translation>
+        <translation>Evidenzia</translation>
     </message>
     <message>
         <source>H</source>
@@ -102,35 +102,35 @@
     </message>
     <message>
         <source>&amp;Game</source>
-        <translation>&amp;Jogo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Novo</translation>
+        <translation>&amp;Nuovo</translation>
     </message>
     <message>
         <source>&amp;Details</source>
-        <translation>&amp;Detalhes</translation>
+        <translation>&amp;Dettagli</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Sair</translation>
+        <translation>&amp;Esci</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation>&amp;Mover</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Anular</translation>
+        <translation>&amp;Annulla</translation>
     </message>
     <message>
         <source>&amp;Redo</source>
-        <translation>&amp;Refazer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Check</source>
-        <translation>&amp;Confirmar</translation>
+        <translation>&amp;Controlla</translation>
     </message>
     <message>
         <source>C</source>
@@ -138,55 +138,55 @@
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Definições</translation>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Modos de Mudança Automática</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Esquema Panorâmico</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Idioma da &amp;Aplicação...</translation>
+        <translation>&amp;Lingua</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Ajuda</translation>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <source>&amp;Controls</source>
-        <translation>&amp;Controlos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Acerca de</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Acerca do &amp;Qt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Game</source>
-        <translation>Novo Jogo</translation>
+        <translation>Nuovo gioco</translation>
     </message>
     <message>
         <source>Dancing Links</source>
-        <translation>Ligações Dançarinas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Slice and Dice</source>
-        <translation>Cortar e Recortar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Random</source>
-        <translation>Aleatório</translation>
+        <translation type="unfinished">Casuale</translation>
     </message>
     <message>
         <source>Symmetry:</source>
-        <translation>Simetria:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Algorithm:</source>
@@ -194,39 +194,39 @@
     </message>
     <message>
         <source>Seed:</source>
-        <translation>Semente:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Detalhes</translation>
+        <translation>Dettagli</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Simetria:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algoritmo:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Semente:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation>Controlos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Controlos do Rato:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Clique esquerdo:&lt;/b&gt; Alternar número no modo de caneta&lt;br&gt;&lt;b&gt;Clique direito:&lt;/b&gt; Alternar número no modo de lápis&lt;br&gt;&lt;b&gt;Roda do rato:&lt;/b&gt; Alterar número atual&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Controlos do Teclado:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Setas:&lt;/b&gt; Mover seleção&lt;br&gt;&lt;b&gt;Números:&lt;/b&gt; Alternar entre valor e nota&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Alternar entre modos caneta e lápis&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Realçar todas as instâncias do número atual&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About Simsu</source>
-        <translation>Acerca do Simsu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>A basic Sudoku game</source>
-        <translation>Um puro jogo de Sudoku</translation>
+        <translation>Un semplice Sudoku</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>Direitos de autor &amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>Copyright &amp;copy; 1009-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Lançado sob a licença &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Rilasciato sotto la licenza &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
     </message>
 </context>
 </TS>
