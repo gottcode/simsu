@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2017-05-20 15:56+0000\n"
+"PO-Revision-Date: 2017-09-23 23:49+0000\n"
 "Last-Translator: st.michael c\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/gottcode/simsu/"
 "language/zh_TW/)\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
+#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
 msgid "Simsu"
 msgstr "Simsu"
 
-#: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
+#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
 msgid "Fill in numbers to solve puzzles"
 msgstr "填入數字，解答數謎。"
 
-#: ../simsu.appdata.xml.in.h:3
+#: ../simsu.appdata.xml.in:10
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
@@ -42,6 +42,6 @@ msgstr ""
 "戲時，你可以同時檢查答案的正確性。這遊戲會儲存你目前的劃記和答案，所以下次你"
 "可以重拾你前次未完成的殘局。"
 
-#: ../simsu.desktop.in.h:2
+#: ../simsu.desktop.in:4
 msgid "Sudoku Game"
 msgstr "數獨遊戲"

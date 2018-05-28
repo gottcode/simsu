@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2015-02-02 15:12+0000\n"
+"PO-Revision-Date: 2017-09-23 20:44+0000\n"
 "Last-Translator: João Frade <100nome.portugal@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/gottcode/simsu/language/"
 "pt/)\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:1
+#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
 msgid "Simsu"
 msgstr "Simsu"
 
-#: ../simsu.appdata.xml.in.h:2 ../simsu.desktop.in.h:3
+#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
 msgid "Fill in numbers to solve puzzles"
 msgstr "Preenche com números para resolveres quebra-cabeças"
 
-#: ../simsu.appdata.xml.in.h:3
+#: ../simsu.appdata.xml.in:10
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
@@ -42,6 +42,6 @@ msgstr ""
 "fazer a verificação durante o jogo. A aplicação guarda as tuas notas e "
 "respostas atuais, de modo a que possas retomar o jogo anterior."
 
-#: ../simsu.desktop.in.h:2
+#: ../simsu.desktop.in:4
 msgid "Sudoku Game"
 msgstr "Jogo de Sudoku"
