@@ -121,7 +121,7 @@ Window::Window()
 	new QShortcut(tr("S"), this, SLOT(toggleMode()));
 
 	m_mode_layout = new QHBoxLayout;
-	m_mode_layout->setMargin(0);
+	m_mode_layout->setContentsMargins(0, 0, 0, 0);
 	m_mode_layout->addWidget(pen_button);
 	m_mode_layout->addWidget(pencil_button);
 	m_mode_layout->addStretch();
@@ -129,7 +129,7 @@ Window::Window()
 
 	// Create key buttons
 	m_keys_layout = new QHBoxLayout;
-	m_keys_layout->setMargin(0);
+	m_keys_layout->setContentsMargins(0, 0, 0, 0);
 
 	m_key_buttons = new QButtonGroup(this);
 	connect(m_key_buttons, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), m_board, &Board::setActiveKey);

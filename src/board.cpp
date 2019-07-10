@@ -52,7 +52,7 @@ Board::Board(QWidget* parent) :
 	m_moves = new QUndoStack(this);
 
 	QGridLayout* layout = new QGridLayout(this);
-	layout->setMargin(3);
+	layout->setContentsMargins(3, 3, 3, 3);
 	layout->setSpacing(0);
 
 	// Create cells
@@ -63,7 +63,7 @@ Board::Board(QWidget* parent) :
 		int max_row = row + 3;
 
 		QGridLayout* box = new QGridLayout;
-		box->setMargin(2);
+		box->setContentsMargins(2, 2, 2, 2);
 		box->setSpacing(1);
 		layout->addLayout(box, row / 3, col / 3);
 
