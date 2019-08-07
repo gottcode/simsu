@@ -3,7 +3,7 @@
 @ECHO OFF
 
 SET APP=Simsu
-SET VERSION=1.3.7
+SET VERSION=1.3.8
 
 ECHO Copying executable
 MKDIR %APP%

@@ -2,7 +2,7 @@
 
 APP='Simsu'
 BUNDLE="$APP.app"
-VERSION='1.3.7'
+VERSION='1.3.8'
 
 # Remove any previous disk folder or DMG
 echo -n 'Preparing... '
