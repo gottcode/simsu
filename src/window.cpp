@@ -208,7 +208,7 @@ void Window::closeEvent(QCloseEvent* event)
 void Window::wheelEvent(QWheelEvent* event)
 {
 	int id = m_key_buttons->checkedId();
-	if (event->delta() < 0) {
+	if (event->angleDelta().y() < 0) {
 		id++;
 		if (id > 9) {
 			id = 1;
