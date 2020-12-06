@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,7 +83,11 @@ protected:
 	void keyPressEvent(QKeyEvent* event);
 
 	/** Override parent function to make sure cell has focus highlight. */
+#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
+	void enterEvent(QEnterEvent* event);
+#else
 	void enterEvent(QEvent* event);
+#endif
 
 	/** Override parent function to handle inputting a guess. */
 	void mousePressEvent(QMouseEvent* event);

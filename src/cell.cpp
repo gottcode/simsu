@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2011, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -268,7 +268,11 @@ void Cell::keyPressEvent(QKeyEvent* event)
 
 //-----------------------------------------------------------------------------
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
+void Cell::enterEvent(QEnterEvent* event)
+#else
 void Cell::enterEvent(QEvent* event)
+#endif
 {
 	setFocus();
 	Frame::enterEvent(event);
