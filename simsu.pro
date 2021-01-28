@@ -70,7 +70,7 @@ macx {
 } else:win32 {
 	RC_ICONS = icons/simsu.ico
 	QMAKE_TARGET_DESCRIPTION = "Sudoku game"
-	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2019 Graeme Gott"
+	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2021 Graeme Gott"
 } else:unix {
 	RESOURCES += icons/icon.qrc
 
