@@ -84,9 +84,6 @@ macx {
 	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
-	pixmap.files = icons/simsu.xpm
-	pixmap.path = $$PREFIX/share/pixmaps/
-
 	desktop.path = $$PREFIX/share/applications/
 	desktop.files = icons/simsu.desktop
 
@@ -100,5 +97,5 @@ macx {
 	man.files = doc/simsu.6
 	man.path = $$PREFIX/share/man/man6
 
-	INSTALLS += target icon pixmap desktop appdata qm man
+	INSTALLS += target icon desktop appdata qm man
 }
