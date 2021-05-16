@@ -28,6 +28,7 @@
 //-----------------------------------------------------------------------------
 
 Puzzle::Puzzle() :
+	m_random(QRandomGenerator::securelySeeded()),
 	m_pattern(0),
 	m_difficulty(VeryEasy),
 	m_generated(INT_MAX)
@@ -43,10 +44,8 @@ Puzzle::~Puzzle()
 
 //-----------------------------------------------------------------------------
 
-void Puzzle::generate(unsigned int seed, int symmetry, int difficulty)
+void Puzzle::generate(int symmetry, int difficulty)
 {
-	m_random.seed(seed);
-
 	delete m_pattern;
 	switch (symmetry) {
 	case Pattern::FullDihedral:

@@ -32,9 +32,6 @@
 #include <QSettings>
 #include <QUndoStack>
 
-#include <ctime>
-#include <random>
-
 //-----------------------------------------------------------------------------
 
 Board::Board(QWidget* parent) :
@@ -128,19 +125,11 @@ void Board::newPuzzle(int symmetry, int difficulty)
 {
 	QSettings settings;
 
-#ifndef Q_OS_WIN
-	std::random_device rd;
-	std::mt19937 gen(rd());
-#else
-	std::mt19937 gen(time(0));
-#endif
-
 	if (symmetry == -1) {
 		symmetry = settings.value("Symmetry", Pattern::Rotational180).toInt();
 	}
 	if (symmetry == Pattern::Random) {
-		std::uniform_int_distribution<int> dis(Pattern::Rotational180, Pattern::FullDihedral);
-		symmetry = dis(gen);
+		symmetry = QRandomGenerator::global()->bounded(Pattern::Rotational180, Pattern::Random);
 	}
 
 	if (difficulty == -1) {
@@ -157,7 +146,7 @@ void Board::newPuzzle(int symmetry, int difficulty)
 	}
 
 	// Create puzzle
-	m_puzzle->generate(gen(), symmetry, difficulty);
+	m_puzzle->generate(symmetry, difficulty);
 
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
