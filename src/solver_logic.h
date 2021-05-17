@@ -36,10 +36,10 @@ class SolverLogic
 		/**
 		 * Constructs a cell.
 		 */
-		CellValue() :
-			m_value(0),
-			m_possible_count(9),
-			m_possible{true,true,true,true,true,true,true,true,true}
+		CellValue()
+			: m_value(0)
+			, m_possible_count(9)
+			, m_possible{true,true,true,true,true,true,true,true,true}
 		{
 		}
 
@@ -131,10 +131,10 @@ class SolverLogic
 		/**
 		 * Constructs a hidden pair.
 		 */
-		HiddenPair() :
-			count(0),
-			cell1(0),
-			cell2(0)
+		HiddenPair()
+			: count(0)
+			, cell1(0)
+			, cell2(0)
 		{
 		}
 

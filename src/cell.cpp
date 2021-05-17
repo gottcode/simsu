@@ -39,15 +39,15 @@ static int pencil_size = 1;
 
 //-----------------------------------------------------------------------------
 
-Cell::Cell(int column, int row, Board* board, QWidget* parent) :
-	Frame(parent),
-	m_current_state(0),
-	m_column(column),
-	m_row(row),
-	m_wrong(false),
-	m_given(false),
-	m_board(board),
-	m_puzzle(0)
+Cell::Cell(int column, int row, Board* board, QWidget* parent)
+	: Frame(parent)
+	, m_current_state(0)
+	, m_column(column)
+	, m_row(row)
+	, m_wrong(false)
+	, m_given(false)
+	, m_board(board)
+	, m_puzzle(0)
 {
 	State state;
 	state.value = 0;

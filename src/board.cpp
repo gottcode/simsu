@@ -34,15 +34,15 @@
 
 //-----------------------------------------------------------------------------
 
-Board::Board(QWidget* parent) :
-	Frame(parent),
-	m_puzzle(new Puzzle),
-	m_active_key(1),
-	m_active_cell(0),
-	m_auto_switch(true),
-	m_highlight_active(false),
-	m_notes_mode(false),
-	m_finished(false)
+Board::Board(QWidget* parent)
+	: Frame(parent)
+	, m_puzzle(new Puzzle)
+	, m_active_key(1)
+	, m_active_cell(0)
+	, m_auto_switch(true)
+	, m_highlight_active(false)
+	, m_notes_mode(false)
+	, m_finished(false)
 {
 	setBackgroundRole(QPalette::Mid);
 

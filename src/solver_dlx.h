@@ -45,13 +45,13 @@ class SolverDLX
 	struct Node
 	{
 		/** Constructs a node with the value of 1. */
-		Node() :
-			left(nullptr),
-			right(nullptr),
-			up(nullptr),
-			down(nullptr),
-			column(nullptr),
-			row(nullptr)
+		Node()
+			: left(nullptr)
+			, right(nullptr)
+			, up(nullptr)
+			, down(nullptr)
+			, column(nullptr)
+			, row(nullptr)
 		{
 		}
 
@@ -67,9 +67,9 @@ class SolverDLX
 	struct HeaderNode : public Node
 	{
 		/** Constructs an empty column. */
-		HeaderNode() :
-			size(0),
-			id(0)
+		HeaderNode()
+			: size(0)
+			, id(0)
 		{
 		}
 

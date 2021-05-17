@@ -26,9 +26,9 @@
 
 //-----------------------------------------------------------------------------
 
-Square::Square(QWidget* parent) :
-	QWidget(parent),
-	m_child(0)
+Square::Square(QWidget* parent)
+	: QWidget(parent)
+	, m_child(0)
 {
 	setMinimumSize(345, 345);
 }

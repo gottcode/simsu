@@ -23,9 +23,9 @@
 
 //-----------------------------------------------------------------------------
 
-Move::Move(Cell* cell, int id, int column, int row, bool note, int value) :
-	m_cell(cell),
-	m_id(id)
+Move::Move(Cell* cell, int id, int column, int row, bool note, int value)
+	: m_cell(cell)
+	, m_id(id)
 {
 	setText(QString("%1%2%3%4").arg(column).arg(row).arg(note ? "n" : "v").arg(value));
 }

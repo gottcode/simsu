@@ -27,11 +27,11 @@
 
 //-----------------------------------------------------------------------------
 
-Puzzle::Puzzle() :
-	m_random(QRandomGenerator::securelySeeded()),
-	m_pattern(0),
-	m_difficulty(VeryEasy),
-	m_generated(INT_MAX)
+Puzzle::Puzzle()
+	: m_random(QRandomGenerator::securelySeeded())
+	, m_pattern(0)
+	, m_difficulty(VeryEasy)
+	, m_generated(INT_MAX)
 {
 }
 

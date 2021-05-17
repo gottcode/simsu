@@ -23,12 +23,12 @@
 
 //-----------------------------------------------------------------------------
 
-Frame::Frame(QWidget* parent) :
-	QWidget(parent),
-	m_highlight(false),
-	m_highlight_border(false),
-	m_highlight_partial(false),
-	m_highlight_mid(false)
+Frame::Frame(QWidget* parent)
+	: QWidget(parent)
+	, m_highlight(false)
+	, m_highlight_border(false)
+	, m_highlight_partial(false)
+	, m_highlight_mid(false)
 {
 }
 

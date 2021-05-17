@@ -23,14 +23,14 @@
 
 //-----------------------------------------------------------------------------
 
-SolverDLX::SolverDLX() :
-	m_max_columns(324),
-	m_max_rows(729),
-	m_max_nodes(2916),
-	m_columns(m_max_columns),
-	m_output(m_max_columns),
-	m_solutions(0),
-	m_tries(0)
+SolverDLX::SolverDLX()
+	: m_max_columns(324)
+	, m_max_rows(729)
+	, m_max_nodes(2916)
+	, m_columns(m_max_columns)
+	, m_output(m_max_columns)
+	, m_solutions(0)
+	, m_tries(0)
 {
 	init();
 }

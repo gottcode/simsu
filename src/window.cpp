@@ -69,8 +69,8 @@ namespace
 		SidebarButton(const QString& icon, const QString& text, QWidget* parent = 0);
 	};
 
-	SidebarButton::SidebarButton(const QString& icon, const QString& text, QWidget* parent) :
-		QToolButton(parent)
+	SidebarButton::SidebarButton(const QString& icon, const QString& text, QWidget* parent)
+		: QToolButton(parent)
 	{
 		setText(text);
 		setIconSize(QSize(32,32));
