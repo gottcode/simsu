@@ -114,7 +114,7 @@ void Cell::setState(int state)
 	m_current_state = state;
 
 	// Check for conflicts
-	for (Cell* cell : m_conflicts) {
+	for (Cell* cell : qAsConst(m_conflicts)) {
 		cell->m_conflicts.removeOne(this);
 		cell->update();
 	}
