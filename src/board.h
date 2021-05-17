@@ -166,7 +166,7 @@ public slots:
 	 * If @p show is @c true, it highlights any cells that the player has filled
 	 * incorrectly. Otherwise, it clears the highlight of incorrect cells.
 	 */
-	void showWrong(bool show = true);
+	void showWrong(bool show);
 
 	/**
 	 * Set which key is currently being used.

@@ -103,7 +103,7 @@ Window::Window()
 #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
 	connect(m_mode_buttons, &QButtonGroup::idClicked, m_board, &Board::setMode);
 #else
-	connect(m_mode_buttons, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), m_board, &Board::setMode);
+	connect(m_mode_buttons, qOverload<int>(&QButtonGroup::buttonClicked), m_board, &Board::setMode);
 #endif
 
 	QToolButton* pen_button = new SidebarButton(":/pen.png", tr("Pen"), contents);
@@ -123,7 +123,8 @@ Window::Window()
 	}
 
 	m_mode_buttons->button(QSettings().value("Mode") == "Pencil")->click();
-	new QShortcut(tr("S"), this, SLOT(toggleMode()));
+	QShortcut* shortcut = new QShortcut(tr("S"), this);
+	connect(shortcut, &QShortcut::activated, this, &Window::toggleMode);
 
 	m_mode_layout = new QHBoxLayout;
 	m_mode_layout->setContentsMargins(0, 0, 0, 0);
@@ -140,7 +141,7 @@ Window::Window()
 #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
 	connect(m_key_buttons, &QButtonGroup::idClicked, m_board, &Board::setActiveKey);
 #else
-	connect(m_key_buttons, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), m_board, &Board::setActiveKey);
+	connect(m_key_buttons, qOverload<int>(&QButtonGroup::buttonClicked), m_board, &Board::setActiveKey);
 #endif
 
 	for (int i = 1; i < 10; ++i) {
@@ -165,19 +166,19 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, SLOT(newGame()), QKeySequence::New);
-	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
+	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
+	menu->addAction(tr("&Details"), this, &Window::showDetails);
 	menu->addSeparator();
-	QAction* action = menu->addAction(tr("&Quit"), qApp, SLOT(quit()), QKeySequence::Quit);
+	QAction* action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Move"));
-	action = menu->addAction(tr("&Undo"), m_board->moves(), SLOT(undo()), QKeySequence::Undo);
+	action = menu->addAction(tr("&Undo"), m_board->moves(), &QUndoStack::undo, QKeySequence::Undo);
 	connect(m_board->moves(), &QUndoStack::canUndoChanged, action, &QAction::setEnabled);
-	action = menu->addAction(tr("&Redo"), m_board->moves(), SLOT(redo()), QKeySequence::Redo);
+	action = menu->addAction(tr("&Redo"), m_board->moves(), &QUndoStack::redo, QKeySequence::Redo);
 	connect(m_board->moves(), &QUndoStack::canRedoChanged, action, &QAction::setEnabled);
 	menu->addSeparator();
-	menu->addAction(tr("&Check"), m_board, SLOT(showWrong()), tr("C"));
+	menu->addAction(tr("&Check"), m_board, [this](){ m_board->showWrong(true); }, tr("C"));
 
 	menu = menuBar()->addMenu(tr("&Settings"));
 	action = menu->addAction(tr("&Auto Switch Modes"));
@@ -189,15 +190,15 @@ Window::Window()
 	connect(action, &QAction::toggled, this, &Window::toggleWidescreen);
 	action->setChecked(settings.value("Widescreen").toBool());
 	menu->addSeparator();
-	menu->addAction(tr("Application &Language..."), this, SLOT(setLocaleClicked()));
+	menu->addAction(tr("Application &Language..."), this, &Window::setLocaleClicked);
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	menu->addAction(tr("&Controls"), this, SLOT(showControls()), QKeySequence::HelpContents);
+	menu->addAction(tr("&Controls"), this, &Window::showControls, QKeySequence::HelpContents);
 	menu->addSeparator();
 
-	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action = menu->addAction(tr("&About"), this, &Window::about);
 	action->setMenuRole(QAction::AboutRole);
-	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
 	action->setMenuRole(QAction::AboutQtRole);
 
 	// Restore size and position
