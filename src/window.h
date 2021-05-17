@@ -45,10 +45,10 @@ public:
 
 protected:
 	/** Override parent function to save window geometry. */
-	void closeEvent(QCloseEvent* event);
+	void closeEvent(QCloseEvent* event) override;
 
 	/** Override parent function to handle scrolling through current keys. */
-	void wheelEvent(QWheelEvent* event);
+	void wheelEvent(QWheelEvent* event) override;
 
 private slots:
 	/**

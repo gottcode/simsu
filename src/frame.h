@@ -35,7 +35,7 @@ public:
 
 protected:
 	/** Override parent function to draw border and custom background color. */
-	void paintEvent(QPaintEvent* event);
+	void paintEvent(QPaintEvent* event) override;
 
 	/** Sets whether or not background should be drawn in full highlight. */
 	void setHighlight(bool highlight)

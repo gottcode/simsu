@@ -133,12 +133,12 @@ protected:
 class PatternFullDihedral : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 8;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -157,12 +157,12 @@ public:
 class PatternRotational180 : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -175,12 +175,12 @@ public:
 class PatternRotationalFull : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -195,12 +195,12 @@ public:
 class PatternHorizontal : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -213,12 +213,12 @@ public:
 class PatternVertical : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -231,12 +231,12 @@ public:
 class PatternHorizontalVertical : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -251,12 +251,12 @@ public:
 class PatternDiagonal : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -269,12 +269,12 @@ public:
 class PatternAntiDiagonal : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -287,12 +287,12 @@ public:
 class PatternDiagonalAntiDiagonal : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -307,12 +307,12 @@ public:
 class PatternNone : public Pattern
 {
 public:
-	int count() const
+	int count() const override
 	{
 		return 1;
 	}
 
-	QVector<int> pattern(const int c, const int r) const
+	QVector<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r)

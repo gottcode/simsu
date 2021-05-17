@@ -74,29 +74,29 @@ public:
 
 protected:
 	/** Override parent function to add partial highlight to cells in column and row. */
-	void focusInEvent(QFocusEvent* event);
+	void focusInEvent(QFocusEvent* event) override;
 
 	/** Override parent function to remove partial highlight from cells in column and row. */
-	void focusOutEvent(QFocusEvent* event);
+	void focusOutEvent(QFocusEvent* event) override;
 
 	/** Override parent function to handle moving focus or inputting a guess. */
-	void keyPressEvent(QKeyEvent* event);
+	void keyPressEvent(QKeyEvent* event) override;
 
 	/** Override parent function to make sure cell has focus highlight. */
 #if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
-	void enterEvent(QEnterEvent* event);
+	void enterEvent(QEnterEvent* event) override;
 #else
-	void enterEvent(QEvent* event);
+	void enterEvent(QEvent* event) override;
 #endif
 
 	/** Override parent function to handle inputting a guess. */
-	void mousePressEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event) override;
 
 	/** Override parent function to draw cell value and highlight. */
-	void paintEvent(QPaintEvent* event);
+	void paintEvent(QPaintEvent* event) override;
 
 	/** Override parent function to set font size used in paintEvent(). */
-	void resizeEvent(QResizeEvent* event);
+	void resizeEvent(QResizeEvent* event) override;
 
 private:
 	/**

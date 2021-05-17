@@ -42,7 +42,7 @@ public:
 
 protected:
 	/** Override parent function to handle setting child position and size. */
-	void resizeEvent(QResizeEvent* event);
+	void resizeEvent(QResizeEvent* event) override;
 
 private:
 	QWidget* m_child; /**< widget to be squared */

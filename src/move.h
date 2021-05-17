@@ -46,10 +46,10 @@ public:
 	Move(Cell* cell, int id, int column, int row, bool note, int value);
 
 	/** Switch cell to the answer or notes of this move. */
-	void redo();
+	void redo() override;
 
 	/** Switch cell to the answer or notes from before this move. */
-	void undo();
+	void undo() override;
 
 private:
 	Cell* m_cell; /**< cell to modify */
