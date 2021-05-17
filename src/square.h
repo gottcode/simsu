@@ -31,7 +31,7 @@ public:
 	 *
 	 * @param parent the parent widget
 	 */
-	Square(QWidget* parent = 0);
+	Square(QWidget* parent = nullptr);
 
 	/**
 	 * Set the widget to be squared.

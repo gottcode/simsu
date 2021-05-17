@@ -42,7 +42,7 @@ public:
 	 * Initializes board and starts a new game. If there is a saved game, it
 	 * loads that instead of starting a new game.
 	 */
-	Board(QWidget* parent = 0);
+	Board(QWidget* parent = nullptr);
 
 	/**
 	 * Cleans up board and removes current game if it is finished so that a new

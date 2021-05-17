@@ -66,7 +66,7 @@ namespace
 		 * @param text the text to display on the button
 		 * @param parent the parent widget of the button
 		 */
-		SidebarButton(const QString& icon, const QString& text, QWidget* parent = 0);
+		SidebarButton(const QString& icon, const QString& text, QWidget* parent = nullptr);
 	};
 
 	SidebarButton::SidebarButton(const QString& icon, const QString& text, QWidget* parent)
@@ -370,14 +370,14 @@ void Window::toggleWidescreen(bool checked)
 		width = m_mode_layout->sizeHint().width();
 		style = Qt::ToolButtonTextUnderIcon;
 		m_layout->removeItem(m_mode_layout);
-		m_mode_layout->setParent(0);
+		m_mode_layout->setParent(nullptr);
 		m_layout->insertLayout(0, m_mode_layout);
 	} else {
 		m_mode_layout->setDirection(QBoxLayout::LeftToRight);
 		m_keys_layout->setDirection(QBoxLayout::LeftToRight);
 		m_layout->setDirection(QBoxLayout::TopToBottom);
 		m_layout->removeItem(m_mode_layout);
-		m_mode_layout->setParent(0);
+		m_mode_layout->setParent(nullptr);
 		m_layout->addLayout(m_mode_layout);
 	}
 

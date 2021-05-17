@@ -29,7 +29,7 @@
 
 Puzzle::Puzzle()
 	: m_random(QRandomGenerator::securelySeeded())
-	, m_pattern(0)
+	, m_pattern(nullptr)
 	, m_difficulty(VeryEasy)
 	, m_generated(INT_MAX)
 {

@@ -43,7 +43,7 @@ public:
 	 * @param board the game board
 	 * @param parent the parent widget
 	 */
-	Cell(int column, int row, Board* board, QWidget* parent = 0);
+	Cell(int column, int row, Board* board, QWidget* parent = nullptr);
 
 	/** @return column of cell. */
 	int column() const;

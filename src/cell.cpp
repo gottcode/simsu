@@ -47,7 +47,7 @@ Cell::Cell(int column, int row, Board* board, QWidget* parent)
 	, m_wrong(false)
 	, m_given(false)
 	, m_board(board)
-	, m_puzzle(0)
+	, m_puzzle(nullptr)
 {
 	State state;
 	state.value = 0;
@@ -79,7 +79,7 @@ int Cell::row() const
 
 bool Cell::isCorrect() const
 {
-	Q_ASSERT(m_puzzle != 0);
+	Q_ASSERT(m_puzzle);
 	return m_states[m_current_state].value == m_puzzle->value(m_column, m_row);
 }
 
@@ -87,7 +87,7 @@ bool Cell::isCorrect() const
 
 void Cell::setPuzzle(Puzzle* puzzle)
 {
-	Q_ASSERT(puzzle != 0);
+	Q_ASSERT(puzzle);
 	m_puzzle = puzzle;
 
 	m_conflicts.clear();
