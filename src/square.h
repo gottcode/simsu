@@ -18,7 +18,7 @@ public:
 	 *
 	 * @param parent the parent widget
 	 */
-	Square(QWidget* parent = nullptr);
+	explicit Square(QWidget* parent = nullptr);
 
 	/**
 	 * Set the widget to be squared.

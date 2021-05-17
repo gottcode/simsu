@@ -23,7 +23,7 @@ class SolverLogic
 		/**
 		 * Constructs a cell.
 		 */
-		CellValue()
+		explicit CellValue()
 			: m_value(0)
 			, m_possible_count(9)
 			, m_possible{true,true,true,true,true,true,true,true,true}
@@ -136,7 +136,7 @@ public:
 	/**
 	 * Constructs a solver.
 	 */
-	SolverLogic();
+	explicit SolverLogic();
 
 	/**
 	 * Find if puzzle has a solution.

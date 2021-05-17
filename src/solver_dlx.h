@@ -32,7 +32,7 @@ class SolverDLX
 	struct Node
 	{
 		/** Constructs a node with the value of 1. */
-		Node()
+		explicit Node()
 			: left(nullptr)
 			, right(nullptr)
 			, up(nullptr)
@@ -54,7 +54,7 @@ class SolverDLX
 	struct HeaderNode : public Node
 	{
 		/** Constructs an empty column. */
-		HeaderNode()
+		explicit HeaderNode()
 			: size(0)
 			, id(0)
 		{
@@ -66,7 +66,7 @@ class SolverDLX
 
 public:
 	/** Construct a solver. */
-	SolverDLX();
+	explicit SolverDLX();
 
 	/** Clean up solver. */
 	~SolverDLX();

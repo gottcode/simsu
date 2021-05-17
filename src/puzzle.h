@@ -34,7 +34,7 @@ public:
 	};
 
 	/** Constructs a puzzle. */
-	Puzzle();
+	explicit Puzzle();
 
 	/** Clean up puzzle. */
 	~Puzzle();

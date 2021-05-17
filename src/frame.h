@@ -18,7 +18,7 @@ class Frame : public QWidget
 {
 public:
 	/** Constructs a frame. */
-	Frame(QWidget* parent = nullptr);
+	explicit Frame(QWidget* parent = nullptr);
 
 protected:
 	/** Override parent function to draw border and custom background color. */
