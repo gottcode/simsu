@@ -290,7 +290,22 @@ void Cell::mousePressEvent(QMouseEvent* event)
 void Cell::paintEvent(QPaintEvent* event)
 {
 	setHighlight(m_board->highlightActive() && m_states[m_current_state].value == m_board->activeKey());
-	setHighlightMid(m_board->highlightActive() && m_states[m_current_state].notes[m_board->activeKey() - 1]);
+	if (m_board->highlightActive()) {
+		switch (m_board->autoNotes()) {
+		case Board::AutoClearNotes:
+			setHighlightMid(m_board->hasPossible(m_column, m_row, m_board->activeKey()) && m_states[m_current_state].notes[m_board->activeKey() - 1]);
+			break;
+		case Board::AutoFillNotes:
+			setHighlightMid(m_board->hasPossible(m_column, m_row, m_board->activeKey()) && m_states[m_current_state].autonotes[m_board->activeKey() - 1]);
+			break;
+		case Board::ManualNotes:
+		default:
+			setHighlightMid(m_states[m_current_state].notes[m_board->activeKey() - 1]);
+			break;
+		};
+	} else {
+		setHighlightMid(false);
+	}
 	Frame::paintEvent(event);
 
 	QPainter painter(this);
