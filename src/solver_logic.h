@@ -139,6 +139,19 @@ public:
 	explicit SolverLogic();
 
 	/**
+	 * Checks if a cell can contain a value.
+	 *
+	 * @param column the column of the cell
+	 * @param row the row of the cell
+	 * @param value the value to check
+	 * @return @c true if the cell can contain the value
+	 */
+	bool hasPossible(int column, int row, int value) const
+	{
+		return m_cells[column + (row * 9)].hasPossible(value);
+	}
+
+	/**
 	 * Prepares the board for solving by filling in the givens. This removes
 	 * the possible values from the row, columns, and boxes of the givens.
 	 *

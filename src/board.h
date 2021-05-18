@@ -105,6 +105,15 @@ public:
 		return m_notes_mode;
 	}
 
+	/**
+	 * Returns @c true if cell can contain @p value.
+	 *
+	 * @param column cell column
+	 * @param row cell row
+	 * @param value value to check
+	 */
+	bool hasPossible(int column, int row, int value) const;
+
 	/** Returns @c true if game is over, @c false otherwise */
 	bool isFinished() const
 	{

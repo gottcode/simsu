@@ -40,6 +40,7 @@ Cell::Cell(int column, int row, Board* board, QWidget* parent)
 	state.value = 0;
 	for (int i = 0; i < 9; ++i) {
 		state.notes[i] = false;
+		state.autonotes[i] = true;
 	}
 	m_states.append(state);
 
@@ -316,7 +317,9 @@ void Cell::paintEvent(QPaintEvent* event)
 		for (int i = 0; i < 9; ++i) {
 			int c = i % 3;
 			int r = i / 3;
-			if (state.notes[i]) {
+			if ( ((m_board->autoNotes() == Board::ManualNotes) && state.notes[i])
+					|| ((m_board->autoNotes() == Board::AutoClearNotes) && state.notes[i] && m_board->hasPossible(m_column, m_row, i + 1))
+					|| ((m_board->autoNotes() == Board::AutoFillNotes) && state.autonotes[i] && m_board->hasPossible(m_column, m_row, i + 1)) ) {
 				painter.drawText(QRect(c * w + 4, r * h + 4, w, h), Qt::AlignCenter, QString::number(i + 1));
 			}
 		}
@@ -359,7 +362,22 @@ void Cell::updateValue()
 	State state = m_states[m_current_state];
 	if (m_board->notesMode()) {
 		// Toggle note
-		state.notes[key - 1] = !state.notes[key - 1];
+		if (m_board->autoNotes() == Board::ManualNotes) {
+			state.notes[key - 1] = !state.notes[key - 1];
+		} else if (m_board->autoNotes() == Board::AutoClearNotes) {
+			if (state.notes[key - 1]) {
+				state.notes[key - 1] = false;
+			} else {
+				state.notes[key - 1] = m_board->hasPossible(m_column, m_row, key);
+			}
+		} else if (m_board->autoNotes() == Board::AutoFillNotes) {
+			if (m_board->hasPossible(m_column, m_row, key)) {
+				state.autonotes[key - 1] = false;
+				state.notes[key - 1] = false;
+			} else if (state.notes[key - 1]) {
+				state.notes[key - 1] = false;
+			}
+		}
 		state.value = 0;
 	} else {
 		// Toggle value

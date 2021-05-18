@@ -273,6 +273,13 @@ void Board::savePuzzle()
 
 //-----------------------------------------------------------------------------
 
+bool Board::hasPossible(int column, int row, int value) const
+{
+	return m_notes->hasPossible(column, row, value);
+}
+
+//-----------------------------------------------------------------------------
+
 void Board::checkFinished()
 {
 	m_finished = true;

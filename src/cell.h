@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -101,6 +101,7 @@ private:
 	{
 		int value; /**< answer set by player */
 		bool notes[9]; /**< notes set by player */
+		bool autonotes[9]; /** autonotes unchanged by player */
 	};
 	QList<State> m_states; /**< list of all changes player has made */
 	int m_current_state; /**< which state is current */
