@@ -9,6 +9,7 @@
 
 class Cell;
 class Puzzle;
+class SolverLogic;
 
 #include "frame.h"
 class QLabel;
@@ -140,6 +141,9 @@ public:
 	 */
 	void increaseKeyCount(int key);
 
+	/** Solves the current board state to find available possibles. */
+	void updatePossibles();
+
 	/**
 	 * Fetch a cell instance.
 	 *
@@ -228,6 +232,7 @@ private:
 	Cell* m_cells[9][9]; /**< game data */
 	int m_key_count[9]; /**< how many instances of each key are on the board */
 	Puzzle* m_puzzle; /**< the algorithm used to generate the board */
+	SolverLogic* m_notes; /**< the solver used to find the allowed possibles */
 	int m_active_key; /**< the current key */
 	Cell* m_active_cell; /**< the current cell */
 	bool m_auto_switch; /**< auto-switching is enabled */

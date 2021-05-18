@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -112,6 +112,8 @@ void Cell::setState(int state)
 	m_board->increaseKeyCount(m_states[state].value);
 
 	m_current_state = state;
+
+	m_board->updatePossibles();
 
 	// Check for conflicts
 	for (Cell* cell : qAsConst(m_conflicts)) {

@@ -41,6 +41,12 @@ public:
 	/** Returns @c true if cell is correct value; @c false otherwise. */
 	bool isCorrect() const;
 
+	/** Returns the current value of the cell. */
+	int value() const
+	{
+		return m_states[m_current_state].value;
+	}
+
 	/**
 	 * Sets the puzzle used to determine if cell is a given, and what value it
 	 * should have.

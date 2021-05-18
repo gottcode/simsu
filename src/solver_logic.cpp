@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2016 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2016-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -47,7 +47,7 @@ SolverLogic::SolverLogic() :
 
 //-----------------------------------------------------------------------------
 
-int SolverLogic::solvePuzzle(const std::array<int, 81>& givens, int max_difficulty)
+void SolverLogic::loadPuzzle(const std::array<int, 81>& givens)
 {
 	// Reset board so that setValue works
 	for (CellValue& cell : m_cells) {
@@ -62,6 +62,13 @@ int SolverLogic::solvePuzzle(const std::array<int, 81>& givens, int max_difficul
 			setValue(i % 9, i / 9, value);
 		}
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+int SolverLogic::solvePuzzle(const std::array<int, 81>& givens, int max_difficulty)
+{
+	loadPuzzle(givens);
 
 	// Reduce board until solved
 	int remaining = m_remaining;

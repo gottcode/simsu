@@ -9,6 +9,7 @@
 #include "cell.h"
 #include "pattern.h"
 #include "puzzle.h"
+#include "solver_logic.h"
 
 #include <QApplication>
 #include <QFrame>
@@ -24,6 +25,7 @@
 Board::Board(QWidget* parent)
 	: Frame(parent)
 	, m_puzzle(new Puzzle)
+	, m_notes(new SolverLogic)
 	, m_active_key(1)
 	, m_active_cell(nullptr)
 	, m_auto_switch(true)
@@ -105,6 +107,7 @@ Board::~Board()
 		settings.remove("Current");
 	}
 	delete m_puzzle;
+	delete m_notes;
 }
 
 //-----------------------------------------------------------------------------
@@ -141,6 +144,7 @@ void Board::newPuzzle(int symmetry, int difficulty)
 			m_cells[c][r]->setPuzzle(m_puzzle);
 		}
 	}
+	updatePossibles();
 
 	// Store puzzle details
 	settings.remove("Current");
@@ -196,6 +200,7 @@ bool Board::loadPuzzle()
 			m_cells[c][r]->setPuzzle(m_puzzle);
 		}
 	}
+	updatePossibles();
 
 	// Load moves
 	const QStringList moves = settings.value("Moves").toStringList();
@@ -345,6 +350,19 @@ void Board::increaseKeyCount(int key)
 		return;
 	}
 	m_key_count[key]++;
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::updatePossibles()
+{
+	std::array<int, 81> givens;
+	for (int r = 0; r < 9; ++r) {
+		for (int c = 0; c < 9; ++c) {
+			givens[c + (r * 9)] = m_cells[c][r]->value();
+		}
+	}
+	m_notes->loadPuzzle(givens);
 }
 
 //-----------------------------------------------------------------------------

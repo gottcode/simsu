@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2016 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2016-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -137,6 +137,14 @@ public:
 	 * Constructs a solver.
 	 */
 	explicit SolverLogic();
+
+	/**
+	 * Prepares the board for solving by filling in the givens. This removes
+	 * the possible values from the row, columns, and boxes of the givens.
+	 *
+	 * @param givens the values already set on the board
+	 */
+	void loadPuzzle(const std::array<int, 81>& givens);
 
 	/**
 	 * Find if puzzle has a solution.
