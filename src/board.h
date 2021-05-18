@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2016 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -25,6 +25,12 @@ class Board : public Frame
 	Q_OBJECT
 
 public:
+	enum AutoNotes {
+		ManualNotes, /**< Player sets notes */
+		AutoClearNotes, /**< Clears invalid player set notes */
+		AutoFillNotes /**< Fills in notes for player */
+	};
+
 	/**
 	 * Initializes board and starts a new game. If there is a saved game, it
 	 * loads that instead of starting a new game.
@@ -61,6 +67,12 @@ public:
 	int activeKey() const
 	{
 		return m_active_key;
+	}
+
+	/** Returns the automatic note filling mode. */
+	AutoNotes autoNotes() const
+	{
+		return m_auto_notes;
 	}
 
 	/** Returns @c true if auto switching modes is enabled; @c false otherwise */
@@ -170,6 +182,13 @@ public slots:
 	void setActiveCell(Cell* cell);
 
 	/**
+	 * Sets if it should automatically fill notes.
+	 *
+	 * @param mode what fill mode the board should use
+	 */
+	void setAutoNotes(int auto_notes);
+
+	/**
 	 * Sets if it should automatically switch between answers and notes mode.
 	 *
 	 * @param auto_switch if @c true enables auto-switching
@@ -215,6 +234,7 @@ private:
 	bool m_highlight_active; /**< tracks if all instances of the current key should be highlighted */
 	bool m_notes_mode; /**< tracks if in notes mode */
 	bool m_finished; /**< tracks if game is finished */
+	AutoNotes m_auto_notes; /**< tracks what fill mode should be used */
 	QLabel* m_message; /**< used to show messages to the player */
 	QUndoStack* m_moves; /**< history of player actions */
 };

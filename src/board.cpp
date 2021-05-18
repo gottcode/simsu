@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2018 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -30,6 +30,7 @@ Board::Board(QWidget* parent)
 	, m_highlight_active(false)
 	, m_notes_mode(false)
 	, m_finished(false)
+	, m_auto_notes(ManualNotes)
 {
 	setBackgroundRole(QPalette::Mid);
 
@@ -360,6 +361,30 @@ void Board::setActiveKey(int key)
 void Board::setActiveCell(Cell* cell)
 {
 	m_active_cell = cell;
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::setAutoNotes(int auto_notes)
+{
+	m_auto_notes = qBound(ManualNotes, AutoNotes(auto_notes), AutoFillNotes);
+
+	QString name;
+	switch (m_auto_notes) {
+	case AutoClearNotes:
+		name = "Clear";
+		break;
+	case AutoFillNotes:
+		name = "Fill";
+		break;
+	case ManualNotes:
+	default:
+		name = "None";
+		break;
+	}
+	QSettings().setValue("AutoNotes", name);
+
+	update();
 }
 
 //-----------------------------------------------------------------------------

@@ -12,6 +12,7 @@
 #include "puzzle.h"
 #include "square.h"
 
+#include <QActionGroup>
 #include <QApplication>
 #include <QButtonGroup>
 #include <QComboBox>
@@ -143,6 +144,11 @@ Window::Window()
 
 	m_key_buttons->button(qBound(1, QSettings().value("Key", 1).toInt(), 10))->click();
 
+	// Create notes fill group
+	m_auto_notes_actions = new QActionGroup(this);
+	m_auto_notes_actions->setExclusive(true);
+	connect(m_auto_notes_actions, &QActionGroup::triggered, this, &Window::autoNotesChanged);
+
 	// Layout window
 	m_layout = new QVBoxLayout(contents);
 	m_layout->addSpacing(6);
@@ -177,6 +183,19 @@ Window::Window()
 	connect(action, &QAction::toggled, this, &Window::toggleWidescreen);
 	action->setChecked(settings.value("Widescreen").toBool());
 	menu->addSeparator();
+	action = menu->addAction(tr("&Manual Notes"));
+	action->setCheckable(true);
+	action->setData(Board::ManualNotes);
+	m_auto_notes_actions->addAction(action);
+	action = menu->addAction(tr("Auto &Clear Notes"));
+	action->setCheckable(true);
+	action->setData(Board::AutoClearNotes);
+	m_auto_notes_actions->addAction(action);
+	action = menu->addAction(tr("Auto &Fill Notes"));
+	action->setCheckable(true);
+	action->setData(Board::AutoFillNotes);
+	m_auto_notes_actions->addAction(action);
+	menu->addSeparator();
 	menu->addAction(tr("Application &Language..."), this, &Window::setLocaleClicked);
 
 	menu = menuBar()->addMenu(tr("&Help"));
@@ -187,6 +206,17 @@ Window::Window()
 	action->setMenuRole(QAction::AboutRole);
 	action = menu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
 	action->setMenuRole(QAction::AboutQtRole);
+
+	// Restore auto notes mode
+	const QString auto_notes = settings.value("AutoNotes").toString();
+	if (auto_notes == "Clear") {
+		action = m_auto_notes_actions->actions().at(Board::AutoClearNotes);
+	} else if (auto_notes == "Fill") {
+		action = m_auto_notes_actions->actions().at(Board::AutoFillNotes);
+	} else {
+		action = m_auto_notes_actions->actions().at(Board::ManualNotes);
+	}
+	action->trigger();
 
 	// Restore size and position
 	restoreGeometry(settings.value("Geometry").toByteArray());
@@ -334,6 +364,13 @@ void Window::activeKeyChanged(int key)
 void Window::notesModeChanged(bool mode)
 {
 	m_mode_buttons->button(mode)->setChecked(true);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::autoNotesChanged(QAction* action)
+{
+	m_board->setAutoNotes(action->data().toInt());
 }
 
 //-----------------------------------------------------------------------------

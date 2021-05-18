@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -10,6 +10,7 @@
 class Board;
 
 #include <QMainWindow>
+class QActionGroup;
 class QBoxLayout;
 class QButtonGroup;
 class QToolButton;
@@ -68,6 +69,13 @@ private slots:
 	 */
 	void notesModeChanged(bool mode);
 
+	/**
+	 * Sets how the board handles auto filling notes.
+	 *
+	 * @param action what notes fill mode to use
+	 */
+	void autoNotesChanged(QAction* action);
+
 	/** Switch between entering answers and notes. */
 	void toggleMode();
 
@@ -85,6 +93,7 @@ private:
 	Board* m_board; /**< game board */
 	QButtonGroup* m_key_buttons; /**< button group to choose which number is active */
 	QButtonGroup* m_mode_buttons; /**< button group to choose if in notes or answer mode */
+	QActionGroup* m_auto_notes_actions; /**< action group to choose mode for auto filling notes */
 	QBoxLayout* m_keys_layout; /**< QLayout for key buttons */
 	QBoxLayout* m_mode_layout; /**< QLayout for mode buttons */
 	QBoxLayout* m_layout; /**< QLayout for widgets */
