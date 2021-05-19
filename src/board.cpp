@@ -374,6 +374,46 @@ void Board::updatePossibles()
 
 //-----------------------------------------------------------------------------
 
+QList<Cell*> Board::cellNeighbors(int column, int row) const
+{
+	QList<Cell*> cells;
+
+	// Fetch neighbors in row
+	for (unsigned int c = 0; c < 9; ++c) {
+		Cell* cell = m_cells[c][row];
+		if (!cells.contains(cell)) {
+			cells.append(cell);
+		}
+	}
+
+	// Fetch neighbors in column
+	for (unsigned int r = 0; r < 9; ++r) {
+		Cell* cell = m_cells[column][r];
+		if (!cells.contains(cell)) {
+			cells.append(cell);
+		}
+	}
+
+	// Fetch neighbors in box
+	const unsigned int box_r = (row / 3) * 3;
+	const unsigned int box_c = (column / 3) * 3;
+	for (unsigned int r = box_r; r < (box_r + 3); ++r) {
+		for (unsigned int c = box_c; c < (box_c + 3); ++c) {
+			Cell* cell = m_cells[c][r];
+			if (!cells.contains(cell)) {
+				cells.append(cell);
+			}
+		}
+	}
+
+	// Do not include cell in neighbors list
+	cells.removeOne(m_cells[column][row]);
+
+	return cells;
+}
+
+//-----------------------------------------------------------------------------
+
 void Board::setActiveKey(int key)
 {
 	m_active_key = qBound(1, key, 10);

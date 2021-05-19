@@ -167,6 +167,15 @@ public:
 		return m_cells[column][row];
 	}
 
+	/**
+	 * Fetch neighbors of a cell.
+	 *
+	 * @param column cell column
+	 * @param row cell row
+	 * @return list of pointers to Cell instances
+	 */
+	QList<Cell*> cellNeighbors(int column, int row) const;
+
 	/** Returns move history. */
 	QUndoStack* moves()
 	{
