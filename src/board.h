@@ -246,6 +246,11 @@ signals:
 	void activeKeyChanged(int key);
 
 	/**
+	 * This signal is emitted when the player has finished the game.
+	 */
+	void gameFinished();
+
+	/**
 	 * This signal is emitted when the game has finished loading.
 	 */
 	void gameStarted();

@@ -244,6 +244,8 @@ bool Board::hasPossible(int column, int row, int value) const
 
 void Board::checkFinished()
 {
+	bool was_finished = m_finished;
+
 	m_finished = true;
 	for (int r = 0; r < 9; ++r) {
 		for (int c = 0; c < 9; ++c) {
@@ -260,6 +262,11 @@ void Board::checkFinished()
 		}
 		m_message->show();
 		update();
+		emit gameFinished();
+	} else if (was_finished) {
+		m_message->hide();
+		update();
+		emit gameStarted();
 	}
 }
 
