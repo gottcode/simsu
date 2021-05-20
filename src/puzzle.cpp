@@ -10,15 +10,19 @@
 #include "solver_dlx.h"
 #include "solver_logic.h"
 
+#include <QtConcurrentRun>
+
 #include <algorithm>
 
 //-----------------------------------------------------------------------------
 
-Puzzle::Puzzle()
-	: m_random(QRandomGenerator::securelySeeded())
+Puzzle::Puzzle(QObject* parent)
+	: QObject(parent)
+	, m_random(QRandomGenerator::securelySeeded())
 	, m_pattern(nullptr)
 	, m_difficulty(VeryEasy)
 	, m_generated(INT_MAX)
+	, m_canceled(false)
 {
 }
 
@@ -26,13 +30,27 @@ Puzzle::Puzzle()
 
 Puzzle::~Puzzle()
 {
+	cancel();
 	delete m_pattern;
+}
+
+//-----------------------------------------------------------------------------
+
+void Puzzle::cancel()
+{
+	blockSignals(true);
+	m_canceled.store(true, std::memory_order_relaxed);
+	m_future.waitForFinished();
+	m_canceled.store(false, std::memory_order_relaxed);
+	blockSignals(false);
 }
 
 //-----------------------------------------------------------------------------
 
 void Puzzle::generate(int symmetry, int difficulty)
 {
+	cancel();
+
 	delete m_pattern;
 	switch (symmetry) {
 	case Pattern::FullDihedral:
@@ -70,23 +88,31 @@ void Puzzle::generate(int symmetry, int difficulty)
 
 	m_difficulty = qBound(VeryEasy, Difficulty(difficulty), Hard);
 
-	int givens = 0;
-	do {
-		m_generated = INT_MAX;
-		createSolution();
-		createGivens();
+	m_future = QtConcurrent::run([this, symmetry]() {
+		int givens = 0;
+		do {
+			m_generated = INT_MAX;
+			createSolution();
+			if (!createGivens()) {
+				return;
+			}
 
-		givens = 81;
-		for (int i = 0; i < 81; ++i) {
-			givens -= !m_givens[i];
-		}
-	} while ((givens > 30) || (m_generated != m_difficulty));
+			givens = 81;
+			for (int i = 0; i < 81; ++i) {
+				givens -= !m_givens[i];
+			}
+		} while ((givens > 30) || (m_generated != m_difficulty));
+
+		emit generated(symmetry, m_difficulty);
+	});
 }
 
 //-----------------------------------------------------------------------------
 
 bool Puzzle::load(const std::array<int, 81>& givens)
 {
+	cancel();
+
 	SolverDLX solver;
 	if (solver.solvePuzzle(givens)) {
 		m_givens = givens;
@@ -154,7 +180,7 @@ void Puzzle::createSolution()
 
 //-----------------------------------------------------------------------------
 
-void Puzzle::createGivens()
+bool Puzzle::createGivens()
 {
 	// Initialize givens
 	m_givens = m_solution;
@@ -186,7 +212,12 @@ void Puzzle::createGivens()
 				m_givens[pos] = m_solution[pos];
 			}
 		}
+
+		if (m_canceled.load(std::memory_order_relaxed)) {
+			return false;
+		}
 	}
+	return true;
 }
 
 //-----------------------------------------------------------------------------

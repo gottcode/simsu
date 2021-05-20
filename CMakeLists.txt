@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui LinguistTools Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Concurrent Core Gui LinguistTools Widgets)
 if(UNIX AND NOT APPLE)
 	include(GNUInstallDirs)
 endif()
@@ -52,6 +52,7 @@ qt6_add_executable(simsu
 )
 
 target_link_libraries(simsu PRIVATE
+	Qt6::Concurrent
 	Qt6::Core
 	Qt6::Gui
 	Qt6::Widgets

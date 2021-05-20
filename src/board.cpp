@@ -24,7 +24,7 @@
 
 Board::Board(QWidget* parent)
 	: Frame(parent)
-	, m_puzzle(new Puzzle)
+	, m_puzzle(new Puzzle(this))
 	, m_notes(new SolverLogic)
 	, m_active_key(1)
 	, m_active_cell(nullptr)
@@ -36,6 +36,11 @@ Board::Board(QWidget* parent)
 	, m_auto_notes(ManualNotes)
 {
 	setBackgroundRole(QPalette::Mid);
+
+	connect(m_puzzle, &Puzzle::generated, this, [this](int symmetry, int difficulty) {
+		puzzleGenerated(symmetry, difficulty);
+		savePuzzle();
+	});
 
 	m_moves = new QUndoStack(this);
 
@@ -102,7 +107,7 @@ Board::~Board()
 	} else {
 		settings.remove("Current");
 	}
-	delete m_puzzle;
+
 	delete m_notes;
 }
 
@@ -125,35 +130,9 @@ void Board::newPuzzle(int symmetry, int difficulty)
 	}
 	settings.setValue("Difficulty", difficulty);
 
-	// Reset board
-	showWrong(false);
-	m_finished = false;
-	m_message->hide();
-	m_moves->clear();
-	for (int i = 0; i < 9; ++i) {
-		m_key_count[i] = 0;
-	}
-
 	// Create puzzle
+	reset();
 	m_puzzle->generate(symmetry, difficulty);
-
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			m_cells[c][r]->setPuzzle(m_puzzle);
-		}
-	}
-	updatePossibles();
-	m_loaded = true;
-
-	// Store puzzle details
-	settings.remove("Current");
-	settings.beginGroup("Current");
-	settings.setValue("Version", 5);
-	settings.setValue("Difficulty", difficulty);
-	settings.setValue("Symmetry", symmetry);
-
-	// Store puzzle layout
-	savePuzzle();
 }
 
 //-----------------------------------------------------------------------------
@@ -184,26 +163,17 @@ bool Board::loadPuzzle()
 		return false;
 	}
 
-	// Reset board
-	showWrong(false);
-	m_finished = false;
-	m_message->hide();
-	m_moves->clear();
-	for (int i = 0; i < 9; ++i) {
-		m_key_count[i] = 0;
-	}
+	// Fetch puzzle details
+	const int difficulty = settings.value("Difficulty").toInt();
+	const int symmetry = settings.value("Symmetry").toInt();
+	const QStringList moves = settings.value("Moves").toStringList();
+	const QStringList active = settings.value("Active").toString().split('x');
 
 	// Load puzzle
-	for (int r = 0; r < 9; ++r) {
-		for (int c = 0; c < 9; ++c) {
-			m_cells[c][r]->setPuzzle(m_puzzle);
-		}
-	}
-	updatePossibles();
-	m_loaded = true;
+	reset();
+	puzzleGenerated(symmetry, difficulty);
 
 	// Load moves
-	const QStringList moves = settings.value("Moves").toStringList();
 	for (const QString& move : moves) {
 		if (move.length() == 4) {
 			m_notes_mode = (move[2] == 'n');
@@ -215,22 +185,10 @@ bool Board::loadPuzzle()
 	m_notes_mode = false;
 
 	// Select current cell
-	const QStringList active = settings.value("Active").toString().split('x');
 	if (active.count() == 2) {
 		m_active_cell = cell(active[0].toInt(), active[1].toInt());
 		m_active_cell->setFocus();
 	}
-
-	// Store puzzle details
-	const int difficulty = settings.value("Difficulty").toInt();
-	const int symmetry = settings.value("Symmetry").toInt();
-
-	settings.endGroup();
-	settings.remove("Current");
-	settings.beginGroup("Current");
-	settings.setValue("Version", 5);
-	settings.setValue("Difficulty", difficulty);
-	settings.setValue("Symmetry", symmetry);
 
 	// Store puzzle layout and moves
 	savePuzzle();
@@ -242,6 +200,10 @@ bool Board::loadPuzzle()
 
 void Board::savePuzzle()
 {
+	if (!m_loaded) {
+		return;
+	}
+
 	QSettings settings;
 	settings.beginGroup("Current");
 
@@ -476,6 +438,45 @@ void Board::setMode(int mode)
 	m_notes_mode = mode;
 	QSettings().setValue("Mode", (m_notes_mode ? "Pencil" : "Pen"));
 	emit notesModeChanged(mode);
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::puzzleGenerated(int symmetry, int difficulty)
+{
+	for (int r = 0; r < 9; ++r) {
+		for (int c = 0; c < 9; ++c) {
+			m_cells[c][r]->setPuzzle(m_puzzle);
+		}
+	}
+
+	updatePossibles();
+
+	// Store puzzle details
+	QSettings settings;
+	settings.remove("Current");
+	settings.beginGroup("Current");
+	settings.setValue("Version", 5);
+	settings.setValue("Difficulty", difficulty);
+	settings.setValue("Symmetry", symmetry);
+
+	m_loaded = true;
+
+	emit gameStarted();
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::reset()
+{
+	showWrong(false);
+	m_finished = false;
+	m_loaded = false;
+	m_message->hide();
+	m_moves->clear();
+	for (int i = 0; i < 9; ++i) {
+		m_key_count[i] = 0;
+	}
 }
 
 //-----------------------------------------------------------------------------

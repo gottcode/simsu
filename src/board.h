@@ -246,11 +246,28 @@ signals:
 	void activeKeyChanged(int key);
 
 	/**
+	 * This signal is emitted when the game has finished loading.
+	 */
+	void gameStarted();
+
+	/**
 	 * This signal is emitted when notes mode is enabled or disabled.
 	 *
 	 * @param mode @c true if notes mode is enabled
 	 */
 	void notesModeChanged(bool mode);
+
+private:
+	/**
+	 * Loads board after puzzle finishes generating.
+	 *
+	 * @param symmetry specify mirroring of givens
+	 * @param difficulty specify how hard to make puzzle
+	 */
+	void puzzleGenerated(int symmetry, int difficulty);
+
+	/** Clear previous game. */
+	void reset();
 
 private:
 	Cell* m_cells[9][9]; /**< game data */
