@@ -73,8 +73,6 @@ namespace
 
 Window::Window()
 {
-	QSettings settings;
-
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
 
@@ -84,6 +82,8 @@ Window::Window()
 	square->setChild(m_board);
 	connect(m_board, &Board::activeKeyChanged, this, &Window::activeKeyChanged);
 	connect(m_board, &Board::notesModeChanged, this, &Window::notesModeChanged);
+
+	QSettings settings;
 
 	// Create mode buttons
 	m_mode_buttons = new QButtonGroup(this);
@@ -140,8 +140,6 @@ Window::Window()
 		m_key_buttons->addButton(key, i);
 		m_keys_layout->addWidget(key);
 	}
-
-	m_key_buttons->button(qBound(1, QSettings().value("Key", 1).toInt(), 10))->click();
 
 	// Create notes fill group
 	m_auto_notes_actions = new QActionGroup(this);
@@ -219,6 +217,12 @@ Window::Window()
 
 	// Restore size and position
 	restoreGeometry(settings.value("Geometry").toByteArray());
+
+	// Show new game dialog if not able to start previous game
+	if (!m_board->loadPuzzle()) {
+		newGame();
+	}
+	m_key_buttons->button(qBound(1, settings.value("Key", 1).toInt(), 10))->click();
 }
 
 //-----------------------------------------------------------------------------

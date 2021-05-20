@@ -89,11 +89,6 @@ Board::Board(QWidget* parent)
 	m_message->setPixmap(success);
 	m_message->hide();
 	layout->addWidget(m_message, 0, 0, 3, 3, Qt::AlignCenter);
-
-	// Load current puzzle
-	if (!loadPuzzle()) {
-		newPuzzle(-1, -1);
-	}
 }
 
 //-----------------------------------------------------------------------------
