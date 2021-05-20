@@ -156,7 +156,7 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
+	m_new_action = menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
 	menu->addAction(tr("&Details"), this, &Window::showDetails);
 	menu->addSeparator();
 	QAction* action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
@@ -263,20 +263,25 @@ void Window::newGame()
 	dialog->setWindowTitle(tr("New Game"));
 
 	NewGamePage* page = new NewGamePage(dialog);
-	connect(page, &NewGamePage::cancel, dialog, &QDialog::reject);
+	connect(page, &NewGamePage::cancel, this, [this, dialog]() {
+		dialog->reject();
+		dialog->deleteLater();
+		m_new_action->setEnabled(true);
+	});
 	connect(page, &NewGamePage::generatePuzzle, this, [this, dialog](int symmetry, int difficulty) {
 		dialog->accept();
+		dialog->deleteLater();
+		m_new_action->setEnabled(true);
 		m_board->newPuzzle(symmetry, difficulty);
 	});
+	m_new_action->setEnabled(false);
 
 	QVBoxLayout* layout = new QVBoxLayout(dialog);
 	layout->setContentsMargins(0,0,0,0);
 	layout->addWidget(page);
 
 	dialog->resize(size());
-	dialog->exec();
-
-	delete dialog;
+	dialog->show();
 }
 
 //-----------------------------------------------------------------------------
