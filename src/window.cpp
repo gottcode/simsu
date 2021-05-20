@@ -103,6 +103,7 @@ Window::Window()
 	connect(m_board, &Board::activeKeyChanged, this, &Window::activeKeyChanged);
 	connect(m_board, &Board::notesModeChanged, this, &Window::notesModeChanged);
 	connect(m_board, &Board::gameStarted, this, &Window::gameStarted);
+	connect(m_board, &Board::gameFinished, this, &Window::gameFinished);
 
 	QSettings settings;
 
@@ -191,7 +192,8 @@ Window::Window()
 	m_redo_action->setEnabled(false);
 	connect(m_board->moves(), &QUndoStack::canRedoChanged, m_redo_action, &QAction::setEnabled);
 	menu->addSeparator();
-	menu->addAction(tr("&Check"), m_board, [this](){ m_board->showWrong(true); }, tr("C"));
+	m_check_action = menu->addAction(tr("&Check"), m_board, [this]() { m_board->showWrong(true); }, tr("C"));
+	m_check_action->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
 	action = menu->addAction(tr("&Auto Switch Modes"));
@@ -285,6 +287,7 @@ void Window::newGame()
 	m_new_action->setEnabled(false);
 	m_undo_action->setEnabled(false);
 	m_redo_action->setEnabled(false);
+	m_check_action->setEnabled(false);
 
 	m_contents->setCurrentIndex(0);
 }
@@ -303,6 +306,7 @@ void Window::newGameCanceled()
 	bool enabled = !m_board->isFinished();
 	m_undo_action->setEnabled(enabled && m_board->moves()->canUndo());
 	m_redo_action->setEnabled(enabled && m_board->moves()->canRedo());
+	m_check_action->setEnabled(enabled);
 
 	m_contents->setCurrentIndex(2);
 }
@@ -355,8 +359,17 @@ void Window::about()
 
 //-----------------------------------------------------------------------------
 
+void Window::gameFinished()
+{
+	m_check_action->setEnabled(false);
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::gameStarted()
 {
+	m_check_action->setEnabled(true);
+
 	m_contents->setCurrentIndex(2);
 }
 

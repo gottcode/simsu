@@ -61,6 +61,9 @@ private slots:
 	/** Show the program details. */
 	void about();
 
+	/** Disable interface when game is over. */
+	void gameFinished();
+
 	/** Enable interface when game is ready to play. */
 	void gameStarted();
 
@@ -111,6 +114,7 @@ private:
 	QAction* m_new_action; /**< action for starting a game */
 	QAction* m_undo_action; /**< action for undoing */
 	QAction* m_redo_action; /**< action for redoing */
+	QAction* m_check_action; /**< action for checking if cells are valid */
 
 	QBoxLayout* m_keys_layout; /**< QLayout for key buttons */
 	QBoxLayout* m_mode_layout; /**< QLayout for mode buttons */
