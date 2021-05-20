@@ -112,6 +112,7 @@ private:
 	QButtonGroup* m_mode_buttons; /**< button group to choose if in notes or answer mode */
 	QActionGroup* m_auto_notes_actions; /**< action group to choose mode for auto filling notes */
 	QAction* m_new_action; /**< action for starting a game */
+	QAction* m_details_action; /**< action for showing game details */
 	QAction* m_undo_action; /**< action for undoing */
 	QAction* m_redo_action; /**< action for redoing */
 	QAction* m_check_action; /**< action for checking if cells are valid */
