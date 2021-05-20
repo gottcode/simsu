@@ -109,6 +109,8 @@ private:
 	QButtonGroup* m_mode_buttons; /**< button group to choose if in notes or answer mode */
 	QActionGroup* m_auto_notes_actions; /**< action group to choose mode for auto filling notes */
 	QAction* m_new_action; /**< action for starting a game */
+	QAction* m_undo_action; /**< action for undoing */
+	QAction* m_redo_action; /**< action for redoing */
 
 	QBoxLayout* m_keys_layout; /**< QLayout for key buttons */
 	QBoxLayout* m_mode_layout; /**< QLayout for mode buttons */

@@ -184,10 +184,12 @@ Window::Window()
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Move"));
-	action = menu->addAction(tr("&Undo"), m_board->moves(), &QUndoStack::undo, QKeySequence::Undo);
-	connect(m_board->moves(), &QUndoStack::canUndoChanged, action, &QAction::setEnabled);
-	action = menu->addAction(tr("&Redo"), m_board->moves(), &QUndoStack::redo, QKeySequence::Redo);
-	connect(m_board->moves(), &QUndoStack::canRedoChanged, action, &QAction::setEnabled);
+	m_undo_action = menu->addAction(tr("&Undo"), m_board->moves(), &QUndoStack::undo, QKeySequence::Undo);
+	m_undo_action->setEnabled(false);
+	connect(m_board->moves(), &QUndoStack::canUndoChanged, m_undo_action, &QAction::setEnabled);
+	m_redo_action = menu->addAction(tr("&Redo"), m_board->moves(), &QUndoStack::redo, QKeySequence::Redo);
+	m_redo_action->setEnabled(false);
+	connect(m_board->moves(), &QUndoStack::canRedoChanged, m_redo_action, &QAction::setEnabled);
 	menu->addSeparator();
 	menu->addAction(tr("&Check"), m_board, [this](){ m_board->showWrong(true); }, tr("C"));
 
@@ -281,6 +283,8 @@ void Window::newGame()
 	m_new_game->reset();
 
 	m_new_action->setEnabled(false);
+	m_undo_action->setEnabled(false);
+	m_redo_action->setEnabled(false);
 
 	m_contents->setCurrentIndex(0);
 }
@@ -295,6 +299,11 @@ void Window::newGameCanceled()
 	}
 
 	m_new_action->setEnabled(true);
+
+	bool enabled = !m_board->isFinished();
+	m_undo_action->setEnabled(enabled && m_board->moves()->canUndo());
+	m_redo_action->setEnabled(enabled && m_board->moves()->canRedo());
+
 	m_contents->setCurrentIndex(2);
 }
 
