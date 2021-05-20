@@ -116,6 +116,7 @@ private:
 	QAction* m_undo_action; /**< action for undoing */
 	QAction* m_redo_action; /**< action for redoing */
 	QAction* m_check_action; /**< action for checking if cells are valid */
+	QAction* m_hint_action; /**< action for getting a hint */
 
 	QBoxLayout* m_keys_layout; /**< QLayout for key buttons */
 	QBoxLayout* m_mode_layout; /**< QLayout for mode buttons */

@@ -28,6 +28,7 @@ Board::Board(QWidget* parent)
 	, m_notes(new SolverLogic)
 	, m_active_key(1)
 	, m_active_cell(nullptr)
+	, m_hint_cell(nullptr)
 	, m_auto_switch(true)
 	, m_highlight_active(false)
 	, m_notes_mode(false)
@@ -267,6 +268,58 @@ void Board::checkFinished()
 		m_message->hide();
 		update();
 		emit gameStarted();
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::hint()
+{
+	if (m_finished) {
+		return;
+	}
+
+	if (!m_hint_cell || m_hint_cell->isCorrect()) {
+		// Find status of cells
+		QList<Cell*> incorrect;
+		QList<Cell*> empty;
+		empty.reserve(81);
+		for (int r = 0; r < 9; ++r) {
+			for (int c = 0; c < 9; ++c) {
+				Cell* cell = m_cells[c][r];
+				if (cell->isCorrect()) {
+					continue;
+				}
+				if (cell->value()) {
+					incorrect.append(cell);
+				} else {
+					empty.append(cell);
+				}
+			}
+		}
+
+		// Show an incorrect cell if they exist
+		if (!incorrect.isEmpty()) {
+			std::shuffle(incorrect.begin(), incorrect.end(), *QRandomGenerator::global());
+			m_hint_cell = incorrect.first();
+			m_hint_cell->showWrong(true);
+			return;
+		}
+
+		// Find a cell to fill
+		if (!empty.isEmpty()) {
+			std::shuffle(empty.begin(), empty.end(), *QRandomGenerator::global());
+			m_hint_cell = empty.first();
+		}
+	}
+
+	// Fill cell with correct value
+	if (m_hint_cell) {
+		const int key = m_puzzle->value(m_hint_cell->column(), m_hint_cell->row());
+		QKeyEvent event(QEvent::KeyPress, Qt::Key_0 + key, Qt::NoModifier);
+		QApplication::sendEvent(m_hint_cell, &event);
+		m_hint_cell->setFocus();
+		m_hint_cell = nullptr;
 	}
 }
 

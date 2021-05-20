@@ -195,6 +195,8 @@ Window::Window()
 	menu->addSeparator();
 	m_check_action = menu->addAction(tr("&Check"), m_board, [this]() { m_board->showWrong(true); }, tr("C"));
 	m_check_action->setEnabled(false);
+	m_hint_action = menu->addAction(tr("&Hint"), m_board, &Board::hint, tr("F2"));
+	m_hint_action->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
 	action = menu->addAction(tr("&Auto Switch Modes"));
@@ -290,6 +292,7 @@ void Window::newGame()
 	m_undo_action->setEnabled(false);
 	m_redo_action->setEnabled(false);
 	m_check_action->setEnabled(false);
+	m_hint_action->setEnabled(false);
 
 	m_contents->setCurrentIndex(0);
 }
@@ -312,6 +315,7 @@ void Window::newGameCanceled()
 	m_undo_action->setEnabled(enabled && m_board->moves()->canUndo());
 	m_redo_action->setEnabled(enabled && m_board->moves()->canRedo());
 	m_check_action->setEnabled(enabled);
+	m_hint_action->setEnabled(enabled);
 
 	m_contents->setCurrentIndex(2);
 }
@@ -367,6 +371,7 @@ void Window::about()
 void Window::gameFinished()
 {
 	m_check_action->setEnabled(false);
+	m_hint_action->setEnabled(false);
 }
 
 //-----------------------------------------------------------------------------
@@ -374,6 +379,7 @@ void Window::gameFinished()
 void Window::gameStarted()
 {
 	m_check_action->setEnabled(true);
+	m_hint_action->setEnabled(true);
 	m_details_action->setEnabled(true);
 
 	m_contents->setCurrentIndex(2);

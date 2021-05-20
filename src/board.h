@@ -190,6 +190,12 @@ public:
 
 public slots:
 	/**
+	 * Finds an empty cell and fills it with a value from the solution. If there
+	 * are errors on the board, it corrects them first.
+	 */
+	void hint();
+
+	/**
 	 * If @p show is @c true, it highlights any cells that the player has filled
 	 * incorrectly. Otherwise, it clears the highlight of incorrect cells.
 	 */
@@ -281,6 +287,7 @@ private:
 	SolverLogic* m_notes; /**< the solver used to find the allowed possibles */
 	int m_active_key; /**< the current key */
 	Cell* m_active_cell; /**< the current cell */
+	Cell* m_hint_cell; /**< the last used cell for a hint */
 	bool m_auto_switch; /**< auto-switching is enabled */
 	bool m_highlight_active; /**< tracks if all instances of the current key should be highlighted */
 	bool m_notes_mode; /**< tracks if in notes mode */
