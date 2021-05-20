@@ -8,11 +8,13 @@
 #define SIMSU_WINDOW_H
 
 class Board;
+class NewGamePage;
 
 #include <QMainWindow>
 class QActionGroup;
 class QBoxLayout;
 class QButtonGroup;
+class QStackedWidget;
 class QToolButton;
 
 /**
@@ -46,6 +48,9 @@ private slots:
 	 */
 	void newGame();
 
+	/** Handle player not starting a new game. */
+	void newGameCanceled();
+
 	/** Show the current game details. */
 	void showDetails();
 
@@ -54,6 +59,9 @@ private slots:
 
 	/** Show the program details. */
 	void about();
+
+	/** Enable interface when game is ready to play. */
+	void gameStarted();
 
 	/**
 	 * Set which key button is depressed.
@@ -90,6 +98,9 @@ private slots:
 	void setLocaleClicked();
 
 private:
+	QStackedWidget* m_contents; /**< the layers of display widgets */
+	NewGamePage* m_new_game; /**< options to start a new game */
+
 	Board* m_board; /**< game board */
 
 	QButtonGroup* m_key_buttons; /**< button group to choose which number is active */

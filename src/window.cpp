@@ -16,7 +16,6 @@
 #include <QActionGroup>
 #include <QApplication>
 #include <QButtonGroup>
-#include <QDialog>
 #include <QFormLayout>
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -73,8 +72,22 @@ namespace
 
 Window::Window()
 {
+	m_contents = new QStackedWidget(this);
+	setCentralWidget(m_contents);
+
+	// Create new game page
+	m_new_game = new NewGamePage(this);
+	connect(m_new_game, &NewGamePage::cancel, this, &Window::newGameCanceled);
+	connect(m_new_game, &NewGamePage::generatePuzzle, this, [this](int symmetry, int difficulty) {
+		m_new_action->setEnabled(true);
+		m_board->newPuzzle(symmetry, difficulty);
+		m_key_buttons->button(1)->click();
+	});
+	m_contents->addWidget(m_new_game);
+
+	// Create game widgets
 	QWidget* contents = new QWidget(this);
-	setCentralWidget(contents);
+	m_contents->addWidget(contents);
 
 	// Create board
 	Square* square = new Square(contents);
@@ -82,6 +95,7 @@ Window::Window()
 	square->setChild(m_board);
 	connect(m_board, &Board::activeKeyChanged, this, &Window::activeKeyChanged);
 	connect(m_board, &Board::notesModeChanged, this, &Window::notesModeChanged);
+	connect(m_board, &Board::gameStarted, this, &Window::gameStarted);
 
 	QSettings settings;
 
@@ -257,31 +271,22 @@ void Window::wheelEvent(QWheelEvent* event)
 
 void Window::newGame()
 {
-	QSettings settings;
-
-	QDialog* dialog = new QDialog(this);
-	dialog->setWindowTitle(tr("New Game"));
-
-	NewGamePage* page = new NewGamePage(dialog);
-	connect(page, &NewGamePage::cancel, this, [this, dialog]() {
-		dialog->reject();
-		dialog->deleteLater();
-		m_new_action->setEnabled(true);
-	});
-	connect(page, &NewGamePage::generatePuzzle, this, [this, dialog](int symmetry, int difficulty) {
-		dialog->accept();
-		dialog->deleteLater();
-		m_new_action->setEnabled(true);
-		m_board->newPuzzle(symmetry, difficulty);
-	});
 	m_new_action->setEnabled(false);
 
-	QVBoxLayout* layout = new QVBoxLayout(dialog);
-	layout->setContentsMargins(0,0,0,0);
-	layout->addWidget(page);
+	m_contents->setCurrentIndex(0);
+}
 
-	dialog->resize(size());
-	dialog->show();
+//-----------------------------------------------------------------------------
+
+void Window::newGameCanceled()
+{
+	if (!m_board->isLoaded()) {
+		qApp->quit();
+		return;
+	}
+
+	m_new_action->setEnabled(true);
+	m_contents->setCurrentIndex(1);
 }
 
 //-----------------------------------------------------------------------------
@@ -328,6 +333,13 @@ void Window::about()
 			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2021"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::gameStarted()
+{
+	m_contents->setCurrentIndex(1);
 }
 
 //-----------------------------------------------------------------------------
