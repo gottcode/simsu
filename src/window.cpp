@@ -8,6 +8,7 @@
 
 #include "board.h"
 #include "locale_dialog.h"
+#include "new_game_page.h"
 #include "pattern.h"
 #include "puzzle.h"
 #include "square.h"
@@ -15,9 +16,7 @@
 #include <QActionGroup>
 #include <QApplication>
 #include <QButtonGroup>
-#include <QComboBox>
 #include <QDialog>
-#include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -259,49 +258,19 @@ void Window::newGame()
 	QDialog* dialog = new QDialog(this);
 	dialog->setWindowTitle(tr("New Game"));
 
-	QStackedWidget* preview = new QStackedWidget(dialog);
-
-	QComboBox* symmetry_box = new QComboBox(dialog);
-	for (int i = Pattern::Rotational180; i <= Pattern::None; ++i) {
-		symmetry_box->addItem(Pattern::name(i), i);
-
-		QLabel* image = new QLabel(preview);
-		image->setPixmap(QIcon(Pattern::icon(i)).pixmap(60, 60));
-		preview->addWidget(image);
-	}
-	preview->setCurrentIndex(0);
-	connect(symmetry_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), preview, &QStackedWidget::setCurrentIndex);
-	const int symmetry = qBound(int(Pattern::Rotational180), settings.value("Symmetry", Pattern::Rotational180).toInt(), int(Pattern::None));
-	symmetry_box->setCurrentIndex(symmetry_box->findData(symmetry));
-
-	QComboBox* difficulty_box = new QComboBox(dialog);
-	for (int i = Puzzle::VeryEasy; i <= Puzzle::Hard; ++i) {
-		difficulty_box->addItem(Puzzle::difficultyString(i), i);
-	}
-	const int difficulty = qBound(int(Puzzle::VeryEasy), settings.value("Difficulty", Puzzle::VeryEasy).toInt(), int(Puzzle::Hard));
-	difficulty_box->setCurrentIndex(difficulty_box->findData(difficulty));
-
-	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, dialog);
-	connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
-	connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
-
-	QFormLayout* contents_layout = new QFormLayout;
-	contents_layout->addRow(QString(), preview);
-	contents_layout->addRow(tr("Symmetry:"), symmetry_box);
-	contents_layout->addRow(tr("Difficulty:"), difficulty_box);
+	NewGamePage* page = new NewGamePage(dialog);
+	connect(page, &NewGamePage::cancel, dialog, &QDialog::reject);
+	connect(page, &NewGamePage::generatePuzzle, this, [this, dialog](int symmetry, int difficulty) {
+		dialog->accept();
+		m_board->newPuzzle(symmetry, difficulty);
+	});
 
 	QVBoxLayout* layout = new QVBoxLayout(dialog);
-	layout->addLayout(contents_layout);
-	layout->addSpacing(18);
-	layout->addWidget(buttons);
+	layout->setContentsMargins(0,0,0,0);
+	layout->addWidget(page);
 
-	if (dialog->exec() == QDialog::Accepted) {
-		int symmetry = symmetry_box->itemData(symmetry_box->currentIndex()).toInt();
-		settings.setValue("Symmetry", symmetry);
-		int difficulty = difficulty_box->itemData(difficulty_box->currentIndex()).toInt();
-		settings.setValue("Difficulty", difficulty);
-		m_board->newPuzzle(symmetry, difficulty);
-	}
+	dialog->resize(size());
+	dialog->exec();
 
 	delete dialog;
 }

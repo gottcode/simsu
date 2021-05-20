@@ -50,7 +50,7 @@ public:
 	 * @param symmetry specify mirroring of givens; if @c -1 use previous symmetry, defaults to Pattern::Rotational180
 	 * @param difficulty specify how hard to make puzzle; if @c -1 use previous algorithm, defaults to Puzzle::VeryEasy
 	 */
-	void newPuzzle(int symmetry = -1, int difficulty = -1);
+	void newPuzzle(int symmetry, int difficulty);
 
 	/**
 	 * Clears out current game and loads a game.
@@ -118,6 +118,12 @@ public:
 	bool isFinished() const
 	{
 		return m_finished;
+	}
+
+	/** Returns @c true if the game is loaded and playable. */
+	bool isLoaded() const
+	{
+		return m_loaded;
 	}
 
 	/**
@@ -257,6 +263,7 @@ private:
 	bool m_highlight_active; /**< tracks if all instances of the current key should be highlighted */
 	bool m_notes_mode; /**< tracks if in notes mode */
 	bool m_finished; /**< tracks if game is finished */
+	bool m_loaded; /**< tracks if game has been loaded */
 	AutoNotes m_auto_notes; /**< tracks what fill mode should be used */
 	QLabel* m_message; /**< used to show messages to the player */
 	QUndoStack* m_moves; /**< history of player actions */

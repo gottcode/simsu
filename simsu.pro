@@ -35,6 +35,7 @@ HEADERS = src/board.h \
 	src/frame.h \
 	src/locale_dialog.h \
 	src/move.h \
+	src/new_game_page.h \
 	src/pattern.h \
 	src/puzzle.h \
 	src/solver_dlx.h \
@@ -48,6 +49,7 @@ SOURCES = src/board.cpp \
 	src/locale_dialog.cpp \
 	src/move.cpp \
 	src/main.cpp \
+	src/new_game_page.cpp \
 	src/puzzle.cpp \
 	src/solver_dlx.cpp \
 	src/solver_logic.cpp \

@@ -32,6 +32,7 @@ Board::Board(QWidget* parent)
 	, m_highlight_active(false)
 	, m_notes_mode(false)
 	, m_finished(false)
+	, m_loaded(false)
 	, m_auto_notes(ManualNotes)
 {
 	setBackgroundRole(QPalette::Mid);
@@ -91,7 +92,7 @@ Board::Board(QWidget* parent)
 
 	// Load current puzzle
 	if (!loadPuzzle()) {
-		newPuzzle();
+		newPuzzle(-1, -1);
 	}
 }
 
@@ -119,6 +120,7 @@ void Board::newPuzzle(int symmetry, int difficulty)
 	if (symmetry == -1) {
 		symmetry = settings.value("Symmetry", Pattern::Rotational180).toInt();
 	}
+	settings.setValue("Symmetry", symmetry);
 	if (symmetry == Pattern::Random) {
 		symmetry = QRandomGenerator::global()->bounded(Pattern::Rotational180, Pattern::Random);
 	}
@@ -126,6 +128,7 @@ void Board::newPuzzle(int symmetry, int difficulty)
 	if (difficulty == -1) {
 		difficulty = settings.value("Difficulty", Puzzle::VeryEasy).toInt();
 	}
+	settings.setValue("Difficulty", difficulty);
 
 	// Reset board
 	showWrong(false);
@@ -145,6 +148,7 @@ void Board::newPuzzle(int symmetry, int difficulty)
 		}
 	}
 	updatePossibles();
+	m_loaded = true;
 
 	// Store puzzle details
 	settings.remove("Current");
@@ -201,6 +205,7 @@ bool Board::loadPuzzle()
 		}
 	}
 	updatePossibles();
+	m_loaded = true;
 
 	// Load moves
 	const QStringList moves = settings.value("Moves").toStringList();

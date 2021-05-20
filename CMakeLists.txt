@@ -40,6 +40,7 @@ qt6_add_executable(simsu
 	src/locale_dialog.cpp
 	src/move.cpp
 	src/main.cpp
+	src/new_game_page.cpp
 	src/puzzle.cpp
 	src/solver_dlx.cpp
 	src/solver_logic.cpp
