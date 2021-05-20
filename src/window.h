@@ -14,6 +14,7 @@ class NewGamePage;
 class QActionGroup;
 class QBoxLayout;
 class QButtonGroup;
+class QLabel;
 class QStackedWidget;
 class QToolButton;
 
@@ -100,6 +101,7 @@ private slots:
 private:
 	QStackedWidget* m_contents; /**< the layers of display widgets */
 	NewGamePage* m_new_game; /**< options to start a new game */
+	QLabel* m_load_message; /**< shows player a wait screen */
 
 	Board* m_board; /**< game board */
 

@@ -81,9 +81,16 @@ Window::Window()
 	connect(m_new_game, &NewGamePage::generatePuzzle, this, [this](int symmetry, int difficulty) {
 		m_new_action->setEnabled(true);
 		m_board->newPuzzle(symmetry, difficulty);
+		m_contents->setCurrentIndex(1);
 		m_key_buttons->button(1)->click();
 	});
 	m_contents->addWidget(m_new_game);
+
+	// Create load screen
+	m_load_message = new QLabel(QString("<big><b>%1</b></big><br>%2").arg(tr("Please wait"), tr("Generating puzzle...")), this);
+	m_load_message->setAlignment(Qt::AlignCenter);
+	m_load_message->setCursor(Qt::BusyCursor);
+	m_contents->addWidget(m_load_message);
 
 	// Create game widgets
 	QWidget* contents = new QWidget(this);
@@ -288,7 +295,7 @@ void Window::newGameCanceled()
 	}
 
 	m_new_action->setEnabled(true);
-	m_contents->setCurrentIndex(1);
+	m_contents->setCurrentIndex(2);
 }
 
 //-----------------------------------------------------------------------------
@@ -341,7 +348,7 @@ void Window::about()
 
 void Window::gameStarted()
 {
-	m_contents->setCurrentIndex(1);
+	m_contents->setCurrentIndex(2);
 }
 
 //-----------------------------------------------------------------------------
