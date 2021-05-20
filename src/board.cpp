@@ -236,6 +236,24 @@ void Board::savePuzzle()
 
 //-----------------------------------------------------------------------------
 
+void Board::restartPuzzle()
+{
+	if (!m_loaded) {
+		return;
+	}
+
+	// Fetch puzzle details
+	QSettings settings;
+	const int difficulty = settings.value("Difficulty").toInt();
+	const int symmetry = settings.value("Symmetry").toInt();
+
+	// Load puzzle
+	reset();
+	puzzleGenerated(symmetry, difficulty);
+}
+
+//-----------------------------------------------------------------------------
+
 bool Board::hasPossible(int column, int row, int value) const
 {
 	return m_notes->hasPossible(column, row, value);

@@ -64,6 +64,9 @@ public:
 	 */
 	void savePuzzle();
 
+	/** Resets the board to its original state. */
+	void restartPuzzle();
+
 	/** Returns currently selected number. */
 	int activeKey() const
 	{

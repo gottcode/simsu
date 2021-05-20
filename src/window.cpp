@@ -179,6 +179,9 @@ Window::Window()
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
 	m_new_action = menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
+	m_restart_action = menu->addAction(tr("&Restart"), this, &Window::restartGame, QKeySequence::Refresh);
+	m_restart_action->setEnabled(false);
+	menu->addSeparator();
 	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
 	m_details_action->setEnabled(false);
 	menu->addSeparator();
@@ -288,6 +291,7 @@ void Window::newGame()
 	m_new_game->reset();
 
 	m_new_action->setEnabled(false);
+	m_restart_action->setEnabled(false);
 	m_details_action->setEnabled(false);
 	m_undo_action->setEnabled(false);
 	m_redo_action->setEnabled(false);
@@ -309,6 +313,7 @@ void Window::newGameCanceled()
 	m_new_action->setEnabled(true);
 
 	bool enabled = m_board->isLoaded();
+	m_restart_action->setEnabled(enabled);
 	m_details_action->setEnabled(enabled);
 
 	enabled = !m_board->isFinished();
@@ -318,6 +323,20 @@ void Window::newGameCanceled()
 	m_hint_action->setEnabled(enabled);
 
 	m_contents->setCurrentIndex(2);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::restartGame()
+{
+	QMessageBox message(QMessageBox::Question, tr("Restart Game"), tr("Reset the board to its original state?"), QMessageBox::Cancel, this);
+	message.setDefaultButton(QMessageBox::Cancel);
+	message.addButton(tr("Restart Game"), QMessageBox::AcceptRole);
+	if (message.exec() == QMessageBox::Cancel) {
+		return;
+	}
+
+	m_board->restartPuzzle();
 }
 
 //-----------------------------------------------------------------------------
@@ -378,6 +397,7 @@ void Window::gameFinished()
 
 void Window::gameStarted()
 {
+	m_restart_action->setEnabled(true);
 	m_check_action->setEnabled(true);
 	m_hint_action->setEnabled(true);
 	m_details_action->setEnabled(true);

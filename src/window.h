@@ -52,6 +52,9 @@ private slots:
 	/** Handle player not starting a new game. */
 	void newGameCanceled();
 
+	/** Restart the current game. */
+	void restartGame();
+
 	/** Show the current game details. */
 	void showDetails();
 
@@ -112,6 +115,7 @@ private:
 	QButtonGroup* m_mode_buttons; /**< button group to choose if in notes or answer mode */
 	QActionGroup* m_auto_notes_actions; /**< action group to choose mode for auto filling notes */
 	QAction* m_new_action; /**< action for starting a game */
+	QAction* m_restart_action; /** action for restarting the current game */
 	QAction* m_details_action; /**< action for showing game details */
 	QAction* m_undo_action; /**< action for undoing */
 	QAction* m_redo_action; /**< action for redoing */
