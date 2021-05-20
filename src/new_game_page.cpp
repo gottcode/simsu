@@ -66,3 +66,18 @@ NewGamePage::NewGamePage(QWidget* parent)
 }
 
 //-----------------------------------------------------------------------------
+
+void NewGamePage::reset()
+{
+	QSettings settings;
+
+	const int symmetry = qBound(int(Pattern::Rotational180), settings.value("Symmetry", Pattern::Rotational180).toInt(), int(Pattern::None));
+	QListWidgetItem* item = m_symmetry->item(symmetry);
+	m_symmetry->setCurrentItem(item);
+	m_symmetry->scrollToItem(item, QAbstractItemView::PositionAtCenter);
+
+	const int difficulty = qBound(int(Puzzle::VeryEasy), settings.value("Difficulty", Puzzle::Medium).toInt(), int(Puzzle::Hard)) - Puzzle::VeryEasy;
+	m_difficulty[difficulty]->setFocus();
+}
+
+//-----------------------------------------------------------------------------

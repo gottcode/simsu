@@ -24,6 +24,8 @@ public:
 	 */
 	explicit NewGamePage(QWidget* parent = nullptr);
 
+	void reset();
+
 signals:
 	/**
 	 * This signal is emitted when the player cancels starting a new game.

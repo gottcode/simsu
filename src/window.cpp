@@ -271,6 +271,8 @@ void Window::wheelEvent(QWheelEvent* event)
 
 void Window::newGame()
 {
+	m_new_game->reset();
+
 	m_new_action->setEnabled(false);
 
 	m_contents->setCurrentIndex(0);
