@@ -19,9 +19,36 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QStackedWidget>
+#include <QTimer>
 #include <QVBoxLayout>
 
 #include <array>
+
+//-----------------------------------------------------------------------------
+
+namespace
+{
+
+class LineEdit : public QLineEdit
+{
+public:
+	explicit LineEdit(QWidget* parent = nullptr)
+		: QLineEdit(parent)
+	{
+		setMaxLength(1);
+		setAlignment(Qt::AlignCenter);
+		setMinimumWidth(1);
+	}
+
+protected:
+	void focusInEvent(QFocusEvent* e) override
+	{
+		QLineEdit::focusInEvent(e);
+		QTimer::singleShot(0, this, &QLineEdit::selectAll);
+	}
+};
+
+}
 
 //-----------------------------------------------------------------------------
 
@@ -92,11 +119,8 @@ NewGamePage::NewGamePage(QWidget* parent)
 	// Create line edits
 	QIntValidator* validator = new QIntValidator(1, 9, this);
 	for (int i = 0; i < 81; ++i) {
-		QLineEdit* edit = new QLineEdit(custom);
-		edit->setMaxLength(1);
+		QLineEdit* edit = new LineEdit(custom);
 		edit->setValidator(validator);
-		edit->setAlignment(Qt::AlignCenter);
-		edit->setMinimumWidth(1);
 		connect(edit, &QLineEdit::textChanged, this, &NewGamePage::showConflicts);
 		m_custom.append(edit);
 	}
