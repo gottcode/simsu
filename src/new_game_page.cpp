@@ -97,6 +97,7 @@ NewGamePage::NewGamePage(QWidget* parent)
 		edit->setValidator(validator);
 		edit->setAlignment(Qt::AlignCenter);
 		edit->setMinimumWidth(1);
+		connect(edit, &QLineEdit::textChanged, this, &NewGamePage::showConflicts);
 		m_custom.append(edit);
 	}
 
@@ -175,6 +176,86 @@ void NewGamePage::playGame()
 
 	// Start game
 	emit loadPuzzle(givens);
+}
+
+//-----------------------------------------------------------------------------
+
+void NewGamePage::showConflicts()
+{
+	// Reset cells
+	QPalette p = palette();
+	for (QLineEdit* edit : qAsConst(m_custom)) {
+		edit->setPalette(p);
+	}
+
+	p.setColor(QPalette::Text, Qt::white);
+	p.setColor(QPalette::Base, Qt::red);
+	std::array<QLineEdit*, 9> found;
+
+	// Find conflicts in rows
+	for (int r = 0; r < 81; r += 9) {
+		found.fill(nullptr);
+		for (int c = 0; c < 9; ++c) {
+			QLineEdit* edit = m_custom[c + r];
+			int value = edit->text().toInt();
+			if (!value) {
+				continue;
+			}
+			--value;
+
+			if (found[value]) {
+				found[value]->setPalette(p);
+				edit->setPalette(p);
+			} else {
+				found[value] = edit;
+			}
+		}
+	}
+
+	// Find conflicts in columns
+	for (int c = 0; c < 9; ++c) {
+		found.fill(nullptr);
+		for (int r = 0; r < 81; r += 9) {
+			QLineEdit* edit = m_custom[c + r];
+			int value = edit->text().toInt();
+			if (!value) {
+				continue;
+			}
+			--value;
+
+			if (found[value]) {
+				found[value]->setPalette(p);
+				edit->setPalette(p);
+			} else {
+				found[value] = edit;
+			}
+		}
+	}
+
+	// Find conflicts in boxes
+	for (int box_r = 0; box_r < 9; box_r += 3) {
+		for (int box_c = 0; box_c < 9; box_c += 3) {
+			found.fill(nullptr);
+			for (int r = 0; r < 3; ++r) {
+				const int y = (r + box_r) * 9;
+				for (int c = 0; c < 3; ++c) {
+					QLineEdit* edit = m_custom[c + box_c + y];
+					int value = edit->text().toInt();
+					if (!value) {
+						continue;
+					}
+					--value;
+
+					if (found[value]) {
+						found[value]->setPalette(p);
+						edit->setPalette(p);
+					} else {
+						found[value] = edit;
+					}
+				}
+			}
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------

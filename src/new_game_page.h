@@ -65,6 +65,11 @@ private slots:
 	void playGame();
 
 	/**
+	 * Shows if player has entered givens that conflict with each other.
+	 */
+	void showConflicts();
+
+	/**
 	 * Switches what settings are visible to the player.
 	 *
 	 * @param show if @c true, show the widgets for building a custom game
