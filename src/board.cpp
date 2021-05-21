@@ -138,6 +138,25 @@ void Board::newPuzzle(int symmetry, int difficulty)
 
 //-----------------------------------------------------------------------------
 
+bool Board::newPuzzle(const std::array<int, 81>& givens)
+{
+	// Create puzzle
+	if (!m_puzzle->load(givens)) {
+		return false;
+	}
+
+	// Load puzzle
+	reset();
+	puzzleGenerated(Pattern::None, SolverLogic().solvePuzzle(givens, Puzzle::Unsolved));
+
+	// Store puzzle layout
+	savePuzzle();
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 bool Board::loadPuzzle()
 {
 	QSettings settings;

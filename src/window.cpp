@@ -84,6 +84,15 @@ Window::Window()
 		m_contents->setCurrentIndex(1);
 		m_key_buttons->button(1)->click();
 	});
+	connect(m_new_game, &NewGamePage::loadPuzzle, this, [this](const std::array<int, 81>& givens) {
+		if (m_board->newPuzzle(givens)) {
+			m_new_action->setEnabled(true);
+			m_contents->setCurrentIndex(2);
+			m_key_buttons->button(1)->click();
+		} else {
+			QMessageBox::information(this, tr("Sorry"), tr("You have not created a valid puzzle. Please try again."));
+		}
+	});
 	m_contents->addWidget(m_new_game);
 
 	// Create load screen

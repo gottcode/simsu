@@ -53,6 +53,14 @@ public:
 	void newPuzzle(int symmetry, int difficulty);
 
 	/**
+	 * Clears out current game and starts a new game.
+	 *
+	 * @param givens the values already set on the board
+	 * @return @c true if the puzzle could be loaded
+	 */
+	bool newPuzzle(const std::array<int, 81>& givens);
+
+	/**
 	 * Clears out current game and loads a game.
 	 *
 	 * @return @c true if the puzzle could be loaded
