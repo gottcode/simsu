@@ -23,6 +23,8 @@
 #include <QLabel>
 #include <QMenuBar>
 #include <QMessageBox>
+#include <QPrintDialog>
+#include <QPrinter>
 #include <QSettings>
 #include <QShortcut>
 #include <QSpinBox>
@@ -191,6 +193,9 @@ Window::Window()
 	m_restart_action = menu->addAction(tr("&Restart"), this, &Window::restartGame, QKeySequence::Refresh);
 	m_restart_action->setEnabled(false);
 	menu->addSeparator();
+	m_print_action = menu->addAction(tr("&Print..."), this, &Window::print, QKeySequence::Print);
+	m_print_action->setEnabled(false);
+	menu->addSeparator();
 	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
 	m_details_action->setEnabled(false);
 	menu->addSeparator();
@@ -301,6 +306,7 @@ void Window::newGame()
 
 	m_new_action->setEnabled(false);
 	m_restart_action->setEnabled(false);
+	m_print_action->setEnabled(false);
 	m_details_action->setEnabled(false);
 	m_undo_action->setEnabled(false);
 	m_redo_action->setEnabled(false);
@@ -323,6 +329,7 @@ void Window::newGameCanceled()
 
 	bool enabled = m_board->isLoaded();
 	m_restart_action->setEnabled(enabled);
+	m_print_action->setEnabled(enabled);
 	m_details_action->setEnabled(enabled);
 
 	enabled = !m_board->isFinished();
@@ -346,6 +353,18 @@ void Window::restartGame()
 	}
 
 	m_board->restartPuzzle();
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::print()
+{
+	QPrinter printer;
+	QPrintDialog dialog(&printer, this);
+	dialog.setWindowTitle(tr("Print Board"));
+	if (dialog.exec() == QDialog::Accepted) {
+		m_board->print(&printer);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -409,6 +428,7 @@ void Window::gameStarted()
 	m_restart_action->setEnabled(true);
 	m_check_action->setEnabled(true);
 	m_hint_action->setEnabled(true);
+	m_print_action->setEnabled(true);
 	m_details_action->setEnabled(true);
 
 	m_contents->setCurrentIndex(2);

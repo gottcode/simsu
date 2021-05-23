@@ -55,6 +55,9 @@ private slots:
 	/** Restart the current game. */
 	void restartGame();
 
+	/** Prints the current board. */
+	void print();
+
 	/** Show the current game details. */
 	void showDetails();
 
@@ -116,6 +119,7 @@ private:
 	QActionGroup* m_auto_notes_actions; /**< action group to choose mode for auto filling notes */
 	QAction* m_new_action; /**< action for starting a game */
 	QAction* m_restart_action; /** action for restarting the current game */
+	QAction* m_print_action; /**< action for printing current board */
 	QAction* m_details_action; /**< action for showing game details */
 	QAction* m_undo_action; /**< action for undoing */
 	QAction* m_redo_action; /**< action for redoing */

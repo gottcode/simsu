@@ -3,7 +3,7 @@
 }
 
 TEMPLATE = app
-QT += widgets concurrent
+QT += concurrent printsupport widgets
 CONFIG += c++17
 
 CONFIG(debug, debug|release) {

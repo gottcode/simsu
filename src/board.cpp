@@ -16,6 +16,8 @@
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QLabel>
+#include <QPagedPaintDevice>
+#include <QPageLayout>
 #include <QPainter>
 #include <QSettings>
 #include <QUndoStack>
@@ -276,6 +278,114 @@ void Board::restartPuzzle()
 bool Board::hasPossible(int column, int row, int value) const
 {
 	return m_notes->hasPossible(column, row, value);
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::print(QPagedPaintDevice* printer) const
+{
+	if (!m_loaded) {
+		return;
+	}
+
+	// Make sure page margins are at least 2cm
+	QMarginsF margins = printer->pageLayout().margins(QPageLayout::Millimeter);
+	qreal min = 20.0;
+	if (margins.left() > min) {
+		min = margins.left();
+	}
+	if (margins.top() > min) {
+		min = margins.top();
+	}
+	if (margins.right() > min) {
+		min = margins.right();
+	}
+	if (margins.bottom() > min) {
+		min = margins.bottom();
+	}
+	printer->setPageMargins(QMarginsF(min, min, min, min), QPageLayout::Millimeter);
+
+	// Begin painting
+	QPainter painter;
+	painter.begin(printer);
+
+	// Center board on the page
+	QRect rect = painter.viewport();
+	const qreal scale = rect.width() / 472.0;
+	if (rect.height() > rect.width()) {
+		const int offset = (rect.height() - rect.width()) / 2;
+		painter.translate(0, offset);
+		rect.setHeight(rect.width());
+	} else {
+		const int offset = (rect.width() - rect.height()) / 2;
+		painter.translate(offset, 0);
+		rect.setWidth(rect.height());
+	}
+
+	// Operate on a scaled viewport so that calculations are easier
+	painter.save();
+	painter.scale(scale, scale);
+
+	// Draw box divider lines
+	painter.setPen(QPen(Qt::black, 4));
+	for (int i = 0; i < 4; ++i) {
+		int pos = (152 * i) + (i * 4) + 2;
+		painter.drawLine(2, pos, 470, pos);
+		painter.drawLine(pos, 2, pos, 470);
+	}
+
+	// Draw cell divider lines
+	painter.setPen(QPen(Qt::black, 1));
+	for (int i = 1; i < 3; ++i) {
+		int pos = (51 * i) + 3;
+		painter.drawLine(1, pos, 471, pos);
+		painter.drawLine(pos, 1, pos, 471);
+	}
+	for (int i = 4; i < 6; ++i) {
+		int pos = (51 * i) + 6;
+		painter.drawLine(1, pos, 471, pos);
+		painter.drawLine(pos, 1, pos, 471);
+	}
+	for (int i = 7; i < 9; ++i) {
+		int pos = (51 * i) + 9;
+		painter.drawLine(1, pos, 471, pos);
+		painter.drawLine(pos, 1, pos, 471);
+	}
+
+	// Draw values
+	const QPen pen_value(QColor(0x88, 0x88, 0x88));
+	const QPen pen_given(Qt::black);
+
+	QFont font_value = painter.font();
+	font_value.setPixelSize(24);
+
+	QFont font_given = font_value;
+	font_given.setBold(true);
+
+	for (int r = 0; r < 9; ++r) {
+		const int r_offset = 4 + (r % 3) + ((r / 3) * 6);
+		for (int c = 0; c < 9; ++c) {
+			int given = m_puzzle->given(c, r);
+			int value = m_cells[c][r]->value();
+			if (given) {
+				value = given;
+				painter.setPen(pen_given);
+				painter.setFont(font_given);
+			} else if (value) {
+				painter.setPen(pen_value);
+				painter.setFont(font_value);
+			} else {
+				continue;
+			}
+
+			const int c_offset = 4 + (c % 3) + ((c / 3) * 6);
+			painter.drawText((c * 50) + c_offset, (r * 50) + r_offset, 50, 50, Qt::AlignCenter, QString::number(value));
+		}
+	}
+
+	// Finish
+	painter.restore();
+	painter.end();
 }
 
 //-----------------------------------------------------------------------------

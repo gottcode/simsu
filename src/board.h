@@ -13,6 +13,7 @@ class SolverLogic;
 
 #include "frame.h"
 class QLabel;
+class QPagedPaintDevice;
 class QSettings;
 class QUndoStack;
 
@@ -136,6 +137,13 @@ public:
 	{
 		return m_loaded;
 	}
+
+	/**
+	 * Prints the current board layout if it is loaded.
+	 *
+	 * @param printer device to print to
+	 */
+	void print(QPagedPaintDevice* printer) const;
 
 	/**
 	 * Checks if the board has been completed successfully. If it has, it informs
