@@ -115,6 +115,7 @@ Window::Window()
 	connect(m_board, &Board::notesModeChanged, this, &Window::notesModeChanged);
 	connect(m_board, &Board::gameStarted, this, &Window::gameStarted);
 	connect(m_board, &Board::gameFinished, this, &Window::gameFinished);
+	connect(m_board, &Board::keysChanged, this, &Window::flattenUsedKeys);
 
 	QSettings settings;
 
@@ -439,6 +440,18 @@ void Window::gameStarted()
 void Window::activeKeyChanged(int key)
 {
 	m_key_buttons->button(key)->setChecked(true);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::flattenUsedKeys()
+{
+	for (int value = 1; value < 10; ++value) {
+		QToolButton* button = qobject_cast<QToolButton*>(m_key_buttons->button(value));
+		if (button) {
+			button->setAutoRaise(m_board->keyCount(value) == 9);
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------

@@ -515,6 +515,7 @@ void Board::decreaseKeyCount(int key)
 		return;
 	}
 	m_key_count[key]--;
+	emit keysChanged();
 }
 
 //-----------------------------------------------------------------------------
@@ -526,6 +527,7 @@ void Board::increaseKeyCount(int key)
 		return;
 	}
 	m_key_count[key]++;
+	emit keysChanged();
 }
 
 //-----------------------------------------------------------------------------
@@ -684,6 +686,7 @@ void Board::reset()
 	for (int i = 0; i < 9; ++i) {
 		m_key_count[i] = 0;
 	}
+	emit keysChanged();
 }
 
 //-----------------------------------------------------------------------------

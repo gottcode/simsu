@@ -287,6 +287,11 @@ signals:
 	 */
 	void notesModeChanged(bool mode);
 
+	/**
+	 * This signal is emitted when the count of an active key has changed.
+	 */
+	void keysChanged();
+
 private:
 	/**
 	 * Loads board after puzzle finishes generating.

@@ -80,6 +80,9 @@ private slots:
 	 */
 	void activeKeyChanged(int key);
 
+	/** Flatten buttons for values that are fully on the board. */
+	void flattenUsedKeys();
+
 	/**
 	 * Set if notes or answer button should be depressed.
 	 *
