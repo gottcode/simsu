@@ -66,7 +66,6 @@ namespace
 		setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 		setCheckable(true);
 		setFocusPolicy(Qt::NoFocus);
-		setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	}
 }
 
@@ -149,6 +148,7 @@ Window::Window()
 
 	m_mode_layout = new QHBoxLayout;
 	m_mode_layout->setContentsMargins(0, 0, 0, 0);
+	m_mode_layout->setSpacing(1);
 	m_mode_layout->addWidget(pen_button);
 	m_mode_layout->addWidget(pencil_button);
 	m_mode_layout->addStretch();
@@ -157,6 +157,7 @@ Window::Window()
 	// Create key buttons
 	m_keys_layout = new QHBoxLayout;
 	m_keys_layout->setContentsMargins(0, 0, 0, 0);
+	m_keys_layout->setSpacing(1);
 
 	m_key_buttons = new QButtonGroup(this);
 #if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
