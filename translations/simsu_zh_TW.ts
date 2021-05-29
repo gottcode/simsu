@@ -28,6 +28,17 @@
     </message>
 </context>
 <context>
+    <name>NewGamePage</name>
+    <message>
+        <source>Play Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Your Own</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Pattern</name>
     <message>
         <source>180° Rotational</source>
@@ -72,6 +83,25 @@
     <message>
         <source>None</source>
         <translation>沒有</translation>
+    </message>
+</context>
+<context>
+    <name>Puzzle</name>
+    <message>
+        <source>Simple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Easy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -169,40 +199,12 @@
         <translation>關於&#x3000;&amp;Qt</translation>
     </message>
     <message>
-        <source>New Game</source>
-        <translation>新遊戲</translation>
-    </message>
-    <message>
-        <source>Dancing Links</source>
-        <translation>舞動連結</translation>
-    </message>
-    <message>
-        <source>Slice and Dice</source>
-        <translation>切片且投骰子</translation>
-    </message>
-    <message>
-        <source>Random</source>
-        <translation>任意產生</translation>
-    </message>
-    <message>
         <source>Symmetry:</source>
         <translation>對稱</translation>
     </message>
     <message>
-        <source>Algorithm:</source>
-        <translation>演算法</translation>
-    </message>
-    <message>
-        <source>Seed:</source>
-        <translation>種子</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>詳細細節</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;對稱:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;演算法:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;種子:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -227,6 +229,66 @@
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
         <translation>這版本以 &lt;a href=%1&gt;GPL 3&lt;/a&gt;授權</translation>
+    </message>
+    <message>
+        <source>Sorry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have not created a valid puzzle. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generating puzzle...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Print...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Hint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Manual Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto &amp;Clear Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto &amp;Fill Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restart Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset the board to its original state?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print Board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Difficulty:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

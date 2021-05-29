@@ -28,6 +28,17 @@
     </message>
 </context>
 <context>
+    <name>NewGamePage</name>
+    <message>
+        <source>Play Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Your Own</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Pattern</name>
     <message>
         <source>180° Rotational</source>
@@ -72,6 +83,25 @@
     <message>
         <source>None</source>
         <translation>Немає</translation>
+    </message>
+</context>
+<context>
+    <name>Puzzle</name>
+    <message>
+        <source>Simple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Easy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -169,40 +199,12 @@
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>New Game</source>
-        <translation>Нова гра</translation>
-    </message>
-    <message>
-        <source>Dancing Links</source>
-        <translation>«Dancing Links»</translation>
-    </message>
-    <message>
-        <source>Slice and Dice</source>
-        <translation>«М&apos;ясорубка»</translation>
-    </message>
-    <message>
-        <source>Random</source>
-        <translation>Випадково</translation>
-    </message>
-    <message>
         <source>Symmetry:</source>
         <translation>Симетрія:</translation>
     </message>
     <message>
-        <source>Algorithm:</source>
-        <translation>Алгоритм:</translation>
-    </message>
-    <message>
-        <source>Seed:</source>
-        <translation>Відбір:</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Деталі</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Симетрія:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Алгоритм:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Відбір:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -226,6 +228,66 @@
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have not created a valid puzzle. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generating puzzle...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Print...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Hint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Manual Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto &amp;Clear Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto &amp;Fill Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restart Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset the board to its original state?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print Board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Difficulty:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
