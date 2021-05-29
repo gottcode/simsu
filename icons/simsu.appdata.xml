@@ -17,6 +17,8 @@
   <name xml:lang="pl">Simsu</name>
   <name xml:lang="pt">Simsu</name>
   <name xml:lang="ro">Simsu</name>
+  <name xml:lang="ru">Simsu</name>
+  <name xml:lang="te">సిస్ము</name>
   <name xml:lang="zh">Simsu</name>
   <name xml:lang="zh_TW">Simsu</name>
   <summary>Fill in numbers to solve puzzles</summary>
@@ -32,6 +34,8 @@
   <summary xml:lang="pl">Uzupełnij liczby aby rozwiązać puzzle</summary>
   <summary xml:lang="pt">Preenche com números para resolveres quebra-cabeças</summary>
   <summary xml:lang="ro">Completaţi cu numere pentru a rezolva puzzle-uri</summary>
+  <summary xml:lang="ru">Заполните цифры для решения головоломки</summary>
+  <summary xml:lang="te">పజిల్స్ పరిష్కరించడానికి సంఖ్యలను పూరించండి</summary>
   <summary xml:lang="zh">填入数字，解答难题</summary>
   <summary xml:lang="zh_TW">填入數字，解答數謎。</summary>
 
@@ -48,6 +52,8 @@
     <p xml:lang="pl">Simsu jest podstawową grą Sudoku. Możesz przełączać pomiędzy wypełnianiem notatek (tryb ołówek), lub wypełnianiem odpowiedzi (tryb pióra). Aby łatwiej rozpoznać, gdzie można umieścić liczby, możesz zaznaczyć wszystkie wystąpienia liczby. Możesz również sprawdzać rozwiązanie podczas gry. Gra zapisuje twoje obecne notatki i odpowiedzi, aby zostały odtworzone przy następnym uruchomieniu gry.</p>
     <p xml:lang="pt">Simsu é um simples jogo de Sudoku. Podes escolher entre preencher com notas (modo de lápis) ou com respostas (modo de caneta). Para facilitar uma nova colocação, podes realçar todas as instâncias de um número. Podes também fazer a verificação durante o jogo. A aplicação guarda as tuas notas e respostas atuais, de modo a que possas retomar o jogo anterior.</p>
     <p xml:lang="ro">Simsu este un joc de bază Sudoku. Puteți comuta între completarea notelor (modul creion), sau completarea răspunsurilor (modul stilou). Pentru a vedea mai uşor unde să plaseze numere, puteţi evidenția toate instanţele unui număr. Puteţi verifica, de asemenea, răspunsurile dumneavoastră pentru corectitudine în timpul jocului. Jocul stochează notele curente și răspunsurile, astfel încît să puteți contunua de unde aţi rămas data viitoare cînd jucaţi.</p>
+    <p xml:lang="ru">Simsu - это классическая игра Судоку. Вы можете переключаться между заполнением заметок (режим карандаш) или ответов (режим ручка). Для облегчения размещения чисел можно подсветить все экземпляры числа. Вы также можете проверить свои ответы на правильность во время игры. Игра хранит ваши текущие заметки и ответы, так что вы можете продолжить с того места, где остановились, когда будете играть в следующий раз.</p>
+    <p xml:lang="te">సిమ్సు ఒక ప్రాథమిక సుడోకు ఆట. మీరు గమనికలను నింపడం (పెన్సిల్ మోడ్) లేదా సమాధానాలను నింపడం (పెన్ మోడ్) మధ్య మారవచ్చు. సంఖ్యలను ఎక్కడ ఉంచాలో చూడటం సులభతరం చేయడానికి, మీరు సంఖ్య యొక్క అన్ని సందర్భాలను హైలైట్ చేయవచ్చు. మీరు ఆడుతున్నప్పుడు సరైనదానికి మీ సమాధానాలను కూడా తనిఖీ చేయవచ్చు. ఆట మీ ప్రస్తుత గమనికలు మరియు సమాధానాలను నిల్వ చేస్తుంది, తద్వారా మీరు తదుపరిసారి ఆడుతున్నప్పుడు మీరు ఎక్కడినుండి వెళ్లిపోయారో అక్కడనుండి కొనసాగించవ్చు.</p>
     <p xml:lang="zh">Simsu 是一款简单的数独游戏。你可以打草稿（铅笔模式）或填答案（钢笔模式）。为了更容易看出在哪里填数字，你可以高亮同一数字的所有出现。你可以在游戏进行的任何时候检查你所填的答案正确与否。游戏会记忆当前的草稿和答案，您下次游戏时可以直接继续。</p>
     <p xml:lang="zh_TW">Simsu是一個基本的數獨遊戲。你可以在劃記(鉛筆模式)和作答(原子筆模式)之間切換。你可以把所有子表格的同一個號碼都塗上色，方便釐清下一個數字要放在哪裡。在玩遊戲時，你可以同時檢查答案的正確性。這遊戲會儲存你目前的劃記和答案，所以下次你可以重拾你前次未完成的殘局。</p>
   </description>
@@ -77,7 +83,7 @@
     <kudo>ModernToolkit</kudo>
   </kudos>
 
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
 
   <releases>
     <release version="1.3.9" date="2020-04-20">

@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Graeme Gott
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Jagadeeshvarma, 2021
+msgid ""
+msgstr ""
+"Project-Id-Version: Simsu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-14 20:55+0000\n"
+"PO-Revision-Date: 2021-05-14 05:10+0000\n"
+"Last-Translator: Jagadeeshvarma\n"
+"Language-Team: Telugu (http://www.transifex.com/gottcode/simsu/language/"
+"te/)\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
+msgid "Simsu"
+msgstr "సిస్ము"
+
+#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
+msgid "Fill in numbers to solve puzzles"
+msgstr "పజిల్స్ పరిష్కరించడానికి సంఖ్యలను పూరించండి"
+
+#: ../simsu.appdata.xml.in:10
+msgid ""
+"Simsu is a basic Sudoku game. You can switch between filling in notes "
+"(pencil mode), or filling in answers (pen mode). To make it easier to see "
+"where to place numbers, you can highlight all instances of a number. You can "
+"also check your answers for correctness while playing. The game stores your "
+"current notes and answers, so that you can pick up where you left off the "
+"next time you play."
+msgstr ""
+"సిమ్సు ఒక ప్రాథమిక సుడోకు ఆట. మీరు గమనికలను నింపడం (పెన్సిల్ మోడ్) లేదా సమాధానాలను నింపడం (పెన్ మోడ్) "
+"మధ్య మారవచ్చు. సంఖ్యలను ఎక్కడ ఉంచాలో చూడటం సులభతరం చేయడానికి, మీరు సంఖ్య యొక్క అన్ని సందర్భాలను "
+"హైలైట్ చేయవచ్చు. మీరు ఆడుతున్నప్పుడు సరైనదానికి మీ సమాధానాలను కూడా తనిఖీ చేయవచ్చు. ఆట మీ ప్రస్తుత "
+"గమనికలు మరియు సమాధానాలను నిల్వ చేస్తుంది, తద్వారా మీరు తదుపరిసారి ఆడుతున్నప్పుడు మీరు ఎక్కడినుండి "
+"వెళ్లిపోయారో అక్కడనుండి కొనసాగించవ్చు."
+
+#: ../simsu.desktop.in:4
+msgid "Sudoku Game"
+msgstr "సుడోకు ఆట"

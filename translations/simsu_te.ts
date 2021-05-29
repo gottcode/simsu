@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru" sourcelanguage="en">
+<TS version="2.1" language="te" sourcelanguage="en">
 <context>
     <name>Board</name>
     <message>
         <source>Success</source>
-        <translation>Удача</translation>
+        <translation>విజయం</translation>
     </message>
 </context>
 <context>
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Выберите язык приложения:</translation>
+        <translation>అనువర్తన భాషను ఎంచుకోండి:</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Язык системы&gt;</translation>
+        <translation>&lt;System Language&gt;</translation>
     </message>
     <message>
         <source>Note</source>
-        <translation>Информация</translation>
+        <translation>గమనిక</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Чтобы применить изменение языка, перезапустите программу.</translation>
+        <translation>భాషలో మార్పు అమలులోకి రావడానికి దయచేసి ఈ అనువర్తనాన్ని పునఃప్రారంభించండి.</translation>
     </message>
 </context>
 <context>
     <name>Pattern</name>
     <message>
         <source>180° Rotational</source>
-        <translation>Разворачиваемый на 180°</translation>
+        <translation>180 ° భ్రమణ</translation>
     </message>
     <message>
         <source>Full Rotational</source>
-        <translation>Полностью разворачиваемый</translation>
+        <translation>పూర్తి భ్రమణ</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтальный</translation>
+        <translation>అడ్డం</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикальный</translation>
+        <translation>నిలువు</translation>
     </message>
     <message>
         <source>Horizontal &amp; Vertical</source>
-        <translation>Горизонтальный и вртикальный</translation>
+        <translation>అడ్డం &amp; నిలువు</translation>
     </message>
     <message>
         <source>Diagonal</source>
-        <translation>Диагональ</translation>
+        <translation>వికర్ణ</translation>
     </message>
     <message>
         <source>Anti-Diagonal</source>
-        <translation>Антидиагональ</translation>
+        <translation>యాంటీ వికర్ణ</translation>
     </message>
     <message>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Диакгональ и антидиагональ</translation>
+        <translation>వికర్ణ &amp; యాంటీ వికర్ణ</translation>
     </message>
     <message>
         <source>Full Dihedral</source>
-        <translation>Двухгранный</translation>
+        <translation>పూర్తి డైహెడ్రల్</translation>
     </message>
     <message>
         <source>Random</source>
-        <translation>Случайный</translation>
+        <translation>పద్ధతి లేకుండా</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Безназвания</translation>
+        <translation>ఏదీ లేదు</translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
         <source>Simsu</source>
-        <translation>Simsu</translation>
+        <translation>సిస్ము</translation>
     </message>
     <message>
         <source>Pen</source>
-        <translation>Ручка</translation>
+        <translation>కలం</translation>
     </message>
     <message>
         <source>Pencil</source>
-        <translation>Каранаш</translation>
+        <translation>పెన్సిల్</translation>
     </message>
     <message>
         <source>Highlight</source>
-        <translation>Подсветка</translation>
+        <translation>హైలైట్</translation>
     </message>
     <message>
         <source>H</source>
@@ -102,35 +102,35 @@
     </message>
     <message>
         <source>&amp;Game</source>
-        <translation>&amp;Игра</translation>
+        <translation>&amp;ఆట</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Новая</translation>
+        <translation>&amp;కొత్త</translation>
     </message>
     <message>
         <source>&amp;Details</source>
-        <translation>&amp;Детали</translation>
+        <translation>&amp;వివరాలు</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Выход</translation>
+        <translation>&amp;నిష్క్రమించండి</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation>&amp;Действия</translation>
+        <translation>&amp;తరలించు</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Отменить</translation>
+        <translation>&amp;అన్డు</translation>
     </message>
     <message>
         <source>&amp;Redo</source>
-        <translation>&amp;Повторить</translation>
+        <translation>&amp;రీడ్డు</translation>
     </message>
     <message>
         <source>&amp;Check</source>
-        <translation>П&amp;роверить</translation>
+        <translation>&amp;తనిఖీ</translation>
     </message>
     <message>
         <source>C</source>
@@ -138,95 +138,95 @@
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Настройки</translation>
+        <translation>&amp;సెట్టింగులు</translation>
     </message>
     <message>
         <source>&amp;Auto Switch Modes</source>
-        <translation>&amp;Режим автопереключения</translation>
+        <translation>&amp;స్వయ మోడ్‌లను మార్చు</translation>
     </message>
     <message>
         <source>&amp;Widescreen Layout</source>
-        <translation>&amp;Широкоэкранный режим</translation>
+        <translation>&amp;వైడ్ స్క్రీన్ లేఅవుట్</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Язык приложения...</translation>
+        <translation>అనువర్తన &amp;భాష...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Справка</translation>
+        <translation>&amp;సహాయం</translation>
     </message>
     <message>
         <source>&amp;Controls</source>
-        <translation>&amp;Управление</translation>
+        <translation>&amp;నియంత్రణలు</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;О программе</translation>
+        <translation>&amp;గురించి</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>О &amp;Qt</translation>
+        <translation>&amp;Qt గురించి</translation>
     </message>
     <message>
         <source>New Game</source>
-        <translation>Новая игра</translation>
+        <translation>కొత్త ఆట</translation>
     </message>
     <message>
         <source>Dancing Links</source>
-        <translation>Танцы ссылок</translation>
+        <translation>డ్యాన్స్ లింకులు</translation>
     </message>
     <message>
         <source>Slice and Dice</source>
-        <translation>Мясорубка</translation>
+        <translation>కొయ్యడం మరియు ముక్కలు చెయ్యడం</translation>
     </message>
     <message>
         <source>Random</source>
-        <translation>Случайный</translation>
+        <translation>పద్ధతి లేకుండా</translation>
     </message>
     <message>
         <source>Symmetry:</source>
-        <translation>Симметрия:</translation>
+        <translation>సమరూపత:</translation>
     </message>
     <message>
         <source>Algorithm:</source>
-        <translation>Алгоритм:</translation>
+        <translation>కలన గణితం:</translation>
     </message>
     <message>
         <source>Seed:</source>
-        <translation>Зерно:</translation>
+        <translation>విత్తనం:</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Детали</translation>
+        <translation>వివరాలు</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Symmetry:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Algorithm:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Seed:&lt;/b&gt; %L3&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Симметрияy:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Алгоритм:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;Зерно:&lt;/b&gt; %L3&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;సమరూపత:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;కలన గణితం:&lt;/b&gt; %L2&lt;br&gt;&lt;b&gt;విత్తనం:&lt;/b&gt; %L3&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation>Управление</translation>
+        <translation>నియంత్రణలు</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;Мышь:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Левый клик:&lt;/b&gt; Назначить число в режиме ручки&lt;br&gt;&lt;b&gt;Правый клик:&lt;/b&gt; Назначить число в режиме карандаша&lt;br&gt;&lt;b&gt;Прокрутка:&lt;/b&gt; Изменить текущее число&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Клавиатура:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Стрелки:&lt;/b&gt; Выбор ячейки&lt;br&gt;&lt;b&gt;Цифры:&lt;/b&gt; Ввод цифр&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Переключение режимов карандаша и ручки&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Подсветка ячеек с текущим числом&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About Simsu</source>
-        <translation>О Simsu</translation>
+        <translation>సిస్ము గురించి</translation>
     </message>
     <message>
         <source>A basic Sudoku game</source>
-        <translation>Классическая игра Судоку</translation>
+        <translation>ప్రాథమిక సుడోకు ఆట</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
+        <translation>కాపీరైట్ &amp; కాపీ; 2009-%1 గ్రేమ్ గాట్</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=%1&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Выпущен под лицензией &lt;a href=%1&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>&lt;a href=%1&gt;GPL3&lt;/a&gt;లైసెన్స్ కింద విడుదల చేయబడింది </translation>
     </message>
 </context>
 </TS>
