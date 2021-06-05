@@ -240,11 +240,7 @@ void Cell::keyPressEvent(QKeyEvent* event)
 
 //-----------------------------------------------------------------------------
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
 void Cell::enterEvent(QEnterEvent* event)
-#else
-void Cell::enterEvent(QEvent* event)
-#endif
 {
 	setFocus();
 	Frame::enterEvent(event);

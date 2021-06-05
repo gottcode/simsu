@@ -120,11 +120,7 @@ Window::Window()
 
 	// Create mode buttons
 	m_mode_buttons = new QButtonGroup(this);
-#if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
 	connect(m_mode_buttons, &QButtonGroup::idClicked, m_board, &Board::setMode);
-#else
-	connect(m_mode_buttons, qOverload<int>(&QButtonGroup::buttonClicked), m_board, &Board::setMode);
-#endif
 
 	QToolButton* pen_button = new SidebarButton(":/pen.png", tr("Pen"), contents);
 	m_mode_buttons->addButton(pen_button, 0);
@@ -160,11 +156,7 @@ Window::Window()
 	m_keys_layout->setSpacing(1);
 
 	m_key_buttons = new QButtonGroup(this);
-#if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
 	connect(m_key_buttons, &QButtonGroup::idClicked, m_board, &Board::setActiveKey);
-#else
-	connect(m_key_buttons, qOverload<int>(&QButtonGroup::buttonClicked), m_board, &Board::setActiveKey);
-#endif
 
 	for (int i = 1; i < 10; ++i) {
 		QToolButton* key = new QToolButton(this);
