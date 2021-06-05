@@ -128,8 +128,8 @@ bool Puzzle::load(const std::array<int, 81>& givens)
 void Puzzle::createSolution()
 {
 	// Create list of initial values
-	static const QVector<int> initial{1,2,3,4,5,6,7,8,9};
-	std::array<QVector<int>, 81> cells;
+	static const QList<int> initial{1,2,3,4,5,6,7,8,9};
+	std::array<QList<int>, 81> cells;
 	cells.fill(initial);
 
 	// Reset solution grid
@@ -145,7 +145,7 @@ void Puzzle::createSolution()
 		// Reset cell in case of backtrack
 		m_solution[i] = 0;
 
-		QVector<int>& cell = cells[i];
+		QList<int>& cell = cells[i];
 		std::shuffle(cell.begin(), cell.end(), m_random);
 
 		forever {
@@ -194,7 +194,7 @@ bool Puzzle::createGivens()
 
 	// Remove as many givens as possible
 	for (const int cell : cells) {
-		const QVector<int> positions = m_pattern->pattern(cell % 9, cell / 9);
+		const QList<int> positions = m_pattern->pattern(cell % 9, cell / 9);
 
 		bool valid = true;
 		for (const int pos : positions) {

@@ -7,7 +7,7 @@
 #ifndef SIMSU_SOLVER_DLX_H
 #define SIMSU_SOLVER_DLX_H
 
-#include <QVector>
+#include <QList>
 
 #include <array>
 
@@ -128,10 +128,10 @@ private:
 	const unsigned int m_max_nodes; /**< amount of nodes */
 
 	HeaderNode* m_header; /**< root element */
-	QVector<HeaderNode> m_columns; /**< constraints */
-	QVector<HeaderNode> m_rows; /**< rows */
-	QVector<Node> m_nodes; /**< row values */
-	QVector<Node*> m_output; /**< rows where columns do not conflict */
+	QList<HeaderNode> m_columns; /**< constraints */
+	QList<HeaderNode> m_rows; /**< rows */
+	QList<Node> m_nodes; /**< row values */
+	QList<Node*> m_output; /**< rows where columns do not conflict */
 	std::array<Node*, 81> m_solution; /**< nodes of most recent solution */
 
 	unsigned int m_solutions; /**< how many solutions have been found so far */

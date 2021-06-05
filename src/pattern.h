@@ -9,8 +9,8 @@
 
 #include <QCoreApplication>
 #include <QHash>
+#include <QList>
 #include <QString>
-#include <QVector>
 
 /**
  * %Pattern of givens.
@@ -50,7 +50,7 @@ public:
 	 *
 	 * @param cell the cell to mirror.
 	 */
-	virtual QVector<int> pattern(const int c, const int r) const = 0;
+	virtual QList<int> pattern(const int c, const int r) const = 0;
 
 	/**
 	 * Returns the human readable name for a pattern.
@@ -125,7 +125,7 @@ public:
 		return 8;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -149,7 +149,7 @@ public:
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -167,7 +167,7 @@ public:
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -187,7 +187,7 @@ public:
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -205,7 +205,7 @@ public:
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -223,7 +223,7 @@ public:
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -243,7 +243,7 @@ public:
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -261,7 +261,7 @@ public:
 		return 2;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -279,7 +279,7 @@ public:
 		return 4;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r),
@@ -299,7 +299,7 @@ public:
 		return 1;
 	}
 
-	QVector<int> pattern(const int c, const int r) const override
+	QList<int> pattern(const int c, const int r) const override
 	{
 		return {
 			point(c, r)
