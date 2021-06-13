@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Нова игра</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>Персонализирана игра</translation>
     </message>
 </context>
 <context>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Просто</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Лесно</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Средно</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Трудно</translation>
     </message>
 </context>
 <context>
@@ -232,63 +232,63 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Съжаляваме</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не сте създали правилен пъзел. Опитайте отново.</translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Моля, изчакайте</translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Създаване на пъзела…</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Рестартиране</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Отпечатване…</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Подсказка</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Бележки</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично &amp;изчистване на бележките</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично &amp;попълване на бележките</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Рестартиране на играта</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Връщане на дъската към началното ѝ състояние?</translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Отпечатване на дъската</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Трудност:</translation>
     </message>
 </context>
 </TS>

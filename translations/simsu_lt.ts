@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Žaisti žaidimą</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>Sukurti asmeninę</translation>
     </message>
 </context>
 <context>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Paprastas</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengvas</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidutinis</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunkus</translation>
     </message>
 </context>
 <context>
@@ -232,63 +232,63 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Atleiskite</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jūs nesate sukūrę tinkamos dėlionės. Bandykite dar kartą.</translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Palaukite</translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuriama dėlionė...</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa&amp;leisti iš naujo</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;pausdinti...</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Užuomina</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rankinės pastabos</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatiškai iš&amp;valyti pastabas</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatiškai &amp;užpildyti pastabas</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Paleisti žaidimą iš naujo</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Atstatyti lentą į jos pradinę būseną?</translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Spausdinti lentą</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sudėtingumas:</translation>
     </message>
 </context>
 </TS>

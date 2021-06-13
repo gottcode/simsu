@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Joacă jocul</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>Creaţi-vă propriul</translation>
     </message>
 </context>
 <context>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Simplu</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Uşor</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Mediu</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Greu</translation>
     </message>
 </context>
 <context>
@@ -232,63 +232,63 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Scuze</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu aţi creat un puzzle valid. Vă rugăm să încercaţi din nou.</translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să aşteptaţi</translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Generare puzzle...</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restart</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>Im&amp;primare...</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugestie</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Note manuale</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Şterge automat notele</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Completează automat notele</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Restart joc</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetaţi tabla de joc la starea iniţială?</translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimare tablă de joc</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dificultate:</translation>
     </message>
 </context>
 </TS>
