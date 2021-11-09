@@ -53,6 +53,7 @@ Comment[ru]=Заполните цифры для решения головоло
 Comment[te]=పజిల్స్ పరిష్కరించడానికి సంఖ్యలను పూరించండి
 Comment[zh]=填入数字，解答难题
 Comment[zh_TW]=填入數字，解答數謎。
+TryExec=simsu
 Exec=simsu
 Icon=simsu
 Terminal=false
