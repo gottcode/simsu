@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Speel het spel</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigen ontwerp</translation>
     </message>
 </context>
 <context>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpel</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Eenvoudig</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Medium</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Moeilijk</translation>
     </message>
 </context>
 <context>
@@ -232,63 +232,64 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorry</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen valide puzzel gemaakt.
+Probeer het alsjeblieft opnieuw</translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Graag even wachten</translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Puzzel wordt gemaakt.</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Herstarten</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>Printen</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Hint</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Handmatige notities</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch &amp; notities verwijderen</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch &amp; notities maken</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Spel herstarten</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Het bord terugbrengen naar zijn originele staat?</translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Print het bord</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Moeilijkheidsgraad</translation>
     </message>
 </context>
 </TS>

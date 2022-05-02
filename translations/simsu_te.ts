@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>ఆట ఆడండి</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>మీ స్వంతంగా సృష్టించుకోండి</translation>
     </message>
 </context>
 <context>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>సాధారణం</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>సులభం</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>మధ్యస్థం</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>కష్టం</translation>
     </message>
 </context>
 <context>
@@ -212,7 +212,7 @@
     </message>
     <message>
         <source>&lt;p&gt;&lt;big&gt;&lt;b&gt;Mouse Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Left click:&lt;/b&gt; Toggle number in pen mode&lt;br&gt;&lt;b&gt;Right click:&lt;/b&gt; Toggle number in pencil mode&lt;br&gt;&lt;b&gt;Scrollwheel:&lt;/b&gt; Change current number&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;Keyboard Controls:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;Arrow keys:&lt;/b&gt; Move selection&lt;br&gt;&lt;b&gt;Number keys:&lt;/b&gt; Toggle value or note&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; Switch between pen and pencil modes&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; Highlight all instances of current number&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;big&gt;&lt;b&gt;మౌస్ నియంత్రణలు:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;ఎడమ క్లిక్ చేయండి:&lt;/b&gt; పెన్ మోడ్‌లో సంఖ్యని టోగుల్ చేయండి&lt;br&gt;&lt;b&gt;కుడి క్లిక్ చేయండి:&lt;/b&gt;పెన్ మోడ్‌లో సంఖ్యని టోగుల్ చేయండి&lt;br&gt;&lt;b&gt;స్క్రోల్ చక్రం:&lt;/b&gt; ప్రస్తుత సంఖ్యను మార్చు&lt;/p&gt;&lt;p&gt;&lt;big&gt;&lt;b&gt;కీబోర్డ్ నియంత్రణలు:&lt;/b&gt;&lt;/big&gt;&lt;br&gt;&lt;b&gt;బాణం కీలు:&lt;/b&gt; ఎంపికను తరలించండి&lt;br&gt;&lt;b&gt;సంఖ్య కీలు:&lt;/b&gt; విలువ లేదా గమనికను టోగుల్ చేయండి&lt;br&gt;&lt;b&gt;S:&lt;/b&gt; కలం మరియు పెన్సిల్ మోడ్‌ల మధ్య మారండి&lt;br&gt;&lt;b&gt;H:&lt;/b&gt; ప్రస్తుత సంఖ్య యొక్క అన్ని సందర్భాలను హైలైట్ చేయండి&lt;/p&gt;</translation>
     </message>
     <message>
         <source>About Simsu</source>
@@ -232,63 +232,63 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>క్షమించండి</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>మీరు చెల్లుబాటు అయ్యే పజిల్‌ని సృష్టించలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>దయచేసి వేచి ఉండండి</translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>పజిల్‌ని సృష్టిస్తోంది...</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation> &amp;పునఃప్రారంభించు</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;ముద్రించు...</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;సూచన</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;చేపుస్తకం గమనికలు</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>స్వయంచాలకంగా &amp;గమనికలను క్లియర్ చెయ్యి</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>స్వయంచాలకంగా &amp;గమనికలను పూరించు</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>ఆటను పునఃప్రారంభించు</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>బోర్డుని దాని అసలు స్థితికి మార్చాలా?</translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>బోర్డును ముద్రించు</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>కష్టం యొక్క స్థాయి</translation>
     </message>
 </context>
 </TS>
