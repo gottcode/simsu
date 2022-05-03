@@ -1,3 +1,8 @@
+1.4.1
+-----
+* Switched to Qt 6.
+* Translation updates: Dutch, Telugu.
+
 1.4.0
 -----
 * Added difficulty ratings.
