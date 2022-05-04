@@ -77,6 +77,7 @@
   <provides>
 	<binary>simsu</binary>
   </provides>
+  <launchable type="desktop-id">simsu.desktop</launchable>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
