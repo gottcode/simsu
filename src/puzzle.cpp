@@ -103,7 +103,7 @@ void Puzzle::generate(int symmetry, int difficulty)
 			}
 		} while ((givens > 30) || (m_generated != m_difficulty));
 
-		emit generated(symmetry, m_difficulty);
+		Q_EMIT generated(symmetry, m_difficulty);
 	});
 }
 
@@ -148,7 +148,7 @@ void Puzzle::createSolution()
 		QList<int>& cell = cells[i];
 		std::shuffle(cell.begin(), cell.end(), m_random);
 
-		forever {
+		Q_FOREVER {
 			// Backtrack if there are no possiblities
 			if (cell.isEmpty()) {
 				cell = initial;

@@ -105,7 +105,7 @@ public:
 		return names.at(qBound(1, difficulty, names.size()) - 1);
 	}
 
-signals:
+Q_SIGNALS:
 	/**
 	 * Emitted when puzzle has finished generating.
 	 *

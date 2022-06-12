@@ -31,7 +31,7 @@ public:
 	 */
 	void reset();
 
-signals:
+Q_SIGNALS:
 	/**
 	 * This signal is emitted when the player cancels starting a new game.
 	 */
@@ -58,7 +58,7 @@ protected:
 	 */
 	void keyPressEvent(QKeyEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Handles starting a player-entered game.
 	 */

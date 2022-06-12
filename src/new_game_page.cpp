@@ -97,7 +97,7 @@ NewGamePage::NewGamePage(QWidget* parent)
 		button->setAutoDefault(true);
 		m_difficulty.append(button);
 		connect(button, &QPushButton::clicked, this, [this, i]() {
-			emit generatePuzzle(m_symmetry->currentRow(), i);
+			Q_EMIT generatePuzzle(m_symmetry->currentRow(), i);
 		});
 	}
 
@@ -199,7 +199,7 @@ void NewGamePage::playGame()
 	}
 
 	// Start game
-	emit loadPuzzle(givens);
+	Q_EMIT loadPuzzle(givens);
 }
 
 //-----------------------------------------------------------------------------

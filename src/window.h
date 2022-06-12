@@ -41,7 +41,7 @@ protected:
 	/** Override parent function to handle scrolling through current keys. */
 	void wheelEvent(QWheelEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Start a new game.
 	 *

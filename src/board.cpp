@@ -410,11 +410,11 @@ void Board::checkFinished()
 		}
 		m_message->show();
 		update();
-		emit gameFinished();
+		Q_EMIT gameFinished();
 	} else if (was_finished) {
 		m_message->hide();
 		update();
-		emit gameStarted();
+		Q_EMIT gameStarted();
 	}
 }
 
@@ -515,7 +515,7 @@ void Board::decreaseKeyCount(int key)
 		return;
 	}
 	m_key_count[key]--;
-	emit keysChanged();
+	Q_EMIT keysChanged();
 }
 
 //-----------------------------------------------------------------------------
@@ -527,7 +527,7 @@ void Board::increaseKeyCount(int key)
 		return;
 	}
 	m_key_count[key]++;
-	emit keysChanged();
+	Q_EMIT keysChanged();
 }
 
 //-----------------------------------------------------------------------------
@@ -589,7 +589,7 @@ void Board::setActiveKey(int key)
 {
 	m_active_key = qBound(1, key, 10);
 	update();
-	emit activeKeyChanged(m_active_key);
+	Q_EMIT activeKeyChanged(m_active_key);
 }
 
 //-----------------------------------------------------------------------------
@@ -646,7 +646,7 @@ void Board::setMode(int mode)
 {
 	m_notes_mode = mode;
 	QSettings().setValue("Mode", (m_notes_mode ? "Pencil" : "Pen"));
-	emit notesModeChanged(mode);
+	Q_EMIT notesModeChanged(mode);
 }
 
 //-----------------------------------------------------------------------------
@@ -671,7 +671,7 @@ void Board::puzzleGenerated(int symmetry, int difficulty)
 
 	m_loaded = true;
 
-	emit gameStarted();
+	Q_EMIT gameStarted();
 }
 
 //-----------------------------------------------------------------------------
@@ -686,7 +686,7 @@ void Board::reset()
 	for (int i = 0; i < 9; ++i) {
 		m_key_count[i] = 0;
 	}
-	emit keysChanged();
+	Q_EMIT keysChanged();
 }
 
 //-----------------------------------------------------------------------------

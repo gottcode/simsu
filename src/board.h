@@ -207,7 +207,7 @@ public:
 		return m_moves;
 	}
 
-public slots:
+public Q_SLOTS:
 	/**
 	 * Finds an empty cell and fills it with a value from the solution. If there
 	 * are errors on the board, it corrects them first.
@@ -262,7 +262,7 @@ public slots:
 	 */
 	void setMode(int mode);
 
-signals:
+Q_SIGNALS:
 	/**
 	 * This signal is emitted when the current key is changed.
 	 *
