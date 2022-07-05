@@ -9,6 +9,8 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QFileInfo>
+#include <QSettings>
 
 /**
  * Program entry point.
@@ -30,6 +32,7 @@ int main(int argc, char** argv)
 	app.setDesktopFileName("simsu");
 #endif
 
+	// Find application data
 	const QString appdir = app.applicationDirPath();
 	const QStringList datadirs{
 #if defined(Q_OS_MAC)
@@ -42,14 +45,28 @@ int main(int argc, char** argv)
 #endif
 	};
 
+	// Handle portability
+#ifdef Q_OS_MAC
+	const QFileInfo portable(appdir + "/../../../Data");
+#else
+	const QFileInfo portable(appdir + "/Data");
+#endif
+	if (portable.exists() && portable.isWritable()) {
+		QSettings::setDefaultFormat(QSettings::IniFormat);
+		QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, portable.absoluteFilePath() + "/Settings");
+	}
+
+	// Load application language
 	LocaleDialog::loadTranslator("simsu_", datadirs);
 
+	// Handle commandline
 	QCommandLineParser parser;
 	parser.setApplicationDescription(Window::tr("A basic Sudoku game"));
 	parser.addHelpOption();
 	parser.addVersionOption();
 	parser.process(app);
 
+	// Create main window
 	Window window;
 	window.show();
 
