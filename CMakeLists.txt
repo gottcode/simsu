@@ -86,6 +86,8 @@ endif()
 
 # Install
 if(UNIX AND NOT APPLE)
+	target_compile_definitions(simsu PRIVATE DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/simsu")
+
 	target_sources(simsu PRIVATE icons/icon.qrc)
 
 	install(TARGETS simsu RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

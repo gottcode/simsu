@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2022 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -30,7 +30,19 @@ int main(int argc, char** argv)
 	app.setDesktopFileName("simsu");
 #endif
 
-	LocaleDialog::loadTranslator("simsu_");
+	const QString appdir = app.applicationDirPath();
+	const QStringList datadirs{
+#if defined(Q_OS_MAC)
+		appdir + "/../Resources"
+#elif defined(Q_OS_UNIX)
+		DATADIR,
+		appdir + "/../share/simsu"
+#else
+		appdir
+#endif
+	};
+
+	LocaleDialog::loadTranslator("simsu_", datadirs);
 
 	QCommandLineParser parser;
 	parser.setApplicationDescription(Window::tr("A basic Sudoku game"));
