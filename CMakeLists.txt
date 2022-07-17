@@ -86,7 +86,7 @@ endif()
 
 # Install
 if(UNIX AND NOT APPLE)
-	target_compile_definitions(simsu PRIVATE DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/simsu")
+	file(RELATIVE_PATH datadir ${CMAKE_INSTALL_FULL_BINDIR} ${CMAKE_INSTALL_FULL_DATADIR}/simsu)
 
 	target_sources(simsu PRIVATE icons/icon.qrc)
 
@@ -97,6 +97,8 @@ if(UNIX AND NOT APPLE)
 	install(FILES icons/simsu.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 	install(FILES icons/simsu.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 elseif(WIN32)
+	set(datadir ".")
+
 	# Use Qt6 macro until CMake provides something
 	# https://bugreports.qt.io/browse/QTBUG-87618
 	set_target_properties(simsu PROPERTIES
@@ -110,3 +112,5 @@ elseif(WIN32)
 	)
 	_qt_internal_generate_win32_rc_file(simsu)
 endif()
+
+set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS SIMSU_DATADIR="${datadir}")
