@@ -183,30 +183,38 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	m_new_action = menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
-	m_restart_action = menu->addAction(tr("&Restart"), this, &Window::restartGame, QKeySequence::Refresh);
+	m_new_action = menu->addAction(tr("&New"), this, &Window::newGame);
+	m_new_action->setShortcut(QKeySequence::New);
+	m_restart_action = menu->addAction(tr("&Restart"), this, &Window::restartGame);
+	m_restart_action->setShortcut(QKeySequence::Refresh);
 	m_restart_action->setEnabled(false);
 	menu->addSeparator();
-	m_print_action = menu->addAction(tr("&Print..."), this, &Window::print, QKeySequence::Print);
+	m_print_action = menu->addAction(tr("&Print..."), this, &Window::print);
+	m_print_action->setShortcut(QKeySequence::Print);
 	m_print_action->setEnabled(false);
 	menu->addSeparator();
 	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
 	m_details_action->setEnabled(false);
 	menu->addSeparator();
-	QAction* action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
+	QAction* action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit);
+	action->setShortcut(QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Move"));
-	m_undo_action = menu->addAction(tr("&Undo"), m_board->moves(), &QUndoStack::undo, QKeySequence::Undo);
+	m_undo_action = menu->addAction(tr("&Undo"), m_board->moves(), &QUndoStack::undo);
+	m_undo_action->setShortcut(QKeySequence::Undo);
 	m_undo_action->setEnabled(false);
 	connect(m_board->moves(), &QUndoStack::canUndoChanged, m_undo_action, &QAction::setEnabled);
-	m_redo_action = menu->addAction(tr("&Redo"), m_board->moves(), &QUndoStack::redo, QKeySequence::Redo);
+	m_redo_action = menu->addAction(tr("&Redo"), m_board->moves(), &QUndoStack::redo);
+	m_redo_action->setShortcut(QKeySequence::Redo);
 	m_redo_action->setEnabled(false);
 	connect(m_board->moves(), &QUndoStack::canRedoChanged, m_redo_action, &QAction::setEnabled);
 	menu->addSeparator();
-	m_check_action = menu->addAction(tr("&Check"), m_board, [this]() { m_board->showWrong(true); }, tr("C"));
+	m_check_action = menu->addAction(tr("&Check"), m_board, [this]() { m_board->showWrong(true); });
+	m_check_action->setShortcut(tr("C"));
 	m_check_action->setEnabled(false);
-	m_hint_action = menu->addAction(tr("&Hint"), m_board, &Board::hint, tr("F2"));
+	m_hint_action = menu->addAction(tr("&Hint"), m_board, &Board::hint);
+	m_hint_action->setShortcut(tr("F2"));
 	m_hint_action->setEnabled(false);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
@@ -235,7 +243,8 @@ Window::Window()
 	menu->addAction(tr("Application &Language..."), this, &Window::setLocaleClicked);
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	menu->addAction(tr("&Controls"), this, &Window::showControls, QKeySequence::HelpContents);
+	action = menu->addAction(tr("&Controls"), this, &Window::showControls);
+	action->setShortcut(QKeySequence::HelpContents);
 	menu->addSeparator();
 
 	action = menu->addAction(tr("&About"), this, &Window::about);
