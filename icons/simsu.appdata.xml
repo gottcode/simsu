@@ -87,6 +87,15 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.4.2" date="2023-01-10">
+      <description>
+        <ul>
+          <li>Added portable mode</li>
+          <li>Improved Linux deployment</li>
+          <li>Replaced deprecated code</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.1" date="2022-05-03">
       <description>
         <ul>
