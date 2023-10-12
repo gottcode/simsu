@@ -107,7 +107,7 @@ NewGamePage::NewGamePage(QWidget* parent)
 	generated_layout->setSpacing(2);
 	generated_layout->addWidget(m_symmetry);
 	generated_layout->addSpacing(12);
-	for (QPushButton* button : qAsConst(m_difficulty)) {
+	for (QPushButton* button : std::as_const(m_difficulty)) {
 		generated_layout->addWidget(button);
 	}
 
@@ -157,7 +157,7 @@ void NewGamePage::reset()
 	// Reset widgets for custom puzzle
 	m_contents->setCurrentIndex(1);
 
-	for (QLineEdit* edit : qAsConst(m_custom)) {
+	for (QLineEdit* edit : std::as_const(m_custom)) {
 		edit->clear();
 	}
 
@@ -208,7 +208,7 @@ void NewGamePage::showConflicts()
 {
 	// Reset cells
 	QPalette p = palette();
-	for (QLineEdit* edit : qAsConst(m_custom)) {
+	for (QLineEdit* edit : std::as_const(m_custom)) {
 		edit->setPalette(p);
 	}
 

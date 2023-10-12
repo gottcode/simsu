@@ -117,7 +117,7 @@ void Cell::setState(int state)
 	m_board->updatePossibles();
 
 	// Check for conflicts
-	for (Cell* cell : qAsConst(m_conflicts)) {
+	for (Cell* cell : std::as_const(m_conflicts)) {
 		cell->m_conflicts.removeOne(this);
 		cell->update();
 	}
