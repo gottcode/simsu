@@ -2,7 +2,7 @@
 
 APP='Simsu'
 BUNDLE="$APP.app"
-VERSION='1.4.2'
+VERSION='1.4.3'
 
 # Locate deployment script
 BIN_DIR=$(pwd)
