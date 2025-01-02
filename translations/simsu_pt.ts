@@ -66,11 +66,11 @@
     </message>
     <message>
         <source>Anti-Diagonal</source>
-        <translation>Anti-Diagonal</translation>
+        <translation>Antidiagonal</translation>
     </message>
     <message>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Diagonal e Anti-Diagonal</translation>
+        <translation>Diagonal e Antidiagonal</translation>
     </message>
     <message>
         <source>Full Dihedral</source>
@@ -268,11 +268,11 @@
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto&amp;Limpar Notas</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto&amp;Preencher Notas</translation>
     </message>
     <message>
         <source>Restart Game</source>
@@ -280,7 +280,7 @@
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Repor o quadro para o estado original?</translation>
     </message>
     <message>
         <source>Print Board</source>
