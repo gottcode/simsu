@@ -264,6 +264,7 @@ Window::Window()
 	action->trigger();
 
 	// Restore size and position
+	resize(1,1);
 	restoreGeometry(settings.value("Geometry").toByteArray());
 
 	// Show new game dialog if not able to start previous game
