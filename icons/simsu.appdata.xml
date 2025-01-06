@@ -95,6 +95,15 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.4.4" date="2025-01-06">
+      <description>
+        <ul>
+          <li>Improved deployment</li>
+          <li>FIXED: Very wide window when played for first time</li>
+          <li>Translation updates: Portuguese</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.3" date="2024-01-16">
       <description>
         <ul>
