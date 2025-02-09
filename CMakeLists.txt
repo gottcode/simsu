@@ -31,6 +31,20 @@ add_version_compile_definition(src/main.cpp VERSIONSTR)
 
 # Create program
 qt_add_executable(simsu
+	# Headers
+	src/board.h
+	src/cell.h
+	src/frame.h
+	src/locale_dialog.h
+	src/move.h
+	src/new_game_page.h
+	src/pattern.h
+	src/puzzle.h
+	src/solver_dlx.h
+	src/solver_logic.h
+	src/square.h
+	src/window.h
+	# Sources
 	src/board.cpp
 	src/cell.cpp
 	src/frame.cpp
@@ -43,6 +57,7 @@ qt_add_executable(simsu
 	src/solver_logic.cpp
 	src/square.cpp
 	src/window.cpp
+	# Resources
 	icons/images.qrc
 	symmetry/symmetry.qrc
 	${translations_QM}
