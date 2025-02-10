@@ -1,49 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
-# Guillaume Gay <guillaume.gay@bigfoot.com>, 2014
+# Guillaume Gay <guillaume.gay@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:55+0000\n"
-"PO-Revision-Date: 2017-09-23 20:29+0000\n"
-"Last-Translator: Guillaume Gay <guillaume.gay@bigfoot.com>\n"
-"Language-Team: French (http://www.transifex.com/gottcode/simsu/language/"
-"fr/)\n"
-"Language: fr\n"
+"POT-Creation-Date: 2014-11-14 17:10+0000\n"
+"PO-Revision-Date: 2018-11-05 20:18+0000\n"
+"Last-Translator: Guillaume Gay <guillaume.gay@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/gottcode/simsu/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
-msgid "Simsu"
-msgstr "Simsu"
-
-#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
+#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
 msgstr "Résolution de puzzles numériques"
 
-#: ../simsu.appdata.xml.in:10
+#: ../simsu.appdata.xml.in.h:2
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
-"where to place numbers, you can highlight all instances of a number. You can "
-"also check your answers for correctness while playing. The game stores your "
-"current notes and answers, so that you can pick up where you left off the "
+"where to place numbers, you can highlight all instances of a number. You can"
+" also check your answers for correctness while playing. The game stores your"
+" current notes and answers, so that you can pick up where you left off the "
 "next time you play."
-msgstr ""
-"Simsu est un simple jeu de Sodoku. Vous pouvez basculer du remplissage en "
-"mode  notes (mode crayon), au remplissage en mode réponses définitives (mode "
-"stylo). Pour faciliter le placement des numéros, vous avez la possibilité de "
-"mettre en surbrillance toutes les occurrences d'un certain nombre. Vous "
-"pouvez également vérifier l'exactitude de vos réponses tout en jouant. Le "
-"jeu enregistre vos notes et vos réponses en cours en cours, de sorte que "
-"vous puissiez reprendre là où vous vous étiez arrêté la prochaine fois. "
+msgstr "Simsu est un simple jeu de Sodoku. Vous pouvez basculer du remplissage en mode  notes (mode crayon), au remplissage en mode réponses définitives (mode stylo). Pour faciliter le placement des numéros, vous avez la possibilité de mettre en surbrillance toutes les occurrences d'un certain nombre. Vous pouvez également vérifier l'exactitude de vos réponses tout en jouant. Le jeu enregistre vos notes et vos réponses en cours en cours, de sorte que vous puissiez reprendre là où vous vous étiez arrêté la prochaine fois."
 
-#: ../simsu.desktop.in:4
+#: ../simsu.desktop.in.h:1
+msgid "Simsu"
+msgstr "Simsu"
+
+#: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
 msgstr "Jeu de Sodoku"

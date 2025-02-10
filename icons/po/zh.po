@@ -1,46 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # 高垚鑫, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:55+0000\n"
+"POT-Creation-Date: 2014-11-14 17:10+0000\n"
 "PO-Revision-Date: 2018-03-25 12:39+0000\n"
 "Last-Translator: 高垚鑫\n"
-"Language-Team: Chinese (http://www.transifex.com/gottcode/simsu/language/"
-"zh/)\n"
-"Language: zh\n"
+"Language-Team: Chinese (http://www.transifex.com/gottcode/simsu/language/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
-msgid "Simsu"
-msgstr "Simsu"
-
-#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
+#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
 msgstr "填入数字，解答难题"
 
-#: ../simsu.appdata.xml.in:10
+#: ../simsu.appdata.xml.in.h:2
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
-"where to place numbers, you can highlight all instances of a number. You can "
-"also check your answers for correctness while playing. The game stores your "
-"current notes and answers, so that you can pick up where you left off the "
+"where to place numbers, you can highlight all instances of a number. You can"
+" also check your answers for correctness while playing. The game stores your"
+" current notes and answers, so that you can pick up where you left off the "
 "next time you play."
-msgstr ""
-"Simsu 是一款简单的数独游戏。你可以打草稿（铅笔模式）或填答案（钢笔模式）。为"
-"了更容易看出在哪里填数字，你可以高亮同一数字的所有出现。你可以在游戏进行的任"
-"何时候检查你所填的答案正确与否。游戏会记忆当前的草稿和答案，您下次游戏时可以"
-"直接继续。"
+msgstr "Simsu 是一款简单的数独游戏。你可以打草稿（铅笔模式）或填答案（钢笔模式）。为了更容易看出在哪里填数字，你可以高亮同一数字的所有出现。你可以在游戏进行的任何时候检查你所填的答案正确与否。游戏会记忆当前的草稿和答案，您下次游戏时可以直接继续。"
 
-#: ../simsu.desktop.in:4
+#: ../simsu.desktop.in.h:1
+msgid "Simsu"
+msgstr "Simsu"
+
+#: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
 msgstr "数独游戏"

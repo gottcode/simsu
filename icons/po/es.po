@@ -1,48 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Edgar Carballo <karvayoEdgar@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Simsu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:55+0000\n"
+"POT-Creation-Date: 2014-11-14 17:10+0000\n"
 "PO-Revision-Date: 2017-09-21 13:55+0000\n"
 "Last-Translator: Edgar Carballo <karvayoEdgar@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/gottcode/simsu/language/"
-"es/)\n"
-"Language: es\n"
+"Language-Team: Spanish (http://www.transifex.com/gottcode/simsu/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../simsu.appdata.xml.in:6 ../simsu.desktop.in:3
-msgid "Simsu"
-msgstr "Simsu"
-
-#: ../simsu.appdata.xml.in:7 ../simsu.desktop.in:5
+#: ../simsu.appdata.xml.in.h:1 ../simsu.desktop.in.h:3
 msgid "Fill in numbers to solve puzzles"
 msgstr "Escriba números para resolver rompecabezas"
 
-#: ../simsu.appdata.xml.in:10
+#: ../simsu.appdata.xml.in.h:2
 msgid ""
 "Simsu is a basic Sudoku game. You can switch between filling in notes "
 "(pencil mode), or filling in answers (pen mode). To make it easier to see "
-"where to place numbers, you can highlight all instances of a number. You can "
-"also check your answers for correctness while playing. The game stores your "
-"current notes and answers, so that you can pick up where you left off the "
+"where to place numbers, you can highlight all instances of a number. You can"
+" also check your answers for correctness while playing. The game stores your"
+" current notes and answers, so that you can pick up where you left off the "
 "next time you play."
-msgstr ""
-"Simsu es un juego de Sudoku básico. Puedes intercambiar entre escribir notas "
-"(modo lápiz), o escribir las respuestas (modo pluma). Para hacer que ver "
-"dónde poner los números sea más fácil, puedes marcar todas las instancias de "
-"un número. También puedes verificar si tus respuestas son correctas mientras "
-"juegas. El juego almacena tus notas y respuestas actuales, para que después "
-"puedas continuar donde te quedaste."
+msgstr "Simsu es un juego de Sudoku básico. Puedes intercambiar entre escribir notas (modo lápiz), o escribir las respuestas (modo pluma). Para hacer que ver dónde poner los números sea más fácil, puedes marcar todas las instancias de un número. También puedes verificar si tus respuestas son correctas mientras juegas. El juego almacena tus notas y respuestas actuales, para que después puedas continuar donde te quedaste."
 
-#: ../simsu.desktop.in:4
+#: ../simsu.desktop.in.h:1
+msgid "Simsu"
+msgstr "Simsu"
+
+#: ../simsu.desktop.in.h:2
 msgid "Sudoku Game"
 msgstr "Juego de Sudoku"
