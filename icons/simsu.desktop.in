@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Simsu
+GenericName=Sudoku Game
+Comment=Fill in numbers to solve puzzles
+TryExec=simsu
+Exec=simsu
+Icon=simsu
+Terminal=false
+Type=Application
+Categories=Qt;Game;LogicGame;
+Keywords=game;logic;

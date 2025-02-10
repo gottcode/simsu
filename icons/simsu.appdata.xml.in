@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>simsu.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+
+  <name>Simsu</name>
+  <summary>Fill in numbers to solve puzzles</summary>
+  <description>
+    <p>Simsu is a basic Sudoku game. You can switch between filling in notes (pencil mode), or filling in answers (pen mode). To make it easier to see where to place numbers, you can highlight all instances of a number. You can also check your answers for correctness while playing. The game stores your current notes and answers, so that you can pick up where you left off the next time you play.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gottcode.org/simsu/screenshots/appdata.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://gottcode.org/simsu/</url>
+  <url type="bugtracker">https://gottcode.org/simsu/bugs/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/gottcode/simsu/</url>
+
+  <developer id="org.gottcode">
+    <name translatable="no">Graeme Gott</name>
+  </developer>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">simsu</translation>
+
+  <provides>
+	<binary>simsu</binary>
+  </provides>
+  <launchable type="desktop-id">simsu.desktop</launchable>
+  <icon type="stock">simsu</icon>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.4.4" date="2025-01-06">
+      <description>
+        <ul>
+          <li>Improved deployment</li>
+          <li>FIXED: Very wide window when played for first time</li>
+          <li>Translation updates: Portuguese</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.4.3" date="2024-01-16">
+      <description>
+        <ul>
+          <li>Replaced deprecated code</li>
+          <li>Translation updates: Portuguese</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.4.2" date="2023-01-10">
+      <description>
+        <ul>
+          <li>Added portable mode</li>
+          <li>Improved Linux deployment</li>
+          <li>Replaced deprecated code</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.4.1" date="2022-05-03">
+      <description>
+        <ul>
+          <li>Switched to Qt 6</li>
+          <li>Translation updates: Dutch, Telugu</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.4.0" date="2021-06-13">
+      <description>
+        <ul>
+          <li>Added difficulty ratings</li>
+          <li>Added getting hints</li>
+          <li>Added optional automatic pencil marks</li>
+          <li>Added playing puzzles entered by player</li>
+          <li>Added printing puzzles</li>
+          <li>Added restarting puzzles</li>
+          <li>Added support for Qt 6</li>
+          <li>Improved new game interface</li>
+          <li>Improved window spacing</li>
+          <li>Refactored code</li>
+          <li>Removed XPM icon</li>
+          <li>Translation updates: Bulgarian, Lithuanian, Romanian, Russian, Telugu</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.9" date="2020-04-20">
+      <description>
+        <ul>
+          <li>FIXED: Did not load locales with underscores</li>
+          <li>Improved Windows deployment</li>
+          <li>Replaced deprecated code</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.8" date="2019-08-07">
+      <description>
+        <ul>
+          <li>FIXED: Window icon didn't work in Wayland</li>
+          <li>Improved loading locales</li>
+          <li>Improved Windows deployment</li>
+          <li>Replaced deprecated code</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.7" date="2018-07-20">
+      <description>
+        <ul>
+          <li>FIXED: Automatic high DPI support</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.3.6" date="2018-05-29">
+      <description>
+        <ul>
+          <li>Replaced deprecated code</li>
+          <li>Extra warnings only shown in debug build</li>
+          <li>Improved Linux deployment</li>
+          <li>Improved macOS deployment</li>
+          <li>Improved Windows deployment</li>
+          <li>Translation updates: Chinese, Chinese (Taiwan), Italian, Portuguese</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
