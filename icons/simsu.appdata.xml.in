@@ -32,12 +32,6 @@
 	<binary>simsu</binary>
   </provides>
   <launchable type="desktop-id">simsu.desktop</launchable>
-  <icon type="stock">simsu</icon>
-
-  <categories>
-    <category>Game</category>
-    <category>LogicGame</category>
-  </categories>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
