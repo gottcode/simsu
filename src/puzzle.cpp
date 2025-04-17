@@ -13,6 +13,7 @@
 #include <QtConcurrentRun>
 
 #include <algorithm>
+#include <climits>
 
 //-----------------------------------------------------------------------------
 
