@@ -5,14 +5,14 @@
     <name>Board</name>
     <message>
         <source>Success</source>
-        <translation>Succès</translation>
+        <translation>Réussi</translation>
     </message>
 </context>
 <context>
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Sélectionner la langue de l&apos;application</translation>
+        <translation>Sélectionnez la langue de l&apos;application</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
@@ -31,11 +31,11 @@
     <name>NewGamePage</name>
     <message>
         <source>Play Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Lancer un jeu</translation>
     </message>
     <message>
         <source>Create Your Own</source>
-        <translation type="unfinished"></translation>
+        <translation>Créez le vôtre</translation>
     </message>
 </context>
 <context>
@@ -62,15 +62,15 @@
     </message>
     <message>
         <source>Diagonal</source>
-        <translation>Diagonale</translation>
+        <translation>Diagonal</translation>
     </message>
     <message>
         <source>Anti-Diagonal</source>
-        <translation>Anti-diagonale</translation>
+        <translation>Antidiagonal</translation>
     </message>
     <message>
         <source>Diagonal &amp; Anti-Diagonal</source>
-        <translation>Diagonale &amp; anti-diagonale</translation>
+        <translation>Diagonal &amp; antidiagonal</translation>
     </message>
     <message>
         <source>Full Dihedral</source>
@@ -89,19 +89,19 @@
     <name>Puzzle</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Simple</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Facile</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Moyen</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Difficile</translation>
     </message>
 </context>
 <context>
@@ -148,11 +148,11 @@
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation>&amp;Déplacer</translation>
+        <translation>&amp;Entrée</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Annuler</translation>
+        <translation>&amp;Défaire</translation>
     </message>
     <message>
         <source>&amp;Redo</source>
@@ -172,7 +172,7 @@
     </message>
     <message>
         <source>&amp;Auto Switch Modes</source>
-        <translation>Modes &amp;automatiques</translation>
+        <translation>Modes commutation &amp;automatique</translation>
     </message>
     <message>
         <source>&amp;Widescreen Layout</source>
@@ -232,63 +232,63 @@
     </message>
     <message>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Désolé</translation>
     </message>
     <message>
         <source>You have not created a valid puzzle. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous n&apos;avez pas créé un puzzle correct. Veuillez réessayer. </translation>
     </message>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez patienter. </translation>
     </message>
     <message>
         <source>Generating puzzle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Génération du puzzle en cours...</translation>
     </message>
     <message>
         <source>&amp;Restart</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Relancer</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>Im&amp;primer...</translation>
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>In&amp;dice</translation>
     </message>
     <message>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <source>&amp;Manual Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notes &amp;manuelles</translation>
     </message>
     <message>
         <source>Auto &amp;Clear Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nettoyage automatique des notes</translation>
     </message>
     <message>
         <source>Auto &amp;Fill Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>R&amp;emplissage automatique des notes</translation>
     </message>
     <message>
         <source>Restart Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Relance du jeu</translation>
     </message>
     <message>
         <source>Reset the board to its original state?</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser la carte à son état d&apos;origine ? </translation>
     </message>
     <message>
         <source>Print Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimer la carte</translation>
     </message>
     <message>
         <source>Difficulty:</source>
-        <translation type="unfinished"></translation>
+        <translation>Difficulté : </translation>
     </message>
 </context>
 </TS>
