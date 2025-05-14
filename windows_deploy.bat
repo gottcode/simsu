@@ -4,7 +4,7 @@
 
 SET SRCDIR=..\simsu
 SET APP=Simsu
-SET VERSION=1.4.5
+SET VERSION=1.4.6
 
 ECHO Copying executable
 MKDIR %SRCDIR%\%APP%
