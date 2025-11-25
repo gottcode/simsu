@@ -19,7 +19,7 @@
   <url type="homepage">https://gottcode.org/simsu/</url>
   <url type="bugtracker">https://gottcode.org/simsu/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
-  <url type="translate">https://www.transifex.com/gottcode/simsu/</url>
+  <url type="translate">https://app.transifex.com/gottcode/simsu/</url>
 
   <developer id="org.gottcode">
     <name translatable="no">Graeme Gott</name>
