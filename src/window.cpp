@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2025 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2026 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -412,7 +412,7 @@ void Window::about()
 	QMessageBox::about(this, tr("About Simsu"), QString("<p align='center'><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></p>")
 		.arg(tr("Simsu"), QCoreApplication::applicationVersion(),
 			tr("A basic Sudoku game"),
-			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2025"),
+			tr("Copyright &copy; 2009-%1 Graeme Gott").arg("2026"),
 			tr("Released under the <a href=%1>GPL 3</a> license").arg("\"http://www.gnu.org/licenses/gpl.html\""))
 	);
 }
