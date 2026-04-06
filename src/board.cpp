@@ -73,28 +73,16 @@ Board::Board(QWidget* parent)
 	}
 
 	// Create success message
-	m_message = new QLabel(this);
-	QFontMetrics metrics(QFont("Sans", 24));
-	int width = metrics.boundingRect(tr("Success")).width();
-	int height = metrics.height();
-	int ratio = devicePixelRatio();
-	QPixmap success(QSize(width + height, height * 2) * ratio);
-	success.setDevicePixelRatio(ratio);
-	success.fill(QColor(0, 0, 0, 0));
-	{
-		QPainter painter(&success);
-
-		painter.setPen(Qt::NoPen);
-		painter.setBrush(QColor(0, 0, 0, 200));
-		painter.setRenderHint(QPainter::Antialiasing, true);
-		painter.drawRoundedRect(0, 0, width + height, height * 2, 10, 10);
-
-		painter.setFont(QFont("Sans", 24));
-		painter.setPen(Qt::white);
-		painter.setRenderHint(QPainter::TextAntialiasing, true);
-		painter.drawText(height / 2, height / 2 + metrics.ascent(), tr("Success"));
-	}
-	m_message->setPixmap(success);
+	m_message = new QLabel(tr("Success"), this);
+	m_message->setFont(QFont("Sans", 24));
+	m_message->setStyleSheet(
+		"QLabel {"
+			"background-color: rgba(0, 0, 0, 200);"
+			"color: white;"
+			"margin: 0;"
+			"padding: 1em;"
+			"border-radius: 10px;"
+		"}");
 	m_message->hide();
 	layout->addWidget(m_message, 0, 0, 3, 3, Qt::AlignCenter);
 }
